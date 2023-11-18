@@ -1,0 +1,43 @@
+@page "/about"
+@rendermode InteractiveServer
+
+<PageTitle>About</PageTitle>
+
+<h1>About Me</h1>
+
+<br>
+
+<p>
+<strong>Greetings from your friendly neighborhood technologist!</strong>
+</p>
+
+<p>
+    Hi! I'm a full-stack developer in Grand Rapids, Michigan with a passion for cloud infrastructure, DevOps automation, and RESTful APIs.
+    With @GetYearsOfExperience() years of professional experience, I've worked with a variety of technologies and platforms.
+
+    My passions include:
+</p>
+<ul>
+    <li>Cloud Infrastructure</li>
+    <li>DevOps Automation</li>
+    <li>RESTful APIs</li>
+    <li>Developer Experience</li>
+</ul>
+<p>
+    I'm currently working as a Solutions Developer at <a href="https://leadingedje.com/">Leading EDJE</a>, a software consultancy based in Columbus, Ohio.
+</p>
+
+@code {
+    private readonly DateTime _start = new DateTime(2019, 5, 6);
+
+    private int GetYearsOfExperience() {
+        var today = DateTime.Now;
+
+        if (today.Month < _start.Month || (today.Month == _start.Month && today.Day < _start.Day))
+        {
+            return (today.Year - _start.Year) - 1;
+        }
+        
+        return today.Year - _start.Year; ;
+    }
+}

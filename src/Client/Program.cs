@@ -1,4 +1,4 @@
-using Client.Components;
+using VictorFrye.DotCom.Client.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

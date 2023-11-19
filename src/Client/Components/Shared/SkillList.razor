@@ -1,0 +1,13 @@
+<div class="skills-list">
+    @foreach (var skill in Skills)
+    {
+        @SkillTemplate(skill)
+    }
+</div>
+
+@code {
+    [Parameter]
+    public IList<string> Skills { get; set; } = [];
+
+    RenderFragment<string> SkillTemplate = (skill) => @<div class='skills-item'>@skill</div>;
+}

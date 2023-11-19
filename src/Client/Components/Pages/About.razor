@@ -1,34 +1,56 @@
 @page "/about"
 @rendermode InteractiveServer
 
-<PageTitle>About</PageTitle>
+<PageTitle>About | Victor Frye</PageTitle>
 
-<h1>About Me</h1>
+<section id="about" class="section-wrapper">
+    <div class="section">
+        <h1 class="heading heading-section">
+            About me.
+        </h1>
 
-<br>
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="heading heading-subsection">
+                    _hey
+                </h2>
+                <p>
+                    Hi! Thank you for taking an interest in me and my website. I'm a full-stack developer from Grand Rapids, Michigan.
+                    With @GetYearsOfExperience() years of professional experience, I've worked with a variety of
+                    technologies and platforms. However, I am only just getting started.
+                </p>
+                <p>
+                    I'm currently working as a Solutions Developer at <a href="https://leadingedje.com/">Leading EDJE</a>, a
+                    software consultancy based in Columbus, Ohio.
+                </p>
+                <p>
+                    In my downtime, I enjoy gaming, reading, and quality time with my fiancée and our two dogs.
+                </p>
 
-<p>
-<strong>Greetings from your friendly neighborhood technologist!</strong>
-</p>
+                <a href="/#contact" class="btn btn-primary">Contact</a>
+            </div>
 
-<p>
-    Hi! I'm a full-stack developer in Grand Rapids, Michigan with a passion for cloud infrastructure, DevOps automation, and RESTful APIs.
-    With @GetYearsOfExperience() years of professional experience, I've worked with a variety of technologies and platforms.
-
-    My passions include:
-</p>
-<ul>
-    <li>Cloud Infrastructure</li>
-    <li>DevOps Automation</li>
-    <li>RESTful APIs</li>
-    <li>Developer Experience</li>
-</ul>
-<p>
-    I'm currently working as a Solutions Developer at <a href="https://leadingedje.com/">Leading EDJE</a>, a software consultancy based in Columbus, Ohio.
-</p>
+            <div class="skills">
+                <h2 class="heading heading-subsection">
+                    _skills
+                </h2>
+                <SkillList Skills=@_skills />
+            </div>
+        </div>
+    </div>
+</section>
 
 @code {
     private readonly DateTime _start = new DateTime(2019, 5, 6);
+    private readonly List<string> _skills = [
+        ".NET",
+        "C#",
+        "Azure",
+        "GitHub",
+        "PowerShell",
+        "Git",
+        "SQL",
+        "YAML"];
 
     private int GetYearsOfExperience() {
         var today = DateTime.Now;

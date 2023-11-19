@@ -1,5 +1,63 @@
 html, body {
+    /* background-color: var(--background-color); */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --background-color: #1d1d20;
+
+    --primary-accent: #3a0647;
+    --secondary-accent: #052767;
+
+    --accent-gradient: linear-gradient(0deg, var(--primary-accent) 0%, var(--secondary-accent) 70%);
+    --accent-gradient-inverse: linear-gradient(180deg, var(--primary-accent) 0%, var(--secondary-accent) 30%);
+    --accent-gradient-top-left: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 50%, var(--primary-accent) 100%);
+    --accent-gradient-bottom-right: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 50%, var(--secondary-accent) 100%);
+
+}
+
+.section-wrapper {
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    /* z-index: 1;
+    background-color: white; */
+    /* overflow: hidden; */
+}
+
+    .section-wrapper ::before {
+            content: " ";
+            width: 180px;
+            height: 180px;
+            background: var(--accent-gradient-top-left);
+            z-index: -1;
+            /* opacity: 1; */
+            border-top-left-radius: 8px;
+            /* transition: all .3s ease-in-out; */
+            position: absolute;
+            top: -2px;
+            left: -2px;
+        }
+
+    .section-wrapper ::after {
+            content: " ";
+            width: 180px;
+            height: 180px;
+            background: var(--accent-gradient-top-left);
+            z-index: -1;
+            /* opacity: 1; */
+            border-bottom-right-radius: 8px;
+            /* transition: all .3s ease-in-out; */
+            position: absolute;
+            bottom: -2px;
+            right: -2px
+        }
+
+.section {
+    background: white;
+    border-top-left-radius: 8px;
+    margin-left: 0;
+    padding: 30px 30px;
+    position: relative;
 }
 
 a, .btn-link {
@@ -7,7 +65,7 @@ a, .btn-link {
 }
 
 .btn-primary {
-    color: #fff;
+    color: white;
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
@@ -23,6 +81,59 @@ a, .btn-link {
 h1:focus {
     outline: none;
 }
+
+.heading {
+    font-weight: 600;
+    color: var(--primary-accent);
+}
+
+.heading-primary {
+    margin-bottom: 20px;
+    font-size: 7.2rem;
+
+}
+
+.heading-section {
+    margin-bottom: 10px;
+    font-size: 2.8rem;
+}
+
+    .heading-section ::before {
+            content: " ";
+            width: 90px;
+            height: 90px;
+            background: var(--accent-gradient-top-left);
+            /* opacity: 1; */
+            border-top-left-radius: 8px;
+            transition: all .3s ease-in-out;
+            position: absolute;
+            top: -2px;
+            bottom: 0;
+            left: -2px;
+        }
+
+.heading-subsection {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: var(--secondary-accent);
+    padding-right: .3rem;
+}
+
+.accent-bar {
+    margin-left: 30px;
+    position: relative;
+    display: block;
+}
+
+    .accent-bar ::before {
+        content: " ";
+        width: 2px;
+        background: var(--accent-gradient-inverse);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30px;
+    }
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;

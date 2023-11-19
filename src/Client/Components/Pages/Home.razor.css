@@ -1,0 +1,37 @@
+.home-page {
+
+}
+
+.welcome-header {
+    font-size: 6em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #3a0647;
+}
+
+.welcome-text {
+    margin-left: 30px;
+    font-size: .9em;
+    /* font-weight: 100; */
+    position: relative;
+    line-height: 1.6rem;
+    display: block;
+}
+
+    .welcome-text ::before {
+        content: " ";
+        width: 2px;
+        background: linear-gradient(0deg, #052767 0%, #3a0647 70%);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30px;
+    }
+
+.spacer {
+    content: " ";
+    display: block;
+    /* height: 15px; */
+    z-index: -2;
+    padding: 30px 60px;
+}

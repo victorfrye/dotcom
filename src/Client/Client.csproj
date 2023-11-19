@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <Title>VictorFrye.com</Title>
-    <Description>🕸️ My personal about me website</Description>
+    <Description>🎨 My personal about me website</Description>
     <Authors>VictorFrye</Authors>
     <RepositoryUrl>https://github.com/victorfrye/dotcom</RepositoryUrl>
 
@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.0.0" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.0.0" />
   </ItemGroup>
 

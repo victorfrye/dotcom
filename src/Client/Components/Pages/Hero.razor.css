@@ -1,0 +1,23 @@
+.home-hero {
+    /* color: #ffffff; */
+    /* background: linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(/daac885…/c157c/assets/svg/common-bg.svg); */
+    background-position: center;
+    /* height: 100vh; */
+    /* min-height: 80rem; */
+    /* max-height: 120rem; */
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.hero-content {
+
+}
+
+.hero-subtitle {
+    margin-left: 30px;
+    font-size: 1.2rem;
+    /* font-weight: 100; */
+    position: relative;
+    line-height: 1.6rem;
+    display: block;
+}

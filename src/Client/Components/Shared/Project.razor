@@ -1,0 +1,28 @@
+<div class="project-container">
+    <div class="project-heading">
+        <h2 class="heading heading-subsection">
+            _@Title
+        </h2>
+    </div>
+    <div class="project-desc">
+        <div class="project-summary">
+            <p>
+                @Summary
+            </p>
+        </div>
+        <div class="project-link">
+            <a href=@Link class="btn btn-primary">View on GitHub</a>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "";
+
+    [Parameter]
+    public string Summary { get; set; } = "";
+
+    [Parameter]
+    public string Link { get; set; } = "";
+}

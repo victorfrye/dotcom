@@ -1,0 +1,35 @@
+.project-container {
+    
+}
+
+.project-heading {
+    display: flex;
+    padding-right: 1.6rem;
+}
+
+.project-desc {
+    line-height: 1.6rem;
+    text-wrap: wrap;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+    .skills-list ::before, ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+        font-family: inherit;
+    }
+
+.skills-item {
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.6rem;
+    margin-right: .8rem;
+    font-size: 1.2rem;
+    background: linear-gradient(180deg, #052767 0%, #3a0647 70%);
+    color: white;
+    /* font-weight: 600; */
+    border-radius: 5px;
+}

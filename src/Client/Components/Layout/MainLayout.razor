@@ -1,30 +1,32 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
+    <div class="sidebar fixed-top">
         <NavMenu />
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://threads.net/@@thevictorfryeadventure" target="_blank" >
-                <img src="images/threads.svg" alt="Threads" class="btn-link" />
-            </a>
-            <a href="https://linkedin.com/in/victorfrye" target="_blank">
-                <img src="images/linkedin.svg" alt="LinkedIn" class="btn-link" />
-            </a>
-            <a href="https://github.com/victorfrye" target="_blank">
-                <img src="images/github.svg" alt="GitHub" class="btn-link" />
-            </a>
-            <a href="mailto:victorfrye@outlook.com" target="_blank">
-                <FluentIcon class="btn-link" Value="@(new Icons.Filled.Size20.Mail())" Color="@Color.FillInverse" />
-            </a>
-        </div>
+
 
         <article class="content px-4">
             @Body
         </article>
     </main>
+
+    @* <div class="top-row px-4">
+        <a href="https://threads.net/@@thevictorfryeadventure" target="_blank">
+            <img src="images/threads.svg" alt="Threads" class="btn-link" />
+        </a>
+        <a href="https://linkedin.com/in/victorfrye" target="_blank">
+            <img src="images/linkedin.svg" alt="LinkedIn" class="btn-link" />
+        </a>
+        <a href="https://github.com/victorfrye" target="_blank">
+            <img src="images/github.svg" alt="GitHub" class="btn-link" />
+        </a>
+        <a href="mailto:victorfrye@outlook.com" target="_blank">
+            <img src="images/email.svg" alt="Email" class="btn-link" />
+        </a>
+    </div> *@
 </div>
 
 <div id="blazor-error-ui">

@@ -1,44 +1,43 @@
-@page "/about"
-@rendermode InteractiveServer
+<div class="section">
+    <h1 class="heading heading-section">
+        [About]
+    </h1>
 
-<PageTitle>About | Victor Frye</PageTitle>
+    <div class="text-muted">
+        <p>
+            Get to know me a little better.
+        </p>
+    </div>
 
-<section id="about" class="section-wrapper">
-    <div class="section">
-        <h1 class="heading heading-section">
-            About me.
-        </h1>
+    <div class="d-flex flex-wrap">
+        <div class="about-content">
+            <h2 class="heading heading-subsection r-5">
+                _hey
+            </h2>
+            <p>
+                Hi! Thank you for taking an interest in me and my website. I'm a full-stack developer from Grand Rapids, Michigan.
+                With @GetYearsOfExperience() years of professional experience, I've worked with a variety of
+                technologies and platforms. However, I am only just getting started.
+            </p>
+            <p>
+                I'm currently working as a Solutions Developer at <a href="https://leadingedje.com/">Leading EDJE</a>, a
+                software consultancy based in Columbus, Ohio.
+            </p>
+            <p>
+                In my downtime, I enjoy gaming, reading, and quality time with my fiancée and our two dogs.
+            </p>
 
-        <div class="about-container">
-            <div class="about-content">
-                <h2 class="heading heading-subsection">
-                    _hey
-                </h2>
-                <p>
-                    Hi! Thank you for taking an interest in me and my website. I'm a full-stack developer from Grand Rapids, Michigan.
-                    With @GetYearsOfExperience() years of professional experience, I've worked with a variety of
-                    technologies and platforms. However, I am only just getting started.
-                </p>
-                <p>
-                    I'm currently working as a Solutions Developer at <a href="https://leadingedje.com/">Leading EDJE</a>, a
-                    software consultancy based in Columbus, Ohio.
-                </p>
-                <p>
-                    In my downtime, I enjoy gaming, reading, and quality time with my fiancée and our two dogs.
-                </p>
+            <a href="/#contact" class="btn btn-primary">Contact</a>
+        </div>
 
-                <a href="/#contact" class="btn btn-primary">Contact</a>
-            </div>
-
-            <div class="skills">
-                <h2 class="heading heading-subsection">
-                    _skills
-                </h2>
-                <SkillList Skills=@_skills />
-            </div>
+        <div class="skills">
+            <h2 class="heading heading-subsection">
+                _skills
+            </h2>
+            <SkillList Skills=@_skills />
         </div>
     </div>
-</section>
+</div>
 
 @code {
     private readonly DateTime _start = new DateTime(2019, 5, 6);

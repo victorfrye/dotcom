@@ -1,4 +1,4 @@
-<div class="skills-list">
+<div class="d-flex flex-wrap">
     @foreach (var skill in Skills)
     {
         @SkillTemplate(skill)
@@ -9,5 +9,5 @@
     [Parameter]
     public IList<string> Skills { get; set; } = [];
 
-    RenderFragment<string> SkillTemplate = (skill) => @<div class='skills-item'>@skill</div>;
+    RenderFragment<string> SkillTemplate = (skill) => @<div class='skills-item px-3 py-2 m-2 rounded text-light'>@skill</div>;
 }

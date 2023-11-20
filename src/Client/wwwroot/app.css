@@ -6,22 +6,30 @@ html, body {
 :root {
     --background-color: #1d1d20;
 
-    --primary-accent: #3a0647;
-    --secondary-accent: #052767;
+    --accent-primary: rgb(58, 6, 71);
+    --accent-secondary: rgb(5, 39, 103);
+    --accent-tertiary: rgb(0, 107, 183);
 
-    --accent-gradient: linear-gradient(0deg, var(--primary-accent) 0%, var(--secondary-accent) 70%);
-    --accent-gradient-inverse: linear-gradient(180deg, var(--primary-accent) 0%, var(--secondary-accent) 30%);
-    --accent-gradient-top-left: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 50%, var(--primary-accent) 100%);
-    --accent-gradient-bottom-right: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 50%, var(--secondary-accent) 100%);
+    --accent-gradient: linear-gradient(0deg, var(--accent-primary) 0%, var(--accent-secondary) 70%);
+    --accent-gradient-inverse: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-secondary) 30%);
+    --accent-gradient-top-left: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-primary) 100%);
+    --accent-gradient-bottom-right: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%);
 
+}
+
+.bi {
+    display: inline-block;
+    /* position: relative; */
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
 }
 
 .section-wrapper {
     backface-visibility: hidden;
-    box-sizing: border-box;
-    /* z-index: 1;
-    background-color: white; */
-    /* overflow: hidden; */
+    /* box-sizing: border-box; */
 }
 
     .section-wrapper ::before {
@@ -30,9 +38,7 @@ html, body {
             height: 180px;
             background: var(--accent-gradient-top-left);
             z-index: -1;
-            /* opacity: 1; */
-            border-top-left-radius: 8px;
-            /* transition: all .3s ease-in-out; */
+            border-top-left-radius: 2.5rem;
             position: absolute;
             top: -2px;
             left: -2px;
@@ -42,11 +48,9 @@ html, body {
             content: " ";
             width: 180px;
             height: 180px;
-            background: var(--accent-gradient-top-left);
+            background: var(--accent-gradient-bottom-right);
             z-index: -1;
-            /* opacity: 1; */
-            border-bottom-right-radius: 8px;
-            /* transition: all .3s ease-in-out; */
+            border-bottom-right-radius: 2.5rem;
             position: absolute;
             bottom: -2px;
             right: -2px
@@ -54,20 +58,20 @@ html, body {
 
 .section {
     background: white;
-    border-top-left-radius: 8px;
+    border-radius: 2.4rem;
     margin-left: 0;
     padding: 30px 30px;
     position: relative;
 }
 
 a, .btn-link {
-    color: #006bb7;
+    color: var(--accent-tertiary);
 }
 
 .btn-primary {
     color: white;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    background-color: var(--accent-tertiary);
+    border-color: var(--accent-tertiary);
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -84,7 +88,7 @@ h1:focus {
 
 .heading {
     font-weight: 600;
-    color: var(--primary-accent);
+    color: var(--accent-primary);
 }
 
 .heading-primary {
@@ -98,25 +102,10 @@ h1:focus {
     font-size: 2.8rem;
 }
 
-    .heading-section ::before {
-            content: " ";
-            width: 90px;
-            height: 90px;
-            background: var(--accent-gradient-top-left);
-            /* opacity: 1; */
-            border-top-left-radius: 8px;
-            transition: all .3s ease-in-out;
-            position: absolute;
-            top: -2px;
-            bottom: 0;
-            left: -2px;
-        }
-
 .heading-subsection {
     margin-bottom: 10px;
     font-size: 2rem;
-    color: var(--secondary-accent);
-    padding-right: .3rem;
+    color: var(--accent-secondary);
 }
 
 .accent-bar {

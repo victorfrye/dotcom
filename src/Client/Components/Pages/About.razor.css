@@ -1,17 +1,16 @@
 .about-container {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
 }
 
 .about-content {
-    flex: 0 0 60%;
+    flex: 0 0 50%;
     line-height: 1.6;
     display: block;
     padding-right: 15px
 }
 
 .skills {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     padding-left: 15px;
 }

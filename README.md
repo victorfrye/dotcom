@@ -1,3 +1,3 @@
 # DotCom
 
-🕸️ My personal about me website
+🎨 My personal about me website

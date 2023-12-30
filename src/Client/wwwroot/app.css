@@ -1,19 +1,22 @@
 html, body {
-    /* background-color: var(--background-color); */
+    background: #1d1d20;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #b8bec3;
 }
 
 :root {
-    --background-color: #1d1d20;
+    /* --accent-primary: #3a0647;
+    --accent-secondary: #052767; */
+    --accent-primary: #fafafa;
+    --accent-secondary: #c0c0c0;
+    
+    --accent-tertiary: #36454f;
+    --accent-dark: #000000;
 
-    --accent-primary: rgb(58, 6, 71);
-    --accent-secondary: rgb(5, 39, 103);
-    --accent-tertiary: rgb(0, 107, 183);
-
-    --accent-gradient: linear-gradient(0deg, var(--accent-primary) 0%, var(--accent-secondary) 70%);
-    --accent-gradient-inverse: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-secondary) 30%);
-    --accent-gradient-top-left: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-primary) 100%);
-    --accent-gradient-bottom-right: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%);
+    --accent-gradient: linear-gradient(0deg, var(--accent-primary) 0%, var(--accent-dark) 70%);
+    --accent-gradient-inverse: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-tertiary) 70%);
+    --accent-gradient-top-left: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 50%, var(--accent-primary) 100%);
+    --accent-gradient-bottom-right: linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-tertiary) 100%);
 
 }
 
@@ -27,51 +30,75 @@ html, body {
     background-size: cover;
 }
 
-.section-wrapper {
-    backface-visibility: hidden;
-    /* box-sizing: border-box; */
+.frame {
+    background: #1d1d20;
+    position: absolute;
+    z-index: 1;
+    min-height: calc(100vh - 90px);
+    margin: 30px;
 }
 
-    .section-wrapper ::before {
-            content: " ";
-            width: 180px;
-            height: 180px;
-            background: var(--accent-gradient-top-left);
-            z-index: -1;
-            border-top-left-radius: 2.5rem;
-            position: absolute;
-            top: -2px;
-            left: -2px;
-        }
+    .frame ::before {
+        content: " ";
+        width: 180px;
+        height: 180px;
+        background: var(--accent-gradient-top-left);
+        z-index: -1;
+        border-top-left-radius: 2.5rem;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+    }
 
-    .section-wrapper ::after {
-            content: " ";
-            width: 180px;
-            height: 180px;
-            background: var(--accent-gradient-bottom-right);
-            z-index: -1;
-            border-bottom-right-radius: 2.5rem;
-            position: absolute;
-            bottom: -2px;
-            right: -2px
-        }
+    .frame ::after {
+        content: " ";
+        width: 180px;
+        height: 180px;
+        background: var(--accent-gradient-bottom-right);
+        z-index: -1;
+        border-bottom-right-radius: 2.5rem;
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+    }
 
-.section {
-    background: white;
+.framed {
+    display: flex;
+    flex-direction: column;
+    background: #1d1d20;
+    min-height: calc(100vh - 90px);
     border-radius: 2.4rem;
-    margin-left: 0;
-    padding: 30px 30px;
-    position: relative;
+    padding: 30px 45px;
+}
+
+.bg-gradient-circle {
+    width: 72px;
+    height: 72px;
+    padding: 3px 3px;
+    border-radius: 50%;
+    background: var(--accent-gradient) !important;
+}
+
+.social-icon {
+    height: 24px;
+    width: 24px;
 }
 
 a, .btn-link {
-    color: var(--accent-tertiary);
+    color: var(--accent-secondary);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-secondary);
+}
+
+.btn-link {
+    fill: var(--accent-secondary);
+    border-bottom: none;
 }
 
 .btn-primary {
     color: white;
-    background-color: var(--accent-tertiary);
-    border-color: var(--accent-tertiary);
+    background-color: var(--accent-secondary);
+    border-color: var(--accent-secondary);
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -86,43 +113,11 @@ h1:focus {
     outline: none;
 }
 
-.heading {
-    font-weight: 600;
-    color: var(--accent-primary);
-}
-
-.heading-primary {
-    margin-bottom: 20px;
-    font-size: 7.2rem;
-
-}
-
-.heading-section {
-    margin-bottom: 10px;
-    font-size: 2.8rem;
-}
-
-.heading-subsection {
-    margin-bottom: 10px;
-    font-size: 2rem;
-    color: var(--accent-secondary);
-}
-
 .accent-bar {
     margin-left: 30px;
     position: relative;
     display: block;
 }
-
-    .accent-bar ::before {
-        content: " ";
-        width: 2px;
-        background: var(--accent-gradient-inverse);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: -30px;
-    }
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;

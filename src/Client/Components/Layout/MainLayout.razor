@@ -1,32 +1,14 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar fixed-top">
-        <NavMenu />
-    </div>
-
-    <main>
-
-
-        <article class="content px-4">
-            @Body
-        </article>
+<div class="d-flex flex-column min-vh-100">
+    <main class="mb-auto min-vh-80">
+        @Body
     </main>
 
-    @* <div class="top-row px-4">
-        <a href="https://threads.net/@@thevictorfryeadventure" target="_blank">
-            <img src="images/threads.svg" alt="Threads" class="btn-link" />
-        </a>
-        <a href="https://linkedin.com/in/victorfrye" target="_blank">
-            <img src="images/linkedin.svg" alt="LinkedIn" class="btn-link" />
-        </a>
-        <a href="https://github.com/victorfrye" target="_blank">
-            <img src="images/github.svg" alt="GitHub" class="btn-link" />
-        </a>
-        <a href="mailto:victorfrye@outlook.com" target="_blank">
-            <img src="images/email.svg" alt="Email" class="btn-link" />
-        </a>
-    </div> *@
+    <footer class="d-flex justify-content-center text-light p-3">
+        ©2023 Victor Frye
+    </footer>
+    
 </div>
 
 <div id="blazor-error-ui">

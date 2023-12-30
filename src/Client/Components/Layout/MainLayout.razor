@@ -1,13 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="d-flex flex-column min-vh-100">
-    <main class="mb-auto min-vh-80">
-        @Body
-    </main>
 
-    <footer class="d-flex justify-content-center text-light p-3">
-        ©2023 Victor Frye
-    </footer>
+    <div class="d-flex flex-column mb-auto frame">
+        <div class="d-flex flex-column framed">
+            <main class="">
+                @Body
+            </main>
+
+            <footer class="d-flex justify-content-end mt-auto text-light p-3">
+                ©2023 Victor Frye
+            </footer>
+        </div>
+    </div>
     
 </div>
 

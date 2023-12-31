@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "ms-dotnettools.csharp",
+    // Azure Static Web Apps
     "ms-vscode.azure-account",
     "ms-azuretools.vscode-azurestaticwebapps",
     "ms-azuretools.vscode-azureresourcegroups"

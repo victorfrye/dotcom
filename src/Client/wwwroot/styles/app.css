@@ -2,47 +2,35 @@ html,
 body {
     background: #1d1d20;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #b8bec3;
 }
 
 :root {
-    /* --accent-primary: #3a0647;
-    --accent-secondary: #052767; */
-    --accent-primary: #fafafa;
-    --accent-secondary: silver;
+    --primary: #c0c0c0;
+    --secondary: #f8f8ff;
+    --tertiary: #36454f;
+    --bg: #1d1d20;
 
-    --accent-tertiary: #36454f;
-    --accent-dark: black;
-
-    --accent-gradient: linear-gradient(0deg, var(--accent-primary) 0%, var(--accent-dark) 70%);
-    --accent-gradient-inverse: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-tertiary) 70%);
-    --accent-gradient-top-left: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 50%, var(--accent-primary) 100%);
-    --accent-gradient-bottom-right: linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-primary) 50%, var(--accent-tertiary) 100%);
-
+    --gradient: linear-gradient(0deg, var(--secondary) 0%, black 70%);
+    --gradient-tl: linear-gradient(135deg, var(--secondary) 0%, black 50%, var(--secondary) 100%);
+    --gradient-br: linear-gradient(135deg, black 0%, var(--secondary) 50%, black 100%);
 }
 
-.bi {
-    display: inline-block;
-    /* position: relative; */
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.75rem;
-    top: -1px;
-    background-size: cover;
+.text-primary {
+    color: var(--primary) !important;
 }
 
-.frame {
-    background: #1d1d20;
+.frame-bg {
+    background: var(--bg);
     position: absolute;
     z-index: 1;
     margin: 30px;
 }
 
-.frame ::before {
+.frame-bg ::before {
     content: " ";
     width: 180px;
     height: 180px;
-    background: var(--accent-gradient-top-left);
+    background: var(--gradient-tl);
     z-index: -1;
     border-top-left-radius: 2.5rem;
     position: absolute;
@@ -50,11 +38,11 @@ body {
     left: -2px;
 }
 
-.frame ::after {
+.frame-bg ::after {
     content: " ";
     width: 180px;
     height: 180px;
-    background: var(--accent-gradient-bottom-right);
+    background: var(--gradient-br);
     z-index: -1;
     border-bottom-right-radius: 2.5rem;
     position: absolute;
@@ -62,19 +50,19 @@ body {
     right: -2px;
 }
 
-.framed {
+.framed-bg {
     min-height: calc(100vh - 60px);
-    background: #1d1d20;
+    background: var(--bg);
     border-radius: 2.4rem;
     padding: 30px 45px;
 }
 
-.bg-gradient-circle {
+.pfp-bg {
     width: 72px;
     height: 72px;
     padding: 3px 3px;
     border-radius: 50%;
-    background: var(--accent-gradient) !important;
+    background: var(--gradient) !important;
 }
 
 .social-icon {
@@ -82,22 +70,23 @@ body {
     width: 24px;
 }
 
+
 a,
 .btn-link {
-    color: var(--accent-secondary);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--accent-secondary);
+    color: var(--primary);
+    text-decoration: none !important;
+    border-bottom: 1px dotted var(--primary);
 }
 
 .btn-link {
-    fill: var(--accent-secondary);
+    fill: var(--primary);
     border-bottom: none;
 }
 
 .btn-primary {
-    color: white;
-    background-color: var(--accent-secondary);
-    border-color: var(--accent-secondary);
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 .btn:focus,
@@ -105,7 +94,7 @@ a,
 .btn-link.nav-link:focus,
 .form-control:focus,
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--tertiary);
 }
 
 .content {

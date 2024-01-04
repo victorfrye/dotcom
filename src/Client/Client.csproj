@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    
+    <RunAOTCompilation>true</RunAOTCompilation>
 
     <Title>VictorFrye.com</Title>
     <Description>🎨 My personal about me website</Description>

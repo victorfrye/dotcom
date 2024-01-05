@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
   "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
-  "name": "C# (.NET)",
+  "name": "DotCom",
   "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/powershell": "latest",
@@ -10,5 +10,6 @@
   },
   "forwardPorts": [5139],
   "postCreateCommand": "dotnet restore; pwsh",
-  "shutdownAction": "stopContainer"
+  "shutdownAction": "stopContainer",
+  "remoteUser": "root"
 }

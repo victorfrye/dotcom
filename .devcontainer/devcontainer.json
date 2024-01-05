@@ -6,11 +6,12 @@
   "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/powershell": "latest"
+    "ghcr.io/devcontainers/features/powershell": "latest",
+    "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/dotnet-wasi:0": "latest"
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [5139],
-  "postCreateCommand": "dotnet restore",
+  "postCreateCommand": "dotnet restore; pwsh",
   "shutdownAction": "stopContainer"
 
   // Configure tool-specific properties.

@@ -76,8 +76,8 @@ a, .btn-link {
     border-bottom: 1px dotted var(--primary);
 }
 
-.btn-link {
-    fill: var(--primary);
+a:hover {
+    color: var(--secondary);
     border-bottom: none;
 }
 

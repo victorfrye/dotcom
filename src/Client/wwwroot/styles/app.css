@@ -10,7 +10,7 @@ body {
     --tertiary: #36454f;
     --bg: #1d1d20;
 
-    --gradient: linear-gradient(0deg, var(--secondary) 0%, black 70%);
+    --gradient: radial-gradient(circle at 30% 107%, var(--primary) 0%, var(--secondary) 15%, black 70%);
     --gradient-tl: linear-gradient(135deg, var(--secondary) 0%, black 50%, var(--secondary) 100%);
     --gradient-br: linear-gradient(135deg, black 0%, var(--secondary) 50%, black 100%);
 }
@@ -65,21 +65,14 @@ body {
     background: var(--gradient) !important;
 }
 
-.social-icon {
-    height: 24px;
-    width: 24px;
-}
-
-
-a,
-.btn-link {
+a {
     color: var(--primary);
     text-decoration: none !important;
     border-bottom: 1px dotted var(--primary);
 }
 
-.btn-link {
-    fill: var(--primary);
+a:hover {
+    color: var(--secondary);
     border-bottom: none;
 }
 
@@ -87,28 +80,6 @@ a,
     color: var(--secondary);
     background-color: var(--primary);
     border-color: var(--primary);
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn-link.nav-link:focus,
-.form-control:focus,
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--tertiary);
-}
-
-.content {
-    padding-top: 1.1rem;
-}
-
-h1:focus {
-    outline: none;
-}
-
-.accent-bar {
-    margin-left: 30px;
-    position: relative;
-    display: block;
 }
 
 .valid.modified:not([type=checkbox]) {

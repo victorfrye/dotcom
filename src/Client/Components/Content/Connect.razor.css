@@ -34,15 +34,15 @@
 }
 
 .btn-social:hover:nth-child(1) {
-    background: var(--bg-threads)
+    background: var(--threads-bg)
 }
 
 .btn-social:hover:nth-child(2) {
-    background: var(--bg-linkedin);
+    background: var(--linkedin-bg);
 }
 
 .btn-social:hover:nth-child(3) {
-    background: var(--bg-github);
+    background: var(--github-bg);
 }
 
 .btn-social:hover:nth-child(4) {

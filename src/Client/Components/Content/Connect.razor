@@ -1,20 +1,33 @@
 <section id="connect">
     <div class="d-flex flex-column flex-wrap">
-        <h5 class="text-primary pt-3 pb-2">_Connect</h5>
+        <h2 class="text-primary pt-3 pb-2">_Connect</h2>
 
-        <div class="d-socials d-flex flex-row flex-wrap">
-            <a href="https://threads.net/@@thevictorfryeadventure" target="_blank" class="btn-link btn-social px-2">
-                <img src="/images/threads.svg" alt="Threads" class="img-social" />
-            </a>
-            <a href="https://linkedin.com/in/victorfrye" target="_blank" class="btn-link btn-social px-2">
-                <img src="/images/linkedin.svg" alt="LinkedIn" class="img-social" />
-            </a>
-            <a href="https://github.com/victorfrye" target="_blank" class="btn-link btn-social px-2">
-                <img src="/images/github.svg" alt="GitHub" class="img-social" />
-            </a>
-            <a href="mailto:victorfrye@outlook.com" target="_blank" class="btn-link btn-social px-2">
-                <img src="/images/envelope.svg" alt="Email Me" class="img-social" />
-            </a>
-        </div>
+        <SocialButtons Socials=@_socials />
     </div>
 </section>
+
+@code {
+    private List<Social> _socials =
+    [
+        new(
+            name: "Threads",
+            userUrl: "https://threads.net/@thevictorfryeadventure",
+            iconUrl: "/images/threads.svg"
+        ),
+        new(
+            name: "LinkedIn",
+            userUrl: "https://linkedin.com/in/victorfrye",
+            iconUrl: "/images/linkedin.svg"
+        ),
+        new(
+            name: "GitHub",
+            userUrl: "https://github.com/victorfrye",
+            iconUrl: "/images/github.svg"
+        ),
+        new(
+            name: "Email",
+            userUrl: "mailto:victorfrye@outlook.com",
+            iconUrl: "/images/envelope.svg"
+        )
+    ];
+}

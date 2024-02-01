@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     
     <Title>VictorFrye.com</Title>
-    <Description>🎨 My personal about me website</Description>
+    <Description>🎨 A personal portfolio site for your friendly neighborhood technologist, Victor Frye</Description>
     <Authors>VictorFrye</Authors>
     <RepositoryUrl>https://github.com/victorfrye/dotcom</RepositoryUrl>
 
@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" />
   </ItemGroup>
 
 </Project>

@@ -19,6 +19,14 @@ body {
     font-family: var(--bs-body-font-family)
 }
 
+h1 {
+    font-size: 1.5rem !important;
+}
+
+h2 {
+    font-size: 1.25rem !important;
+}
+
 .text-primary {
     color: var(--primary) !important;
 }

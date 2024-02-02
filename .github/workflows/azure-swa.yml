@@ -36,6 +36,8 @@ jobs:
         run: dotnet format --verify-no-changes --no-restore
       - name: Build solution
         run: dotnet build -c Release --no-restore
+      - name: Test solution
+        run: dotnet test -c Release --no-restore --no-build
       - name: Publish app project
         run: dotnet publish ${{ env.APP_PROJECT_FILE }} -c Release -o ${{ env.APP_OUTPUT_LOCATION }} --no-restore --no-build
       - name: Deploy static web app

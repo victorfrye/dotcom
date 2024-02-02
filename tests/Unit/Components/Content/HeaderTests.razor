@@ -1,0 +1,36 @@
+@inherits TestContext
+
+@code {
+
+    [Fact]
+    public void ShouldRenderHeadingAndImage()
+    {
+        // Arrange
+        var expectedHeading = "[Victor Frye]";
+
+        var expectedSubHeading = "Your friendly neighborhood technologist";
+        var expectedImageSrc = "/images/profile.png";
+
+        // Act
+        var cut = RenderComponentUnderTest();
+        var actualHeading = cut.Find("h1");
+        var actualSubHeading = cut.Find("span");
+        var actualImage = cut.Find("img");
+
+        // Assert
+        Assert.NotNull(actualHeading);
+        actualHeading.TextContent.MarkupMatches(expectedHeading);
+
+        Assert.NotNull(actualSubHeading);
+        actualSubHeading.TextContent.MarkupMatches(expectedSubHeading);
+
+        Assert.NotNull(actualImage);
+        var actualImageSrc = actualImage.GetAttribute("src");
+        Assert.Equal(expectedImageSrc, actualImageSrc);
+    }
+
+    private IRenderedFragment RenderComponentUnderTest()
+    {
+        return Render(@<Header />);
+    }
+}

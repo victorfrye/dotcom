@@ -1,0 +1,25 @@
+@inherits TestContext
+
+@code {
+
+    [Fact]
+    public void ShouldRenderHeadingAndImage()
+    {
+        // Arrange
+        var year = DateTime.Now.Year;
+        var expectedCopywright = $"©{year} Victor Frye";
+
+        // Act
+        var cut = RenderComponentUnderTest();
+        var actualCopywright = cut.Find("p");
+
+        // Assert
+        Assert.NotNull(actualCopywright);
+        actualCopywright.TextContent.MarkupMatches(expectedCopywright);
+    }
+
+    private IRenderedFragment RenderComponentUnderTest()
+    {
+        return Render(@<Footer />);
+    }
+}

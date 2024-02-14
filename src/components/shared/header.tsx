@@ -1,6 +1,6 @@
 'use client';
 
-import ProfileAvatar from "@dotcom/components/shared/avatar";
+import ProfileAvatar from "./avatar";
 
 export default function Header() {
     return (

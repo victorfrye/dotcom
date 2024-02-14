@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@dotcom/styles/globals.css";
-import ThemeProvider from "@dotcom/providers/theme";
+import ThemeProvider from "@dotcom/components/providers/theme";
 import Frame from "@dotcom/components/shared/frame";
 import Header from "@dotcom/components/shared/header";
 import Footer from "@dotcom/components/shared/footer";
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-     type: "website",
-     url: "/",
-     title: "Victor Frye",
-     description: "Your friendly neighborhood technologist",
-     siteName: "VictorFrye.COM",
-     }
+    type: "website",
+    url: "/",
+    title: "Victor Frye",
+    description: "Your friendly neighborhood technologist",
+    siteName: "VictorFrye.COM",
+  }
 };
 
 export default function RootLayout({

@@ -37,15 +37,14 @@
 html,
 body {
   background: var(--body-bg);
-  font-family: var(--bs-body-font-family)
 }
 
 h1 {
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
 }
 
 h2 {
-  font-size: 1.25rem !important;
+  font-size: 1.5rem !important;
 }
 
 .text-primary {
@@ -123,8 +122,8 @@ a:hover {
   outline: 2px solid #ececec;
   cursor: pointer;
   transition: all 0.3s;
-  display: grid;
-  place-items: center;
+  display: grid !important;
+  place-items: center !important;
   text-decoration: none !important;
 }
 
@@ -142,22 +141,18 @@ a:hover {
 }
 
 .btn-social:hover:nth-child(1) {
-  /* background: radial-gradient(circle at 30% 107%, #ffd600 0%, #ffd600 10%, #ff7a00 20%, #ff0069 50%, #d300c5 75%, #7638fa 90%); */
   background: var(--threads-bg)
 }
 
 .btn-social:hover:nth-child(2) {
-  /* background: #0077B5; */
   background: var(--linkedin-bg);
 }
 
 .btn-social:hover:nth-child(3) {
-  /* background: #333333; */
   background: var(--github-bg);
 }
 
 .btn-social:hover:nth-child(4) {
-  /* background: #333333; */
   background: var(--email-bg);
 }
 
@@ -183,72 +178,4 @@ a:hover {
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(#ececec66, #0141ff00);
-    --secondary-glow: linear-gradient(to bottom right,
-        #0141ff00,
-        #0141ff00,
-        #ececec4d);
-
-    /* --primary-glow: conic-gradient(from 180deg at 50% 50%,
-            #83838333 0deg,
-            #8E8E8E33 55deg,
-            #61616133 120deg,
-            #A1A1A133 160deg,
-            transparent 360deg);
-    --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 0)); */
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(#ffffff80,
-        #ffffff40,
-        #ffffff30,
-        #ffffff20,
-        #ffffff10,
-        #ffffff10,
-        #ffffff80);
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

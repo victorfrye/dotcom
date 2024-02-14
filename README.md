@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="src\Client\wwwroot\images\profile.png" alt="profile of Victor Frye" height="64" width="64" />
+    <img src="public\images\profile.png" alt="profile of Victor Frye" height="64" width="64" />
     <h1>VictorFrye.COM</h1>
     <p>A personal portfolio site for your friendly neighborhood technologist, Victor Frye</p>
 </div>

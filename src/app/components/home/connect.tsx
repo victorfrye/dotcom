@@ -6,6 +6,8 @@ interface ISocial {
     image: JSX.Element;
 }
 
+export function generateStaticParams() { };
+
 export default function Connect() {
     const socialDetails: ISocial[] = [
         {

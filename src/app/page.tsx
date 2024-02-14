@@ -7,9 +7,9 @@ import Connect from "@dotcom/components/home/connect";
 export default function Home() {
   return (
     <>
-        <About />
+      <About />
 
-        <Connect />
+      <Connect />
     </>
   );
 }

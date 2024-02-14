@@ -30,7 +30,7 @@ jobs:
         run: npm ci
       - name: Verify formatting
         run: npm run lint
-      - name: Build app
+      - name: Build sources
         run: npm run build
       - name: Deploy static web app
         id: deploy

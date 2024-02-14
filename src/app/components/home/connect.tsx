@@ -28,7 +28,7 @@ export default function Connect() {
 
     const renderSocialButtons = (): JSX.Element[] => {
         return socialDetails.map((social, index) =>
-            <Link href={social.href} target="_blank" className="btn-link btn-social" key={index} slot="button">
+            <Link href={social.href} target="_blank" rel="noreferrer noopener" className="btn-link btn-social" key={index} slot="button">
                 {social.image}
             </Link>
         );

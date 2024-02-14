@@ -25,7 +25,7 @@ export default function About() {
                 I&#x27;m passionate about <strong>digital transformation</strong>, the <strong>developer experience</strong>, and constructing solutions that help people <strong>achieve more</strong>.
             </p>
             <p>
-                I&#x27;m currently working as a <strong>Senior Software Engineer at <Link href="https://leadingedje.com" target="_blank" rel="noreferrer"><strong>Leading EDJE</strong></Link></strong>, a software consultancy based in Columbus, Ohio.
+                I&#x27;m currently working as a <strong>Senior Software Engineer at <Link href="https://leadingedje.com" target="_blank" rel="noreferrer noopener"><strong>Leading EDJE</strong></Link></strong>, a software consultancy based in Columbus, Ohio.
                 In my downtime, I enjoy <b>gaming</b>, <b>reading</b>, and quality time with <b>my wife and our two dogs</b>.
             </p>
         </section>

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Image, Link } from "@fluentui/react-components";
-=======
-import { Image } from "@fluentui/react-components";
->>>>>>> origin/main
 import React from "react";
 
 interface ISocial {

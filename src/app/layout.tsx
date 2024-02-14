@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@dotcom/styles/globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import ThemeProvider from "@dotcom/providers/theme";
+import Frame from "@dotcom/components/shared/frame";
+import Header from "@dotcom/components/shared/header";
+import Footer from "@dotcom/components/shared/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -33,7 +34,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <ThemeProvider>
+          <Frame>
+            <Header />
+
+            <main>
+              {children}
+            </main>
+
+            <Footer />
+          </Frame>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

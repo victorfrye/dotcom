@@ -6,9 +6,6 @@
   --tertiary: #333333;
   --body-bg: #171717;
 
-  --max-width: 1100px;
-  --border-radius: 12px;
-
   --threads-bg: radial-gradient(circle at 30% 107%,
       #ffd600 0%,
       #ffd600 10%,
@@ -18,20 +15,11 @@
       #7638fa 90%);
   --linkedin-bg: #0077B5;
   --github-bg: #333333;
-  --email-bg: radial-gradient(circle at 30% 107%, var(--secondary) 0%, var(--primary) 30%, black 70%);
+  --outlook-bg: #127CD6;
 
-  --gradient: radial-gradient(circle at 30% 107%, var(--secondary) 0%, var(--primary) 30%, black 70%);
-  --gradient-tl: linear-gradient(135deg, var(--secondary) 0%, black 50%, var(--secondary) 100%);
-  --gradient-br: linear-gradient(135deg, black 0%, var(--secondary) 50%, black 100%);
-
-  --primary-glow: conic-gradient(from 180deg at 50% 50%,
-      #7C7C7C33 0deg,
-      #71717133 55deg,
-      #9E9E9E33 120deg,
-      #5E5E5E33 160deg,
-      transparent 360deg);
-  --secondary-glow: radial-gradient(#ffffff,
-      #ffffff00);
+  --gradient: radial-gradient(circle at 30% 107%, var(--secondary) 0%, var(--primary) 30%, #000000 70%);
+  --gradient-tl: linear-gradient(135deg, var(--secondary) 0%, #000000 50%, var(--secondary) 100%);
+  --gradient-br: linear-gradient(135deg, #000000 0%, var(--secondary) 50%, #000000 100%);
 }
 
 html,
@@ -89,27 +77,15 @@ h2 {
   padding: 30px 45px;
 }
 
-.pfp-bg {
-  width: 72px;
-  height: 72px;
-  padding: 3px 3px;
-  border-radius: 50% !important;
-  background: var(--email-bg) !important;
-}
-
-a, .btn-link {
+a,
+.btn-link {
   color: var(--primary);
   text-decoration: none !important;
-  border-bottom: 1px dotted var(--primary);
+  border-bottom: 1px dotted #7f7f7f;
 }
 
 a:hover {
-  color: white;
-  border-bottom: none;
-}
-
-a:hover {
-  color: white;
+  color: #ffffff !important;
   border-bottom: none;
 }
 
@@ -119,7 +95,7 @@ a:hover {
   border: none;
   background-color: transparent;
   border-radius: 50%;
-  outline: 2px solid #ececec;
+  outline: 2px solid #ffffff;
   cursor: pointer;
   transition: all 0.3s;
   display: grid !important;
@@ -153,29 +129,5 @@ a:hover {
 }
 
 .btn-social:hover:nth-child(4) {
-  background: var(--email-bg);
-}
-
-.center::before {
-  place-items: center;
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.center::before,
-.center::after {
-  content: "";
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+  background: var(--outlook-bg);
 }

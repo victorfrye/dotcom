@@ -7,9 +7,7 @@ export default function Header() {
 
             <div className="d-flex flex-column p-3 gap-1">
                 <h1 className="text-primary"><strong>&#91;Victor Frye&#93;</strong></h1>
-                <span>
-                    Your friendly neighborhood technologist
-                </span>
+                <span><em>Your friendly neighborhood technologist</em></span>
             </div>
         </header>
     )

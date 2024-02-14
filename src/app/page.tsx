@@ -5,8 +5,8 @@ import { BrandVariants, FluentProvider, Theme, createDarkTheme, createLightTheme
 import '@dotcom/styles/globals.css';
 import Footer from "@dotcom/components/shared/footer";
 import Header from "@dotcom/components/shared/header";
-import About from "@dotcom/components/content/about";
-import Connect from "@dotcom/components/content/connect";
+import About from "@dotcom/components/home/about";
+import Connect from "@dotcom/components/home/connect";
 
 const myBrand: BrandVariants = {
   10: "#030303",

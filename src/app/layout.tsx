@@ -7,9 +7,9 @@ import Footer from "@dotcom/components/shared/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
-  title: "Victor Frye",
-  description: "Hello from Grand Rapids! I'm Victor Frye, your friendly neighborhood technologist.",
-  keywords: ["victor frye", "grand rapids", "technologist", "software engineer", "web developer", "full stack", "next.js", "react", "typescript", "javascript", "css", "html", ".net", "c#", "azure", "devops", "github"],
+  title: "Victor Frye | Your friendly neighborhood developer",
+  description: "Hello from Grand Rapids! I'm Victor Frye, your friendly neighborhood developer, and this is my personal landing page.",
+  keywords: ["victor frye", "grand rapids", "developer", "software engineer", "web", "cloud", "ai", "full stack", "next", "react", "typescript", "javascript", "css", "html", ".net", "c#", "azure", "devops", "github"],
   icons: ["images/profile.png"],
   authors: {
     name: "Victor Frye",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     title: "Victor Frye",
-    description: "Your friendly neighborhood technologist",
+    description: "The personal landing page and portfolio of your friendly neighborhood developer, Victor Frye.",
     siteName: "VictorFrye.COM",
   }
 };

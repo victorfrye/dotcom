@@ -1,7 +1,6 @@
 'use client';
 
-import { Avatar, Persona, Text } from "@fluentui/react-components";
-import ProfileAvatar from "./avatar";
+import { Persona, Text } from "@fluentui/react-components";
 
 export default function Header() {
     return (

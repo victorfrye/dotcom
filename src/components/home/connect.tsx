@@ -1,4 +1,4 @@
-import { Image, Link } from "@fluentui/react-components";
+import { Image, Link, Text } from "@fluentui/react-components";
 import React from "react";
 
 interface ISocial {
@@ -28,7 +28,7 @@ export default function Connect() {
 
     const renderSocialButtons = (): JSX.Element[] => {
         return socialDetails.map((social, index) =>
-            <Link href={social.href} target="_blank" rel="noreferrer noopener" className="btn-link btn-social" key={index} slot="button">
+            <Link as="a" href={social.href} target="_blank" rel="noreferrer noopener" className="btn-link btn-social" key={index} slot="button">
                 {social.image}
             </Link>
         );
@@ -36,8 +36,9 @@ export default function Connect() {
 
     return (
         <section id="connect" className="d-flex flex-column flex-wrap">
-            <h2 className="text-primary pt-3 pb-2">_Connect</h2>
-            <div className="d-flex flex-row flex-nowrap gap-3 p-0 pb-3">
+            <Text as="h2" className="text-primary pt-4 pb-3">_Connect</Text>
+
+            <div className="d-flex flex-row flex-nowrap gap-3 p-0 pt-1 pb-3">
                 {renderSocialButtons()}
             </div>
         </section>

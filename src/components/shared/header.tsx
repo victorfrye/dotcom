@@ -1,16 +1,25 @@
 'use client';
 
-import ProfileAvatar from "./avatar";
+import { Persona, Text } from "@fluentui/react-components";
 
 export default function Header() {
     return (
-        <header id="header" className="d-flex align-items-center">
-            <ProfileAvatar />
-
-            <div className="d-flex flex-column p-3 gap-1">
-                <h1 className="text-primary"><strong>&#91;Victor Frye&#93;</strong></h1>
-                <em>Your friendly neighborhood developer</em>
-            </div>
+        <header id="header" className="d-flex align-items-center py-3">
+            <Persona
+                avatar={{
+                    image: { src: "/images/profile.png", alt: "a profile picture of Victor Frye" },
+                    color: "neutral",
+                    name: "Victor Frye",
+                    active: "active",
+                    activeAppearance: "ring-shadow",
+                    size: 72
+                }}
+                name="Victor Frye"
+                primaryText={<Text as="h1" weight="bold" wrap={false} className="text-primary">&#91;Victor Frye&#93;</Text>}
+                secondaryText={<Text as="p" block/>}
+                tertiaryText={<Text as="em" >Your friendly neighborhood developer</Text>}
+                size="huge"
+            />
         </header>
     )
 }

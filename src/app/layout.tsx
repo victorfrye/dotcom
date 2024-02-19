@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "@dotcom/styles/globals.css";
 import ThemeProvider from "@dotcom/components/providers/theme";
-import Frame from "@dotcom/components/shared/frame";
-import Header from "@dotcom/components/shared/header";
-import Footer from "@dotcom/components/shared/footer";
+import ProfileCard from "@dotcom/components/shared/frame";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -36,15 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider>
-          <Frame>
-            <Header />
-
-            <main>
-              {children}
-            </main>
-
-            <Footer />
-          </Frame>
+          <ProfileCard>
+            {children}
+          </ProfileCard>
         </ThemeProvider>
       </body>
     </html>

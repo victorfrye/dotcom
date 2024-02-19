@@ -1,4 +1,4 @@
-import { Card, CardHeader, Link, Text, makeStyles, tokens } from "@fluentui/react-components";
+import { Card, CardHeader, Link, Text, makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import { Person32Regular } from "@fluentui/react-icons";
 
 const useStyles = makeStyles({
@@ -6,12 +6,10 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        // ...shorthands.margin(tokens.spacingVerticalL, tokens.spacingHorizontalNone, tokens.spacingVerticalM, tokens.spacingHorizontalNone),
     },
     header: {
         fontSize: tokens.fontSizeBase600,
         color: tokens.colorBrandForeground2,
-        // ...shorthands.margin(tokens.spacingVerticalNone, tokens.spacingHorizontalNone, tokens.spacingVerticalXL, tokens.spacingHorizontalNone),
     },
     bold: {
         fontWeight: 'bold',

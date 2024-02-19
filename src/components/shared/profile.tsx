@@ -20,9 +20,8 @@ const useStyles = makeStyles({
         ...shorthands.padding(tokens.spacingVerticalL, tokens.spacingHorizontalL),
     },
     header: {
-        // display: 'flex',
         alignItems: 'center',
-        ...shorthands.padding(tokens.spacingVerticalXL, tokens.spacingHorizontalXL, tokens.spacingVerticalNone),
+        ...shorthands.padding(tokens.spacingVerticalXL, tokens.spacingHorizontalXXL, tokens.spacingVerticalNone),
     },
     name: {
         fontSize: tokens.fontSizeHero800,
@@ -39,9 +38,8 @@ const useStyles = makeStyles({
             flexDirection: 'column',
         },
         justifyItems: 'center',
-        // justifyContent: 'flex-end',
         marginTop: 'auto',
-        ...shorthands.padding(tokens.spacingVerticalL),
+        ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalXL, tokens.spacingVerticalXL),
     },
     copyright: {
         marginTop: 'auto',
@@ -59,7 +57,6 @@ const useStyles = makeStyles({
 
 const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     const styles = useStyles();
-    const _today: Date = new Date();
 
     return (
         <div className={styles.frame}>

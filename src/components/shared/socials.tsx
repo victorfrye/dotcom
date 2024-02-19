@@ -13,7 +13,6 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         ...shorthands.gap(tokens.spacingVerticalL),
-        ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalL),
     },
     button: {
         display: 'grid',

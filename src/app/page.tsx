@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   main: {
     display: 'flex',
     flexDirection: 'column',
-    ...shorthands.padding(tokens.spacingVerticalXXL),
+    ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalL),
   },
   divider: {
     ...shorthands.margin(tokens.spacingVerticalXXL, tokens.spacingHorizontalNone),

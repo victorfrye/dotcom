@@ -1,5 +1,5 @@
-import { Card, CardHeader, Link, Text, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import { Person20Regular, Person32Regular } from "@fluentui/react-icons";
+import { Card, CardHeader, Link, Text, makeStyles, tokens } from "@fluentui/react-components";
+import { Person32Regular } from "@fluentui/react-icons";
 
 const useStyles = makeStyles({
     container: {

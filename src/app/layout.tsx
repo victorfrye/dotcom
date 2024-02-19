@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@dotcom/styles/globals.css";
 import ThemeProvider from "@dotcom/components/providers/theme";
-import ProfileCard from "@dotcom/components/shared/frame";
+import Profile from "@dotcom/components/shared/profile";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -34,9 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider>
-          <ProfileCard>
+          <Profile>
             {children}
-          </ProfileCard>
+          </Profile>
         </ThemeProvider>
       </body>
     </html>

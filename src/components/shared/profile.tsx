@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     }
 });
 
-const ProfileCard = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
+const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     const styles = useStyles();
     const _today: Date = new Date();
 
@@ -88,4 +88,4 @@ const ProfileCard = ({ children }: Readonly<{ children: React.ReactNode; }>) => 
     )
 }
 
-export default ProfileCard;
+export default Profile;

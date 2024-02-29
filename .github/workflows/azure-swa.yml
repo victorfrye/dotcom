@@ -17,7 +17,7 @@ jobs:
     name: Build and Deploy Job
     environment: ${{ github.event_name == 'push' && 'Production' || 'Staging' }}
     concurrency: 
-      group: ${{ github.event_name == 'push' && 'production' || 'staging' }}
+      group: ${{ github.ref }}
       cancel-in-progress: true
     steps:
       - name: Checkout

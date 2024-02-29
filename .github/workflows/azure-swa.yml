@@ -33,7 +33,7 @@ jobs:
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Verify formatting
         run: yarn lint
-      - name: Build sources
+      - name: Build distributable
         run: yarn build
       - name: Deploy static web app
         id: deploy

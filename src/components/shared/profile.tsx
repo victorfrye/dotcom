@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar, Card, CardFooter, CardHeader, Text, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Avatar, Body1, Body2, Caption1, Card, CardFooter, CardHeader, LargeTitle, Subtitle2, Text, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import Socials from "./socials";
 
 const useStyles = makeStyles({
@@ -23,9 +23,7 @@ const useStyles = makeStyles({
         alignItems: 'center',
         ...shorthands.padding(tokens.spacingVerticalXL, tokens.spacingHorizontalXXL, tokens.spacingVerticalNone),
     },
-    name: {
-        fontSize: tokens.fontSizeHero800,
-        lineHeight: tokens.lineHeightHero800,
+    title: {
         ...shorthands.margin(tokens.spacingVerticalNone, tokens.spacingHorizontalSNudge),
     },
     tagline: {
@@ -47,7 +45,7 @@ const useStyles = makeStyles({
         marginLeft: 'auto',
         '@media screen and (max-width: 576px)': {
             marginRight: 'auto',
-            ...shorthands.padding(tokens.spacingVerticalL, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
+            ...shorthands.padding(tokens.spacingVerticalMNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
 
         },
         flexWrap: 'wrap',
@@ -70,15 +68,15 @@ const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
                         activeAppearance="ring-shadow"
                         size={72}
                     />}
-                    header={<Text as="h1" weight="bold" wrap={false} className={styles.name}>Victor Frye</Text>}
-                    description={<Text as="em" className={styles.tagline}>Your friendly neighborhood developer</Text>}
+                    header={<Title1 as="h1" wrap={false} className={styles.title}>Victor Frye</Title1>}
+                    description={<Subtitle2 as="em" className={styles.tagline}>Your friendly neighborhood developer</Subtitle2>}
                 />
 
                 {children}
 
                 <CardFooter className={styles.footer}>
                     <Socials />
-                    <Text as="p" align="end" block className={styles.copyright}>© Victor Frye {new Date().getFullYear()}</Text>
+                    <Caption1 as="p" align="end" block className={styles.copyright}>© Victor Frye {new Date().getFullYear()}</Caption1>
                 </CardFooter>
             </Card>
         </div>

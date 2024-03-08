@@ -41,13 +41,39 @@ darkTheme.colorBrandForeground1 = platinumTheme[110];
 darkTheme.colorBrandForeground2 = platinumTheme[120];
 
 const useStaticStyles = makeStaticStyles({
+    html: {
+        lineHeight: '1.15',
+        "-webkit-text-size-adjust": "100%",
+    },
+    body: {
+        margin: 0,
+        padding: 0,
+        width: "100%",
+        height: "100%",
+    },
+    main: {
+        display: 'block',
+    },
+    h1: {
+        fontSize: '2em',
+        margin: '0.67em 0',
+    },
     p: {
         marginBlockStart: tokens.spacingVerticalXS,
         marginBlockEnd: tokens.spacingVerticalXS,
         marginInlineStart: 0,
         marginInlineEnd: 0,
     },
-})
+    b: {
+        fontWeight: 'bolder',
+    },
+    strong: {
+        fontWeight: 'bolder',
+    },
+    small: {
+        fontSize: '80%',
+    },
+});
 
 const ThemeProvider = ({ children, }: Readonly<{ children: React.ReactNode; }>) => {
     useStaticStyles();

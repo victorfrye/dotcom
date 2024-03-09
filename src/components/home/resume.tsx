@@ -1,7 +1,6 @@
 import { Job, School } from "@dotcom/types";
-import { Body1, Body1Strong, Body1Stronger, Body2, Button, Card, CardFooter, CardHeader, Link, Subtitle1, Subtitle2, Text, Title2, Title3, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import { Building16Filled, Building32Filled, Building32Regular, Building48Regular, Notebook32Filled, Notebook32Regular, Open12Regular, Open16Regular, Person32Regular } from "@fluentui/react-icons";
-import { Key, useState } from "react";
+import { Body1,Button, Card, CardHeader, Subtitle1, Subtitle2, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Building32Regular, Notebook32Regular, Open12Regular } from "@fluentui/react-icons";
 
 const useStyles = makeStyles({
     container: {

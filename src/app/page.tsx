@@ -3,14 +3,13 @@
 import { Company, Job, School } from "@dotcom/types";
 import { About, Resume } from "@dotcom/components/home";
 import { Divider, SelectTabData, SelectTabEvent, Tab, TabList, TabValue, makeStyles, shorthands, tokens } from '@fluentui/react-components';
-import { Apps32Filled, Apps32Regular, Briefcase32Filled, Briefcase32Regular, Mail32Filled, Mail32Regular, Person32Filled, Person32Regular, bundleIcon } from "@fluentui/react-icons";
+import { Briefcase32Filled, Briefcase32Regular, Person32Filled, Person32Regular, bundleIcon } from "@fluentui/react-icons";
 import { useEffect, useState } from "react";
 
 const useStyles = makeStyles({
   main: {
     display: 'flex',
     flexDirection: 'column',
-    // marginRight: "auto",
     ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalL),
   },
   tabList: {
@@ -59,8 +58,6 @@ const Home = () => {
 
   const PersonIcon = bundleIcon(Person32Filled, Person32Regular);
   const BriefcaseIcon = bundleIcon(Briefcase32Filled, Briefcase32Regular);
-  const AppsIcon = bundleIcon(Apps32Filled, Apps32Regular);
-  const MailIcon = bundleIcon(Mail32Filled, Mail32Regular);
 
   const [selectedValue, setSelectedValue] = useState<TabValue>('about');
 
@@ -127,17 +124,11 @@ const Home = () => {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume" >
           Resume
         </Tab>
-        {/* <Tab id="Projects" icon={<AppsIcon />} value="projects" >
-          Projects
-        </Tab>
-        <Tab id="Contact" icon={<MailIcon />} value="contact" >
-          Contact
-        </Tab> */}
       </TabList>
+      
       <div>
         {selectedValue === 'about' && jobs && <About currentJob={jobs[0]} />}
-        {selectedValue === 'resume' && jobs && <Resume jobs={jobs} schools={schools} skills={skills}/>}
-        {/* {selectedValue === 'projects' && <Projects />} */}
+        {selectedValue === 'resume' && jobs && <Resume jobs={jobs} schools={schools} skills={skills} />}
       </div>
 
       <Divider appearance='subtle' inset className={styles.divider} />

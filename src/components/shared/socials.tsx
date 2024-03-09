@@ -1,5 +1,5 @@
 import { Image, Link, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import DarkModeProvider, { useDarkMode } from "../providers/darkMode";
+import { useDarkMode } from "../providers/darkMode";
 
 interface ISocial {
     href: string;

@@ -9,8 +9,7 @@ import {
     makeStaticStyles,
     tokens,
 } from "@fluentui/react-components";
-import { useDarkMode } from "./darkMode";
-import { useState } from "react";
+import { useDarkMode } from "@dotcom/components/providers/darkMode";
 
 const platinumTheme: BrandVariants = {
     10: "#030303",
@@ -47,12 +46,6 @@ const useStaticStyles = makeStaticStyles({
     html: {
         lineHeight: '1.15',
         "-webkit-text-size-adjust": "100%",
-    },
-    body: {
-        margin: 0,
-        padding: 0,
-        width: "100%",
-        height: "100%",
     },
     main: {
         display: 'block',

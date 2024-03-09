@@ -1,8 +1,8 @@
 'use client';
 
-import { Avatar, Body1, Body2, Caption1, Card, CardFooter, CardHeader, LargeTitle, Subtitle2, Switch, SwitchOnChangeData, Text, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Avatar, Caption1, Card, CardFooter, CardHeader, Subtitle2, Switch, SwitchOnChangeData, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import Socials from "@dotcom/components/shared/socials";
-import DarkModeProvider, { useDarkMode } from "@dotcom/components/providers/darkMode";
+import { useDarkMode } from "@dotcom/components/providers/darkMode";
 
 const useStyles = makeStyles({
     frame: {
@@ -68,7 +68,6 @@ const useStyles = makeStyles({
 const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     const styles = useStyles();
     const { isDark, onDarkModeToggled } = useDarkMode();
-    // const [darkMode, setDarkMode] = [isDark, setIsDark];
 
     const handleDarkModeToggled = (event: React.ChangeEvent<HTMLInputElement>, data: SwitchOnChangeData) => {
         onDarkModeToggled(data.checked);;

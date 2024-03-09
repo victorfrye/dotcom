@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import "@dotcom/styles/globals.css";
+// import "@dotcom/styles/globals.css";
 import ThemeProvider from "@dotcom/components/providers/theme";
 import Profile from "@dotcom/components/shared/profile";
+import DarkModeProvider from "@dotcom/components/providers/darkMode";
+// import useDarkMode from "@dotcom/components/providers/darkMode";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -33,11 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          <Profile>
-            {children}
-          </Profile>
-        </ThemeProvider>
+        <DarkModeProvider>
+          <ThemeProvider>
+            <Profile>
+              {children}
+            </Profile>
+          </ThemeProvider>
+        </DarkModeProvider>
       </body>
     </html>
   );

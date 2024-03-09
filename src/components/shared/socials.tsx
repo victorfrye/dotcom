@@ -1,4 +1,5 @@
 import { Image, Link, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import DarkModeProvider, { useDarkMode } from "../providers/darkMode";
 
 interface ISocial {
     href: string;
@@ -25,52 +26,48 @@ const useStyles = makeStyles({
         ...shorthands.border('none'),
         ...shorthands.borderRadius(tokens.borderRadiusCircular),
         ...shorthands.outline(tokens.strokeWidthThick, 'solid', tokens.colorNeutralForeground1),
-        ...shorthands.transition('all', tokens.durationSlow),
+        ...shorthands.transition('all', tokens.durationFaster),
         ':hover': {
             outlineOffset: tokens.strokeWidthThicker,
-            ...shorthands.transition('all', tokens.durationSlow),
+            ...shorthands.transition('all', tokens.durationFaster),
         },
-        ' img': {
-            ...shorthands.transition('all', tokens.durationSlow),
+        ':focus': {
+            outlineOffset: tokens.strokeWidthThicker,
+            ...shorthands.transition('all', tokens.durationFaster),
+        },
+        '& img': {
+            ...shorthands.transition('all', tokens.durationFaster),
         },
         ':hover img': {
             transform: 'scale(1.15)',
-            ...shorthands.transition('all', tokens.durationSlow),
+            ...shorthands.transition('all', tokens.durationFaster),
         },
-        ':hover:nth-child(1)': {
-            backgroundColor: '#000000',
-        },
-        ':hover:nth-child(2)': {
-            backgroundColor: '#0077B5',
-        },
-        ':hover:nth-child(3)': {
-            backgroundColor: '#333333',
-        },
-        ':hover:nth-child(4)': {
-            backgroundColor: '#127CD6',
+        ':focus img': {
+            transform: 'scale(1.5)',
         },
     },
 });
 
 const Socials = () => {
     const styles = useStyles();
+    const { isDark } = useDarkMode();
 
     const socialDetails: ISocial[] = [
         {
             href: "https://threads.net/@thevictorfryeadventure",
-            image: <Image src="/images/threads.svg" alt="Threads" height={20} width={20} />
+            image: <Image src={isDark ? "/images/threads.svg" : "/images/threads_dark.svg"} alt="Threads" height={20} width={20} />
         },
         {
             href: "https://linkedin.com/in/victorfrye",
-            image: <Image src="/images/linkedin.svg" alt="LinkedIn" height={20} width={20} />
+            image: <Image src={isDark ? "/images/linkedin.svg" : "/images/linkedin_dark.svg"} alt="LinkedIn" height={20} width={20} />
         },
         {
             href: "https://github.com/victorfrye",
-            image: <Image src="/images/github.svg" alt="GitHub" height={20} width={20} />
+            image: <Image src={isDark ? "/images/github.svg" : "/images/github_dark.svg"} alt="GitHub" height={20} width={20} />
         },
         {
             href: "mailto:victorfrye@outlook.com",
-            image: <Image src="/images/envelope.svg" alt="Email Me" height={20} width={20} />
+            image: <Image src={isDark ? "/images/envelope.svg" : "/images/envelope_dark.svg"} alt="Email Me" height={20} width={20} />
         }
     ];
 

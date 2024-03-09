@@ -1,0 +1,171 @@
+import { Job, School } from "@dotcom/types";
+import { Body1, Body1Strong, Body1Stronger, Body2, Button, Card, CardFooter, CardHeader, Link, Subtitle1, Subtitle2, Text, Title2, Title3, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Building16Filled, Building32Filled, Building32Regular, Building48Regular, Notebook32Filled, Notebook32Regular, Open12Regular, Open16Regular, Person32Regular } from "@fluentui/react-icons";
+import { Key, useState } from "react";
+
+const useStyles = makeStyles({
+    container: {
+        display: 'flex',
+        ...shorthands.flex(0, 0, 'auto'),
+        ...shorthands.margin(tokens.spacingVerticalL, tokens.spacingHorizontalXL),
+        ...shorthands.borderRadius(tokens.borderRadiusMedium),
+    },
+    sectionTitle: {
+        ...shorthands.margin(tokens.spacingVerticalXS, tokens.spacingHorizontalNone, tokens.spacingVerticalSNudge)
+    },
+    card: {
+        '@media screen and (min-width: 870px)': {
+            width: "720px",
+        },
+        height: "fit-content",
+    },
+    cardImage: {
+        color: tokens.colorBrandForeground2,
+        ...shorthands.margin(tokens.spacingVerticalS, tokens.spacingHorizontalNone, tokens.spacingVerticalXS)
+    },
+    header: {
+        color: tokens.colorBrandForeground2,
+        ...shorthands.margin(tokens.spacingVerticalNone, 'auto', tokens.spacingVerticalNone, tokens.spacingHorizontalNone),
+    },
+    bold: {
+        fontWeight: 'bold',
+    },
+    footer: {
+        marginTop: 'auto',
+    },
+    list: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        maxWidth: '100%',
+        ...shorthands.gap(tokens.spacingVerticalXXXL),
+    },
+    skills: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        '@media screen and (max-width: 576px)': {
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        justifyContent: 'start',
+        alignItems: 'start',
+        ...shorthands.gap(tokens.spacingVerticalL),
+    
+    }
+});
+interface ResumeProps {
+    jobs: Job[];
+    schools: School[];
+    skills: string[];
+}
+
+const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
+    const styles = useStyles();
+
+    const renderCard = (headerIcon: JSX.Element, headerTitle: string, headerSubtitle: string, content: JSX.Element, footerUrl: string): JSX.Element => {
+        return (
+            <Card appearance="filled-alternative" className={styles.card} size="small">
+                <CardHeader
+                    image={headerIcon}
+                    header={<Subtitle2 as="h4" className={styles.header}>{headerTitle}</Subtitle2>}
+                    description={<Body1 as="em">{headerSubtitle}</Body1>}
+                    action={<Button as="a" icon={<Open12Regular />} appearance="subtle" size="small" href={footerUrl} target="_blank" rel="noreferrer noopener" />}
+                />
+                {content}
+                {/* <CardFooter className={styles.footer}>
+                    <Button as="a" appearance="primary" icon={<Open16Regular/>} href={footerUrl} target="_blank" rel="noreferrer noopener" size="small">
+                        Open
+                    </Button>
+                </CardFooter> */}
+            </Card>
+        )
+    };
+
+    const getJobDescription = (job: Job): JSX.Element => {
+        return (
+            <>
+                <Body1 as="p">{job.startDate.getFullYear()} - {job.endDate ? job.endDate.getFullYear() : 'Present'}</Body1>
+                <Body1 as="p">
+                    {job.description}
+                </Body1>
+            </>
+
+        )
+    };
+
+    const renderJobs = (jobs: Job[]): JSX.Element[] => {
+        return jobs.map((job: Job, index: number) => {
+            return (
+                <li key={index}>
+                    {renderCard(
+                        <Building32Regular className={styles.cardImage} />,
+                        job.company.name,
+                        job.title,
+                        getJobDescription(job),
+                        job.company.url
+                    )}
+                </li>
+            )
+        })
+    };
+
+    const getSchoolDescription = (school: School): JSX.Element => {
+        return (
+            <>
+                <Body1>{school.startDate.getFullYear()} - {school.graduationDate ? school.graduationDate.getFullYear() : 'Present'}</Body1>
+                <Body1 as="p">
+                    {school.description}
+                </Body1>
+            </>
+        )
+    };
+
+    const renderSchools = (schools: School[]): JSX.Element[] => {
+        return schools.map((school: School, index: number) => {
+            return (
+                <li key={index}>
+                    {renderCard(
+                        <Notebook32Regular className={styles.cardImage} />,
+                        school.name,
+                        school.degree,
+                        getSchoolDescription(school),
+                        school.url
+                    )}
+                </li>
+            )
+        })
+    };
+
+    const renderSkills = (skills: string[]): JSX.Element[] => {
+        return skills.map((skill: string, index: number) => {
+            return (
+                <li key={index}>
+                    <Button size="small">{skill}</Button>
+                </li>
+            )
+        })
+    };
+
+
+    return (
+        <Card appearance='subtle' size="small">
+            <Subtitle1 as="h3" className={styles.sectionTitle}>Employment</Subtitle1>
+            <ul className={styles.list}>
+                {renderJobs(jobs)}
+            </ul>
+            <Subtitle1 as="h3" className={styles.sectionTitle}>Education</Subtitle1>
+            <ul className={styles.list}>
+                {renderSchools(schools)}
+            </ul>
+            <Subtitle1 as="h3" className={styles.sectionTitle}>Skills</Subtitle1>
+            <ul className={styles.skills}>
+                {renderSkills(skills)}
+            </ul>
+        </Card>
+    )
+}
+
+export default Resume;
+
+export {
+    Resume,
+};

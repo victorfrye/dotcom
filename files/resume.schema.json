@@ -10,15 +10,31 @@
         "type": "object",
         "properties": {
           "company": {
-            "description": "The name of the company I worked for",
-            "type": "string"
+            "description": "The the company I worked for",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the company",
+                "type": "string"
+              },
+              "location": {
+                "description": "The location of the company",
+                "type": "string"
+              },
+              "description": {
+                "description": "A description of the company",
+                "type": "string"
+              },
+              "url": {
+                "description": "A URL to the company's website",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name", "location", "description", "url"]
           },
           "title": {
             "description": "The title I held at the company",
-            "type": "string"
-          },
-          "location": {
-            "description": "The location of the company",
             "type": "string"
           },
           "startDate": {
@@ -34,14 +50,9 @@
           "description": {
             "description": "A description of the work I did at the company",
             "type": "string"
-          },
-          "url": {
-            "description": "A URL to the company's website",
-            "type": "string",
-            "format": "uri"
           }
         },
-        "required": ["company", "title", "location", "startDate"]
+        "required": ["company", "title", "startDate"]
       }
     },
     "schools": {
@@ -80,6 +91,10 @@
             "type": "string",
             "format": "date"
           },
+          "description": {
+            "description": "A description of my experience at the school",
+            "type": "string"
+          },
           "url": {
             "description": "A URL to the school's website",
             "type": "string",
@@ -95,7 +110,7 @@
       "items": {
         "type": "string"
       }
-    },
-    "required": ["jobs", "schools", "skills"]
-  }
+    }
+  },
+  "required": ["jobs", "schools", "skills"]
 }

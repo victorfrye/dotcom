@@ -9,6 +9,8 @@ import {
     makeStaticStyles,
     tokens,
 } from "@fluentui/react-components";
+import { useDarkMode } from "./darkMode";
+import { useState } from "react";
 
 const platinumTheme: BrandVariants = {
     10: "#030303",
@@ -17,16 +19,16 @@ const platinumTheme: BrandVariants = {
     40: "#2E3436",
     50: "#394043",
     60: "#444D50",
-    70: "#4F5B5E",
+    70: "#4F5A5E",
     80: "#5B686C",
-    90: "#67767B",
-    100: "#758489",
-    110: "#859296",
-    120: "#94A0A4",
-    130: "#A4AEB1",
-    140: "#B5BDBF",
-    150: "#C5CCCE",
-    160: "#D6DBDC"
+    90: "#6A7679",
+    100: "#788387",
+    110: "#879194",
+    120: "#979FA2",
+    130: "#A6AEB0",
+    140: "#B6BCBE",
+    150: "#C7CBCD",
+    160: "#D7DADB"
 };
 
 const lightTheme: Theme = {
@@ -36,6 +38,7 @@ const lightTheme: Theme = {
 const darkTheme: Theme = {
     ...createDarkTheme(platinumTheme),
 };
+
 
 darkTheme.colorBrandForeground1 = platinumTheme[110];
 darkTheme.colorBrandForeground2 = platinumTheme[120];
@@ -73,16 +76,29 @@ const useStaticStyles = makeStaticStyles({
     small: {
         fontSize: '80%',
     },
+    ul: {
+        listStyleType: 'none',
+        marginBlockStart: tokens.spacingVerticalXS,
+        marginBlockEnd: tokens.spacingVerticalXS,
+        marginInlineStart: 0,
+        marginInlineEnd: 0,
+        paddingInlineStart: 0,
+    }
 });
 
-const ThemeProvider = ({ children, }: Readonly<{ children: React.ReactNode; }>) => {
+const ThemeProvider = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     useStaticStyles();
+    const { isDark } = useDarkMode();
 
     return (
-        <FluentProvider theme={darkTheme}>
+        <FluentProvider theme={isDark ? darkTheme : lightTheme}>
             {children}
         </FluentProvider>
     );
 };
 
 export default ThemeProvider;
+
+export {
+    ThemeProvider,
+}

@@ -1,7 +1,8 @@
 'use client';
 
-import { Avatar, Body1, Body2, Caption1, Card, CardFooter, CardHeader, LargeTitle, Subtitle2, Text, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import Socials from "./socials";
+import { Avatar, Body1, Body2, Caption1, Card, CardFooter, CardHeader, LargeTitle, Subtitle2, Switch, SwitchOnChangeData, Text, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import Socials from "@dotcom/components/shared/socials";
+import DarkModeProvider, { useDarkMode } from "@dotcom/components/providers/darkMode";
 
 const useStyles = makeStyles({
     frame: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles({
     profileCard: {
         display: "flex",
         flexDirection: "column",
+        width: "100%",
         boxShadow: tokens.shadow64,
         ...shorthands.padding(tokens.spacingVerticalL, tokens.spacingHorizontalL),
     },
@@ -39,13 +41,23 @@ const useStyles = makeStyles({
         marginTop: 'auto',
         ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalXL, tokens.spacingVerticalXL),
     },
+    switch: {
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        '@media screen and (max-width: 576px)': {
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            ...shorthands.padding(tokens.spacingVerticalSNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
+        },
+        ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalM),
+    },
     copyright: {
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 'auto',
         '@media screen and (max-width: 576px)': {
             marginRight: 'auto',
-            ...shorthands.padding(tokens.spacingVerticalMNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
+            ...shorthands.padding(tokens.spacingVerticalSNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
 
         },
         flexWrap: 'wrap',
@@ -55,6 +67,12 @@ const useStyles = makeStyles({
 
 const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     const styles = useStyles();
+    const { isDark, onDarkModeToggled } = useDarkMode();
+    // const [darkMode, setDarkMode] = [isDark, setIsDark];
+
+    const handleDarkModeToggled = (event: React.ChangeEvent<HTMLInputElement>, data: SwitchOnChangeData) => {
+        onDarkModeToggled(data.checked);;
+    };
 
     return (
         <div className={styles.frame}>
@@ -76,6 +94,13 @@ const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
 
                 <CardFooter className={styles.footer}>
                     <Socials />
+                    <Switch
+                        checked={isDark}
+                        onChange={handleDarkModeToggled}
+                        label={isDark ? "Dark Mode" : "Light Mode"}
+                        className={styles.switch}
+                    />
+
                     <Caption1 as="p" align="end" block className={styles.copyright}>© Victor Frye {new Date().getFullYear()}</Caption1>
                 </CardFooter>
             </Card>

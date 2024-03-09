@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org//2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/victorfrye/dotcom/main/files/resume.schema.json",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "description": "The list of jobs I have worked",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "description": "The the company I worked for",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the company",
+                "type": "string"
+              },
+              "location": {
+                "description": "The location of the company",
+                "type": "string"
+              },
+              "description": {
+                "description": "A description of the company",
+                "type": "string"
+              },
+              "url": {
+                "description": "A URL to the company's website",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name", "location", "description", "url"]
+          },
+          "title": {
+            "description": "The title I held at the company",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "The date I started at the company",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The date I left the company",
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "description": "A description of the work I did at the company",
+            "type": "string"
+          }
+        },
+        "required": ["company", "title", "startDate"]
+      }
+    },
+    "schools": {
+      "description": "The list of schools I have attended",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the school",
+            "type": "string"
+          },
+          "degree": {
+            "description": "The degree I earned at the school",
+            "type": "string"
+          },
+          "major": {
+            "description": "The major I studied at the school",
+            "type": "string"
+          },
+          "location": {
+            "description": "The location of the school",
+            "type": "string"
+          },
+          "grade": {
+            "description": "The grade I earned at the school",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "The date I started at the school",
+            "type": "string",
+            "format": "date"
+          },
+          "graduationDate": {
+            "description": "The date I graduated from the school",
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "description": "A description of my experience at the school",
+            "type": "string"
+          },
+          "url": {
+            "description": "A URL to the school's website",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["name", "degree", "major", "location", "startDate"]
+      }
+    },
+    "skills": {
+      "description": "The list of relevant skills that I have",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["jobs", "schools", "skills"]
+}

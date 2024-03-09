@@ -1,7 +1,8 @@
 'use client';
 
-import { Avatar, Card, CardFooter, CardHeader, Text, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import Socials from "./socials";
+import { Avatar, Caption1, Card, CardFooter, CardHeader, Subtitle2, Switch, SwitchOnChangeData, Title1, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import Socials from "@dotcom/components/shared/socials";
+import { useDarkMode } from "@dotcom/components/providers/darkMode";
 
 const useStyles = makeStyles({
     frame: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles({
     profileCard: {
         display: "flex",
         flexDirection: "column",
+        width: "100%",
         boxShadow: tokens.shadow64,
         ...shorthands.padding(tokens.spacingVerticalL, tokens.spacingHorizontalL),
     },
@@ -23,9 +25,7 @@ const useStyles = makeStyles({
         alignItems: 'center',
         ...shorthands.padding(tokens.spacingVerticalXL, tokens.spacingHorizontalXXL, tokens.spacingVerticalNone),
     },
-    name: {
-        fontSize: tokens.fontSizeHero800,
-        lineHeight: tokens.lineHeightHero800,
+    title: {
         ...shorthands.margin(tokens.spacingVerticalNone, tokens.spacingHorizontalSNudge),
     },
     tagline: {
@@ -41,13 +41,23 @@ const useStyles = makeStyles({
         marginTop: 'auto',
         ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalXL, tokens.spacingVerticalXL),
     },
+    switch: {
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        '@media screen and (max-width: 576px)': {
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            ...shorthands.padding(tokens.spacingVerticalSNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
+        },
+        ...shorthands.padding(tokens.spacingVerticalNone, tokens.spacingHorizontalM),
+    },
     copyright: {
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 'auto',
         '@media screen and (max-width: 576px)': {
             marginRight: 'auto',
-            ...shorthands.padding(tokens.spacingVerticalL, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
+            ...shorthands.padding(tokens.spacingVerticalSNudge, tokens.spacingHorizontalL, tokens.spacingVerticalNone),
 
         },
         flexWrap: 'wrap',
@@ -57,6 +67,11 @@ const useStyles = makeStyles({
 
 const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     const styles = useStyles();
+    const { isDark, onDarkModeToggled } = useDarkMode();
+
+    const handleDarkModeToggled = (event: React.ChangeEvent<HTMLInputElement>, data: SwitchOnChangeData) => {
+        onDarkModeToggled(data.checked);;
+    };
 
     return (
         <div className={styles.frame}>
@@ -70,15 +85,22 @@ const Profile = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
                         activeAppearance="ring-shadow"
                         size={72}
                     />}
-                    header={<Text as="h1" weight="bold" wrap={false} className={styles.name}>Victor Frye</Text>}
-                    description={<Text as="em" className={styles.tagline}>Your friendly neighborhood developer</Text>}
+                    header={<Title1 as="h1" wrap={false} className={styles.title}>Victor Frye</Title1>}
+                    description={<Subtitle2 as="em" className={styles.tagline}>Your friendly neighborhood developer</Subtitle2>}
                 />
 
                 {children}
 
                 <CardFooter className={styles.footer}>
                     <Socials />
-                    <Text as="p" align="end" block className={styles.copyright}>© Victor Frye {new Date().getFullYear()}</Text>
+                    <Switch
+                        checked={isDark}
+                        onChange={handleDarkModeToggled}
+                        label={isDark ? "Dark Mode" : "Light Mode"}
+                        className={styles.switch}
+                    />
+
+                    <Caption1 as="p" align="end" block className={styles.copyright}>© Victor Frye {new Date().getFullYear()}</Caption1>
                 </CardFooter>
             </Card>
         </div>

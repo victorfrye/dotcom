@@ -1,5 +1,5 @@
-import { Card, CardHeader, Link, Text, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import { Person32Regular } from "@fluentui/react-icons";
+import Job from "@dotcom/types/job";
+import { Body2, Subtitle2Stronger, Card, Link, makeStyles, tokens, Subtitle1, shorthands } from "@fluentui/react-components";
 
 const useStyles = makeStyles({
     container: {
@@ -13,10 +13,17 @@ const useStyles = makeStyles({
     },
     bold: {
         fontWeight: 'bold',
-    }
+    },
+    sectionTitle: {
+        ...shorthands.margin(tokens.spacingVerticalXS, tokens.spacingHorizontalNone, tokens.spacingVerticalSNudge)
+    },
 });
 
-export default function About() {
+interface AboutProps {
+    currentJob: Job;
+}
+
+const About: React.FC<AboutProps> = ({ currentJob }) => {
     const styles = useStyles();
     const _today: Date = new Date();
     const _start: Date = new Date(2019, 5, 6);
@@ -30,24 +37,26 @@ export default function About() {
     }
 
     return (
-        <Card id="about" appearance="subtle" className={styles.container}>
-            <CardHeader className={styles.header}
-                image={<Person32Regular />}
-                header={<Text as="h2" className={styles.header}>About</Text>}
-            />
-
-            <Text as="p">
-                Hello from Grand Rapids! <Text weight="bold">I&#x27;m Victor, a software engineer powered by coffee</Text>.
+        <Card appearance='subtle' className={styles.container} size="small">
+            <Subtitle1 as="h3" className={styles.sectionTitle}>Hello from Grand Rapids!</Subtitle1>
+            <Body2 as="p">
+                <Subtitle2Stronger>I&#x27;m Victor, a coffee-powered developer</Subtitle2Stronger>.
                 With {`${getYearsOfExperience()}`} years of experience in the industry, I&#x27;ve worked with a variety of technologies and platforms.
-                My current focuses are on web development with <Text weight="bold">React.js</Text>, the <Text weight="bold">.NET</Text> ecosystem, <Text weight="bold">Azure</Text> cloud services, and <Text weight="bold">DevOps</Text> automation and processes.
-            </Text>
-            <Text as="p">
-                I&#x27;m passionate about <Text weight="bold">digital transformation</Text>, the <Text weight="bold">developer experience</Text>, and constructing solutions that help people <Text weight="bold">achieve more</Text>.
-            </Text>
-            <Text as="p">
-                I&#x27;m currently working as a <Text weight="bold">Senior Software Engineer at <Link as="a" inline href="https://leadingedje.com" target="_blank" rel="noreferrer noopener" className={styles.bold}>Leading EDJE</Link></Text>, a software consultancy based in Columbus, Ohio.
-                In my downtime, I enjoy <Text weight="bold">gaming</Text>, <Text weight="bold">reading</Text>, and quality time with <Text weight="bold">my wife and our two dogs</Text>.
-            </Text>
+                My current focuses are on web development with <Subtitle2Stronger>React.js</Subtitle2Stronger>, the <Subtitle2Stronger>.NET</Subtitle2Stronger> ecosystem, <Subtitle2Stronger>Azure</Subtitle2Stronger> cloud services, and <Subtitle2Stronger>DevOps</Subtitle2Stronger> automation and processes.
+            </Body2>
+            <Body2 as="p">
+                I&#x27;m passionate about <Subtitle2Stronger>digital transformation</Subtitle2Stronger>, the <Subtitle2Stronger>developer experience</Subtitle2Stronger>, and constructing solutions that help people <Subtitle2Stronger>achieve more</Subtitle2Stronger>.
+            </Body2>
+            {currentJob && currentJob.company && <Body2 as="p">
+                I&#x27;m currently working as a <Subtitle2Stronger>{currentJob.title} at <Link as="a" inline href={currentJob.company?.url} target="_blank" rel="noreferrer noopener" className={styles.bold}>{currentJob.company?.name}</Link></Subtitle2Stronger>, a {currentJob.company?.description} based in {currentJob.company?.location}.
+                In my downtime, I enjoy <Subtitle2Stronger>gaming</Subtitle2Stronger>, <Subtitle2Stronger>reading</Subtitle2Stronger>, and quality time with <Subtitle2Stronger>my wife and our two dogs</Subtitle2Stronger>.
+            </Body2>}
         </Card>
     )
+}
+
+export default About;
+
+export {
+    About,
 }

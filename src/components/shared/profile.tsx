@@ -7,9 +7,9 @@ import { useDarkMode } from "@dotcom/components/providers/darkMode";
 const useStyles = makeStyles({
     frame: {
         display: "flex",
-        minHeight: "calc(100vh - (var(--spacingVerticalXXXL) * 2))",
+        minHeight: "calc(100dvh - (var(--spacingVerticalXXXL) * 2))",
         '@media screen and (max-width: 576px)': {
-            minHeight: "100vh",
+            minHeight: "100dvh",
             ...shorthands.padding(tokens.spacingVerticalNone),
         },
         ...shorthands.padding(tokens.spacingVerticalXXXL),

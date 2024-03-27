@@ -1,22 +1,17 @@
 import { Job, School } from "@dotcom/types";
-import { Body1,Button, Card, CardHeader, Subtitle1, Subtitle2, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Body1, Button, Card, CardHeader, Subtitle1, Subtitle2, makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import { Building32Regular, Notebook32Regular, Open12Regular } from "@fluentui/react-icons";
 
 const useStyles = makeStyles({
     container: {
         display: 'flex',
-        ...shorthands.flex(0, 0, 'auto'),
-        ...shorthands.margin(tokens.spacingVerticalL, tokens.spacingHorizontalXL),
-        ...shorthands.borderRadius(tokens.borderRadiusMedium),
+        '@media screen and (min-width: 790px)': {
+            maxWidth: "640px",
+        },
+        ...shorthands.flex('auto'),
     },
     sectionTitle: {
         ...shorthands.margin(tokens.spacingVerticalXS, tokens.spacingHorizontalNone, tokens.spacingVerticalSNudge)
-    },
-    card: {
-        '@media screen and (min-width: 870px)': {
-            width: "720px",
-        },
-        height: "fit-content",
     },
     cardImage: {
         color: tokens.colorBrandForeground2,
@@ -62,7 +57,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
 
     const renderCard = (headerIcon: JSX.Element, headerTitle: string, headerSubtitle: string, content: JSX.Element, footerUrl: string): JSX.Element => {
         return (
-            <Card appearance="filled-alternative" className={styles.card} size="small">
+            <Card appearance="filled-alternative" size="small">
                 <CardHeader
                     image={headerIcon}
                     header={<Subtitle2 as="h4" className={styles.header}>{headerTitle}</Subtitle2>}
@@ -70,11 +65,6 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
                     action={<Button as="a" icon={<Open12Regular />} appearance="subtle" size="small" href={footerUrl} target="_blank" rel="noreferrer noopener" />}
                 />
                 {content}
-                {/* <CardFooter className={styles.footer}>
-                    <Button as="a" appearance="primary" icon={<Open16Regular/>} href={footerUrl} target="_blank" rel="noreferrer noopener" size="small">
-                        Open
-                    </Button>
-                </CardFooter> */}
             </Card>
         )
     };
@@ -94,7 +84,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
     const renderJobs = (jobs: Job[]): JSX.Element[] => {
         return jobs.map((job: Job, index: number) => {
             return (
-                <li key={index}>
+                <li key={index} className={styles.container}>
                     {renderCard(
                         <Building32Regular className={styles.cardImage} />,
                         job.company.name,
@@ -121,7 +111,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
     const renderSchools = (schools: School[]): JSX.Element[] => {
         return schools.map((school: School, index: number) => {
             return (
-                <li key={index}>
+                <li key={index} className={styles.container}>
                     {renderCard(
                         <Notebook32Regular className={styles.cardImage} />,
                         school.name,

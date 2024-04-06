@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const DarkModeContext = createContext({
   isDark: true,
-  onDarkModeToggled: (isDark: boolean) => { },
+  onDarkModeToggled: (isDark: boolean) => {},
 });
 DarkModeContext.displayName = 'DarkModeContext';
 
@@ -26,7 +26,7 @@ const DarkModeProvider = ({
       query: '(prefers-color-scheme: light)',
     },
     undefined,
-    (isSystemLight) => setIsDark(!isSystemLight)
+    (isSystemLight) => setIsDark(!isSystemLight),
   );
 
   const onDarkModeToggled = useCallback((isDark: boolean) => {
@@ -38,7 +38,7 @@ const DarkModeProvider = ({
       isDark,
       onDarkModeToggled,
     }),
-    [isDark, onDarkModeToggled]
+    [isDark, onDarkModeToggled],
   );
 
   useEffect(() => {

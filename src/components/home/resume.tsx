@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     ...shorthands.margin(
       tokens.spacingVerticalXS,
       tokens.spacingHorizontalNone,
-      tokens.spacingVerticalSNudge
+      tokens.spacingVerticalSNudge,
     ),
   },
   cardImage: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     ...shorthands.margin(
       tokens.spacingVerticalS,
       tokens.spacingHorizontalNone,
-      tokens.spacingVerticalXS
+      tokens.spacingVerticalXS,
     ),
   },
   header: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
       tokens.spacingVerticalNone,
       'auto',
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalNone
+      tokens.spacingHorizontalNone,
     ),
   },
   bold: {
@@ -86,7 +86,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
     headerTitle: string,
     headerSubtitle: string,
     content: JSX.Element,
-    footerUrl: string
+    footerUrl: string,
   ): JSX.Element => {
     return (
       <Card appearance='filled-alternative' size='small'>
@@ -136,7 +136,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
             job.company.name,
             job.title,
             getJobDescription(job),
-            job.company.url
+            job.company.url,
           )}
         </li>
       );
@@ -166,7 +166,7 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
             school.name,
             school.degree,
             getSchoolDescription(school),
-            school.url
+            school.url,
           )}
         </li>
       );

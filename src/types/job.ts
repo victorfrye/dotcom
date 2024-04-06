@@ -12,7 +12,7 @@ class Job {
     title: string,
     startDate: Date,
     endDate: Date | undefined,
-    description: string
+    description: string,
   ) {
     this.company = company;
     this.title = title;

@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     ...shorthands.outline(
       tokens.strokeWidthThick,
       'solid',
-      tokens.colorNeutralForeground1
+      tokens.colorNeutralForeground1,
     ),
     ...shorthands.transition('all', tokens.durationFaster),
     ':hover': {

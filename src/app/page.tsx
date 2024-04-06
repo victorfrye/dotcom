@@ -28,20 +28,20 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     ...shorthands.padding(
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalL
+      tokens.spacingHorizontalL,
     ),
   },
   tabList: {
     ...shorthands.margin(
       tokens.spacingVerticalSNudge,
       tokens.spacingHorizontalNone,
-      tokens.spacingHorizontalMNudge
+      tokens.spacingHorizontalMNudge,
     ),
   },
   divider: {
     ...shorthands.margin(
       tokens.spacingVerticalXXL,
-      tokens.spacingHorizontalNone
+      tokens.spacingHorizontalNone,
     ),
   },
 });
@@ -110,14 +110,14 @@ const Home = () => {
             job.company.name,
             job.company.location,
             job.company.description,
-            job.company.url
+            job.company.url,
           ),
           job.title,
           new Date(job.startDate),
           job.endDate ? new Date(job.endDate) : undefined,
-          job.description
+          job.description,
         );
-      })
+      }),
     );
     setSchools(
       data.schools?.map((school: ISchool) => {
@@ -130,9 +130,9 @@ const Home = () => {
           new Date(school.startDate),
           school.graduationDate ? new Date(school.graduationDate) : undefined,
           school.description,
-          school.url
+          school.url,
         );
-      })
+      }),
     );
     setSkills(data.skills);
   };

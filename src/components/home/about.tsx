@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     ...shorthands.margin(
       tokens.spacingVerticalXS,
       tokens.spacingHorizontalNone,
-      tokens.spacingVerticalSNudge
+      tokens.spacingVerticalSNudge,
     ),
   },
 });

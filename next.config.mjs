@@ -5,7 +5,7 @@ const nextConfig = withGriffelCSSExtraction()({
   output: 'export',
   webpack: (
     config,
-    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack },
   ) => {
     config.module.rules.unshift(
       {
@@ -30,7 +30,7 @@ const nextConfig = withGriffelCSSExtraction()({
             },
           },
         ],
-      }
+      },
     );
 
     return config;

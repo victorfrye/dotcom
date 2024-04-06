@@ -39,20 +39,20 @@ const useStyles = makeStyles({
     ...shorthands.padding(
       tokens.spacingVerticalXL,
       tokens.spacingHorizontalXXL,
-      tokens.spacingVerticalNone
+      tokens.spacingVerticalNone,
     ),
   },
   title: {
     ...shorthands.margin(
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalSNudge
+      tokens.spacingHorizontalSNudge,
     ),
   },
   tagline: {
     color: tokens.colorBrandForeground2,
     ...shorthands.margin(
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalSNudge
+      tokens.spacingHorizontalSNudge,
     ),
   },
   footer: {
@@ -65,7 +65,7 @@ const useStyles = makeStyles({
     ...shorthands.padding(
       tokens.spacingVerticalNone,
       tokens.spacingHorizontalXL,
-      tokens.spacingVerticalXL
+      tokens.spacingVerticalXL,
     ),
   },
   switch: {
@@ -77,12 +77,12 @@ const useStyles = makeStyles({
       ...shorthands.padding(
         tokens.spacingVerticalSNudge,
         tokens.spacingHorizontalL,
-        tokens.spacingVerticalNone
+        tokens.spacingVerticalNone,
       ),
     },
     ...shorthands.padding(
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalM
+      tokens.spacingHorizontalM,
     ),
   },
   copyright: {
@@ -94,13 +94,13 @@ const useStyles = makeStyles({
       ...shorthands.padding(
         tokens.spacingVerticalSNudge,
         tokens.spacingHorizontalL,
-        tokens.spacingVerticalNone
+        tokens.spacingVerticalNone,
       ),
     },
     flexWrap: 'wrap',
     ...shorthands.padding(
       tokens.spacingVerticalNone,
-      tokens.spacingHorizontalL
+      tokens.spacingHorizontalL,
     ),
   },
 });
@@ -111,7 +111,7 @@ const Profile = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 
   const handleDarkModeToggled = (
     event: React.ChangeEvent<HTMLInputElement>,
-    data: SwitchOnChangeData
+    data: SwitchOnChangeData,
   ) => {
     onDarkModeToggled(data.checked);
   };

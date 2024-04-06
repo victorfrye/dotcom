@@ -18,7 +18,7 @@ class School {
     startDate: Date,
     graduationDate: Date | undefined,
     description: string,
-    url: string
+    url: string,
   ) {
     this.name = name;
     this.degree = degree;

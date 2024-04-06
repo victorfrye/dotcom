@@ -8,7 +8,7 @@ class Company {
     name: string,
     location: string,
     description: string,
-    url: string
+    url: string,
   ) {
     this.name = name;
     this.location = location;

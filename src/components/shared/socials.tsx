@@ -1,4 +1,4 @@
-import { Button, Image, Link, makeStyles, shorthands, tokens } from "@fluentui/react-components";
+import { Button, Image, makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import { useDarkMode } from "../providers/darkMode";
 
 interface ISocial {

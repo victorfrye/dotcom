@@ -1,4 +1,4 @@
-import Company from "@dotcom/types/company";
+import Company from '@dotcom/types/company';
 
 class Job {
   company: Company;
@@ -24,6 +24,4 @@ class Job {
 
 export default Job;
 
-export {
-  Job,
-}
+export { Job };

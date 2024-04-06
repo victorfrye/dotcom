@@ -4,7 +4,12 @@ class Company {
   description: string;
   url: string;
 
-  constructor(name: string, location: string, description: string, url: string) {
+  constructor(
+    name: string,
+    location: string,
+    description: string,
+    url: string,
+  ) {
     this.name = name;
     this.location = location;
     this.description = description;
@@ -14,6 +19,4 @@ class Company {
 
 export default Company;
 
-export {
-  Company,
-}
+export { Company };

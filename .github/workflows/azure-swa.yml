@@ -2,10 +2,10 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     types: [opened, synchronize, reopened, closed]
-    branches: ["main"]
+    branches: ['main']
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     environment: ${{ github.event_name == 'push' && 'Production' || 'Staging' }}
-    concurrency: 
+    concurrency:
       group: ${{ github.ref }}
       cancel-in-progress: true
     steps:
@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Verify formatting
-        run: yarn lint
+        run: yarn format:check
       - name: Build distributable
         run: yarn build
       - name: Deploy static web app

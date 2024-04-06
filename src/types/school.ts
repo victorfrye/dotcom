@@ -34,6 +34,4 @@ class School {
 
 export default School;
 
-export {
-  School,
-}
+export { School };

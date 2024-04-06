@@ -1,4 +1,4 @@
-import Company from "@dotcom/types/company";
+import Company from '@dotcom/types/company';
 
 class Job {
   company: Company;
@@ -12,7 +12,7 @@ class Job {
     title: string,
     startDate: Date,
     endDate: Date | undefined,
-    description: string,
+    description: string
   ) {
     this.company = company;
     this.title = title;
@@ -24,6 +24,4 @@ class Job {
 
 export default Job;
 
-export {
-  Job,
-}
+export { Job };

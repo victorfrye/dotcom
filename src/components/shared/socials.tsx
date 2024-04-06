@@ -1,5 +1,11 @@
-import { Button, Image, makeStyles, shorthands, tokens } from "@fluentui/react-components";
-import { useDarkMode } from "../providers/darkMode";
+import {
+  Button,
+  Image,
+  makeStyles,
+  shorthands,
+  tokens,
+} from '@fluentui/react-components';
+import { useDarkMode } from '../providers/darkMode';
 
 interface ISocial {
   href: string;
@@ -7,16 +13,15 @@ interface ISocial {
 }
 
 const useStyles = makeStyles({
-    container: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        ...shorthands.gap(tokens.spacingVerticalSNudge),
-    },
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...shorthands.gap(tokens.spacingVerticalSNudge),
   },
-);
+});
 
 const Socials = () => {
   const styles = useStyles();
@@ -69,21 +74,21 @@ const Socials = () => {
     },
   ];
 
-    const renderButtons = (): JSX.Element[] => {
-        return socialDetails.map((social, index) =>
-            <Button
-                icon={social.image}
-                as="a"
-                appearance="subtle"
-                shape="circular"
-                size="large"
-                href={social.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                key={index}
-            />
-        );
-    }
+  const renderButtons = (): JSX.Element[] => {
+    return socialDetails.map((social, index) => (
+      <Button
+        icon={social.image}
+        as='a'
+        appearance='subtle'
+        shape='circular'
+        size='large'
+        href={social.href}
+        target='_blank'
+        rel='noreferrer noopener'
+        key={index}
+      />
+    ));
+  };
 
   return <div className={styles.container}>{renderButtons()}</div>;
 };

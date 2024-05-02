@@ -72,6 +72,7 @@ const useStyles = makeStyles({
     ...shorthands.gap(tokens.spacingVerticalL),
   },
 });
+
 interface ResumeProps {
   jobs: Job[];
   schools: School[];

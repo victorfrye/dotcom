@@ -12,22 +12,8 @@ interface ISocial {
   image: JSX.Element;
 }
 
-const useStyles = makeStyles({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    ...shorthands.gap(tokens.spacingVerticalSNudge),
-  },
-});
-
-const Socials = () => {
-  const styles = useStyles();
-  const { isDark } = useDarkMode();
-
-  const socialDetails: ISocial[] = [
+const getSocials = (isDark: Boolean): ISocial[] => {
+  return [
     {
       href: 'https://threads.net/@thevictorfryeadventure',
       image: (
@@ -73,9 +59,25 @@ const Socials = () => {
       ),
     },
   ];
+};
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...shorthands.gap(tokens.spacingVerticalSNudge),
+  },
+});
+
+const Socials = () => {
+  const styles = useStyles();
+  const { isDark } = useDarkMode();
 
   const renderButtons = (): JSX.Element[] => {
-    return socialDetails.map((social, index) => (
+    return getSocials(isDark).map((social, index) => (
       <Button
         icon={social.image}
         as='a'

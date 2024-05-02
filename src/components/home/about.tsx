@@ -34,12 +34,13 @@ const useStyles = makeStyles({
 
 interface AboutProps {
   currentJob: Job;
+  firstJob: Job;
 }
 
-const About: React.FC<AboutProps> = ({ currentJob }) => {
+const About: React.FC<AboutProps> = ({ currentJob, firstJob }) => {
   const styles = useStyles();
   const _today: Date = new Date();
-  const _start: Date = new Date(2019, 5, 6);
+  const _start: Date = firstJob.startDate;
 
   const getYearsOfExperience = (): number => {
     if (

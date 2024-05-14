@@ -18,11 +18,6 @@ class Certification {
     this.expirationDate = expirationDate;
     this.url = url;
   }
-
-  // public isActive(): boolean {
-  //   return this.expirationDate ? this.expirationDate >= new Date() : true;
-  // }
-  
 }
 
 export default Certification;

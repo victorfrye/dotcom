@@ -1,4 +1,4 @@
-import { Job, School } from '@dotcom/types';
+import { Certification, Job, School } from '@dotcom/types';
 import {
   Body1,
   Button,
@@ -8,12 +8,14 @@ import {
   Subtitle2,
   makeStyles,
   shorthands,
+  Tag,
   tokens,
 } from '@fluentui/react-components';
 import {
-  Building32Regular,
-  Notebook32Regular,
-  Open12Regular,
+  BuildingRegular,
+  CertificateRegular,
+  HatGraduationRegular,
+  OpenRegular,
 } from '@fluentui/react-icons';
 
 const useStyles = makeStyles({
@@ -33,11 +35,9 @@ const useStyles = makeStyles({
   },
   cardImage: {
     color: tokens.colorBrandForeground2,
-    ...shorthands.margin(
-      tokens.spacingVerticalS,
-      tokens.spacingHorizontalNone,
-      tokens.spacingVerticalXS,
-    ),
+    height: '44px',
+    width: '44px',
+    ...shorthands.borderRadius('4px'),
   },
   header: {
     color: tokens.colorBrandForeground2,
@@ -76,64 +76,72 @@ const useStyles = makeStyles({
 interface ResumeProps {
   jobs: Job[];
   schools: School[];
+  certifications: Certification[];
   skills: string[];
 }
 
-const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
+const Resume: React.FC<ResumeProps> = ({
+  jobs,
+  schools,
+  certifications,
+  skills,
+}) => {
   const styles = useStyles();
 
   const renderCard = (
     headerIcon: JSX.Element,
     headerTitle: string,
     headerSubtitle: string,
-    content: JSX.Element,
-    footerUrl: string,
-  ): JSX.Element => {
-    return (
-      <Card appearance='filled-alternative' size='small'>
-        <CardHeader
-          image={headerIcon}
-          header={
-            <Subtitle2 as='h4' className={styles.header}>
-              {headerTitle}
-            </Subtitle2>
-          }
-          description={<Body1 as='em'>{headerSubtitle}</Body1>}
-          action={
-            <Button
-              as='a'
-              icon={<Open12Regular />}
-              appearance='subtle'
-              size='small'
-              href={footerUrl}
-              target='_blank'
-              rel='noreferrer noopener'
-            />
-          }
-        />
-        {content}
-      </Card>
-    );
-  };
+    content: JSX.Element | undefined,
+    actionUrl: string,
+    orientation: 'horizontal' | 'vertical' = 'vertical',
+  ): JSX.Element => (
+    <Card
+      orientation={orientation}
+      appearance='filled-alternative'
+      size='small'
+    >
+      <CardHeader
+        image={headerIcon}
+        header={
+          <Subtitle2 as='h4' className={styles.header}>
+            {headerTitle}
+          </Subtitle2>
+        }
+        description={<Body1 as='em'>{headerSubtitle}</Body1>}
+        action={
+          <Button
+            as='a'
+            icon={<OpenRegular />}
+            appearance='subtle'
+            size='small'
+            href={actionUrl}
+            target='_blank'
+            rel='noreferrer noopener'
+            aria-label='Open link in new tab'
+          />
+        }
+      />
+      {content ?? null}
+    </Card>
+  );
 
-  const getJobDescription = (job: Job): JSX.Element => {
-    return (
-      <>
-        <Body1 as='p'>
-          {job.startDate.getFullYear()} -{' '}
-          {job.endDate ? job.endDate.getFullYear() : 'Present'}
-        </Body1>
-        <Body1 as='p'>{job.description}</Body1>
-      </>
-    );
-  };
+  const getJobDescription = (job: Job): JSX.Element => (
+    <>
+      <Body1 as='p'>
+        {job.startDate.getFullYear()} -{' '}
+        {job.endDate ? job.endDate.getFullYear() : 'Present'}
+      </Body1>
+      <Body1 as='p'>{job.description}</Body1>
+    </>
+  );
 
-  const renderJobs = (jobs: Job[]): JSX.Element[] => {
-    return jobs.map((job: Job, index: number) => {
+  const renderJobs = (jobs: Job[]): JSX.Element[] =>
+    jobs.map((job: Job, index: number) => {
       return (
         <li key={index} className={styles.container}>
           {renderCard(
-            <Building32Regular className={styles.cardImage} />,
+            <BuildingRegular className={styles.cardImage} />,
             job.company.name,
             job.title,
             getJobDescription(job),
@@ -142,28 +150,25 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
         </li>
       );
     });
-  };
 
-  const getSchoolDescription = (school: School): JSX.Element => {
-    return (
-      <>
-        <Body1>
-          {school.startDate.getFullYear()} -{' '}
-          {school.graduationDate
-            ? school.graduationDate.getFullYear()
-            : 'Present'}
-        </Body1>
-        <Body1 as='p'>{school.description}</Body1>
-      </>
-    );
-  };
+  const getSchoolDescription = (school: School): JSX.Element => (
+    <>
+      <Body1>
+        {school.startDate.getFullYear()} -{' '}
+        {school.graduationDate
+          ? school.graduationDate.getFullYear()
+          : 'Present'}
+      </Body1>
+      <Body1 as='p'>{school.description}</Body1>
+    </>
+  );
 
-  const renderSchools = (schools: School[]): JSX.Element[] => {
-    return schools.map((school: School, index: number) => {
+  const renderSchools = (schools: School[]): JSX.Element[] =>
+    schools.map((school: School, index: number) => {
       return (
         <li key={index} className={styles.container}>
           {renderCard(
-            <Notebook32Regular className={styles.cardImage} />,
+            <HatGraduationRegular className={styles.cardImage} />,
             school.name,
             school.degree,
             getSchoolDescription(school),
@@ -172,13 +177,35 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
         </li>
       );
     });
+
+  const renderCertifications = (
+    certifications: Certification[],
+  ): JSX.Element[] => {
+    return certifications.map((certification: Certification, index: number) => (
+      <li key={index} className={styles.container}>
+        {renderCard(
+          <CertificateRegular className={styles.cardImage} />,
+          certification.name,
+          'Issued ' +
+            certification.issueDate.toLocaleString('default', {
+              month: 'long',
+              year: 'numeric',
+            }),
+          undefined,
+          certification.url,
+          'horizontal',
+        )}
+      </li>
+    ));
   };
 
   const renderSkills = (skills: string[]): JSX.Element[] => {
     return skills.map((skill: string, index: number) => {
       return (
         <li key={index}>
-          <Button size='small'>{skill}</Button>
+          <Tag size='small' shape='circular'>
+            {skill}
+          </Tag>
         </li>
       );
     });
@@ -194,6 +221,10 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
         Education
       </Subtitle1>
       <ul className={styles.list}>{renderSchools(schools)}</ul>
+      <Subtitle1 as='h3' className={styles.sectionTitle}>
+        Certifications
+      </Subtitle1>
+      <ul className={styles.list}>{renderCertifications(certifications)}</ul>
       <Subtitle1 as='h3' className={styles.sectionTitle}>
         Skills
       </Subtitle1>

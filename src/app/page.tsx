@@ -1,6 +1,6 @@
 'use client';
 
-import { Company, Job, School } from '@dotcom/types';
+import { Certification, Company, Job, School } from '@dotcom/types';
 import { About, Resume } from '@dotcom/components/home';
 import {
   Divider,
@@ -61,6 +61,7 @@ const Home = () => {
 
   const [jobs] = useState<Job[]>(resumeData.jobs);
   const [schools] = useState<School[]>(resumeData.schools);
+  const [certifications] = useState<Certification[]>(resumeData.certifications);
   const [skills] = useState<string[]>(resumeData.skills);
 
   return (
@@ -86,7 +87,7 @@ const Home = () => {
           <About currentJob={jobs[0]} firstJob={jobs[jobs.length - 1]} />
         )}
         {selectedValue === 'resume' && jobs && (
-          <Resume jobs={jobs} schools={schools} skills={skills} />
+          <Resume jobs={jobs} schools={schools} certifications={certifications} skills={skills} />
         )}
       </div>
 

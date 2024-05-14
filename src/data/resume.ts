@@ -1,8 +1,10 @@
-import { Job, School } from '@dotcom/types';
+import { Certification, Job, School } from '@dotcom/types';
+import exp from 'constants';
 
 interface IResumeData {
   jobs: Job[];
   schools: School[];
+  certifications: Certification[];
   skills: string[];
 }
 
@@ -60,6 +62,22 @@ const resumeData: IResumeData = {
         "Attended Davenport University's College of Technology full-time. Majored in computer science with focuses on software development, artificial intelligence, and mathematics. Graduated with a 3.77 GPA and three academic honor society inductions.",
       url: 'https://davenport.edu/',
     },
+  ],
+  certifications: [
+    {
+      name: "Microsoft Certified: Azure Fundamentals",
+      issuer: "Microsoft",
+      issueDate: new Date(2023, 12, 21),
+      expirationDate: undefined,
+      url: "https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392"
+    },
+    {
+      name: "Microsoft Certified: Azure AI Fundamentals",
+      issuer: "Microsoft",
+      issueDate: new Date(2024, 4, 30),
+      expirationDate: undefined,
+      url: "https://learn.microsoft.com/en-us/users/victorfrye/credentials/af866c0af923042d"
+    }
   ],
   skills: [
     'C#',

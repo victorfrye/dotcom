@@ -1,4 +1,4 @@
-import { Job, School } from '@dotcom/types';
+import { Certification, Job, School } from '@dotcom/types';
 import {
   Body1,
   Button,
@@ -8,13 +8,19 @@ import {
   Subtitle2,
   makeStyles,
   shorthands,
+  Tag,
   tokens,
+  Avatar,
+  Persona,
+  Body1Strong,
 } from '@fluentui/react-components';
 import {
   Building32Regular,
+  CertificateRegular,
   Notebook32Regular,
   Open12Regular,
 } from '@fluentui/react-icons';
+import { HatGraduation20Regular } from '@fluentui/react-icons/fonts';
 
 const useStyles = makeStyles({
   container: {
@@ -76,10 +82,11 @@ const useStyles = makeStyles({
 interface ResumeProps {
   jobs: Job[];
   schools: School[];
+  certifications: Certification[];
   skills: string[];
 }
 
-const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
+const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }) => {
   const styles = useStyles();
 
   const renderCard = (
@@ -174,11 +181,32 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
     });
   };
 
+  const renderCertifications = (certifications: Certification[]): JSX.Element[] => {
+    return certifications.map((certification: Certification, index: number) => {
+      return (
+        <li key={index} className={styles.container}>
+          <Persona
+            avatar={{
+              icon: <CertificateRegular />,
+              color: 'neutral',
+              size: 36,
+            }}
+            presence={{
+              status: !certification.expirationDate || certification.expirationDate < new Date() ? 'available' : 'offline'
+            }}
+            primaryText={<Body1Strong>{certification.name}</Body1Strong>}
+            secondaryText={certification.issuer}
+          />
+        </li>
+      );
+    });
+  };
+
   const renderSkills = (skills: string[]): JSX.Element[] => {
     return skills.map((skill: string, index: number) => {
       return (
         <li key={index}>
-          <Button size='small'>{skill}</Button>
+          <Tag size='small' shape='circular'>{skill}</Tag>
         </li>
       );
     });
@@ -194,6 +222,10 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, skills }) => {
         Education
       </Subtitle1>
       <ul className={styles.list}>{renderSchools(schools)}</ul>
+      <Subtitle1 as='h3' className={styles.sectionTitle}>
+        Certifications
+      </Subtitle1>
+      <ul className={styles.list}>{renderCertifications(certifications)}</ul>
       <Subtitle1 as='h3' className={styles.sectionTitle}>
         Skills
       </Subtitle1>

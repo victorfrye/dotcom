@@ -84,7 +84,6 @@ const About: React.FC<AboutProps> = ({ currentJob, firstJob }) => {
             {currentJob.title} at{' '}
             <Link
               as='a'
-              inline
               href={currentJob.company?.url}
               target='_blank'
               rel='noreferrer noopener'

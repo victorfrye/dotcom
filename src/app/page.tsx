@@ -1,6 +1,6 @@
 'use client';
 
-import { Certification, Company, Job, School } from '@dotcom/types';
+import { Certification, Job, School } from '@dotcom/types';
 import { About, Resume } from '@dotcom/components/home';
 import {
   Divider,
@@ -14,10 +14,10 @@ import {
   tokens,
 } from '@fluentui/react-components';
 import {
-  Briefcase32Filled,
-  Briefcase32Regular,
-  Person32Filled,
-  Person32Regular,
+  BriefcaseFilled,
+  BriefcaseRegular,
+  PersonFilled,
+  PersonRegular,
   bundleIcon,
 } from '@fluentui/react-icons';
 import { useState } from 'react';
@@ -47,11 +47,11 @@ const useStyles = makeStyles({
   },
 });
 
+const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
+const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
+
 const Home = () => {
   const styles = useStyles();
-
-  const PersonIcon = bundleIcon(Person32Filled, Person32Regular);
-  const BriefcaseIcon = bundleIcon(Briefcase32Filled, Briefcase32Regular);
 
   const [selectedValue, setSelectedValue] = useState<TabValue>('about');
 

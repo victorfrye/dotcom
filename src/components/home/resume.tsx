@@ -94,10 +94,8 @@ const Resume: React.FC<ResumeProps> = ({
     headerSubtitle: string,
     content: JSX.Element | undefined,
     actionUrl: string,
-    orientation: 'horizontal' | 'vertical' = 'vertical',
   ): JSX.Element => (
     <Card
-      orientation={orientation}
       appearance='filled-alternative'
       size='small'
     >

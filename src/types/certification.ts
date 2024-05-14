@@ -6,11 +6,11 @@ class Certification {
   url: string;
 
   public constructor(
-  name: string,
-  issuer: string,
-  issueDate: Date,
-  expirationDate: Date | undefined,
-  url: string,
+    name: string,
+    issuer: string,
+    issueDate: Date,
+    expirationDate: Date | undefined,
+    url: string,
   ) {
     this.name = name;
     this.issuer = issuer;

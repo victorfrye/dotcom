@@ -87,7 +87,12 @@ const Home = () => {
           <About currentJob={jobs[0]} firstJob={jobs[jobs.length - 1]} />
         )}
         {selectedValue === 'resume' && jobs && (
-          <Resume jobs={jobs} schools={schools} certifications={certifications} skills={skills} />
+          <Resume
+            jobs={jobs}
+            schools={schools}
+            certifications={certifications}
+            skills={skills}
+          />
         )}
       </div>
 

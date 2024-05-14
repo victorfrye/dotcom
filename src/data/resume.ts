@@ -65,19 +65,19 @@ const resumeData: IResumeData = {
   ],
   certifications: [
     {
-      name: "Microsoft Certified: Azure Fundamentals",
-      issuer: "Microsoft",
+      name: 'Microsoft Certified: Azure Fundamentals',
+      issuer: 'Microsoft',
       issueDate: new Date(2023, 12, 21),
       expirationDate: undefined,
-      url: "https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392"
+      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392',
     },
     {
-      name: "Microsoft Certified: Azure AI Fundamentals",
-      issuer: "Microsoft",
+      name: 'Microsoft Certified: Azure AI Fundamentals',
+      issuer: 'Microsoft',
       issueDate: new Date(2024, 4, 30),
       expirationDate: undefined,
-      url: "https://learn.microsoft.com/en-us/users/victorfrye/credentials/af866c0af923042d"
-    }
+      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/af866c0af923042d',
+    },
   ],
   skills: [
     'C#',

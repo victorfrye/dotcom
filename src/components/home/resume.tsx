@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     color: tokens.colorBrandForeground2,
     height: '44px',
     width: '44px',
-    ...shorthands.borderRadius("4px"),
+    ...shorthands.borderRadius('4px'),
   },
   header: {
     color: tokens.colorBrandForeground2,
@@ -80,7 +80,12 @@ interface ResumeProps {
   skills: string[];
 }
 
-const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }) => {
+const Resume: React.FC<ResumeProps> = ({
+  jobs,
+  schools,
+  certifications,
+  skills,
+}) => {
   const styles = useStyles();
 
   const renderCard = (
@@ -89,24 +94,33 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }
     headerSubtitle: string,
     content: JSX.Element | undefined,
     actionUrl: string,
-    orientation: 'horizontal' | 'vertical' = 'vertical'
+    orientation: 'horizontal' | 'vertical' = 'vertical',
   ): JSX.Element => (
-    <Card orientation={orientation} appearance='filled-alternative' size='small'>
+    <Card
+      orientation={orientation}
+      appearance='filled-alternative'
+      size='small'
+    >
       <CardHeader
         image={headerIcon}
-        header={<Subtitle2 as='h4' className={styles.header}>
-          {headerTitle}
-        </Subtitle2>}
+        header={
+          <Subtitle2 as='h4' className={styles.header}>
+            {headerTitle}
+          </Subtitle2>
+        }
         description={<Body1 as='em'>{headerSubtitle}</Body1>}
-        action={<Button
-          as='a'
-          icon={<OpenRegular />}
-          appearance='subtle'
-          size='small'
-          href={actionUrl}
-          target='_blank'
-          rel='noreferrer noopener'
-          aria-label='Open link in new tab' />}
+        action={
+          <Button
+            as='a'
+            icon={<OpenRegular />}
+            appearance='subtle'
+            size='small'
+            href={actionUrl}
+            target='_blank'
+            rel='noreferrer noopener'
+            aria-label='Open link in new tab'
+          />
+        }
       />
       {content ?? null}
     </Card>
@@ -122,19 +136,20 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }
     </>
   );
 
-  const renderJobs = (jobs: Job[]): JSX.Element[] => jobs.map((job: Job, index: number) => {
-    return (
-      <li key={index} className={styles.container}>
-        {renderCard(
-          <BuildingRegular className={styles.cardImage} />,
-          job.company.name,
-          job.title,
-          getJobDescription(job),
-          job.company.url
-        )}
-      </li>
-    );
-  });
+  const renderJobs = (jobs: Job[]): JSX.Element[] =>
+    jobs.map((job: Job, index: number) => {
+      return (
+        <li key={index} className={styles.container}>
+          {renderCard(
+            <BuildingRegular className={styles.cardImage} />,
+            job.company.name,
+            job.title,
+            getJobDescription(job),
+            job.company.url,
+          )}
+        </li>
+      );
+    });
 
   const getSchoolDescription = (school: School): JSX.Element => (
     <>
@@ -148,30 +163,37 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }
     </>
   );
 
-  const renderSchools = (schools: School[]): JSX.Element[] => schools.map((school: School, index: number) => {
-    return (
-      <li key={index} className={styles.container}>
-        {renderCard(
-          <HatGraduationRegular className={styles.cardImage} />,
-          school.name,
-          school.degree,
-          getSchoolDescription(school),
-          school.url
-        )}
-      </li>
-    );
-  });
+  const renderSchools = (schools: School[]): JSX.Element[] =>
+    schools.map((school: School, index: number) => {
+      return (
+        <li key={index} className={styles.container}>
+          {renderCard(
+            <HatGraduationRegular className={styles.cardImage} />,
+            school.name,
+            school.degree,
+            getSchoolDescription(school),
+            school.url,
+          )}
+        </li>
+      );
+    });
 
-  const renderCertifications = (certifications: Certification[]): JSX.Element[] => {
+  const renderCertifications = (
+    certifications: Certification[],
+  ): JSX.Element[] => {
     return certifications.map((certification: Certification, index: number) => (
       <li key={index} className={styles.container}>
         {renderCard(
           <CertificateRegular className={styles.cardImage} />,
           certification.name,
-          "Issued " + certification.issueDate.toLocaleString('default', { month: 'long', year: 'numeric' }),
+          'Issued ' +
+            certification.issueDate.toLocaleString('default', {
+              month: 'long',
+              year: 'numeric',
+            }),
           undefined,
           certification.url,
-          'horizontal'
+          'horizontal',
         )}
       </li>
     ));
@@ -181,7 +203,9 @@ const Resume: React.FC<ResumeProps> = ({ jobs, schools, certifications, skills }
     return skills.map((skill: string, index: number) => {
       return (
         <li key={index}>
-          <Tag size='small' shape='circular'>{skill}</Tag>
+          <Tag size='small' shape='circular'>
+            {skill}
+          </Tag>
         </li>
       );
     });

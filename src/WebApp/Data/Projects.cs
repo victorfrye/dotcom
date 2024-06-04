@@ -20,7 +20,7 @@ public static class Projects
         name: "VictorFrye.COM",
         icon: new Emojis.TravelPlaces.HighContrast.Default.GlobeWithMeridians(),
         skills: [Skills.CSharp, Skills.DotNet, Skills.Azure, Skills.GitHub],
-        content: "This website! Built with .NET Blazor and hosted on Azure, this serves as my personal resume and portfolio.",
+        content: "This web app! Built with .NET Blazor and hosted on Azure, this serves as my personal resume and portfolio.",
         url: "https://victorfrye.com"
     );
 

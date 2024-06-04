@@ -15,5 +15,5 @@ public class Certification(string name, string issuer, DateOnly issueDate, DateO
 
     public bool IsActive() => ExpirationDate is null || ExpirationDate.Value >= DateOnly.FromDateTime(DateTime.Now);
 
-    public string GetStatus() => IsActive() ? $"Issued {IssueDate:MMMM yyyy} by {Issuer}" : $"Expired {ExpirationDate:MMMM yyyy}";
+    public string GetStatus() => IsActive() ? $"Issued {IssueDate:MMMM yyyy}" : $"Expired {ExpirationDate:MMMM yyyy}";
 }

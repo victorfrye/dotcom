@@ -40,9 +40,6 @@ public enum Skills
     [Description("Terraform")]
     Terraform,
 
-    [Description("Kubernetes")]
-    Kubernetes,
-
     [Description("Azure")]
     Azure,
 

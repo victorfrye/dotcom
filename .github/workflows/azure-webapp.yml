@@ -15,6 +15,7 @@ env:
   DOTNET_VERSION: '8.x'
   APP_PROJECT_FILE: 'src/WebApp/WebApp.csproj'
   APP_OUTPUT_LOCATION: 'src/bin/Release/net8.0/publish'
+  APP_ARTIFACT_NAME: 'webapp-${{ github.sha }}'
 
 jobs:
   build_and_deploy_job:
@@ -31,18 +32,32 @@ jobs:
         with:
           submodules: true
           lfs: false
+
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
           cache: 'nuget'
+
       - name: Restore dependencies
         run: dotnet restore
+
       - name: Verify formatting
         run: dotnet format --verify-no-changes --no-restore
+
       - name: Build solution
         run: dotnet build -c Release --no-restore
+
       - name: Run tests
         run: dotnet test -c Release --no-restore
+
       - name: Publish web app
+        if: github.event_name == 'push'
         run: dotnet publish ${{ env.APP_PROJECT_FILE }} -c Release --no-restore --no-build
+
+      - name: Upload artifact
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.APP_ARTIFACT_NAME }}
+          path: ${{ env.APP_OUTPUT_LOCATION }}

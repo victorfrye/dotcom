@@ -1,0 +1,45 @@
+<FluentDivider Role="DividerRole.Presentation" class="footer-divider" />
+
+<FluentStack VerticalAlignment="VerticalAlignment.Center" Wrap class="profile-footer">
+    <FluentStack Width="20">
+    @foreach (var social in _socials)
+    {
+        <FluentAnchor Href="@social.UserHref" Appearance="Appearance.Stealth" Rel="noopener noreferrer" Target="_blank"
+            aria-label="@social.Name" class="social-anchor">
+            @social.Icon
+        </FluentAnchor>
+    }
+    </FluentStack>
+
+    <FluentSpacer />
+
+    © Victor Frye @_timeProvider.GetLocalNow().Year
+</FluentStack>
+
+@code {
+    private TimeProvider _timeProvider { get; init; } = TimeProvider.System;
+
+    private IEnumerable<Social> _socials { get; init; } =
+    [
+new(
+name: "Threads",
+icon: @<FluentIcon Value="@(new VictorFrye.DotCom.WebApp.Icons.Threads())" Color="@Color.Neutral" />,
+userHref: "https://threads.net/@thevictorfryeadventure"
+),
+new(
+name: "LinkedIn",
+icon: @<FluentIcon Value="@(new VictorFrye.DotCom.WebApp.Icons.LinkedIn())" Color="@Color.Neutral" />,
+userHref: "https://linkedin.com/in/victorfrye"
+),
+new(
+name: "GitHub",
+icon: @<FluentIcon Value="@(new VictorFrye.DotCom.WebApp.Icons.GitHub())" Color="@Color.Neutral" />,
+userHref: "https://github.com/victorfrye"
+),
+new(
+name: "Email",
+icon: @<FluentIcon Value="@(new Icons.Filled.Size28.Mail())" Color="@Color.Neutral" />,
+userHref: "mailto:victorfrye@outlook.com"
+)
+];
+}

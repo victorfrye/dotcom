@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
 
     <Title>VictorFrye.COM</Title>
     <Description>🎨 A personal portfolio site for your friendly neighborhood developer, Victor Frye</Description>

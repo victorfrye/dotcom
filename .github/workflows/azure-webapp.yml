@@ -33,24 +33,24 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Set up .NET
+      - name: Set Up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Restore dependencies
+      - name: Restore Dependencies
         run: dotnet restore
 
-      - name: Verify formatting
+      - name: Verify Formatting
         run: dotnet format --verify-no-changes --no-restore
 
-      - name: Build solution
+      - name: Build Solution
         run: dotnet build -c Release --no-restore
 
-      - name: Run tests
+      - name: Run Tests
         run: dotnet test -c Release --no-restore
 
-      - name: Publish web app
+      - name: Publish Web App
         if: github.event_name == 'push'
         run: dotnet publish ${{ env.APP_PROJECT_FILE }} -c Release --no-restore --no-build
 

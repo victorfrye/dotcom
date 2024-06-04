@@ -1,0 +1,52 @@
+@using System.Collections.Frozen
+@using VictorFrye.DotCom.WebApp.Models.Extensions
+
+<FluentDesignTheme Mode="DesignThemeModes.System" StorageName="theme" />
+
+<FluentStack Orientation="Orientation.Vertical">
+    <h3 class="content-header">Projects</h3>
+
+    <FluentStack VerticalGap="16" HorizontalGap="16" Wrap>
+        @foreach (var project in _projects)
+        {
+            @ProjectTemplate(project)
+        }
+    </FluentStack>
+</FluentStack>
+
+@code
+{
+
+    private static readonly IList<Project> _projects = Projects.All.ToList();
+
+    private static readonly IList<string> _skills = Enum.GetValues<Skills>().Select(s => s.ToLabel()).ToList();
+
+    private RenderFragment<Project> ProjectTemplate = (project) =>
+        @<FluentCard class="summary-card" MinimalStyle>
+            <FluentStack VerticalAlignment="VerticalAlignment.Center" class="card-header">
+                <FluentEmoji Value=@project.Icon Width="48" class="project-icon" />
+                <FluentStack Orientation="Orientation.Vertical" VerticalGap="0">
+                    <h4 class="card-title">@project.Name</h4>
+                </FluentStack>
+                <FluentSpacer />
+                @if (@project.Url is not null)
+                {
+                    <FluentAnchor Href="@project.Url" Target="_blank" Rel="noreferrer noopener" Appearance="Appearance.Stealth">
+                        <FluentIcon Value="@(new Icons.Regular.Size12.Open())" Color="Color.Neutral"/>
+                    </FluentAnchor>
+                }
+            </FluentStack>
+
+            <p>@project.Content</p>
+
+            <FluentStack VerticalGap="8" HorizontalGap="8" Wrap>
+                @foreach (var skill in project.GetSkillLabels())
+                {
+                    <FluentBadge Appearance="Appearance.Accent" >
+                        <span>@skill</span>
+                    </FluentBadge>
+                }
+            </FluentStack>
+
+        </FluentCard>;
+}

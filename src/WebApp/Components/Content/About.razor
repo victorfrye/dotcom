@@ -14,9 +14,9 @@
     </p>
 
     <p class="about-text">
-        I'm currently working as a <strong>Senior Software Engineer</strong> at <FluentAnchor
-            Appearance=Appearance.Hypertext Href="https://leadingedje.com" Target="_blank" Rel="noreferrer noopener"
-            class="bold">Leading EDJE</FluentAnchor>, a software consultancy based in Dublin, Ohio. In my downtime, I
+        I'm currently working as a <strong>@_currentJob.Title</strong> at <FluentAnchor
+            Appearance=Appearance.Hypertext Href="@_currentJob.Entity.Url" Target="_blank" Rel="noreferrer noopener"
+            class="bold">@_currentJob.Entity.Name</FluentAnchor>, a @_currentJob.Entity.Description based in @_currentJob.Entity.Location. In my downtime, I
         enjoy <strong>gaming</strong>, <strong>reading</strong>, and quality time with <strong>my wife and our two
             dogs</strong>.
     </p>
@@ -25,7 +25,9 @@
 @code {
     private TimeProvider _timeProvider { get; init; } = TimeProvider.System;
 
-    private static readonly DateOnly _start = History.JobAtCorewellHealth.StartDate;
+    private static readonly DateOnly _start = CareerSummary.JobAtCorewellHealth.StartDate;
+
+    private static readonly Experience _currentJob = CareerSummary.JobAtLeadingEdje;
 
     private int GetYearsOfExperience()
     {

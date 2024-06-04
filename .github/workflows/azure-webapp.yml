@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Azure Web App CI/CD
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          cache: 'nuget'
+          cache: true
 
       - name: Restore dependencies
         run: dotnet restore

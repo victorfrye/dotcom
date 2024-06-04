@@ -37,10 +37,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          cache: true
 
       - name: Restore dependencies
-        run: dotnet restore --locked-mode
+        run: dotnet restore
 
       - name: Verify formatting
         run: dotnet format --verify-no-changes --no-restore

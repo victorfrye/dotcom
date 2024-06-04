@@ -1,3 +1,5 @@
+@inject TimeProvider Time
+
 <FluentStack Orientation="Orientation.Vertical">
     <h3 class="content-header">Hello from Grand Rapids</h3>
 
@@ -23,15 +25,13 @@
 </FluentStack>
 
 @code {
-    private TimeProvider _timeProvider { get; init; } = TimeProvider.System;
-
     private static readonly DateOnly _start = CareerSummary.JobAtCorewellHealth.StartDate;
 
     private static readonly Experience _currentJob = CareerSummary.JobAtLeadingEdje;
 
     private int GetYearsOfExperience()
     {
-        var now = _timeProvider.GetLocalNow();
+        var now = Time.GetLocalNow().DateTime;
 
         var years = now.Year - _start.Year;
 

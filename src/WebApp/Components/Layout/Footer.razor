@@ -1,3 +1,5 @@
+@inject TimeProvider Time
+
 <FluentDivider Role="DividerRole.Presentation" class="footer-divider" />
 
 <FluentStack VerticalAlignment="VerticalAlignment.Center" Wrap class="profile-footer">
@@ -14,13 +16,10 @@
     <FluentSpacer />
 
     <span class="copyright">
-        © Victor Frye @_timeProvider.GetLocalNow().Year
+        © Victor Frye @Time.GetLocalNow().Year
     </span>
 </FluentStack>
 
 @code {
-
-    private TimeProvider _timeProvider { get; init; } = TimeProvider.System;
-
     private IEnumerable<Social> _socials { get; init; } = Data.SocialMedia.All;
 }

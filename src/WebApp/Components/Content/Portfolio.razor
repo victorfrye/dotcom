@@ -6,7 +6,7 @@
 <FluentStack Orientation="Orientation.Vertical">
     <h3 class="content-header">Projects</h3>
 
-    <FluentStack VerticalGap="16" HorizontalGap="16" Wrap>
+    <FluentStack Orientation="Orientation.Vertical" VerticalGap="16" HorizontalGap="16">
         @foreach (var project in _projects)
         {
             @ProjectTemplate(project)
@@ -16,7 +16,6 @@
 
 @code
 {
-
     private static readonly IList<Project> _projects = Projects.All.ToList();
 
     private static readonly IList<string> _skills = Enum.GetValues<Skills>().Select(s => s.ToLabel()).ToList();

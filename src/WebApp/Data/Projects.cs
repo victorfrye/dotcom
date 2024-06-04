@@ -1,8 +1,8 @@
-using FluentIcons = Microsoft.FluentUI.AspNetCore.Components.Icons;
-
+using Microsoft.FluentUI.AspNetCore.Components;
 
 using VictorFrye.DotCom.WebApp.Models;
-using Microsoft.FluentUI.AspNetCore.Components;
+
+using FluentIcons = Microsoft.FluentUI.AspNetCore.Components.Icons;
 
 namespace VictorFrye.DotCom.WebApp.Data;
 

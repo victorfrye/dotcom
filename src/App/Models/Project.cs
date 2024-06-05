@@ -1,8 +1,8 @@
 using Microsoft.FluentUI.AspNetCore.Components;
 
-using VictorFrye.DotCom.App.Models.Extensions;
+using VictorFrye.DotCom.Models.Extensions;
 
-namespace VictorFrye.DotCom.App.Models;
+namespace VictorFrye.DotCom.Models;
 
 public class Project(string name, Emoji icon, IEnumerable<Skills> skills, string content, string? url = null)
 {

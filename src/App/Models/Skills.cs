@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace VictorFrye.DotCom.App.Models;
+namespace VictorFrye.DotCom.Models;
 
 public enum Skills
 {

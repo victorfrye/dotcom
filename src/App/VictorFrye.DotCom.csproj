@@ -10,8 +10,8 @@
     <Authors>VictorFrye</Authors>
     <RepositoryUrl>https://github.com/victorfrye/dotcom</RepositoryUrl>
 
-    <AssemblyName>VictorFrye.DotCom.App</AssemblyName>
-    <RootNamespace>VictorFrye.DotCom.App</RootNamespace>
+    <AssemblyName>VictorFrye.DotCom</AssemblyName>
+    <RootNamespace>VictorFrye.DotCom</RootNamespace>
 
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>

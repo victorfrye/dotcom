@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 
-namespace VictorFrye.DotCom.App.Models;
+namespace VictorFrye.DotCom.Models;
 
 public class Experience(string title, Icon icon, Entity entity, DateOnly startDate, DateOnly? endDate = null, RenderFragment? content = null)
 {

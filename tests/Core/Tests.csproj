@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\App\App.csproj" />
+        <ProjectReference Include="..\..\src\App\VictorFrye.DotCom.csproj" />
     </ItemGroup>
 
     <ItemGroup>

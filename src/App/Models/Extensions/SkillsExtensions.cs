@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace VictorFrye.DotCom.App.Models.Extensions;
+namespace VictorFrye.DotCom.Models.Extensions;
 
 public static class SkillsExtensions
 {

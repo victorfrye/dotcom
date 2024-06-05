@@ -1,8 +1,8 @@
 using Microsoft.FluentUI.AspNetCore.Components;
 
-using VictorFrye.DotCom.App.Models;
+using VictorFrye.DotCom.Models;
 
-namespace VictorFrye.DotCom.App.Data;
+namespace VictorFrye.DotCom.Data;
 
 public static class Projects
 {

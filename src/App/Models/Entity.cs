@@ -1,4 +1,4 @@
-namespace VictorFrye.DotCom.App.Models;
+namespace VictorFrye.DotCom.Models;
 
 public record Entity(string Name, string Location, string Description, string Url)
 {

@@ -1,8 +1,8 @@
-using VictorFrye.DotCom.App.Models;
+using VictorFrye.DotCom.Models;
 
 using FluentIcons = Microsoft.FluentUI.AspNetCore.Components.Icons;
 
-namespace VictorFrye.DotCom.App.Data;
+namespace VictorFrye.DotCom.Data;
 
 public static partial class CareerSummary
 {

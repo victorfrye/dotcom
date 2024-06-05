@@ -1,6 +1,6 @@
 using Microsoft.FluentUI.AspNetCore.Components;
 
-using VictorFrye.DotCom.App.Components;
+using VictorFrye.DotCom.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

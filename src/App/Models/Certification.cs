@@ -2,7 +2,7 @@ using Microsoft.FluentUI.AspNetCore.Components;
 
 using FluentIcons = Microsoft.FluentUI.AspNetCore.Components.Icons;
 
-namespace VictorFrye.DotCom.App.Models;
+namespace VictorFrye.DotCom.Models;
 
 public class Certification(string name, string issuer, DateOnly issueDate, DateOnly? expirationDate = null, string? url = null)
 {

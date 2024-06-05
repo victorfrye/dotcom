@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E228E2E0-9090-4BD0-8862-FA665F8A4E40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\App.csproj", "{9161375E-EDA0-4399-AB46-6EE3F847AEC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\VictorFrye.DotCom.csproj", "{9161375E-EDA0-4399-AB46-6EE3F847AEC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AF08DF97-8EE8-4B4B-82BD-7AAD886F78AA}"
 EndProject

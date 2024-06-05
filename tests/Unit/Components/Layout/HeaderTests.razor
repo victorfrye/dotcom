@@ -1,0 +1,60 @@
+@using Microsoft.FluentUI.AspNetCore.Components
+@using VictorFrye.DotCom.WebApp.Components.Layout
+@inherits ComponentTestContext
+
+@code
+{
+
+    [Fact]
+    public void ShouldRenderHeader()
+    {
+        AddGlobalState();
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find("header");
+
+        Assert.NotNull(actual);
+    }
+
+    [Fact]
+    public void ShouldRenderName()
+    {
+        AddGlobalState();
+        var expected = "Victor Frye";
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find("h1");
+
+        Assert.NotNull(actual);
+        actual.TextContent.MarkupMatches(expected);
+    }
+
+    [Fact]
+    public void ShouldRenderTagline()
+    {
+        AddGlobalState();
+        var expected = "Your friendly neighborhood developer";
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find("em");
+
+        Assert.NotNull(actual);
+        actual.TextContent.MarkupMatches(expected);
+    }
+
+    [Fact]
+    public void ShouldRenderImage()
+    {
+        AddGlobalState();
+        var expected = "/images/profile.png";
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find("img");
+        var actualSource = actual.GetAttribute("src");
+
+        Assert.NotNull(actual);
+        Assert.Equal(expected, actualSource);
+    }
+
+    private IRenderedFragment RenderComponentUnderTest() => RenderComponent<Header>();
+}

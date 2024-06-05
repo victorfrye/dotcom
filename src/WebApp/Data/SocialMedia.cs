@@ -32,5 +32,4 @@ public static class SocialMedia
         );
 
     public static readonly HashSet<Social> All = [Threads, LinkedIn, GitHub, Email];
-
 }

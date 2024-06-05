@@ -24,12 +24,13 @@
     </p>
 </FluentStack>
 
-@code {
+@code
+{
     private static readonly DateOnly _start = CareerSummary.JobAtCorewellHealth.StartDate;
 
     private static readonly Experience _currentJob = CareerSummary.JobAtLeadingEdje;
 
-    private int GetYearsOfExperience()
+    internal int GetYearsOfExperience()
     {
         var now = Time.GetLocalNow().DateTime;
 

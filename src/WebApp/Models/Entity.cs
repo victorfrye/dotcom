@@ -1,9 +1,9 @@
 namespace VictorFrye.DotCom.WebApp.Models;
 
-public class Entity(string name, string location, string description, string url)
+public record Entity(string Name, string Location, string Description, string Url)
 {
-    public string Name { get; init; } = name;
-    public string Location { get; init; } = location;
-    public string Description { get; init; } = description;
-    public string Url { get; init; } = url;
+    public string Name { get; init; } = Name;
+    public string Location { get; init; } = Location;
+    public string Description { get; init; } = Description;
+    public string Url { get; init; } = Url;
 }

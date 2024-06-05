@@ -33,4 +33,8 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.7.2" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.6.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="VictorFrye.DotCom.Tests" />
+  </ItemGroup>
 </Project>

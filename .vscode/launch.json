@@ -8,7 +8,7 @@
       "name": "C#: DotCom Web App Debug",
       "type": "dotnet",
       "request": "launch",
-      "projectPath": "${workspaceFolder}/src/WebApp/WebApp.csproj"
+      "projectPath": "${workspaceFolder}/src/App/App.csproj"
     }
   ]
 }

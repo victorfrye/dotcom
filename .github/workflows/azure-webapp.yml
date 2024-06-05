@@ -14,9 +14,9 @@ permissions:
 
 env:
   DOTNET_VERSION: '8.x'
-  APP_PROJECT_FILE: 'src/WebApp/WebApp.csproj'
+  APP_PROJECT_FILE: 'src/App/App.csproj'
   APP_OUTPUT_LOCATION: 'src/bin/Release/net8.0/publish'
-  APP_ARTIFACT_NAME: 'webapp-${{ github.sha }}'
+  APP_ARTIFACT_NAME: 'app-${{ github.sha }}'
 
 jobs:
   build:

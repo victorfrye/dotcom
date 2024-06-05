@@ -1,0 +1,49 @@
+@using Microsoft.FluentUI.AspNetCore.Components
+@using VictorFrye.DotCom.App.Components.Layout
+@using VictorFrye.DotCom.App.Data
+@inherits ComponentTestContext
+
+@code
+{
+    [Fact]
+    public void ShouldRenderFooter()
+    {
+        SetupLooseJSInterop();
+        AddTimeProvider();
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find("footer");
+
+        Assert.NotNull(actual);
+    }
+
+    [Fact]
+    public void ShouldRenderSocialMedia()
+    {
+        SetupLooseJSInterop();
+        AddTimeProvider();
+        var expected = SocialMedia.All;
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.FindAll(".social-anchor");
+
+        Assert.NotEmpty(actual);
+        Assert.Equal(expected.Count(), actual.Count());
+    }
+
+    [Fact]
+    public void ShouldRenderCopyright()
+    {
+        SetupLooseJSInterop();
+        AddTimeProvider();
+        var expected = "© Victor Frye 2000";
+
+        var cut = RenderComponentUnderTest();
+        var actual = cut.Find(".copyright");
+
+        Assert.NotNull(actual);
+        actual.TextContent.MarkupMatches(expected);
+    }
+
+    private IRenderedFragment RenderComponentUnderTest() => RenderComponent<Footer>();
+}

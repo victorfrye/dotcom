@@ -1,0 +1,34 @@
+﻿@page "/"
+
+<PageTitle>Victor Frye | Your friendly neighborhood developer</PageTitle>
+
+<FluentTabs Size=TabSize.Large class="profile-tabs">
+
+    <FluentTab Id="about" LabelClass="tab" Icon="@(new Icons.Filled.Size32.Person())">
+        <Header>
+            <h2 class="tab-title">About</h2>
+        </Header>
+        <Content>
+            <About />
+        </Content>
+    </FluentTab>
+
+    <FluentTab Id="resume" LabelClass="tab" Icon="@(new Icons.Filled.Size32.Briefcase())">
+        <Header>
+            <h2 class="tab-title">Resume</h2>
+        </Header>
+        <Content>
+            <Resume />
+        </Content>
+    </FluentTab>
+
+    <FluentTab Id="portfolio" LabelClass="tab" Icon="@(new Icons.Filled.Size32.Apps())">
+        <Header>
+            <h2 class="tab-title">Portfolio</h2>
+        </Header>
+        <Content>
+            <Portfolio />
+        </Content>
+    </FluentTab>
+
+</FluentTabs>

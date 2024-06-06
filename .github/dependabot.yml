@@ -5,8 +5,8 @@
 
 version: 2
 updates:
-  # Maintain dependencies for npm
-  - package-ecosystem: 'npm'
+  # Maintain dependencies for NuGet
+  - package-ecosystem: 'nuget'
     directory: '/'
     schedule:
       interval: 'weekly'

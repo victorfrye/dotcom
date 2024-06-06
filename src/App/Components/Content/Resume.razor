@@ -1,0 +1,90 @@
+@using System.Collections.Frozen
+@using VictorFrye.DotCom.Models.Extensions
+
+<FluentStack Orientation="Orientation.Vertical">
+    <h3 class="content-header">Employment</h3>
+
+    <FluentStack Orientation="Orientation.Vertical" VerticalGap="16" HorizontalGap="16">
+        @foreach (var job in _employment)
+        {
+            @ExperienceTemplate(job)
+        }
+    </FluentStack>
+
+    <h3 class="content-header">Education</h3>
+
+    <FluentStack Orientation="Orientation.Vertical" VerticalGap="16" HorizontalGap="16">
+        @foreach (var school in _education)
+        {
+            @ExperienceTemplate(school)
+        }
+    </FluentStack>
+
+    <h3 class="content-header">Certifications</h3>
+
+    <FluentStack Orientation="Orientation.Vertical" VerticalGap="16" HorizontalGap="16">
+        @foreach (var cert in _certifications)
+        {
+            @CertificationTemplate(cert)
+        }
+    </FluentStack>
+
+    <h3 class="content-header">Skills</h3>
+
+    <FluentStack VerticalGap="16" HorizontalGap="16" Wrap class="skills-list">
+        @foreach (var skill in _skills)
+        {
+            @SkillTemplate(skill)
+        }
+    </FluentStack>
+</FluentStack>
+
+@code
+{
+    private static readonly IList<Experience> _employment = CareerSummary.Employment.Reverse().ToList();
+
+    private static readonly IList<Experience> _education = CareerSummary.Education.Reverse().ToList();
+
+    private static readonly IList<Certification> _certifications = CareerSummary.Certifications.Reverse().ToList();
+
+    private static readonly IList<string> _skills = Enum.GetValues<Skills>().Select(s => s.ToLabel()).ToList();
+
+    private RenderFragment<Experience> ExperienceTemplate = (experience) =>
+        @<FluentCard class="summary-card" MinimalStyle>
+            <FluentStack  class="card-header">
+                <FluentIcon Value=@experience.Icon Color="Color.Accent" class="resume-icon" />
+                <FluentStack Orientation="Orientation.Vertical" VerticalGap="0">
+                    <h4 class="card-title">@experience.Entity.Name</h4>
+                    <em class="card-subtitle">@experience.Title</em>
+                </FluentStack>
+                <FluentSpacer />
+                <FluentAnchor Href="@experience.Entity.Url" Target="_blank" Rel="noreferrer noopener" Appearance="Appearance.Stealth">
+                    <FluentIcon Value="@(new Icons.Regular.Size12.Open())" Color="Color.Neutral"/>
+                </FluentAnchor>
+            </FluentStack>
+
+            <p>@experience.GetDuration()</p>
+
+            <p>@experience.Content</p>
+        </FluentCard>;
+
+    private RenderFragment<Certification> CertificationTemplate = (cert) =>
+        @<FluentCard class="summary-card" MinimalStyle>
+            <FluentStack  class="card-header">
+                <FluentIcon Value=@cert.Icon Color="Color.Accent" class="resume-icon" />
+                <FluentStack Orientation="Orientation.Vertical" VerticalGap="4">
+                    <h4 class="card-title">@cert.Name</h4>
+                    <em class="card-subtitle">@cert.GetStatus()</em>
+                </FluentStack>
+                <FluentSpacer />
+                <FluentAnchor Href="@cert.Url" Target="_blank" Rel="noreferrer noopener" Appearance="Appearance.Stealth">
+                    <FluentIcon Value="@(new Icons.Regular.Size12.Open())" Color="Color.Neutral"/>
+                </FluentAnchor>
+            </FluentStack>
+        </FluentCard>;
+
+    private RenderFragment<string> SkillTemplate = (skill) =>
+        @<FluentBadge Appearance="Appearance.Accent" >
+            <span>@skill</span>
+        </FluentBadge>;
+}

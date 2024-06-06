@@ -1,0 +1,41 @@
+@inject TimeProvider Time
+
+<FluentStack Orientation="Orientation.Vertical">
+    <h3 class="content-header">Hello from Grand Rapids</h3>
+
+    <p class="about-text">
+        I'm Victor, your friendly neighborhood developer. With @GetYearsOfExperience() years of experience in the
+        industry, I've worked with a variety of technologies and platforms. My current focuses are on web development
+        with the <strong>.NET</strong> ecosystem, <strong>Azure</strong> cloud services, <strong>DevOps</strong>
+        automation and processes, and <strong>AI</strong> workloads.
+    </p>
+
+    <p class="about-text">
+        I'm passionate about <strong>digital transformation</strong>, the <strong>developer experience</strong>, and
+        constructing solutions that help people <strong>achieve more</strong>.
+    </p>
+
+    <p class="about-text">
+        I'm currently working as a <strong>@_currentJob.Title</strong> at <FluentAnchor
+            Appearance=Appearance.Hypertext Href="@_currentJob.Entity.Url" Target="_blank" Rel="noreferrer noopener"
+            class="bold">@_currentJob.Entity.Name</FluentAnchor>, a @_currentJob.Entity.Description based in @_currentJob.Entity.Location. In my downtime, I
+        enjoy <strong>gaming</strong>, <strong>reading</strong>, and quality time with <strong>my wife and our two
+            dogs</strong>.
+    </p>
+</FluentStack>
+
+@code
+{
+    private static readonly DateOnly _start = CareerSummary.JobAtCorewellHealth.StartDate;
+
+    private static readonly Experience _currentJob = CareerSummary.JobAtLeadingEdje;
+
+    internal int GetYearsOfExperience()
+    {
+        var now = Time.GetLocalNow().DateTime;
+
+        var years = now.Year - _start.Year;
+
+        return now.Month < _start.Month || (now.Month == _start.Month && now.Day < _start.Day) ? years-- : years;
+    }
+}

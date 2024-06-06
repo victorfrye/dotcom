@@ -55,7 +55,7 @@ jobs:
 
       - name: Upload artifact
         if: github.event_name == 'push'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP_ARTIFACT_NAME }}
           path: ${{ env.APP_OUTPUT_LOCATION }}

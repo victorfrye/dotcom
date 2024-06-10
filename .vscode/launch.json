@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C#: DotCom Web App Debug",
+      "name": "C#: Web App Debug",
       "type": "dotnet",
       "request": "launch",
-      "projectPath": "${workspaceFolder}/src/App/App.csproj"
+      "projectPath": "${workspaceFolder}/src/App/VictorFrye.DotCom.csproj"
     }
   ]
 }

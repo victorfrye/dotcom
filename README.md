@@ -1,16 +1,10 @@
-<div align="center">
-    <img src="public\images\profile.png" alt="profile of Victor Frye" height="64" width="64" />
-    <h1>VictorFrye.COM</h1>
-    <p>A personal portfolio site for your friendly neighborhood developer, Victor Frye</p>
-</div>
+# VictorFrye.COM
 
-<div align="center">
+A personal portfolio website for your friendly neighborhood developer, Victor Frye
 
 [![Azure Static Web Apps CI/CD](https://github.com/victorfrye/dotcom/actions/workflows/azure-swa.yml/badge.svg)](https://github.com/victorfrye/dotcom/actions/workflows/azure-swa.yml)
 [![GitHub Issues](https://img.shields.io/github/issues/victorfrye/dotcom)](https://github.com/victorfrye/dotcom/issues)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
-
-</div>
 
 ## Technology Stack
 

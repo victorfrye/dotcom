@@ -42,7 +42,7 @@ jobs:
         run: npm ci
 
       - name: Verify formatting
-        run: npm run format:check
+        run: npm run lint:check
 
       - name: Build distributable
         run: npm run build

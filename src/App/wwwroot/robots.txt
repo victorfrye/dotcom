@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://victorfrye.com/sitemap.xml

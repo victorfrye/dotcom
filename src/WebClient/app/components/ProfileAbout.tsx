@@ -43,8 +43,7 @@ const ProfileAbout: FC<AboutProps> = ({ currentJob, firstJob }) => {
   const getYearsOfExperience = useCallback((): number => {
     if (
       today.getMonth() < start.getMonth() ||
-      (today.getMonth() === start.getMonth() &&
-        today.getDay() < start.getDay())
+      (today.getMonth() === start.getMonth() && today.getDay() < start.getDay())
     ) {
       return today.getFullYear() - start.getFullYear() - 1;
     }

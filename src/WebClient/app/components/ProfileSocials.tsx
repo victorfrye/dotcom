@@ -83,7 +83,7 @@ const ProfileSocials = () => {
         size="large"
         href={social.href}
         target="_blank"
-        rel="noreferrer noopener"
+        rel="me noreferrer noopener"
         key={index}
       />
     ));

@@ -30,7 +30,7 @@ jobs:
       url: ${{ github.event_name == 'push' && 'https://victorfrye.com/' || steps.deploy.outputs.static_web_app_url }}
 
     concurrency:
-      group: ${{ github.ref }}
+      group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
 
     steps:
@@ -55,7 +55,7 @@ jobs:
 
       - name: Deploy static web app
         id: deploy
-        uses: Azure/static-web-apps-deploy@v1
+        uses: azure/static-web-apps-deploy@v1
         env:
           SKIP_DEPLOY_ON_MISSING_SECRETS: ${{ github.event_name == 'pull_request' }}
           IS_STATIC_EXPORT: true
@@ -75,7 +75,7 @@ jobs:
     steps:
       - name: Close pull request
         id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
+        uses: azure/static-web-apps-deploy@v1
         env:
           SKIP_DEPLOY_ON_MISSING_SECRETS: ${{ github.event_name == 'pull_request' }}
         with:

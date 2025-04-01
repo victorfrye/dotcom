@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fluentui/react-components": "^9.60.0",
+    "@fluentui/react-components": "^9.61.6",
     "@fluentui/react-icons": "^2.0.279",
     "@griffel/react": "^1.5.29",
     "react": "^18.3.1",

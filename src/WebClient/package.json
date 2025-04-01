@@ -23,7 +23,7 @@
     "@griffel/tag-processor": "^1.0.12",
     "@griffel/vite-plugin": "^0.1.12",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/node": "^22.13.9",
+    "@types/node": "^22.13.17",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",

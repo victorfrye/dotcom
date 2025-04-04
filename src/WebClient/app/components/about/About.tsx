@@ -10,6 +10,7 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
+import { useResume } from '@dotcom/components/resume';
 import { Job } from '@dotcom/types';
 
 const useStyles = makeStyles({
@@ -30,26 +31,29 @@ const useStyles = makeStyles({
   },
 });
 
-interface AboutProps {
-  currentJob: Job;
-  firstJob: Job;
-}
-
-const ProfileAbout: FC<AboutProps> = ({ currentJob, firstJob }) => {
+const About: FC = () => {
   const styles = useStyles();
   const today: Date = useMemo(() => new Date(), []);
-  const start: Date = useMemo(() => firstJob.startDate, [firstJob]);
+
+  const { jobs } = useResume();
+  const currentJob: Job = useMemo(() => jobs[0], [jobs]);
+
+  const careerStart: Date = useMemo(
+    () => jobs[jobs.length - 1].startDate,
+    [jobs]
+  );
 
   const getYearsOfExperience = useCallback((): number => {
     if (
-      today.getMonth() < start.getMonth() ||
-      (today.getMonth() === start.getMonth() && today.getDay() < start.getDay())
+      today.getMonth() < careerStart.getMonth() ||
+      (today.getMonth() === careerStart.getMonth() &&
+        today.getDay() < careerStart.getDay())
     ) {
-      return today.getFullYear() - start.getFullYear() - 1;
+      return today.getFullYear() - careerStart.getFullYear() - 1;
     }
 
-    return today.getFullYear() - start.getFullYear();
-  }, [start, today]);
+    return today.getFullYear() - careerStart.getFullYear();
+  }, [careerStart, today]);
 
   return (
     <Card appearance="subtle" className={styles.container} size="small">
@@ -63,11 +67,11 @@ const ProfileAbout: FC<AboutProps> = ({ currentJob, firstJob }) => {
         . With {`${getYearsOfExperience()}`} years of experience in the
         industry, I&#x27;ve worked with a variety of technologies and platforms.
         My current focuses are on web development with{' '}
-        <Body1Stronger>React.js</Body1Stronger> and the{' '}
-        <Body1Stronger>.NET</Body1Stronger> ecosystem,{' '}
+        <Body1Stronger>React.js</Body1Stronger> and{' '}
+        <Body1Stronger>.NET</Body1Stronger> ecosystems,{' '}
         <Body1Stronger>Azure</Body1Stronger> cloud services,{' '}
         <Body1Stronger>DevOps</Body1Stronger> automation and developer{' '}
-        productivity, and <Body1Stronger>AI</Body1Stronger> workloads.
+        productivity, and emerging <Body1Stronger>AI</Body1Stronger> solutions.
       </Body1>
       <Body1 as="p">
         I&#x27;m passionate about{' '}
@@ -101,6 +105,4 @@ const ProfileAbout: FC<AboutProps> = ({ currentJob, firstJob }) => {
   );
 };
 
-export default ProfileAbout;
-
-export { ProfileAbout };
+export default About;

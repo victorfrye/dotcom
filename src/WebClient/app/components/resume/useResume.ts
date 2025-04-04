@@ -103,12 +103,23 @@ const resumeData: ResumeData = {
     '.NET',
     'Node.js',
     'React.js',
+    'Next.js',
     'Azure',
     'GitHub',
+    'Bicep',
     'Terraform',
     'Docker',
     'Git',
   ],
 };
 
-export default resumeData;
+const useResume = () => {
+  const jobs: Job[] = resumeData.jobs;
+  const schools: School[] = resumeData.schools;
+  const certifications: Certification[] = resumeData.certifications;
+  const skills: string[] = resumeData.skills;
+
+  return { jobs, schools, certifications, skills };
+};
+
+export default useResume;

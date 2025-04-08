@@ -1,9 +1,9 @@
-import { Certification, Job, School } from '@dotcom/types';
+import { Certificate, Job, School } from '@dotcom/types';
 
 interface ResumeData {
   jobs: Job[];
   schools: School[];
-  certifications: Certification[];
+  certifications: Certificate[];
   skills: string[];
 }
 
@@ -116,10 +116,10 @@ const resumeData: ResumeData = {
 const useResume = () => {
   const jobs: Job[] = resumeData.jobs;
   const schools: School[] = resumeData.schools;
-  const certifications: Certification[] = resumeData.certifications;
+  const certificates: Certificate[] = resumeData.certifications;
   const skills: string[] = resumeData.skills;
 
-  return { jobs, schools, certifications, skills };
+  return { jobs, schools, certificates, skills };
 };
 
 export default useResume;

@@ -1,25 +1,18 @@
 import { FC, JSX, useCallback } from 'react';
 
 import {
-  Body1,
-  Button,
   Card,
-  CardHeader,
   Subtitle1,
-  Subtitle2,
   Tag,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
-import {
-  BuildingRegular,
-  CertificateRegular,
-  HatGraduationRegular,
-  OpenRegular,
-} from '@fluentui/react-icons';
 
+import Certification from '@dotcom/components/resume/Certification';
+import Education from '@dotcom/components/resume/Education';
+import Workplace from '@dotcom/components/resume/Workplace';
 import useResume from '@dotcom/components/resume/useResume';
-import { Certification, Job, School } from '@dotcom/types';
+import { Certificate, Job, School } from '@dotcom/types';
 
 const useStyles = makeStyles({
   container: {
@@ -68,130 +61,42 @@ const useStyles = makeStyles({
 
 const ProfileResume: FC = () => {
   const styles = useStyles();
-  const { jobs, schools, certifications, skills } = useResume();
+  const { jobs, schools, certificates, skills } = useResume();
 
-  const renderCard = useCallback(
-    (
-      headerIcon: JSX.Element,
-      headerTitle: string,
-      headerSubtitle: string,
-      content: JSX.Element | undefined,
-      actionUrl: string,
-      orientation: 'horizontal' | 'vertical' = 'vertical'
-    ): JSX.Element => (
-      <Card
-        orientation={orientation}
-        appearance="filled-alternative"
-        size="small"
-      >
-        <CardHeader
-          image={headerIcon}
-          header={
-            <Subtitle2 as="h4" className={styles.header}>
-              {headerTitle}
-            </Subtitle2>
-          }
-          description={<Body1 as="em">{headerSubtitle}</Body1>}
-          action={
-            <Button
-              as="a"
-              icon={<OpenRegular />}
-              appearance="subtle"
-              size="small"
-              href={actionUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Open link in new tab"
-            />
-          }
-        />
-        {content ?? null}
-      </Card>
-    ),
-    [styles]
-  );
-
-  const getJobDescription = (job: Job): JSX.Element => (
-    <>
-      <Body1 as="p">
-        {job.startDate.getFullYear()} -{' '}
-        {job.endDate ? job.endDate.getFullYear() : 'Present'}
-      </Body1>
-      <Body1 as="p">{job.description}</Body1>
-    </>
-  );
-
-  const renderJobs = useCallback(
+  const renderEmploymentHistory = useCallback(
     (): JSX.Element[] =>
-      jobs.map((job: Job) => {
+      jobs.map((job) => {
         return (
           <li key={job.company.name} className={styles.container}>
-            {renderCard(
-              <BuildingRegular className={styles.image} />,
-              job.company.name,
-              job.title,
-              getJobDescription(job),
-              job.company.url
-            )}
+            {<Workplace job={job} />}
           </li>
         );
       }),
-    [jobs, renderCard, styles]
+    [jobs, styles]
   );
 
-  const getSchoolDescription = useCallback(
-    (school: School): JSX.Element => (
-      <>
-        <Body1>
-          {school.startDate.getFullYear()} -{' '}
-          {school.graduationDate
-            ? school.graduationDate.getFullYear()
-            : 'Present'}
-        </Body1>
-        <Body1 as="p">{school.description}</Body1>
-      </>
-    ),
-    []
-  );
-
-  const renderSchools = useCallback(
+  const renderEducationHistory = useCallback(
     (): JSX.Element[] =>
-      schools.map((school: School) => (
+      schools.map((school) => (
         <li key={school.name} className={styles.container}>
-          {renderCard(
-            <HatGraduationRegular className={styles.image} />,
-            school.name,
-            school.degree,
-            getSchoolDescription(school),
-            school.url
-          )}
+          {<Education school={school} />}
         </li>
       )),
-    [schools, getSchoolDescription, renderCard, styles]
+    [schools, styles]
   );
 
   const renderCertifications = useCallback(
     (): JSX.Element[] =>
-      certifications.map((certification: Certification) => (
+      certificates.map((certification) => (
         <li key={certification.name} className={styles.container}>
-          {renderCard(
-            <CertificateRegular className={styles.image} />,
-            certification.name,
-            'Issued ' +
-              certification.issueDate.toLocaleString('default', {
-                month: 'long',
-                year: 'numeric',
-              }),
-            undefined,
-            certification.url
-          )}
+          {<Certification certificate={certification} />}
         </li>
       )),
-    [certifications, renderCard, styles]
+    [certificates, styles]
   );
 
   const renderSkills = useCallback((): JSX.Element[] => {
-    return skills.map((skill: string) => {
+    return skills.map((skill) => {
       return (
         <li key={skill}>
           <Tag size="small" shape="circular">
@@ -207,12 +112,12 @@ const ProfileResume: FC = () => {
       <Subtitle1 as="h3" className={styles.sectionTitle}>
         Employment
       </Subtitle1>
-      <ul className={styles.list}>{renderJobs()}</ul>
+      <ul className={styles.list}>{renderEmploymentHistory()}</ul>
 
       <Subtitle1 as="h3" className={styles.sectionTitle}>
         Education
       </Subtitle1>
-      <ul className={styles.list}>{renderSchools()}</ul>
+      <ul className={styles.list}>{renderEducationHistory()}</ul>
 
       <Subtitle1 as="h3" className={styles.sectionTitle}>
         Certifications

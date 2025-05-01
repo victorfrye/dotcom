@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fluentui/react-components": "^9.61.6",
-    "@fluentui/react-icons": "^2.0.294",
+    "@fluentui/react-icons": "^2.0.298",
     "@griffel/react": "^1.5.29",
     "next": "^15.2.4",
     "react": "^18.3.1",

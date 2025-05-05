@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { DarkModeContext } from '@dotcom/components/theme/DarkMode';
+import { DarkModeContext } from '@dotcom/lib/theme/DarkMode';
 
 const useDarkMode = () => useContext(DarkModeContext);
 

@@ -1,9 +1,9 @@
-import { Certification, Job, School } from '@dotcom/types';
+import { Certificate, Job, School } from '@dotcom/types';
 
 interface ResumeData {
   jobs: Job[];
   schools: School[];
-  certifications: Certification[];
+  certificates: Certificate[];
   skills: string[];
 }
 
@@ -62,7 +62,7 @@ const resumeData: ResumeData = {
       url: 'https://davenport.edu/',
     },
   ],
-  certifications: [
+  certificates: [
     {
       name: 'Microsoft Certified: Azure Fundamentals',
       issuer: 'Microsoft',
@@ -116,10 +116,10 @@ const resumeData: ResumeData = {
 const useResume = () => {
   const jobs: Job[] = resumeData.jobs;
   const schools: School[] = resumeData.schools;
-  const certifications: Certification[] = resumeData.certifications;
+  const certificates: Certificate[] = resumeData.certificates;
   const skills: string[] = resumeData.skills;
 
-  return { jobs, schools, certifications, skills };
+  return { jobs, schools, certificates, skills };
 };
 
 export default useResume;

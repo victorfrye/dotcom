@@ -1,4 +1,4 @@
-interface Certification {
+interface Certificate {
   name: string;
   issuer: string;
   issueDate: Date;
@@ -6,6 +6,6 @@ interface Certification {
   url: string;
 }
 
-export default Certification;
+export default Certificate;
 
-export type { Certification };
+export type { Certificate };

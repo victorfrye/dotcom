@@ -3,7 +3,7 @@ import { JSX, useCallback } from 'react';
 import { Button, Image, makeStyles, tokens } from '@fluentui/react-components';
 import { MailFilled } from '@fluentui/react-icons';
 
-import { useDarkMode } from '@dotcom/components/theme';
+import { useDarkMode } from '@dotcom/lib/theme';
 
 interface Social {
   href: string;
@@ -55,14 +55,6 @@ const useStyles = makeStyles({
       backgroundColor: tokens.colorPaletteGreenBackground1,
     },
   },
-  lavender: {
-    ':hover': {
-      backgroundColor: tokens.colorPaletteLavenderBackground2,
-    },
-    ':hover:active': {
-      backgroundColor: tokens.colorPaletteLavenderBackground2,
-    },
-  },
 });
 
 const Socials = () => {
@@ -95,18 +87,18 @@ const Socials = () => {
           />
         ),
       },
-      // {
-      //   href: 'https://www.threads.net/@thevictorfryeadventure',
-      //   styles: styles.neutral,
-      //   image: (
-      //     <Image
-      //       src={isDark ? '/images/threads.svg' : '/images/threads_dark.svg'}
-      //       alt="Threads"
-      //       height={20}
-      //       width={20}
-      //     />
-      //   ),
-      // },
+      {
+        href: 'https://www.threads.com/@thevictorfryeadventure',
+        styles: styles.neutral,
+        image: (
+          <Image
+            src={isDark ? '/images/threads.svg' : '/images/threads_dark.svg'}
+            alt="Threads"
+            height={20}
+            width={20}
+          />
+        ),
+      },
       {
         href: 'https://bsky.app/profile/victorfrye.com',
         styles: styles.blue,
@@ -114,18 +106,6 @@ const Socials = () => {
           <Image
             src={isDark ? '/images/bluesky.svg' : '/images/bluesky_dark.svg'}
             alt="Bluesky"
-            height={20}
-            width={20}
-          />
-        ),
-      },
-      {
-        href: 'https://discord.com/users/914672291474997289',
-        styles: styles.lavender,
-        image: (
-          <Image
-            src={isDark ? '/images/discord.svg' : '/images/discord_dark.svg'}
-            alt="Discord"
             height={20}
             width={20}
           />

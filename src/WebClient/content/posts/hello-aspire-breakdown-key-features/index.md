@@ -1,6 +1,14 @@
-# Hello Aspire: What is it?
++++
+title = "Hello .NET Aspire: Breaking down the key features"
+description = ".NET Aspire is a new framework for building cloud-native and distributed applications. Let's break down the key features."
+date = "2025-05-03"
+preview = "banner.png"
+draft = false
+tags = [ "aspire", "cloud-native", "csharp", "dotnet" ]
+slug = "hello-aspire-breaking-down-key-features"
++++
 
-.NET Aspire is the latest framework from Microsoft in the .NET ecosystem, adding to ASP.NET, Blazor, Entity Framework, MAUI, etc. Released in 2023, it was designed specifically for cloud-native and distributed applications and acts as an orchestrator for the entire application stack. It is opinionated, meaning it provides a set of conventions and best practices for how to build applications. If you adopt these opinions, Aspire makes the developer experience much smoother and more productive. Some of these benefits include:
+.NET Aspire is the latest framework from Microsoft in the .NET ecosystem, adding to ASP.NET, Blazor, Entity Framework, MAUI, etc. Released in 2023, it was designed specifically for cloud-native and distributed applications and acts as an orchestrator for the entire application stack. It is opinionated, meaning it provides a set of conventions and best practices for how to build applications. If you adopt these opinions, Aspire makes the developer experience much smoother and more productive. Some of these key features include:
 
 - **Application modeling**: Aspire allows you to model your application in C# code instead of using YAML or other configuration languages.
 - **Local development**: It provides a seamless local development experience, allowing you to start and stop your entire application with a single command.
@@ -8,7 +16,7 @@
 - **Client integrations**: Aspire includes client libraries and SDKs for common cloud-native services, making it easier to integrate your application with dependencies locally and in the cloud.
 - **Automated testing**: Aspire can be used with existing test frameworks to spin up and tear down your entire application stack for integration or functional tests.
 
-In this post, I will provide some background on Aspire and overview of its key features. I will also provide some code snippets to help get started. These snippets will be in C# or CLI commands, but are not exhaustive. You can find examples of how to get started with Visual Studio, Visual Studio Code, or the command line on the [Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/aspire/) documentation.
+In this post, I will provide some background on Aspire and overview of its key features.
 
 ## Brief history so far
 

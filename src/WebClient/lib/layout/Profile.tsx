@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 
 import { Card, makeStyles, tokens } from '@fluentui/react-components';
 
-import Footer from '@dotcom/components/layout/Footer';
-import Header from '@dotcom/components/layout/Header';
+import Footer from '@dotcom/lib/layout/Footer';
+import Header from '@dotcom/lib/layout/Header';
 
 const useStyles = makeStyles({
   frame: {

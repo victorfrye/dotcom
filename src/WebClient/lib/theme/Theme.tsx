@@ -10,7 +10,7 @@ import {
   webLightTheme,
 } from '@fluentui/react-components';
 
-import useDarkMode from '@dotcom/components/theme/useDarkMode';
+import useDarkMode from '@dotcom/lib/theme/useDarkMode';
 
 const useStaticStyles = makeStaticStyles({
   html: {

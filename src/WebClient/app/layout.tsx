@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import { Metadata } from 'next';
 
-import { Profile } from '@dotcom/components/layout';
-import { DarkModeProvider, ThemeProvider } from '@dotcom/components/theme';
-import '@dotcom/globals.css';
+import '@dotcom/app/globals.css';
+import { Profile } from '@dotcom/lib/layout';
+import { DarkModeProvider, ThemeProvider } from '@dotcom/lib/theme';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),

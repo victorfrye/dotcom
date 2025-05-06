@@ -22,11 +22,11 @@ const useStyles = makeStyles({
       flexDirection: 'column',
     },
     justifyItems: 'center',
-    marginTop: 'auto',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalXL} ${tokens.spacingVerticalXL}`,
   },
   divider: {
-    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone}`,
+    flex: '0 1 auto',
+    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalXXL}`,
   },
   switch: {
     marginTop: 'auto',

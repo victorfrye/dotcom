@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import {
   Body1,
@@ -103,4 +103,4 @@ export default function About() {
       )}
     </Card>
   );
-};
+}

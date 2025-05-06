@@ -3,10 +3,10 @@
 import { useRef, useState } from 'react';
 
 import {
-  Divider,
   Link,
   SelectTabData,
   SelectTabEvent,
+  Spinner,
   Tab,
   TabList,
   TabValue,
@@ -14,10 +14,10 @@ import {
   tokens,
 } from '@fluentui/react-components';
 import {
+  BookFilled,
+  BookRegular,
   BriefcaseFilled,
   BriefcaseRegular,
-  DocumentEditFilled,
-  DocumentEditRegular,
   PersonFilled,
   PersonRegular,
   bundleIcon,
@@ -47,15 +47,22 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}}`,
+    marginBottom: 'auto',
   },
   tabList: {
     margin: `${tokens.spacingVerticalSNudge} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalMNudge}`,
+  },
+  spinner: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 'max-content',
   },
 });
 
 const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
 const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
-const DocumentEditIcon = bundleIcon(DocumentEditFilled, DocumentEditRegular);
+const BookIcon = bundleIcon(BookFilled, BookRegular);
 
 export default function HomePage() {
   const styles = useStyles();
@@ -90,7 +97,7 @@ export default function HomePage() {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume">
           Resume
         </Tab>
-        <Tab id="Blog" icon={<DocumentEditIcon />} value="blog">
+        <Tab id="Blog" icon={<BookIcon />} value="blog">
           <Link href={'/blog'} ref={blogLinkRef} appearance="subtle">
             Blog
           </Link>
@@ -100,7 +107,13 @@ export default function HomePage() {
       <div>
         {selectedValue === 'about' && jobs && <About />}
         {selectedValue === 'resume' && jobs && <Resume />}
-        {selectedValue === 'blog' && <Link href={'/blog'} ref={blogLinkRef} />}
+        {selectedValue === 'blog' && (
+          <Spinner
+            label={'Loading...'}
+            size="extra-large"
+            className={styles.spinner}
+          />
+        )}
       </div>
     </main>
   );

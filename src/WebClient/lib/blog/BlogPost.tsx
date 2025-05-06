@@ -8,7 +8,6 @@ import {
   Tag,
   TagGroup,
   Title1,
-  Title2,
   makeStaticStyles,
   makeStyles,
   tokens,
@@ -27,7 +26,9 @@ const useStyles = makeStyles({
     height: 'auto',
   },
   title: {
-    margin: `${tokens.spacingVerticalXL} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalS}`,
+    display: 'flex',
+    color: tokens.colorBrandForeground2,
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
   },
   postDate: {
     display: 'flex',
@@ -36,7 +37,7 @@ const useStyles = makeStyles({
     gap: tokens.spacingHorizontalSNudge,
   },
   tags: {
-    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
   },
 });
 
@@ -63,25 +64,30 @@ const useStaticStyles = makeStaticStyles({
 
 interface BlogPostProps {
   post: Post;
-  html: string;
 }
 
 export default function BlogPost(props: BlogPostProps) {
   const styles = useStyles();
   useStaticStyles();
 
-  const { post, html } = props;
+  const { post } = props;
 
   const { getDate } = usePost(post);
 
   const renderTags = useCallback((): JSX.Element[] => {
-    return post.tags.map((tag) => {
-      return (
-        <Tag role="listitem" size="medium" shape="circular" key={tag}>
-          {tag}
-        </Tag>
-      );
-    });
+    if (!post.tags) {
+      return [];
+    }
+
+    return post.tags
+      .sort((a, b) => (a > b ? 1 : -1))
+      .map((tag) => {
+        return (
+          <Tag role="listitem" size="medium" shape="circular" key={tag}>
+            {tag}
+          </Tag>
+        );
+      });
   }, [post.tags]);
 
   return (
@@ -94,20 +100,18 @@ export default function BlogPost(props: BlogPostProps) {
         className={styles.banner}
       />
 
-      <div className={styles.title}>
-        <Title1 as="h1" className={styles.title}>
-          {post.title}
-        </Title1>
-      </div>
+      <Title1 as="h1" className={styles.title}>
+        {post.title}
+      </Title1>
 
       <div className={styles.postDate}>
         <CalendarRegular />
-        <span>{getDate()}</span>
+        <em>{getDate()}</em>
       </div>
 
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
-      <div dangerouslySetInnerHTML={{ __html: html ?? '' }} />
+      <div dangerouslySetInnerHTML={{ __html: post.html ?? '' }} />
     </div>
   );
 }

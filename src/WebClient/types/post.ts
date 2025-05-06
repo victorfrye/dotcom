@@ -8,7 +8,7 @@ interface Post {
   draft: boolean;
   tags: string[];
   categories: string[];
-  content: string;
+  html: string;
 }
 
 export default Post;

@@ -1,5 +1,3 @@
-'use server';
-
 import matter from 'gray-matter';
 import fs from 'node:fs';
 import { join } from 'node:path';
@@ -25,7 +23,9 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 
   const date = data.date ? new Date(data.date) : undefined;
 
-  return { slug, ...data, date, content } as unknown as Post;
+  const html = await getPostHtmlContent(content);
+
+  return { slug, ...data, date, html } as unknown as Post;
 }
 
 export async function getPosts(): Promise<Post[]> {

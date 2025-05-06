@@ -95,15 +95,17 @@ const ProfileResume: FC = () => {
   );
 
   const renderSkills = useCallback((): JSX.Element[] => {
-    return skills.map((skill) => {
-      return (
-        <li key={skill}>
-          <Tag size="small" shape="circular">
-            {skill}
-          </Tag>
-        </li>
-      );
-    });
+    return skills
+      .sort((a, b) => (a > b ? 1 : -1))
+      .map((skill) => {
+        return (
+          <li key={skill}>
+            <Tag size="small" shape="circular">
+              {skill}
+            </Tag>
+          </li>
+        );
+      });
   }, [skills]);
 
   return (

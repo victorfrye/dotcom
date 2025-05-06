@@ -2,7 +2,7 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.framework.id": "next",
-  "frontMatter.framework.startCommand": "npx run dev",
+  "frontMatter.framework.startCommand": "npm run dev",
   "frontMatter.preview.host": "http://localhost:3000/blog",
   "frontMatter.website.host": "https://victorfrye.com/blog",
   "frontMatter.taxonomy.contentTypes": [

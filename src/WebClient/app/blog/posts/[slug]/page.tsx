@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getPostBySlug, getPostHtmlContent, getPosts } from '@dotcom/lib/api';
+import { getPostBySlug, getPosts } from '@dotcom/lib/api';
 import BlogBreadcrumb from '@dotcom/lib/blog/BlogBreadcrumb';
 import BlogPost from '@dotcom/lib/blog/BlogPost';
 
@@ -21,13 +21,11 @@ export default async function Post(props: PostParams) {
     throw notFound();
   }
 
-  const html = await getPostHtmlContent(post.content);
-
   return (
     <>
       <BlogBreadcrumb post={post} />
 
-      <BlogPost post={post} html={html} />
+      <BlogPost post={post} />
     </>
   );
 }

@@ -14,10 +14,10 @@ import {
   tokens,
 } from '@fluentui/react-components';
 import {
-  BookFilled,
-  BookRegular,
   BriefcaseFilled,
   BriefcaseRegular,
+  PenFilled,
+  PenRegular,
   PersonFilled,
   PersonRegular,
   bundleIcon,
@@ -56,13 +56,13 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 'max-content',
+    height: '50vh',
   },
 });
 
 const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
 const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
-const BookIcon = bundleIcon(BookFilled, BookRegular);
+const PenIcon = bundleIcon(PenFilled, PenRegular);
 
 export default function HomePage() {
   const styles = useStyles();
@@ -97,7 +97,7 @@ export default function HomePage() {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume">
           Resume
         </Tab>
-        <Tab id="Blog" icon={<BookIcon />} value="blog">
+        <Tab id="Blog" icon={<PenIcon />} value="blog">
           <Link href={'/blog'} ref={blogLinkRef} appearance="subtle">
             Blog
           </Link>

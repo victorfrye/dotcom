@@ -3,12 +3,7 @@
 import { useCallback } from 'react';
 
 import BlogBreadcrumb from './BlogBreadcrumb';
-import {
-  Card,
-  Subtitle1,
-  makeStyles,
-  tokens,
-} from '@fluentui/react-components';
+import { makeStyles, tokens } from '@fluentui/react-components';
 
 import PostCard from '@dotcom/lib/blog/PostCard';
 import { Post } from '@dotcom/types';
@@ -49,12 +44,7 @@ export default function Blog({ posts }: BlogProps) {
     <div className={styles.container}>
       <BlogBreadcrumb />
 
-      <Card appearance="subtle" size="small">
-        <Subtitle1 as="h3" className={styles.header}>
-          Blog
-        </Subtitle1>
-        <ul className={styles.list}>{renderPosts()}</ul>
-      </Card>
+      <ul className={styles.list}>{renderPosts()}</ul>
     </div>
   );
 }

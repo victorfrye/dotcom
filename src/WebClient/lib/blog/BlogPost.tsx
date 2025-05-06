@@ -15,6 +15,7 @@ import {
 } from '@fluentui/react-components';
 import { CalendarRegular } from '@fluentui/react-icons';
 
+import BlogBreadcrumb from '@dotcom/lib/blog/BlogBreadcrumb';
 import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({
@@ -50,14 +51,11 @@ const useStaticStyles = makeStaticStyles({
   },
   a: {
     color: tokens.colorBrandForegroundLink,
-    textDecoration: 'none',
     ':hover': {
-      color: `${tokens.colorBrandForegroundLinkHover} !important`,
-      textDecoration: 'underline !important',
+      color: tokens.colorBrandForegroundLinkHover,
     },
     ':hover:active': {
-      color: `${tokens.colorBrandForegroundLinkPressed} !important`,
-      textDecoration: 'underline !important',
+      color: tokens.colorBrandForegroundLinkPressed,
     },
   },
 });
@@ -92,6 +90,8 @@ export default function BlogPost(props: BlogPostProps) {
 
   return (
     <div className={styles.container}>
+      <BlogBreadcrumb post={post} />
+
       <Image
         src={`/${post.preview}`}
         alt={post.title}

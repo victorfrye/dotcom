@@ -4,6 +4,7 @@ interface Post {
   description: string;
   author: string;
   date: Date;
+  lastMod: Date;
   preview: string;
   draft: boolean;
   tags: string[];

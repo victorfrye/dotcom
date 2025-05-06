@@ -2,9 +2,14 @@
 title: "Hello .NET Aspire: Breaking down the key features"
 description: ".NET Aspire is a new framework for building cloud-native and distributed applications. Let's break down the key features."
 date: "2025-05-03"
+lastmod: "2025-05-06T12:12:22.700Z"
 preview: "_blog/hello-aspire-breaking-down-key-features/banner.png"
 draft: false
-tags: [ "aspire", "cloud-native", "csharp", "dotnet" ]
+tags:
+  - aspire
+  - cloud-native
+  - csharp
+  - dotnet
 ---
 
 .NET Aspire is the latest framework from Microsoft in the .NET ecosystem, adding to ASP.NET, Blazor, Entity Framework, MAUI, etc. Released in 2023, it was designed specifically for cloud-native and distributed applications and acts as an orchestrator for the entire application stack. It is opinionated, meaning it provides a set of conventions and best practices for how to build applications. If you adopt these opinions, Aspire makes the developer experience much smoother and more productive. Some of these key features include:

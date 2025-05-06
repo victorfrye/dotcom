@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { getPostBySlug, getPosts } from '@dotcom/lib/api';
-import BlogBreadcrumb from '@dotcom/lib/blog/BlogBreadcrumb';
 import BlogPost from '@dotcom/lib/blog/BlogPost';
 
 interface PostProps {
@@ -22,11 +21,9 @@ export default async function Post(props: PostParams) {
   }
 
   return (
-    <>
-      <BlogBreadcrumb post={post} />
-
+    <main>
       <BlogPost post={post} />
-    </>
+    </main>
   );
 }
 
@@ -48,10 +45,15 @@ export async function generateMetadata(props: PostParams): Promise<Metadata> {
   }
 
   return {
-    title: post.title,
+    title: `${post.title} | Victor Frye`,
+    description: post.description,
+    alternates: {
+      canonical: `/blog/posts/${post.slug}`,
+    },
     openGraph: {
-      title: post.title,
-      images: [post.preview],
+      title: `${post.title} | Victor Frye`,
+      description: post.description,
+      images: [`/${post.preview}`],
     },
   };
 }

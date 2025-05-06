@@ -1,12 +1,11 @@
-+++
-title = "Hello .NET Aspire: Breaking down the key features"
-description = ".NET Aspire is a new framework for building cloud-native and distributed applications. Let's break down the key features."
-date = "2025-05-03"
-preview = "banner.png"
-draft = false
-tags = [ "aspire", "cloud-native", "csharp", "dotnet" ]
-slug = "hello-aspire-breaking-down-key-features"
-+++
+---
+title: "Hello .NET Aspire: Breaking down the key features"
+description: ".NET Aspire is a new framework for building cloud-native and distributed applications. Let's break down the key features."
+date: "2025-05-03"
+preview: "_blog/hello-aspire-breaking-down-key-features/banner.png"
+draft: false
+tags: [ "Aspire", "Cloud Native", "C#", ".NET" ]
+---
 
 .NET Aspire is the latest framework from Microsoft in the .NET ecosystem, adding to ASP.NET, Blazor, Entity Framework, MAUI, etc. Released in 2023, it was designed specifically for cloud-native and distributed applications and acts as an orchestrator for the entire application stack. It is opinionated, meaning it provides a set of conventions and best practices for how to build applications. If you adopt these opinions, Aspire makes the developer experience much smoother and more productive. Some of these key features include:
 
@@ -92,7 +91,7 @@ With our app host project, we have a new entry point for our local application t
 
 Our dashboard will look something like this:
 
-![A screenshot of the .NET Aspire sample app dashboard. The resource table is displayed along with the cache, database, and api resource entries.](sample_dashboard.png)
+![A screenshot of the .NET Aspire sample app dashboard. The resource table is displayed along with the cache, database, and api resource entries.](/_blog/hello-aspire-breaking-down-key-features/sample_dashboard.png)
 
 This dashboard provides a visual representation of our application stack resources, console logs, and telemetry data for each of the services. It becomes the central UI hub for exploring our local app.
 

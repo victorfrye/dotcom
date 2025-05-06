@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   },
 });
 
-const About: FC = () => {
+export default function About() {
   const styles = useStyles();
   const today: Date = useMemo(() => new Date(), []);
 
@@ -104,5 +104,3 @@ const About: FC = () => {
     </Card>
   );
 };
-
-export default About;

@@ -5,6 +5,7 @@ import { ChangeEvent } from 'react';
 import {
   Caption1,
   CardFooter,
+  Divider,
   Switch,
   SwitchOnChangeData,
   makeStyles,
@@ -23,6 +24,9 @@ const useStyles = makeStyles({
     justifyItems: 'center',
     marginTop: 'auto',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalXL} ${tokens.spacingVerticalXL}`,
+  },
+  divider: {
+    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone}`,
   },
   switch: {
     marginTop: 'auto',
@@ -61,19 +65,23 @@ const Footer = () => {
   };
 
   return (
-    <CardFooter className={styles.footer}>
-      <Socials />
-      <Switch
-        checked={isDark}
-        onChange={handleDarkModeToggled}
-        label={isDark ? 'Dark Mode' : 'Light Mode'}
-        className={styles.switch}
-      />
+    <>
+      <Divider appearance="subtle" inset className={styles.divider} />
 
-      <Caption1 as="p" align="end" block className={styles.copyright}>
-        © Victor Frye {_today.getFullYear()}
-      </Caption1>
-    </CardFooter>
+      <CardFooter className={styles.footer}>
+        <Socials />
+        <Switch
+          checked={isDark}
+          onChange={handleDarkModeToggled}
+          label={isDark ? 'Dark Mode' : 'Light Mode'}
+          className={styles.switch}
+        />
+
+        <Caption1 as="p" align="end" block className={styles.copyright}>
+          © Victor Frye {_today.getFullYear()}
+        </Caption1>
+      </CardFooter>
+    </>
   );
 };
 

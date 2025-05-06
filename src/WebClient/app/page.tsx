@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import {
   Divider,
+  Link,
   SelectTabData,
   SelectTabEvent,
   Tab,
@@ -15,6 +16,8 @@ import {
 import {
   BriefcaseFilled,
   BriefcaseRegular,
+  DocumentEditFilled,
+  DocumentEditRegular,
   PersonFilled,
   PersonRegular,
   bundleIcon,
@@ -48,22 +51,26 @@ const useStyles = makeStyles({
   tabList: {
     margin: `${tokens.spacingVerticalSNudge} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalMNudge}`,
   },
-  divider: {
-    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone}`,
-  },
 });
 
 const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
 const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
+const DocumentEditIcon = bundleIcon(DocumentEditFilled, DocumentEditRegular);
 
-const HomePage = () => {
+export default function HomePage() {
   const styles = useStyles();
 
   const [selectedValue, setSelectedValue] = useState<TabValue>('about');
 
   const onTabSelect = (_event: SelectTabEvent, data: SelectTabData) => {
+    if (data.value === 'blog') {
+      blogLinkRef.current?.click();
+    }
+
     setSelectedValue(data.value);
   };
+
+  const blogLinkRef = useRef<HTMLAnchorElement>(null);
 
   const { jobs } = useResume();
 
@@ -83,16 +90,18 @@ const HomePage = () => {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume">
           Resume
         </Tab>
+        <Tab id="Blog" icon={<DocumentEditIcon />} value="blog">
+          <Link href={'/blog'} ref={blogLinkRef} appearance="subtle">
+            Blog
+          </Link>
+        </Tab>
       </TabList>
 
       <div>
         {selectedValue === 'about' && jobs && <About />}
         {selectedValue === 'resume' && jobs && <Resume />}
+        {selectedValue === 'blog' && <Link href={'/blog'} ref={blogLinkRef} />}
       </div>
-
-      <Divider appearance="subtle" inset className={styles.divider} />
     </main>
   );
-};
-
-export default HomePage;
+}

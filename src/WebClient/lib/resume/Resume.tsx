@@ -1,4 +1,4 @@
-import { FC, JSX, useCallback } from 'react';
+import { JSX, useCallback } from 'react';
 
 import {
   Card,
@@ -58,7 +58,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ProfileResume: FC = () => {
+export default function Resume() {
   const styles = useStyles();
   const { jobs, schools, certificates, skills } = useResume();
 
@@ -96,7 +96,7 @@ const ProfileResume: FC = () => {
 
   const renderSkills = useCallback((): JSX.Element[] => {
     return skills
-      .sort((a, b) => (a > b ? 1 : -1))
+      .toSorted((a, b) => (a > b ? 1 : -1))
       .map((skill) => {
         return (
           <li key={skill}>
@@ -131,8 +131,4 @@ const ProfileResume: FC = () => {
       <ul className={styles.skills}>{renderSkills()}</ul>
     </Card>
   );
-};
-
-export default ProfileResume;
-
-export { ProfileResume };
+}

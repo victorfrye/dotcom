@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { CertificateRegular } from '@fluentui/react-icons';
 
 import ResumeCard from '@dotcom/lib/resume/ResumeCard';
@@ -9,19 +7,21 @@ interface CertificationProps {
   certificate: Certificate;
 }
 
-const Certification: FC<CertificationProps> = ({ certificate }) => (
-  <ResumeCard
-    headerIcon={<CertificateRegular />}
-    headerTitle={certificate.name}
-    headerSubtitle={
-      'Issued ' +
-      certificate.issueDate.toLocaleString('default', {
-        month: 'long',
-        year: 'numeric',
-      })
-    }
-    actionUrl={certificate.url}
-  />
-);
-
-export default Certification;
+export default function Certification({
+  certificate,
+}: Readonly<CertificationProps>) {
+  return (
+    <ResumeCard
+      headerIcon={<CertificateRegular />}
+      headerTitle={certificate.name}
+      headerSubtitle={
+        'Issued ' +
+        certificate.issueDate.toLocaleString('default', {
+          month: 'long',
+          year: 'numeric',
+        })
+      }
+      actionUrl={certificate.url}
+    />
+  );
+}

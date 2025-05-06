@@ -1,4 +1,4 @@
-interface School {
+export default interface School {
   name: string;
   degree: string;
   major: string;
@@ -9,7 +9,3 @@ interface School {
   description: string;
   url: string;
 }
-
-export default School;
-
-export type { School };

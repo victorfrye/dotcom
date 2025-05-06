@@ -1,4 +1,4 @@
-interface Post {
+export default interface Post {
   slug: string;
   title: string;
   description: string;
@@ -11,6 +11,3 @@ interface Post {
   categories: string[];
   html: string;
 }
-
-export default Post;
-export type { Post };

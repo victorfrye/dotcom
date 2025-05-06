@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Footer = () => {
+export default function Footer() {
   const styles = useStyles();
   const _today: Date = new Date();
 
@@ -83,6 +83,4 @@ const Footer = () => {
       </CardFooter>
     </>
   );
-};
-
-export default Footer;
+}

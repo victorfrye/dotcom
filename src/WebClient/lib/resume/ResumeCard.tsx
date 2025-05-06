@@ -1,4 +1,4 @@
-import { FC, cloneElement } from 'react';
+import { cloneElement } from 'react';
 
 import {
   Body1,
@@ -34,14 +34,14 @@ interface ResumeCardProps {
   orientation?: 'horizontal' | 'vertical';
 }
 
-const ResumeCard: FC<ResumeCardProps> = ({
+export default function ResumeCard({
   headerIcon,
   headerTitle,
   headerSubtitle,
   content,
   actionUrl,
   orientation = 'vertical',
-}) => {
+}: Readonly<ResumeCardProps>) {
   const styles = useStyles();
 
   return (
@@ -76,6 +76,4 @@ const ResumeCard: FC<ResumeCardProps> = ({
       {content ?? null}
     </Card>
   );
-};
-
-export default ResumeCard;
+}

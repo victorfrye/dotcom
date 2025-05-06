@@ -113,13 +113,11 @@ const resumeData: ResumeData = {
   ],
 };
 
-const useResume = () => {
+export default function useResume() {
   const jobs: Job[] = resumeData.jobs;
   const schools: School[] = resumeData.schools;
   const certificates: Certificate[] = resumeData.certificates;
   const skills: string[] = resumeData.skills;
 
   return { jobs, schools, certificates, skills };
-};
-
-export default useResume;
+}

@@ -3,9 +3,7 @@ import { withGriffelCSSExtraction } from '@griffel/next-extraction-plugin';
 /** @type {import('next').NextConfig} */
 const nextConfig = withGriffelCSSExtraction()({
   output: 'export',
-  experimental: {
-    turbo: {},
-  },
+  turbopack: {},
   webpack: (config) => {
     config.module.rules.unshift(
       {

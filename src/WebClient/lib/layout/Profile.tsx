@@ -26,11 +26,11 @@ const useStyles = makeStyles({
   },
 });
 
-export const Profile = ({
-  children,
-}: Readonly<{
+interface ProfileProps {
   children: ReactNode;
-}>) => {
+}
+
+export default function Profile({ children }: Readonly<ProfileProps>) {
   const styles = useStyles();
 
   return (
@@ -42,6 +42,4 @@ export const Profile = ({
       </Card>
     </div>
   );
-};
-
-export default Profile;
+}

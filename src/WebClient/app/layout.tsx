@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import '@wooorm/starry-night/style/both';
 import { Metadata } from 'next';
 
 import '@dotcom/app/globals.css';
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     'devops',
     'github',
   ],
-  icons: ['images/profile.png'],
+  icons: ['/assets/profile.png'],
   authors: {
     name: 'Victor Frye',
     url: 'https://victorfrye.com/',
@@ -76,11 +77,11 @@ export const metadata: Metadata = {
   },
 };
 
-export const RootLayout = ({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: ReactNode;
-}>) => {
+}
+
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body>
@@ -94,6 +95,4 @@ export const RootLayout = ({
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

@@ -5,6 +5,7 @@ import { ChangeEvent } from 'react';
 import {
   Caption1,
   CardFooter,
+  Divider,
   Switch,
   SwitchOnChangeData,
   makeStyles,
@@ -21,8 +22,11 @@ const useStyles = makeStyles({
       flexDirection: 'column',
     },
     justifyItems: 'center',
-    marginTop: 'auto',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalXL} ${tokens.spacingVerticalXL}`,
+  },
+  divider: {
+    flex: '0 1 auto',
+    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalXXL}`,
   },
   switch: {
     marginTop: 'auto',
@@ -47,7 +51,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Footer = () => {
+export default function Footer() {
   const styles = useStyles();
   const _today: Date = new Date();
 
@@ -61,20 +65,22 @@ const Footer = () => {
   };
 
   return (
-    <CardFooter className={styles.footer}>
-      <Socials />
-      <Switch
-        checked={isDark}
-        onChange={handleDarkModeToggled}
-        label={isDark ? 'Dark Mode' : 'Light Mode'}
-        className={styles.switch}
-      />
+    <>
+      <Divider appearance="subtle" inset className={styles.divider} />
 
-      <Caption1 as="p" align="end" block className={styles.copyright}>
-        © Victor Frye {_today.getFullYear()}
-      </Caption1>
-    </CardFooter>
+      <CardFooter className={styles.footer}>
+        <Socials />
+        <Switch
+          checked={isDark}
+          onChange={handleDarkModeToggled}
+          label={isDark ? 'Dark Mode' : 'Light Mode'}
+          className={styles.switch}
+        />
+
+        <Caption1 as="p" align="end" block className={styles.copyright}>
+          © Victor Frye {_today.getFullYear()}
+        </Caption1>
+      </CardFooter>
+    </>
   );
-};
-
-export default Footer;
+}

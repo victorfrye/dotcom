@@ -57,7 +57,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Socials = () => {
+export default function Socials() {
   const styles = useStyles();
   const { isDark } = useDarkMode();
 
@@ -68,7 +68,7 @@ const Socials = () => {
         styles: styles.blue,
         image: (
           <Image
-            src={isDark ? '/images/linkedin.svg' : '/images/linkedin_dark.svg'}
+            src={isDark ? '/assets/linkedin.svg' : '/assets/linkedin_dark.svg'}
             alt="LinkedIn"
             height={20}
             width={20}
@@ -80,7 +80,7 @@ const Socials = () => {
         styles: styles.neutral,
         image: (
           <Image
-            src={isDark ? '/images/github.svg' : '/images/github_dark.svg'}
+            src={isDark ? '/assets/github.svg' : '/assets/github_dark.svg'}
             alt="GitHub"
             height={20}
             width={20}
@@ -92,7 +92,7 @@ const Socials = () => {
         styles: styles.neutral,
         image: (
           <Image
-            src={isDark ? '/images/threads.svg' : '/images/threads_dark.svg'}
+            src={isDark ? '/assets/threads.svg' : '/assets/threads_dark.svg'}
             alt="Threads"
             height={20}
             width={20}
@@ -104,7 +104,7 @@ const Socials = () => {
         styles: styles.blue,
         image: (
           <Image
-            src={isDark ? '/images/bluesky.svg' : '/images/bluesky_dark.svg'}
+            src={isDark ? '/assets/bluesky.svg' : '/assets/bluesky_dark.svg'}
             alt="Bluesky"
             height={20}
             width={20}
@@ -116,7 +116,7 @@ const Socials = () => {
         styles: styles.green,
         image: (
           <Image
-            src={isDark ? '/images/xbox.svg' : '/images/xbox_dark.svg'}
+            src={isDark ? '/assets/xbox.svg' : '/assets/xbox_dark.svg'}
             alt="Xbox"
             height={20}
             width={20}
@@ -149,6 +149,4 @@ const Socials = () => {
   };
 
   return <div className={styles.container}>{renderButtons()}</div>;
-};
-
-export default Socials;
+}

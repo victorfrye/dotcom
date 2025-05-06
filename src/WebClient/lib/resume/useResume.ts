@@ -93,33 +93,31 @@ const resumeData: ResumeData = {
     },
   ],
   skills: [
-    'HTML',
-    'CSS',
-    'C#',
-    'JavaScript',
-    'TypeScript',
-    'PowerShell',
-    'SQL',
-    '.NET',
-    'Node.js',
-    'React.js',
-    'Next.js',
-    'Azure',
-    'GitHub',
-    'Bicep',
-    'Terraform',
-    'Docker',
-    'Git',
+    'html',
+    'css',
+    'csharp',
+    'javascript',
+    'typescript',
+    'powershell',
+    'sql',
+    'dotnet',
+    'nodejs',
+    'react',
+    'nextjs',
+    'azure',
+    'github',
+    'bicep',
+    'terraform',
+    'docker',
+    'git',
   ],
 };
 
-const useResume = () => {
+export default function useResume() {
   const jobs: Job[] = resumeData.jobs;
   const schools: School[] = resumeData.schools;
   const certificates: Certificate[] = resumeData.certificates;
   const skills: string[] = resumeData.skills;
 
   return { jobs, schools, certificates, skills };
-};
-
-export default useResume;
+}

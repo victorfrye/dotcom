@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import {
-  Divider,
+  Link,
   SelectTabData,
   SelectTabEvent,
+  Spinner,
   Tab,
   TabList,
   TabValue,
@@ -15,6 +16,8 @@ import {
 import {
   BriefcaseFilled,
   BriefcaseRegular,
+  PenFilled,
+  PenRegular,
   PersonFilled,
   PersonRegular,
   bundleIcon,
@@ -44,26 +47,37 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}}`,
+    marginBottom: 'auto',
   },
   tabList: {
     margin: `${tokens.spacingVerticalSNudge} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalMNudge}`,
   },
-  divider: {
-    margin: `${tokens.spacingVerticalXXL} ${tokens.spacingHorizontalNone}`,
+  spinner: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50vh',
   },
 });
 
 const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
 const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
+const PenIcon = bundleIcon(PenFilled, PenRegular);
 
-const HomePage = () => {
+export default function HomePage() {
   const styles = useStyles();
 
   const [selectedValue, setSelectedValue] = useState<TabValue>('about');
 
   const onTabSelect = (_event: SelectTabEvent, data: SelectTabData) => {
+    if (data.value === 'blog') {
+      blogLinkRef.current?.click();
+    }
+
     setSelectedValue(data.value);
   };
+
+  const blogLinkRef = useRef<HTMLAnchorElement>(null);
 
   const { jobs } = useResume();
 
@@ -83,16 +97,24 @@ const HomePage = () => {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume">
           Resume
         </Tab>
+        <Tab id="Blog" icon={<PenIcon />} value="blog">
+          <Link href={'/blog'} ref={blogLinkRef} appearance="subtle">
+            Blog
+          </Link>
+        </Tab>
       </TabList>
 
       <div>
         {selectedValue === 'about' && jobs && <About />}
         {selectedValue === 'resume' && jobs && <Resume />}
+        {selectedValue === 'blog' && (
+          <Spinner
+            label={'Loading...'}
+            size="extra-large"
+            className={styles.spinner}
+          />
+        )}
       </div>
-
-      <Divider appearance="subtle" inset className={styles.divider} />
     </main>
   );
-};
-
-export default HomePage;
+}

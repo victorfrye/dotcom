@@ -1,6 +1,6 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.publicFolder": "[[workspace]]/src/WebClient/public",
   "frontMatter.framework.id": "next",
   "frontMatter.framework.startCommand": "npm run dev",
   "frontMatter.preview.host": "http://localhost:3000/blog",

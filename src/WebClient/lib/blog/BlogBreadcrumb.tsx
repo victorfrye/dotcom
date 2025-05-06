@@ -23,7 +23,7 @@ interface BlogBreadcrumbProps {
   post?: Post;
 }
 
-export default function BlogBreadcrumb(props: BlogBreadcrumbProps) {
+export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
   const styles = useStyles();
   const { post } = props;
 

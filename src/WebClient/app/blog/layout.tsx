@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogLayout({
-  children,
-}: Readonly<{
+interface BlogLayoutProps {
   children: ReactNode;
-}>) {
+}
+
+export default function BlogLayout({ children }: Readonly<BlogLayoutProps>) {
   return <>{children}</>;
 }

@@ -2,29 +2,25 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { getPostBySlug, getPosts } from '@dotcom/lib/api';
-import BlogPost from '@dotcom/lib/blog/BlogPost';
+import { BlogPost } from '@dotcom/lib/blog';
 
-interface PostProps {
+interface PostPageProps {
   slug: string;
 }
 
-interface PostParams {
-  params: Promise<PostProps>;
+interface PostPageParams {
+  params: Promise<PostPageProps>;
 }
 
-export default async function Post(props: PostParams) {
-  const { slug } = await props.params;
+export default async function PostPage({ params }: Readonly<PostPageParams>) {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
     throw notFound();
   }
 
-  return (
-    <main>
-      <BlogPost post={post} />
-    </main>
-  );
+  return <BlogPost post={post} />;
 }
 
 export async function generateStaticParams() {
@@ -35,10 +31,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(props: PostParams): Promise<Metadata> {
-  const params = await props.params;
+export async function generateMetadata({
+  params,
+}: PostPageParams): Promise<Metadata> {
+  const { slug } = await params;
 
-  const post = await getPostBySlug(params.slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     throw notFound();

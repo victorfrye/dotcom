@@ -5,9 +5,5 @@ import { Post } from '@dotcom/types';
 export default async function BlogPage() {
   const posts: Post[] = await getPosts();
 
-  return (
-    <main>
-      <Blog posts={posts} />
-    </main>
-  );
+  return <Blog posts={posts} />;
 }

@@ -64,7 +64,7 @@ interface BlogPostProps {
   post: Post;
 }
 
-export default function BlogPost(props: BlogPostProps) {
+export default function BlogPost(props: Readonly<BlogPostProps>) {
   const styles = useStyles();
   useStaticStyles();
 
@@ -78,10 +78,10 @@ export default function BlogPost(props: BlogPostProps) {
     }
 
     return post.tags
-      .sort((a, b) => (a > b ? 1 : -1))
+      .toSorted((a, b) => (a > b ? 1 : -1))
       .map((tag) => {
         return (
-          <Tag role="listitem" size="medium" shape="circular" key={tag}>
+          <Tag size="medium" shape="circular" key={tag}>
             {tag}
           </Tag>
         );
@@ -89,7 +89,7 @@ export default function BlogPost(props: BlogPostProps) {
   }, [post.tags]);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <BlogBreadcrumb post={post} />
 
       <Image
@@ -112,6 +112,6 @@ export default function BlogPost(props: BlogPostProps) {
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
       <div dangerouslySetInnerHTML={{ __html: post.html ?? '' }} />
-    </div>
+    </main>
   );
 }

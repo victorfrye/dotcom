@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     'devops',
     'github',
   ],
-  icons: ['/images/profile.png'],
+  icons: ['/assets/profile.png'],
   authors: {
     name: 'Victor Frye',
     url: 'https://victorfrye.com/',
@@ -77,11 +77,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body>

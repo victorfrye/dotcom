@@ -42,11 +42,11 @@ const useStyles = makeStyles({
   },
 });
 
-interface PostCardProps {
+interface PostPreviewProps {
   post: Post;
 }
 
-export default function PostCard(props: PostCardProps) {
+export default function PostPreview(props: Readonly<PostPreviewProps>) {
   const styles = useStyles();
   const linkRef = useRef<HTMLAnchorElement>(null);
 
@@ -73,10 +73,10 @@ export default function PostCard(props: PostCardProps) {
     }
 
     return post.tags
-      .sort((a, b) => (a > b ? 1 : -1))
+      .toSorted((a, b) => (a > b ? 1 : -1))
       .map((tag) => {
         return (
-          <Tag role="listitem" size="small" shape="circular" key={tag}>
+          <Tag size="small" shape="circular" key={tag}>
             {tag}
           </Tag>
         );

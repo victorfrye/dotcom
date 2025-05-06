@@ -32,7 +32,7 @@ const Header = () => {
       image={
         <Avatar
           image={{
-            src: '/images/profile.png',
+            src: '/assets/profile.png',
             alt: 'a profile picture of Victor Frye',
           }}
           color="brand"

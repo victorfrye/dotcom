@@ -2,7 +2,7 @@
 title: "Hello .NET Aspire: Breaking down the key features"
 description: ".NET Aspire is a new framework for building cloud-native and distributed applications. Let's break down the key features."
 date: "2025-05-03"
-lastmod: "2025-05-06T12:12:22.700Z"
+modified: "2025-05-06T12:12:22.700Z"
 preview: "assets/_blog/hello-aspire-breaking-down-key-features/banner.png"
 draft: false
 tags:

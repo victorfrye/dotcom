@@ -4,7 +4,7 @@ export default interface Post {
   description: string;
   author: string;
   date: Date;
-  lastMod: Date;
+  modified: Date;
   preview: string;
   draft: boolean;
   tags: string[];

@@ -22,11 +22,11 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const { data, content } = matter(fileContents);
 
   const date = data.date ? new Date(data.date) : undefined;
-  const lastMod = data.lastMod ? new Date(data.lastMod) : undefined;
+  const modified = data.modified ? new Date(data.modified) : undefined;
 
   const html = await getPostHtmlContent(content);
 
-  return { slug, ...data, date, lastMod, html } as unknown as Post;
+  return { slug, ...data, date, modified, html } as Post;
 }
 
 export async function getPosts(): Promise<Post[]> {

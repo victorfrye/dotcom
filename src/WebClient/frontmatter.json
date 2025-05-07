@@ -36,9 +36,10 @@
         },
         {
           "title": "Last modified date",
-          "name": "lastMod",
+          "name": "modified",
           "type": "datetime",
-          "default": "{{now}}"
+          "default": "{{now}}",
+          "isModifiedDate": true
         },
         {
           "title": "Content preview",

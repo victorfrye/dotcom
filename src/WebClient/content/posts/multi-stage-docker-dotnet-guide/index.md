@@ -5,12 +5,13 @@ date: 2025-05-08
 preview: assets/_blog/multi-stage-docker-dotnet-guide/banner.png
 draft: false
 tags:
-    - aspnet
-    - cloudnative
-    - devops
-    - docker
-    - dotnet
+  - aspnet
+  - cloudnative
+  - devops
+  - docker
+  - dotnet
 ---
+
 My Docker skills were getting rusty. My day-to-day work has shifted away from containerized workloads and more towards modernizing legacy systems or architecting serverless solutions. Somehow, I've also never drafted my own Dockerfile from scratch. Docker and containers are culturally synonymous and both are core cloud native technologies that any modern developer should be familiar with. So, I decided to write my own multi-stage build for a .NET web API for fun. This post will explore the result and guide you based on my learnings.
 
 For this post, I will be using .NET 10 in preview. The application is a simple web API with a single endpoint that returns "Hello, .NET!". You can find the code for this [here on GitHub](https://github.com/victorfrye/hellodotnet).
@@ -50,7 +51,8 @@ The first thing we need to do is decide on our base images. For production, I kn
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/aspnet:10.0-preview-alpine AS base
-LABEL maintainer="Victor Frye"
+LABEL com.github.owner="victorfrye"
+LABEL com.github.repo="hellodotnet"
 USER $APP_UID
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0-preview-alpine AS build

@@ -5,6 +5,7 @@ export default interface Post {
   author: string;
   date: Date;
   modified: Date;
+  duration: string;
   preview: string;
   draft: boolean;
   tags: string[];

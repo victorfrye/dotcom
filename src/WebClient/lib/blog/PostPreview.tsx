@@ -102,7 +102,9 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
         description={
           <div className={styles.postDate}>
             <CalendarRegular />
-            <em>{getDate()}</em>
+            <em>
+              {getDate()} • {post.duration}
+            </em>
           </div>
         }
       />

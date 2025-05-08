@@ -106,7 +106,9 @@ export default function BlogPost(props: Readonly<BlogPostProps>) {
 
       <div className={styles.postDate}>
         <CalendarRegular />
-        <em>{getDate()}</em>
+        <em>
+          {getDate()} • {post.duration}
+        </em>
       </div>
 
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>

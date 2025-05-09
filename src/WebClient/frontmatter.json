@@ -22,12 +22,6 @@
           "type": "string"
         },
         {
-          "title": "Author",
-          "name": "author",
-          "type": "string",
-          "default": "Victor Frye"
-        },
-        {
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
@@ -36,7 +30,7 @@
         },
         {
           "title": "Last modified date",
-          "name": "modified",
+          "name": "lastModified",
           "type": "datetime",
           "default": "{{now}}",
           "isModifiedDate": true
@@ -56,11 +50,6 @@
           "title": "Tags",
           "name": "tags",
           "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
         }
       ]
     }

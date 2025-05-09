@@ -1,6 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
+import readingDuration from 'reading-duration';
 import rehypeStarryNight from 'rehype-starry-night';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
@@ -22,11 +23,18 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const { data, content } = matter(fileContents);
 
   const date = data.date ? new Date(data.date) : undefined;
-  const modified = data.modified ? new Date(data.modified) : undefined;
 
-  const html = await getPostHtmlContent(content);
+  // Tell the date to be EST
+  date?.setMinutes(date.getMinutes() + 300);
 
-  return { slug, ...data, date, modified, html } as Post;
+  return {
+    slug,
+    ...data,
+    date: date,
+    lastModified: data.lastModified ? new Date(data.lastModified) : undefined,
+    readingDuration: readingDuration(content, { emoji: false }),
+    html: await getPostHtmlContent(content),
+  } as Post;
 }
 
 export async function getPosts(): Promise<Post[]> {

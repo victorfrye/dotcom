@@ -7,7 +7,7 @@ import { Post } from '@dotcom/types';
 export default function usePost(post: Post) {
   const getDate = useCallback(
     (): string =>
-      new Date(post.date).toLocaleDateString(undefined, {
+      new Date(post.date).toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric',

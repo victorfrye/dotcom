@@ -3,7 +3,7 @@ import { JSX, useCallback } from 'react';
 import { Button, Image, makeStyles, tokens } from '@fluentui/react-components';
 import { MailFilled } from '@fluentui/react-icons';
 
-import { useDarkMode } from '@dotcom/lib/theme';
+import { useDarkMode } from '@dotcom/theme';
 
 interface Social {
   href: string;

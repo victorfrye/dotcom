@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getPostBySlug, getPosts } from '@dotcom/lib/api';
-import { BlogPost } from '@dotcom/lib/blog';
+import BlogPost from '@dotcom/blog/blog-post';
+import { getPostBySlug, getPosts } from '@dotcom/blog/posts-api';
 
 interface PostPageProps {
   slug: string;

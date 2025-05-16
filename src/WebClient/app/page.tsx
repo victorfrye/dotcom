@@ -23,8 +23,8 @@ import {
   bundleIcon,
 } from '@fluentui/react-icons';
 
-import { About } from '@dotcom/lib/about';
-import { Resume, useResume } from '@dotcom/lib/resume';
+import About from '@dotcom/about';
+import { Resume, useResume } from '@dotcom/resume';
 
 const useStyles = makeStyles({
   frame: {

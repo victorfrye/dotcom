@@ -1,5 +1,5 @@
-import { getPosts } from '@dotcom/lib/api';
-import { Blog } from '@dotcom/lib/blog';
+import Blog from '@dotcom/blog/blog';
+import { getPosts } from '@dotcom/blog/posts-api';
 import { Post } from '@dotcom/types';
 
 export default async function BlogPage() {

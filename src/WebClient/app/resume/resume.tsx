@@ -8,10 +8,10 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
-import Certification from '@dotcom/lib/resume/Certification';
-import Education from '@dotcom/lib/resume/Education';
-import Workplace from '@dotcom/lib/resume/Workplace';
-import useResume from '@dotcom/lib/resume/useResume';
+import Certification from '@dotcom/resume/certification';
+import Education from '@dotcom/resume/education';
+import useResume from '@dotcom/resume/use-resume';
+import Workplace from '@dotcom/resume/workplace';
 
 const useStyles = makeStyles({
   container: {

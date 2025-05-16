@@ -3,9 +3,9 @@ import { ReactNode } from 'react';
 import '@wooorm/starry-night/style/both';
 import { Metadata } from 'next';
 
-import '@dotcom/app/globals.css';
-import { Profile } from '@dotcom/lib/layout';
-import { DarkModeProvider, ThemeProvider } from '@dotcom/lib/theme';
+import Frame from '@dotcom/frame';
+import '@dotcom/globals.css';
+import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
         <div id="root">
           <DarkModeProvider>
             <ThemeProvider>
-              <Profile>{children}</Profile>
+              <Frame>{children}</Frame>
             </ThemeProvider>
           </DarkModeProvider>
         </div>

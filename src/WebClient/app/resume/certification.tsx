@@ -1,6 +1,6 @@
 import { CertificateRegular } from '@fluentui/react-icons';
 
-import ResumeCard from '@dotcom/lib/resume/ResumeCard';
+import ResumeItem from '@dotcom/resume/resume-item';
 import { Certificate } from '@dotcom/types';
 
 interface CertificationProps {
@@ -11,7 +11,7 @@ export default function Certification({
   certificate,
 }: Readonly<CertificationProps>) {
   return (
-    <ResumeCard
+    <ResumeItem
       headerIcon={<CertificateRegular />}
       headerTitle={certificate.name}
       headerSubtitle={

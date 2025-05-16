@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 
 import { Card, makeStyles, tokens } from '@fluentui/react-components';
 
-import Footer from '@dotcom/lib/layout/Footer';
-import Header from '@dotcom/lib/layout/Header';
+import Footer from '@dotcom/footer';
+import Header from '@dotcom/header';
 
 const useStyles = makeStyles({
   frame: {
@@ -26,11 +26,11 @@ const useStyles = makeStyles({
   },
 });
 
-interface ProfileProps {
+interface FrameProps {
   children: ReactNode;
 }
 
-export default function Profile({ children }: Readonly<ProfileProps>) {
+export default function Frame({ children }: Readonly<FrameProps>) {
   const styles = useStyles();
 
   return (

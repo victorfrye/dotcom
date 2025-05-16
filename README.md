@@ -10,54 +10,19 @@ A personal portfolio website for your friendly neighborhood developer
 
 ## Overview
 
-VictorFrye.COM is a personal portfolio website for myself, Victor Frye, your friendly neighborhood developer. This project provides the following to connect others with my work and interests:
+VictorFrye.COM is a personal static web application for myself, Victor Frye, your friendly neighborhood developer. The website serves as:
 
-🌐 A React static web application to engage with users interested in connecting.
+🧔🏻‍♂️ A landing page to digitally introduce myself
 
-🛠️ .NET Aspire to orchestrate the local development environment because of my love for developer productivity.
+💼 A digital resume to explore my professional experience and credentials
 
-🚀 GitHub Actions for CI/CD because automation breeds modern software.
+🖊️ A blog dedicated to topics I can share with the community
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Table of Contents](#table-of-contents)
-- [Get Started](#get-started)
-  - [Prerequisites](#prerequisites)
-  - [Clone the repo](#clone-the-repo)
-  - [Run the app](#run-the-app)
 - [License](#license)
-
-## Get Started
-
-### Prerequisites
-
-To run this project, you will need to have the following software installed on your machine:
-
-- [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/en/download/)
-- [.NET 9 SDK](https://dotnet.microsoft.com/en-us/download)
-- An IDE or text editor of your choice, e.g.:
-  - [Visual Studio](https://visualstudio.microsoft.com/downloads/)
-  - [Visual Studio Code](https://code.visualstudio.com/download)
-- An OCI compliant container runtime, e.g.:
-  - [Docker Desktop](https://www.docker.com/get-started/)
-
-### Clone the repo
-
-To clone the repository, run the following command in your terminal:
-
-```pwsh
-git clone https://github.com/victorfrye/dotcom.git
-```
-
-### Run the app
-
-To run the application, simply run the following commands in the root of the project:
-
-```pwsh
-dotnet run --project ./src/AppHost/AppHost.csproj
-```
 
 ## License
 

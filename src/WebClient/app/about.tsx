@@ -10,7 +10,7 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
-import { useResume } from '@dotcom/lib/resume';
+import { useResume } from '@dotcom/resume';
 import { Job } from '@dotcom/types';
 
 const useStyles = makeStyles({

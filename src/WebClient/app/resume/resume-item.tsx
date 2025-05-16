@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-interface ResumeCardProps {
+interface ResumeItemProps {
   headerIcon: JSX.Element;
   headerTitle: string;
   headerSubtitle: string;
@@ -34,14 +34,14 @@ interface ResumeCardProps {
   orientation?: 'horizontal' | 'vertical';
 }
 
-export default function ResumeCard({
+export default function ResumeItem({
   headerIcon,
   headerTitle,
   headerSubtitle,
   content,
   actionUrl,
   orientation = 'vertical',
-}: Readonly<ResumeCardProps>) {
+}: Readonly<ResumeItemProps>) {
   const styles = useStyles();
 
   return (

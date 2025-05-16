@@ -10,7 +10,7 @@ import {
   webLightTheme,
 } from '@fluentui/react-components';
 
-import useDarkMode from '@dotcom/lib/theme/useDarkMode';
+import useDarkMode from '@dotcom/theme/use-dark-mode';
 
 const useStaticStyles = makeStaticStyles({
   html: {
@@ -53,7 +53,7 @@ const useStaticStyles = makeStaticStyles({
     marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     overflow: 'auto',
-    padding: `calc(${tokens.fontSizeBase300} + ${tokens.lineHeightBase300})`,
+    padding: `calc((${tokens.fontSizeBase300} + ${tokens.lineHeightBase300}) / 2)`,
     wordWrap: 'normal',
     backgroundColor: `${tokens.colorNeutralBackgroundAlpha2}`,
     borderRadius: tokens.borderRadiusMedium,
@@ -72,13 +72,9 @@ const useStaticStyles = makeStaticStyles({
   },
 });
 
-interface ThemeProviderProps {
-  children: React.ReactNode;
-}
-
 export default function ThemeProvider({
   children,
-}: Readonly<ThemeProviderProps>) {
+}: Readonly<{ children: React.ReactNode }>) {
   useStaticStyles();
   const { isDark } = useDarkMode();
 

@@ -1,7 +1,7 @@
 import { Body1 } from '@fluentui/react-components';
 import { HatGraduationRegular } from '@fluentui/react-icons';
 
-import ResumeCard from '@dotcom/lib/resume/ResumeCard';
+import ResumeItem from '@dotcom/resume/resume-item';
 import { School } from '@dotcom/types';
 
 interface EducationProps {
@@ -24,7 +24,7 @@ function getSchoolDescription(school: School): JSX.Element {
 
 export default function Education({ school }: Readonly<EducationProps>) {
   return (
-    <ResumeCard
+    <ResumeItem
       headerIcon={<HatGraduationRegular />}
       headerTitle={school.name}
       headerSubtitle={school.degree}

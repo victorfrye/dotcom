@@ -21,13 +21,9 @@ export const DarkModeContext = createContext<DarkModeContextProps>({
   onDarkModeToggled: (_isDark: boolean) => {},
 });
 
-interface DarkModeProviderProps {
-  children: React.ReactNode;
-}
-
 export default function DarkModeProvider({
   children,
-}: Readonly<DarkModeProviderProps>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const [isDark, setIsDark] = useState(true);
 
   const systemPrefersLight = useMediaQuery(

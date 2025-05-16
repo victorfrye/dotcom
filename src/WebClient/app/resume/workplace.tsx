@@ -1,7 +1,7 @@
 import { Body1 } from '@fluentui/react-components';
 import { BuildingRegular } from '@fluentui/react-icons';
 
-import ResumeCard from '@dotcom/lib/resume/ResumeCard';
+import ResumeItem from '@dotcom/resume/resume-item';
 import { Job } from '@dotcom/types';
 
 interface WorkplaceProps {
@@ -22,7 +22,7 @@ function getJobDescription(job: Job): JSX.Element {
 
 export default function Workplace({ job }: Readonly<WorkplaceProps>) {
   return (
-    <ResumeCard
+    <ResumeItem
       headerIcon={<BuildingRegular />}
       headerTitle={job.company.name}
       headerSubtitle={job.title}

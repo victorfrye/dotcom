@@ -2,7 +2,6 @@
 
 import { useCallback } from 'react';
 
-import usePost from './usePost';
 import {
   Image,
   Tag,
@@ -15,7 +14,8 @@ import {
 } from '@fluentui/react-components';
 import { CalendarRegular } from '@fluentui/react-icons';
 
-import BlogBreadcrumb from '@dotcom/lib/blog/BlogBreadcrumb';
+import BlogBreadcrumb from '@dotcom/blog/blog-breadcrumb';
+import usePost from '@dotcom/blog/use-post';
 import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({

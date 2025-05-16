@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-import { getPosts } from '@dotcom/lib/api';
+import { getPosts } from '@dotcom/blog/posts-api';
 
 export const dynamic = 'force-static';
 

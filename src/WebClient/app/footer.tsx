@@ -12,8 +12,8 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
-import Socials from '@dotcom/lib/layout/Socials';
-import { useDarkMode } from '@dotcom/lib/theme';
+import Socials from '@dotcom/socials';
+import { useDarkMode } from '@dotcom/theme';
 
 const useStyles = makeStyles({
   footer: {

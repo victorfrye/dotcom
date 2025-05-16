@@ -19,7 +19,7 @@ import {
 } from '@fluentui/react-components';
 import { BookOpenRegular, CalendarRegular } from '@fluentui/react-icons';
 
-import usePost from '@dotcom/lib/blog/usePost';
+import usePost from '@dotcom/blog/use-post';
 import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({

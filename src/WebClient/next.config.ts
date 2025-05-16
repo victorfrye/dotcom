@@ -1,7 +1,7 @@
 import { withGriffelCSSExtraction } from '@griffel/next-extraction-plugin';
+import { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = withGriffelCSSExtraction()({
+const nextConfig: NextConfig = withGriffelCSSExtraction()({
   output: 'export',
   turbopack: {},
   webpack: (config) => {

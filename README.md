@@ -4,7 +4,7 @@ A personal portfolio website for your friendly neighborhood developer
 
 [![Azure Static Web Apps CI/CD](https://github.com/victorfrye/dotcom/actions/workflows/azure-swa.yml/badge.svg)](https://github.com/victorfrye/dotcom/actions/workflows/azure-swa.yml)
 [![Bicep CI/CD](https://github.com/victorfrye/dotcom/actions/workflows/bicep.yml/badge.svg)](https://github.com/victorfrye/dotcom/actions/workflows/bicep.yml)
-[![CodeQL](https://github.com/victorfrye/dotcom/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/victorfrye/dotcom/actions/workflows/github-code-scanning/codeql)
+[![CodeQL](https://github.com/victorfrye/dotcom/actions/workflows/codeql.yml/badge.svg)](https://github.com/victorfrye/dotcom/actions/workflows/codeql.yml)
 [![GitHub Issues](https://img.shields.io/github/issues/victorfrye/dotcom)](https://github.com/victorfrye/dotcom/issues)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 

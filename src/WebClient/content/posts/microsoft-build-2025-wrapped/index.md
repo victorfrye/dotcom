@@ -4,7 +4,7 @@ description: A recap of the most exciting announcements from Microsoft Build 202
 date: 2025-05-22
 preview: assets/_blog/microsoft-build-2025-wrapped/banner.png
 tags:
-  - msbuild
+  - events
   - ai
   - dotnet
   - windows
@@ -19,7 +19,7 @@ Microsoft Build 2025 was all about artificial intelligence, with nearly every se
 - **GitHub Copilot Coding Agent**: A new feature that allows developers to assign tasks to Copilot in the GitHub platform.
 - **GitHub Copilot for .NET Aspire**: The Aspire dashboard now includes Copilot integration, allowing developers to chat with Copilot with Aspire context.
 - **NLWeb**: A new protocol built on top of MCP that allows for natural language to be a first-class citizen in web development.
-- **Azure AI Foundry**: New enhancements to Azure AI Foundry, including Foundry Local in preview--which brings models to your local machine--and Foundry Agent Service going to general availability.
+- **Azure AI Foundry**: New enhancements to Azure AI Foundry, including Foundry Local in preview—which brings models to your local machine—and Foundry Agent Service going to general availability.
 
 I want to focus on the first two items here as they are the two I am closest to and the most excited about.
 
@@ -61,7 +61,7 @@ Immediately, I am both impressed and annoyed. Will I use Copilot here? Probably,
 
 ![A screenshot of wsl CLI in Windows Terminal after the help argument was provided.](/assets/_blog/microsoft-build-2025-wrapped/wsl_cli.png)
 
-Microsoft continues to be a major contributor to open source and announced a couple major projects moving from closed-source to the open on GitHub. The first is a long-time coming project, the Windows Subsystem for Linux (WSL). I first used WSL to port a Java stack to Windows. That stack was a nightmare to run on Windows due to a team optimizing for macOS workflows but we wanted to enable new developers to use standard Windows dev machines and stop requiring expensive macOS hardware for a cross-platform native toolchain like Java. Today, WSL is a major part of the Windows developer experience. And now, Microsoft is open-sourcing WSL to allow the community to contribute and innovate on the project.
+Microsoft continues to be a major contributor to open source and announced a couple major projects moving from closed-source to the open on GitHub. The first is a long-time coming project, the Windows Subsystem for Linux (WSL). I first used WSL to port a Java stack to Windows. That stack was a nightmare to run on Windows due to a team optimizing for macOS workflows but we wanted to enable new developers to use standard Windows dev machines and stop requiring expensive macOS hardware for a cross-platform native toolchain like Java. Today, WSL is a major part of the Windows developer experience. And now, Microsoft is open-sourcing WSL to allow the community to contribute and innovate on the [project on GitHub](https://github.com/microsoft/wsl).
 
 Another major project moving to open source is the GitHub Copilot Chat extension for Visual Studio Code. As more and more IDEs and text editors are adding AI features, the Copilot Chat extension is being moved to open source **AND** the code being integrated into the Visual Studio Code core codebase. This means the main AI UI experience for Visual Studio Code will become a first-class component of VS Code. Personally, I am excited about this as pushes the AI developer experience towards transparency and competing with other juggernauts like Cursor and Windsurf. This is also another blurred line between the GitHub org and the developer division at Microsoft. It is a small step, but a step in the right direction.
 
@@ -69,7 +69,7 @@ Another major project moving to open source is the GitHub Copilot Chat extension
 
 ![A screenshot of Edit running in Windows Terminal. The README for the project is opened along with the About dialog in the foreground showing the name "Microsoft Edit" and version "1.0.0" information.](/assets/_blog/microsoft-build-2025-wrapped/edit_about.png)
 
-A small footnote in the book of news and not mentioned in the keynote is my favorite announcement from Build: Edit. It is a command line text editor, similar to Neovim or Emacs, that pays homage to the classic MS-DOS editor with modern inspiration from VS Code. Edit allows for a modeless command-line interface, meaning you do not have to switch between command and edit modes like in Neovim. This makes it far easier to use for new developers or those unfamiliar with command-line workflows. I have already dropped it into my inner loop in favor of Neovim. There are a couple kinks to work out, but I see a ton of potential and community input to the app. It is already available to install via WinGet and launched with binaries for Windows and Linux. The source code is [available on GitHub](https://github.com/microsoft/edit), and issues and pull requests are already open for various features including macOS support and additional localization support.
+A small footnote in the book of news and not mentioned in the keynote is my favorite announcement from Build: **Edit**. It is a command line text editor, similar to Neovim or Emacs, that pays homage to the classic MS-DOS editor with modern inspiration from VS Code. Edit allows for a modeless command-line interface, meaning you do not have to switch between command and edit modes like in Neovim. This makes it far easier to use for new developers or those unfamiliar with command-line workflows. I have already dropped it into my inner loop in favor of Neovim. There are a couple kinks to work out, but I see a ton of potential and community input to the app. It is already available to install via WinGet and launched with binaries for Windows and Linux. The source code is [available on GitHub](https://github.com/microsoft/edit), and issues and pull requests are already open for various features including macOS support and additional localization support.
 
 ## Closing Thoughts
 

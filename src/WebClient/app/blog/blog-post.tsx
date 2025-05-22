@@ -59,7 +59,7 @@ const useStaticStyles = makeStaticStyles({
     },
   },
   p: {
-    margin: `${tokens.spacingHorizontalMNudge} ${tokens.spacingHorizontalNone}`,
+    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
   },
   img: {
     width: '100%',

@@ -4,10 +4,13 @@ description: A recap of the most exciting announcements from Microsoft Build 202
 date: 2025-05-22
 preview: assets/_blog/microsoft-build-2025-wrapped/banner.png
 tags:
-  - events
-  - azure
   - ai
+  - aspire
+  - azure
+  - cli
   - dotnet
+  - events
+  - github
   - windows
 ---
 

@@ -58,6 +58,14 @@ const useStaticStyles = makeStaticStyles({
       color: tokens.colorBrandForegroundLinkPressed,
     },
   },
+  p: {
+    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
+  },
+  img: {
+    width: '100%',
+    maxWidth: '1080px',
+    borderRadius: tokens.borderRadiusMedium,
+  },
 });
 
 interface BlogPostProps {

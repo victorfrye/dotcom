@@ -5,6 +5,7 @@ date: 2025-05-22
 preview: assets/_blog/microsoft-build-2025-wrapped/banner.png
 tags:
   - events
+  - azure
   - ai
   - dotnet
   - windows

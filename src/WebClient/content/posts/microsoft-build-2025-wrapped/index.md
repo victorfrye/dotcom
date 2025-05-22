@@ -37,7 +37,7 @@ GitHub Copilot continues to evolve with the introduction of the new Coding Agent
 
 ![GitHub Copilot for .NET Aspire hero](/assets/_blog/microsoft-build-2025-wrapped/copilot_dotnet_aspire.jpg)
 
-Yeah that's right, .NET Aspire is getting the Copilot treatment too! When launching the app from Visual Studio or Visual Studio Code, you will now see the familiar GitHub Copilot icon in the top right corner of the Aspire dashboard. Using it to test my own website, I asked it get traces and structured logs and it was able to identify that no telemetry exists but my web client application was in the running state. That's correct as I haven't configured any telemetry with the Next.js frontend just yet... I have been meaning to get to that.
+Yeah that's right, [.NET Aspire](https://victorfrye.com/blog/posts/hello-aspire-breaking-down-key-features) is getting the Copilot treatment too! When launching the app from Visual Studio or Visual Studio Code, you will now see the familiar GitHub Copilot icon in the top right corner of the Aspire dashboard. Using it to test my own website, I asked it get traces and structured logs and it was able to identify that no telemetry exists but my web client application was in the running state. That's correct as I haven't configured any telemetry with the Next.js frontend just yet... I have been meaning to get to that.
 
 ![A screenshot of the .NET Aspire dashboard with GitHub Copilot. Copilot shows a question asked for "get traces and structured logs" and responds with a summary of the findings, a root cause investigation to issues found, and suggested next steps.](/assets/_blog/microsoft-build-2025-wrapped/aspire_dashboard_copilot.png)
 

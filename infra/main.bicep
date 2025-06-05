@@ -151,6 +151,17 @@ resource dnsWwwCname 'Microsoft.Network/dnszones/CNAME@2023-07-01-preview' = {
   }
 }
 
+resource dnsBlogCname 'Microsoft.Network/dnszones/CNAME@2023-07-01-preview' = {
+  parent: dnsZone
+  name: 'blog'
+  properties: {
+    TTL: 3600
+    CNAMERecord: {
+      cname: '${domainName}/blog'
+    }
+  }
+}
+
 resource dnsBingVerification 'Microsoft.Network/dnszones/CNAME@2023-07-01-preview' = {
   parent: dnsZone
   name: bingVerificationCode

@@ -2,7 +2,7 @@
 title: "Multi-Stage Docker Builds: A .NET developer's guide"
 description: A practical guide to crafting a multi-stage build for production-ready .NET Docker images.
 date: 2025-05-09
-preview: assets/_blog/multi-stage-docker-dotnet-guide/banner.png
+preview: assets/_blog/multi-stage-docker-dotnet-guide/banner.jpg
 tags:
   - aspnet
   - cloudnative

@@ -42,7 +42,7 @@ First, the `csproj` file for our CRUD application host looks like this:
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0" />
-    <PackageReference Include="Aspire.Hosting.NodeJS" Version="9.3.0" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.3.0" />
     <PackageReference Include="Aspire.Hosting.Redis" Version="9.3.0" />
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.3.0" />
   </ItemGroup>

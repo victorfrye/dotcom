@@ -2,7 +2,7 @@
 title: "Adding .NET Aspire: A command line user's guide"
 description: A CLI enthusiast's guide to adding Aspire to your .NET projects using the dotnet CLI. Plus, how to install the aspire CLI for running Aspire applications.
 date: 2025-06-04
-preview: assets/_blog/adding-aspire-cli-guide/banner.png
+preview: assets/_blog/adding-aspire-cli-guide/banner.jpg
 tags:
   - aspire
   - cloudnative

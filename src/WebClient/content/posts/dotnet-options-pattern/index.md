@@ -2,7 +2,7 @@
 title: ".NET Options Pattern: Binding settings and user secrets"
 description: Let's explore the .NET Options pattern and how it can be used to bind application settings and user secrets in your application.
 date: 2025-06-04
-preview: assets/_blog/dotnet-options-pattern/banner.png
+preview: assets/_blog/dotnet-options-pattern/banner.jpg
 tags:
   - dotnet
 ---

@@ -2,7 +2,7 @@
 title: "Local Friendly .NET Aspire: Modeling your local environment"
 description: Let's explore the .NET Aspire app host and how modeling your local environment builds a better developer experience.
 date: 2025-06-04
-preview: assets/_blog/local-friendly-aspire-modeling/banner.png
+preview: assets/_blog/local-friendly-aspire-modeling/banner.jpg
 tags:
   - aspire
   - cloudnative

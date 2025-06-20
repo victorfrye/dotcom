@@ -28,13 +28,13 @@ const useStyles = makeStyles({
   },
   title: {
     display: 'flex',
-    color: tokens.colorBrandForeground2,
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
   },
   postDate: {
     display: 'flex',
     alignItems: 'center',
     text: typographyStyles.caption1,
+    color: tokens.colorNeutralForeground2,
     gap: tokens.spacingHorizontalSNudge,
   },
   tags: {
@@ -44,39 +44,60 @@ const useStyles = makeStyles({
 
 const useStaticStyles = makeStaticStyles({
   ul: {
+    text: typographyStyles.body2,
+    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
     listStyleType: 'disc !important',
-    marginBlockStart: `${tokens.spacingHorizontalL} !important`,
-    marginBlockEnd: `${tokens.spacingHorizontalL} !important`,
+    marginBlockStart: `${tokens.spacingVerticalM} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
     marginInlineStart: `${tokens.spacingHorizontalXL} !important`,
+  },
+  li: {
+    marginBlockStart: `${tokens.spacingVerticalS} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalS} !important`,
   },
   a: {
     color: tokens.colorBrandForegroundLink,
-    ':hover': {
-      color: tokens.colorBrandForegroundLinkHover,
-    },
-    ':hover:active': {
-      color: tokens.colorBrandForegroundLinkPressed,
-    },
+    textDecorationLine: 'none',
+  },
+  'a:hover': {
+    color: tokens.colorBrandForegroundLinkHover,
+    textDecorationLine: 'underline',
+  },
+  'a:active': {
+    color: tokens.colorBrandForegroundLinkPressed,
+    textDecorationLine: 'underline',
   },
   p: {
-    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
+    text: typographyStyles.body2,
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
+    marginBlockStart: `${tokens.spacingVerticalM} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
+  },
+  h2: {
+    text: typographyStyles.title2,
+  },
+  h3: {
+    text: typographyStyles.title3,
   },
   img: {
     width: '100%',
     maxWidth: '1080px',
     borderRadius: tokens.borderRadiusMedium,
   },
+  code: {
+    color: tokens.colorNeutralForeground2,
+    fontFamily: tokens.fontFamilyMonospace,
+    text: typographyStyles.body2,
+  },
 });
 
-interface BlogPostProps {
+interface ArticleProps {
   post: Post;
 }
 
-export default function BlogPost(props: Readonly<BlogPostProps>) {
+export default function Article({ post }: Readonly<ArticleProps>) {
   const styles = useStyles();
   useStaticStyles();
-
-  const { post } = props;
 
   const { getDate } = usePost(post);
 

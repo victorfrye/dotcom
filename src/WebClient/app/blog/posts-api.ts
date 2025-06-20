@@ -2,7 +2,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 import readingDuration from 'reading-duration';
-import rehypeStarryNight from 'rehype-starry-night';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
@@ -48,7 +47,6 @@ export async function getPostHtmlContent(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
-    .use(rehypeStarryNight)
     .use(rehypeStringify)
     .process(markdown);
 

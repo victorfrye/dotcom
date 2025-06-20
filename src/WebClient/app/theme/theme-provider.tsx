@@ -48,27 +48,27 @@ const useStaticStyles = makeStaticStyles({
     paddingInlineStart: 0,
   },
   pre: {
-    fontFamily: 'monospace',
-    fontSize: `${tokens.fontSizeBase300}`,
+    fontFamily: tokens.fontFamilyMonospace,
+    fontSize: tokens.fontSizeBase300,
     marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     overflow: 'auto',
     padding: `calc((${tokens.fontSizeBase300} + ${tokens.lineHeightBase300}) / 2)`,
     wordWrap: 'normal',
-    backgroundColor: `${tokens.colorNeutralBackgroundAlpha2}`,
+    backgroundColor: tokens.colorNeutralBackgroundAlpha2,
     borderRadius: tokens.borderRadiusMedium,
   },
   code: {
-    fontFamily: 'monospace',
-    fontSize: `${tokens.fontSizeBase300}`,
+    fontFamily: tokens.fontFamilyMonospace,
+    fontSize: tokens.fontSizeBase300,
   },
   kbd: {
-    fontFamily: 'monospace',
-    fontSize: `${tokens.fontSizeBase300}`,
+    fontFamily: tokens.fontFamilyMonospace,
+    fontSize: tokens.fontSizeBase300,
   },
   samp: {
-    fontFamily: 'monospace',
-    fontSize: `${tokens.fontSizeBase300}`,
+    fontFamily: tokens.fontFamilyMonospace,
+    fontSize: tokens.fontSizeBase300,
   },
 });
 

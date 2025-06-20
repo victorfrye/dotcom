@@ -17,7 +17,7 @@ import {
   tokens,
   typographyStyles,
 } from '@fluentui/react-components';
-import { BookOpenRegular, CalendarRegular } from '@fluentui/react-icons';
+import { BookOpenFilled, CalendarRegular } from '@fluentui/react-icons';
 
 import usePost from '@dotcom/blog/use-post';
 import { Post } from '@dotcom/types';
@@ -38,7 +38,13 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     text: typographyStyles.caption2,
+    color: tokens.colorNeutralForeground2,
     gap: tokens.spacingHorizontalSNudge,
+  },
+  tags: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    rowGap: tokens.spacingVerticalS,
   },
 });
 
@@ -109,7 +115,7 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
         }
       />
 
-      <TagGroup>{renderTags()}</TagGroup>
+      <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
       <Body1>{post.description}</Body1>
 
@@ -119,10 +125,10 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
           href={getLink()}
           ref={linkRef}
           appearance="primary"
-          icon={<BookOpenRegular />}
+          icon={<BookOpenFilled />}
           onClick={onCardActionClick}
         >
-          Read More
+          Read Article
         </Button>
       </CardFooter>
     </Card>

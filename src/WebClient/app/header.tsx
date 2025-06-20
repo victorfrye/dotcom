@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalSNudge}`,
   },
   tagline: {
-    color: tokens.colorBrandForeground2,
+    color: tokens.colorNeutralForeground2,
     margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalSNudge}`,
   },
 });

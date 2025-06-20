@@ -92,7 +92,6 @@ const useStaticStyles = makeStaticStyles({
   },
   code: {
     color: tokens.colorNeutralForeground2,
-    fontFamily: tokens.fontFamilyMonospace,
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
   },

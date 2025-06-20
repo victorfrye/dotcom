@@ -5,6 +5,7 @@ import {
   BreadcrumbButton,
   BreadcrumbDivider,
   BreadcrumbItem,
+  Tooltip,
   makeStyles,
   tokens,
   truncateBreadcrumbLongName,
@@ -16,6 +17,10 @@ import { Post } from '@dotcom/types';
 const useStyles = makeStyles({
   breadcrumb: {
     margin: `${tokens.spacingVerticalXL} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalM}`,
+    '@media screen and (max-width: 576px)': {
+      margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL} ${tokens.spacingHorizontalNone}`,
+      flexWrap: 'wrap',
+    },
   },
 });
 
@@ -49,12 +54,14 @@ export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
           </BreadcrumbItem>
           <BreadcrumbDivider />
           <BreadcrumbItem>
-            <BreadcrumbButton
-              href={`/blog/posts/${post.slug}`}
-              current={!!post}
-            >
-              {truncateBreadcrumbLongName(post.title)}
-            </BreadcrumbButton>
+            <Tooltip withArrow content={post.title} relationship="label">
+              <BreadcrumbButton
+                href={`/blog/posts/${post.slug}`}
+                current={!!post}
+              >
+                {truncateBreadcrumbLongName(post.title)}
+              </BreadcrumbButton>
+            </Tooltip>
           </BreadcrumbItem>
         </>
       )}

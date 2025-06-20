@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 
-import '@wooorm/starry-night/style/both';
 import { Metadata } from 'next';
 
 import Frame from '@dotcom/frame';

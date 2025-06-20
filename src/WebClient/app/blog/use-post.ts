@@ -2,9 +2,9 @@
 
 import { useCallback } from 'react';
 
-import { Article } from '@dotcom/types';
+import { Post } from '@dotcom/types';
 
-export default function usePost(post: Article) {
+export default function usePost(post: Post) {
   const getDate = useCallback(
     (): string =>
       new Date(post.date).toLocaleDateString('en-US', {

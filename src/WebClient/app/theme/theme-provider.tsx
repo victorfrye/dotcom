@@ -49,7 +49,6 @@ const useStaticStyles = makeStaticStyles({
   },
   pre: {
     fontFamily: tokens.fontFamilyMonospace,
-    fontSize: tokens.fontSizeBase300,
     marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     overflow: 'auto',
@@ -60,15 +59,12 @@ const useStaticStyles = makeStaticStyles({
   },
   code: {
     fontFamily: tokens.fontFamilyMonospace,
-    fontSize: tokens.fontSizeBase300,
   },
   kbd: {
     fontFamily: tokens.fontFamilyMonospace,
-    fontSize: tokens.fontSizeBase300,
   },
   samp: {
     fontFamily: tokens.fontFamilyMonospace,
-    fontSize: tokens.fontSizeBase300,
   },
 });
 

@@ -44,7 +44,6 @@ const useStyles = makeStyles({
 
 const useStaticStyles = makeStaticStyles({
   ul: {
-    text: typographyStyles.body2,
     margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
     listStyleType: 'disc !important',
     marginBlockStart: `${tokens.spacingVerticalM} !important`,
@@ -52,6 +51,8 @@ const useStaticStyles = makeStaticStyles({
     marginInlineStart: `${tokens.spacingHorizontalXL} !important`,
   },
   li: {
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
     marginBlockStart: `${tokens.spacingVerticalS} !important`,
     marginBlockEnd: `${tokens.spacingVerticalS} !important`,
   },
@@ -68,16 +69,21 @@ const useStaticStyles = makeStaticStyles({
     textDecorationLine: 'underline',
   },
   p: {
-    text: typographyStyles.body2,
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
     marginBlockStart: `${tokens.spacingVerticalM} !important`,
     marginBlockEnd: `${tokens.spacingVerticalM} !important`,
   },
   h2: {
-    text: typographyStyles.title2,
+    fontSize: tokens.fontSizeHero700,
+    fontWeight: tokens.fontWeightSemibold,
+    lineHeight: tokens.lineHeightHero700,
   },
   h3: {
-    text: typographyStyles.title3,
+    fontSize: tokens.fontSizeBase600,
+    fontWeight: tokens.fontWeightSemibold,
+    lineHeight: tokens.lineHeightBase600,
   },
   img: {
     width: '100%',
@@ -87,7 +93,8 @@ const useStaticStyles = makeStaticStyles({
   code: {
     color: tokens.colorNeutralForeground2,
     fontFamily: tokens.fontFamilyMonospace,
-    text: typographyStyles.body2,
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
   },
 });
 

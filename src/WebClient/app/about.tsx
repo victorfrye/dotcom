@@ -57,7 +57,7 @@ export default function About() {
 
   return (
     <Card appearance="subtle" className={styles.container} size="small">
-      <Subtitle1 as="h3" className={styles.sectionTitle}>
+      <Subtitle1 as="h1" className={styles.sectionTitle}>
         Hello from Grand Rapids!
       </Subtitle1>
       <Body1 as="p">

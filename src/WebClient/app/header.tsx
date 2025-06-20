@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalSNudge}`,
   },
   tagline: {
-    color: tokens.colorBrandForeground2,
+    color: tokens.colorNeutralForeground2,
     margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalSNudge}`,
   },
 });
@@ -43,7 +43,7 @@ export default function Header() {
         />
       }
       header={
-        <Title1 as="h1" wrap={false} className={styles.title}>
+        <Title1 as="span" wrap={false} className={styles.title}>
           Victor Frye
         </Title1>
       }

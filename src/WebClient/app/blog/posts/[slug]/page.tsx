@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import BlogPost from '@dotcom/blog/blog-post';
+import Article from '@dotcom/blog/article';
 import { getPostBySlug, getPosts } from '@dotcom/blog/posts-api';
 
 interface PostPageProps {
@@ -20,7 +20,7 @@ export default async function PostPage({ params }: Readonly<PostPageParams>) {
     throw notFound();
   }
 
-  return <BlogPost post={post} />;
+  return <Article post={post} />;
 }
 
 export async function generateStaticParams() {
@@ -31,9 +31,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: PostPageParams): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PostPageParams,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { slug } = await params;
 
   const post = await getPostBySlug(slug);
@@ -42,9 +43,12 @@ export async function generateMetadata({
     throw notFound();
   }
 
+  const previousKeywords = (await parent).keywords ?? [];
+
   return {
     title: `${post.title} | Victor Frye`,
     description: post.description,
+    keywords: [...previousKeywords, ...post.tags],
     alternates: {
       canonical: `/blog/posts/${post.slug}`,
     },

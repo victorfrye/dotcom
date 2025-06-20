@@ -9,7 +9,7 @@ import {
   tokens,
   truncateBreadcrumbLongName,
 } from '@fluentui/react-components';
-import { HomeRegular } from '@fluentui/react-icons';
+import { HomeColor } from '@fluentui/react-icons';
 
 import { Post } from '@dotcom/types';
 
@@ -30,7 +30,7 @@ export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
   return (
     <Breadcrumb size="large" className={styles.breadcrumb}>
       <BreadcrumbItem>
-        <BreadcrumbButton href="/" icon={<HomeRegular />}>
+        <BreadcrumbButton href="/" icon={<HomeColor />}>
           Home
         </BreadcrumbButton>
       </BreadcrumbItem>

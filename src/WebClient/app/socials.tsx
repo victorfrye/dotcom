@@ -18,7 +18,10 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: tokens.spacingVerticalSNudge,
+    gap: tokens.spacingVerticalM,
+    '@media screen and (max-width: 576px)': {
+      gap: tokens.spacingVerticalSNudge,
+    },
   },
   icon: {
     color: tokens.colorNeutralForeground1,

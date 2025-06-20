@@ -28,13 +28,13 @@ const useStyles = makeStyles({
   },
   title: {
     display: 'flex',
-    color: tokens.colorBrandForeground2,
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
   },
   postDate: {
     display: 'flex',
     alignItems: 'center',
     text: typographyStyles.caption1,
+    color: tokens.colorNeutralForeground2,
     gap: tokens.spacingHorizontalSNudge,
   },
   tags: {
@@ -44,39 +44,67 @@ const useStyles = makeStyles({
 
 const useStaticStyles = makeStaticStyles({
   ul: {
+    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
     listStyleType: 'disc !important',
-    marginBlockStart: `${tokens.spacingHorizontalL} !important`,
-    marginBlockEnd: `${tokens.spacingHorizontalL} !important`,
+    marginBlockStart: `${tokens.spacingVerticalM} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
     marginInlineStart: `${tokens.spacingHorizontalXL} !important`,
+  },
+  li: {
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
+    marginBlockStart: `${tokens.spacingVerticalS} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalS} !important`,
   },
   a: {
     color: tokens.colorBrandForegroundLink,
-    ':hover': {
-      color: tokens.colorBrandForegroundLinkHover,
-    },
-    ':hover:active': {
-      color: tokens.colorBrandForegroundLinkPressed,
-    },
+    textDecorationLine: 'none',
+  },
+  'a:hover': {
+    color: tokens.colorBrandForegroundLinkHover,
+    textDecorationLine: 'underline',
+  },
+  'a:active': {
+    color: tokens.colorBrandForegroundLinkPressed,
+    textDecorationLine: 'underline',
   },
   p: {
-    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
+    marginBlockStart: `${tokens.spacingVerticalM} !important`,
+    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
+  },
+  h2: {
+    fontSize: tokens.fontSizeHero700,
+    fontWeight: tokens.fontWeightSemibold,
+    lineHeight: tokens.lineHeightHero700,
+  },
+  h3: {
+    fontSize: tokens.fontSizeBase600,
+    fontWeight: tokens.fontWeightSemibold,
+    lineHeight: tokens.lineHeightBase600,
   },
   img: {
     width: '100%',
     maxWidth: '1080px',
     borderRadius: tokens.borderRadiusMedium,
   },
+  code: {
+    color: tokens.colorNeutralForeground2,
+    fontFamily: tokens.fontFamilyMonospace,
+    fontSize: tokens.fontSizeBase400,
+    lineHeight: tokens.lineHeightBase400,
+  },
 });
 
-interface BlogPostProps {
+interface ArticleProps {
   post: Post;
 }
 
-export default function BlogPost(props: Readonly<BlogPostProps>) {
+export default function Article({ post }: Readonly<ArticleProps>) {
   const styles = useStyles();
   useStaticStyles();
-
-  const { post } = props;
 
   const { getDate } = usePost(post);
 

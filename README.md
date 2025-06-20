@@ -16,7 +16,7 @@ VictorFrye.COM is a personal static web application for myself, Victor Frye, you
 
 💼 A digital resume to explore my professional experience and credentials
 
-🖊️ A blog dedicated to topics I can share with the community
+✏️ A blog dedicated to topics I can share with the community
 
 ## Table of Contents
 

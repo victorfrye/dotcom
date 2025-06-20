@@ -13,15 +13,7 @@ import {
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
-import {
-  BriefcaseFilled,
-  BriefcaseRegular,
-  PenFilled,
-  PenRegular,
-  PersonFilled,
-  PersonRegular,
-  bundleIcon,
-} from '@fluentui/react-icons';
+import { BriefcaseColor, EditColor, PersonColor } from '@fluentui/react-icons';
 
 import About from '@dotcom/about';
 import { Resume, useResume } from '@dotcom/resume';
@@ -60,9 +52,9 @@ const useStyles = makeStyles({
   },
 });
 
-const PersonIcon = bundleIcon(PersonFilled, PersonRegular);
-const BriefcaseIcon = bundleIcon(BriefcaseFilled, BriefcaseRegular);
-const PenIcon = bundleIcon(PenFilled, PenRegular);
+const PersonIcon = PersonColor;
+const BriefcaseIcon = BriefcaseColor;
+const EditIcon = EditColor;
 
 export default function HomePage() {
   const styles = useStyles();
@@ -97,7 +89,7 @@ export default function HomePage() {
         <Tab id="Resume" icon={<BriefcaseIcon />} value="resume">
           Resume
         </Tab>
-        <Tab id="Blog" icon={<PenIcon />} value="blog">
+        <Tab id="Blog" icon={<EditIcon />} value="blog">
           <Link href={'/blog'} ref={blogLinkRef} appearance="subtle">
             Blog
           </Link>

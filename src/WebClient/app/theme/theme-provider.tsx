@@ -39,23 +39,16 @@ const useStaticStyles = makeStaticStyles({
   small: {
     fontSize: '80%',
   },
-  ul: {
-    listStyleType: 'none',
-    marginBlockStart: tokens.spacingVerticalXS,
-    marginBlockEnd: tokens.spacingVerticalXS,
-    marginInlineStart: 0,
-    marginInlineEnd: 0,
-    paddingInlineStart: 0,
-  },
+  // ul: {
+  //   listStyleType: 'none',
+  //   marginBlockStart: tokens.spacingVerticalXS,
+  //   marginBlockEnd: tokens.spacingVerticalXS,
+  //   marginInlineStart: 0,
+  //   marginInlineEnd: 0,
+  //   paddingInlineStart: 0,
+  // },
   pre: {
     fontFamily: tokens.fontFamilyMonospace,
-    marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
-    marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
-    overflow: 'auto',
-    padding: `calc((${tokens.fontSizeBase300} + ${tokens.lineHeightBase300}) / 2)`,
-    wordWrap: 'normal',
-    backgroundColor: tokens.colorNeutralBackgroundAlpha2,
-    borderRadius: tokens.borderRadiusMedium,
   },
   code: {
     fontFamily: tokens.fontFamilyMonospace,

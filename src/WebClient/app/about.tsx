@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useMemo } from 'react';
 
 import {
@@ -5,7 +7,7 @@ import {
   Body1Stronger,
   Card,
   Link,
-  Subtitle1,
+  Title3,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
@@ -57,9 +59,9 @@ export default function About() {
 
   return (
     <Card appearance="subtle" className={styles.container} size="small">
-      <Subtitle1 as="h1" className={styles.sectionTitle}>
+      <Title3 as="h1" className={styles.sectionTitle}>
         Hello from Grand Rapids!
-      </Subtitle1>
+      </Title3>
       <Body1 as="p">
         <Body1Stronger>
           I&#x27;m Victor, your friendly neighborhood developer

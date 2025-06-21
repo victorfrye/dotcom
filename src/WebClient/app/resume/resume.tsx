@@ -1,9 +1,11 @@
+'use client';
+
 import { JSX, useCallback } from 'react';
 
 import {
-  Card,
   Subtitle1,
   Tag,
+  TagGroup,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
@@ -15,6 +17,10 @@ import Workplace from '@dotcom/resume/workplace';
 
 const useStyles = makeStyles({
   container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  item: {
     display: 'flex',
     width: '48%',
     '@media screen and (max-width: 768px)': {
@@ -41,9 +47,15 @@ const useStyles = makeStyles({
   },
   list: {
     display: 'flex',
+    flexDirection: 'row',
+    flex: '0 auto',
     flexWrap: 'wrap',
     maxWidth: '100%',
     gap: tokens.spacingVerticalXXXL,
+    listStyleType: 'none',
+    marginBlock: tokens.spacingVerticalNone,
+    paddingInline: tokens.spacingHorizontalNone,
+    padding: tokens.spacingVerticalS,
   },
   skills: {
     display: 'flex',
@@ -66,7 +78,7 @@ export default function Resume() {
     (): JSX.Element[] =>
       jobs.map((job) => {
         return (
-          <li key={job.company.name} className={styles.container}>
+          <li key={job.company.name} className={styles.item}>
             {<Workplace job={job} />}
           </li>
         );
@@ -77,7 +89,7 @@ export default function Resume() {
   const renderEducationHistory = useCallback(
     (): JSX.Element[] =>
       schools.map((school) => (
-        <li key={school.name} className={styles.container}>
+        <li key={school.name} className={styles.item}>
           {<Education school={school} />}
         </li>
       )),
@@ -87,7 +99,7 @@ export default function Resume() {
   const renderCertifications = useCallback(
     (): JSX.Element[] =>
       certificates.map((certification) => (
-        <li key={certification.name} className={styles.container}>
+        <li key={certification.name} className={styles.item}>
           {<Certification certificate={certification} />}
         </li>
       )),
@@ -99,17 +111,15 @@ export default function Resume() {
       .toSorted((a, b) => (a > b ? 1 : -1))
       .map((skill) => {
         return (
-          <li key={skill}>
-            <Tag size="small" shape="circular">
-              {skill}
-            </Tag>
-          </li>
+          <Tag size="small" shape="circular" key={skill}>
+            {skill}
+          </Tag>
         );
       });
   }, [skills]);
 
   return (
-    <Card appearance="subtle" size="small">
+    <div className={styles.container}>
       <Subtitle1 as="h3" className={styles.sectionTitle}>
         Employment
       </Subtitle1>
@@ -128,7 +138,7 @@ export default function Resume() {
       <Subtitle1 as="h3" className={styles.sectionTitle}>
         Skills
       </Subtitle1>
-      <ul className={styles.skills}>{renderSkills()}</ul>
-    </Card>
+      <TagGroup className={styles.skills}>{renderSkills()}</TagGroup>
+    </div>
   );
 }

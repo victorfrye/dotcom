@@ -19,9 +19,6 @@ import usePost from '@dotcom/blog/use-post';
 import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({
-  container: {
-    padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}`,
-  },
   banner: {
     maxWidth: 'calc(1080px)',
     height: 'auto',
@@ -42,19 +39,13 @@ const useStyles = makeStyles({
   },
 });
 
-const useStaticStyles = makeStaticStyles({
+const useMarkdownStyles = makeStaticStyles({
   ul: {
     margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
-    listStyleType: 'disc !important',
-    marginBlockStart: `${tokens.spacingVerticalM} !important`,
-    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
-    marginInlineStart: `${tokens.spacingHorizontalXL} !important`,
   },
   li: {
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
-    marginBlockStart: `${tokens.spacingVerticalS} !important`,
-    marginBlockEnd: `${tokens.spacingVerticalS} !important`,
   },
   a: {
     color: tokens.colorBrandForegroundLink,
@@ -72,8 +63,6 @@ const useStaticStyles = makeStaticStyles({
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
-    marginBlockStart: `${tokens.spacingVerticalM} !important`,
-    marginBlockEnd: `${tokens.spacingVerticalM} !important`,
   },
   h2: {
     fontSize: tokens.fontSizeHero700,
@@ -90,6 +79,15 @@ const useStaticStyles = makeStaticStyles({
     maxWidth: '1080px',
     borderRadius: tokens.borderRadiusMedium,
   },
+  pre: {
+    marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
+    marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
+    overflow: 'auto',
+    padding: `calc((${tokens.fontSizeBase300} + ${tokens.lineHeightBase300}) / 2)`,
+    wordWrap: 'normal',
+    backgroundColor: tokens.colorNeutralBackgroundAlpha2,
+    borderRadius: tokens.borderRadiusMedium,
+  },
   code: {
     color: tokens.colorNeutralForeground2,
     fontSize: tokens.fontSizeBase400,
@@ -103,7 +101,7 @@ interface ArticleProps {
 
 export default function Article({ post }: Readonly<ArticleProps>) {
   const styles = useStyles();
-  useStaticStyles();
+  useMarkdownStyles();
 
   const { getDate } = usePost(post);
 
@@ -116,7 +114,7 @@ export default function Article({ post }: Readonly<ArticleProps>) {
       .toSorted((a, b) => (a > b ? 1 : -1))
       .map((tag) => {
         return (
-          <Tag size="medium" shape="circular" key={tag}>
+          <Tag size="medium" shape="circular" appearance="filled" key={tag}>
             {tag}
           </Tag>
         );
@@ -124,7 +122,7 @@ export default function Article({ post }: Readonly<ArticleProps>) {
   }, [post.tags]);
 
   return (
-    <main className={styles.container}>
+    <main>
       <BlogBreadcrumb post={post} />
 
       <Image

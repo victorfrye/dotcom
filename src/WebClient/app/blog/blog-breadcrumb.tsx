@@ -16,10 +16,9 @@ import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({
   breadcrumb: {
-    margin: `${tokens.spacingVerticalXL} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalM}`,
+    margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
     '@media screen and (max-width: 576px)': {
-      margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL} ${tokens.spacingHorizontalNone}`,
-      flexWrap: 'wrap',
+      margin: tokens.spacingVerticalNone,
     },
   },
 });
@@ -33,16 +32,10 @@ export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
   const { post } = props;
 
   return (
-    <Breadcrumb size="large" className={styles.breadcrumb}>
+    <Breadcrumb size="medium" className={styles.breadcrumb}>
       <BreadcrumbItem>
-        <BreadcrumbButton href="/" icon={<HomeColor />}>
+        <BreadcrumbButton href="/blog" icon={<HomeColor />} current={!post}>
           Home
-        </BreadcrumbButton>
-      </BreadcrumbItem>
-      <BreadcrumbDivider />
-      <BreadcrumbItem>
-        <BreadcrumbButton href="/blog" current={!post}>
-          Blog
         </BreadcrumbButton>
       </BreadcrumbItem>
 

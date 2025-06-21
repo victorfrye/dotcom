@@ -1,5 +1,5 @@
 import { Body1 } from '@fluentui/react-components';
-import { HatGraduationRegular } from '@fluentui/react-icons';
+import { BookColor } from '@fluentui/react-icons';
 
 import ResumeItem from '@dotcom/resume/resume-item';
 import { School } from '@dotcom/types';
@@ -25,7 +25,7 @@ function getSchoolDescription(school: School): JSX.Element {
 export default function Education({ school }: Readonly<EducationProps>) {
   return (
     <ResumeItem
-      headerIcon={<HatGraduationRegular />}
+      headerIcon={<BookColor />}
       headerTitle={school.name}
       headerSubtitle={school.degree}
       content={getSchoolDescription(school)}

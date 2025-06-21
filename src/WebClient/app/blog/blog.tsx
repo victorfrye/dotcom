@@ -9,12 +9,6 @@ import PostPreview from '@dotcom/blog/post-preview';
 import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}`,
-    marginBottom: 'auto',
-  },
   header: {
     margin: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalSNudge}`,
   },
@@ -23,6 +17,17 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     maxWidth: '100%',
     gap: tokens.spacingVerticalXXXL,
+    listStyleType: 'none',
+    marginBlock: tokens.spacingVerticalNone,
+    paddingInline: tokens.spacingHorizontalNone,
+  },
+  item: {
+    display: 'flex',
+    width: '48%',
+    '@media screen and (max-width: 768px)': {
+      width: '100%',
+    },
+    flex: '0 auto',
   },
 });
 
@@ -36,7 +41,7 @@ export default function Blog({ posts }: Readonly<BlogProps>) {
   const renderPosts = useCallback(
     (): JSX.Element[] =>
       posts.map((post) => (
-        <li key={post.slug} className={styles.container}>
+        <li key={post.slug} className={styles.item}>
           <PostPreview post={post} />
         </li>
       )),
@@ -44,10 +49,10 @@ export default function Blog({ posts }: Readonly<BlogProps>) {
   );
 
   return (
-    <main className={styles.container}>
+    <>
       <BlogBreadcrumb />
 
       <ul className={styles.list}>{renderPosts()}</ul>
-    </main>
+    </>
   );
 }

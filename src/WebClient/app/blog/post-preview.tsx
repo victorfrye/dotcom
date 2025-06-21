@@ -60,17 +60,17 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
 
   const { getDate, getLink } = usePost(post);
 
-  const onCardActionClick = useCallback((): void => {
+  const handleCardActionClicked = useCallback((): void => {
     linkRef.current?.click();
   }, []);
 
-  const onCardActionKeyDown = useCallback(
+  const handleCardActionKeyDowned = useCallback(
     (event: KeyboardEvent<HTMLDivElement>): void => {
       if (event.key === 'Enter' || event.key === ' ') {
-        onCardActionClick();
+        handleCardActionClicked();
       }
     },
-    [onCardActionClick]
+    [handleCardActionClicked]
   );
 
   const renderTags = useCallback((): JSX.Element[] => {
@@ -82,7 +82,7 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
       .toSorted((a, b) => (a > b ? 1 : -1))
       .map((tag) => {
         return (
-          <Tag size="small" shape="circular" key={tag}>
+          <Tag size="small" shape="circular" appearance="filled" key={tag}>
             {tag}
           </Tag>
         );
@@ -91,8 +91,9 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
 
   return (
     <Card
-      onClick={onCardActionClick}
-      onKeyDown={onCardActionKeyDown}
+      onClick={handleCardActionClicked}
+      onKeyDown={handleCardActionKeyDowned}
+      appearance="filled"
       className={styles.container}
     >
       <CardPreview>
@@ -126,7 +127,7 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
           ref={linkRef}
           appearance="primary"
           icon={<BookOpenFilled />}
-          onClick={onCardActionClick}
+          onClick={handleCardActionClicked}
         >
           Read Article
         </Button>

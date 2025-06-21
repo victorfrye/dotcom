@@ -1,4 +1,4 @@
-import { CertificateRegular } from '@fluentui/react-icons';
+import { CertificateColor } from '@fluentui/react-icons';
 
 import ResumeItem from '@dotcom/resume/resume-item';
 import { Certificate } from '@dotcom/types';
@@ -12,7 +12,7 @@ export default function Certification({
 }: Readonly<CertificationProps>) {
   return (
     <ResumeItem
-      headerIcon={<CertificateRegular />}
+      headerIcon={<CertificateColor />}
       headerTitle={certificate.name}
       headerSubtitle={
         'Issued ' +

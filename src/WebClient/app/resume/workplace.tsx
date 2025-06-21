@@ -1,5 +1,5 @@
 import { Body1 } from '@fluentui/react-components';
-import { BuildingRegular } from '@fluentui/react-icons';
+import { BuildingColor } from '@fluentui/react-icons';
 
 import ResumeItem from '@dotcom/resume/resume-item';
 import { Job } from '@dotcom/types';
@@ -23,7 +23,7 @@ function getJobDescription(job: Job): JSX.Element {
 export default function Workplace({ job }: Readonly<WorkplaceProps>) {
   return (
     <ResumeItem
-      headerIcon={<BuildingRegular />}
+      headerIcon={<BuildingColor />}
       headerTitle={job.company.name}
       headerSubtitle={job.title}
       content={getJobDescription(job)}

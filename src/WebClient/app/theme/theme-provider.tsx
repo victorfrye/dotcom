@@ -39,14 +39,6 @@ const useStaticStyles = makeStaticStyles({
   small: {
     fontSize: '80%',
   },
-  // ul: {
-  //   listStyleType: 'none',
-  //   marginBlockStart: tokens.spacingVerticalXS,
-  //   marginBlockEnd: tokens.spacingVerticalXS,
-  //   marginInlineStart: 0,
-  //   marginInlineEnd: 0,
-  //   paddingInlineStart: 0,
-  // },
   pre: {
     fontFamily: tokens.fontFamilyMonospace,
   },

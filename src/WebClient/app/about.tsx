@@ -3,14 +3,14 @@ import { useCallback, useMemo } from 'react';
 import {
   Body1,
   Body1Stronger,
-  Card,
   Link,
   Subtitle1,
+  Title3,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
 
-import { useResume } from '@dotcom/resume';
+import useResume from '@dotcom/resume/use-resume';
 import { Job } from '@dotcom/types';
 
 const useStyles = makeStyles({
@@ -56,10 +56,10 @@ export default function About() {
   }, [careerStart, today]);
 
   return (
-    <Card appearance="subtle" className={styles.container} size="small">
-      <Subtitle1 as="h1" className={styles.sectionTitle}>
+    <div className={styles.container}>
+      <Title3 as="h1" className={styles.sectionTitle}>
         Hello from Grand Rapids!
-      </Subtitle1>
+      </Title3>
       <Body1 as="p">
         <Body1Stronger>
           I&#x27;m Victor, your friendly neighborhood developer
@@ -101,6 +101,6 @@ export default function About() {
           <Body1Stronger>my wife and our two dogs</Body1Stronger>.
         </Body1>
       )}
-    </Card>
+    </div>
   );
 }

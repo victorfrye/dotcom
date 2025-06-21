@@ -20,11 +20,14 @@ import { Post } from '@dotcom/types';
 
 const useStyles = makeStyles({
   container: {
+    display: 'block',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}`,
   },
   banner: {
-    maxWidth: 'calc(1080px)',
-    height: 'auto',
+    width: '100%',
+    // maxWidth: '1080px',
   },
   title: {
     display: 'flex',
@@ -39,6 +42,8 @@ const useStyles = makeStyles({
   },
   tags: {
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
+    flexWrap: 'wrap',
+    rowGap: tokens.spacingVerticalS,
   },
 });
 

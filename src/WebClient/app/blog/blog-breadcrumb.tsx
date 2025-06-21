@@ -10,7 +10,6 @@ import {
   tokens,
   truncateBreadcrumbLongName,
 } from '@fluentui/react-components';
-import { HomeColor } from '@fluentui/react-icons';
 
 import { Post } from '@dotcom/types';
 
@@ -18,7 +17,7 @@ const useStyles = makeStyles({
   breadcrumb: {
     margin: `${tokens.spacingVerticalXL} ${tokens.spacingHorizontalNone} ${tokens.spacingHorizontalM}`,
     '@media screen and (max-width: 576px)': {
-      margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL} ${tokens.spacingHorizontalNone}`,
+      margin: tokens.spacingVerticalNone,
       flexWrap: 'wrap',
     },
   },
@@ -33,13 +32,7 @@ export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
   const { post } = props;
 
   return (
-    <Breadcrumb size="large" className={styles.breadcrumb}>
-      <BreadcrumbItem>
-        <BreadcrumbButton href="/" icon={<HomeColor />}>
-          Home
-        </BreadcrumbButton>
-      </BreadcrumbItem>
-      <BreadcrumbDivider />
+    <Breadcrumb size="medium" className={styles.breadcrumb}>
       <BreadcrumbItem>
         <BreadcrumbButton href="/blog" current={!post}>
           Blog

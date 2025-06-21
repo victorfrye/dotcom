@@ -128,10 +128,6 @@ export default function Frame({ children }: Readonly<FrameProps>) {
         console.warn(`Unknown tab value: ${data.value}`);
     }
 
-    if (data.value === 'blog') {
-      blogLinkRef.current?.click();
-    }
-
     setSelectedValue(data.value);
   };
 

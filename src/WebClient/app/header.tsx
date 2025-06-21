@@ -3,7 +3,6 @@
 import {
   Avatar,
   CardHeader,
-  Hamburger,
   Subtitle2,
   Title1,
   makeStyles,

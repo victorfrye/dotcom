@@ -17,9 +17,6 @@ import { Post } from '@dotcom/types';
 const useStyles = makeStyles({
   breadcrumb: {
     margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
-    '@media screen and (max-width: 576px)': {
-      margin: tokens.spacingVerticalNone,
-    },
   },
 });
 

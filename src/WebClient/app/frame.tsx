@@ -47,7 +47,7 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}}`,
+    padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}`,
     marginBottom: 'auto',
   },
   tabs: {

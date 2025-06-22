@@ -1,37 +1,75 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { JSX, cloneElement, useCallback, useMemo } from 'react';
 
 import {
-  Body1,
-  Body1Stronger,
+  Body2,
+  Button,
   Card,
-  Link,
+  CardFooter,
+  CardHeader,
+  Carousel,
+  CarouselCard,
+  CarouselNav,
+  CarouselNavButton,
+  CarouselNavContainer,
+  CarouselSlider,
+  CarouselViewport,
   Title3,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
+import {
+  BriefcaseFilled,
+  DesignIdeasColor,
+  EditFilled,
+  GameChatColor,
+  LocationRippleColor,
+  MailFilled,
+  PeopleHomeColor,
+  PhoneLaptopColor,
+} from '@fluentui/react-icons';
 
 import { useResume } from '@dotcom/resume';
 import { Job } from '@dotcom/types';
 
 const useStyles = makeStyles({
+  carousel: {
+    overflow: 'clip',
+  },
   container: {
     display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
+    maxWidth: '600px',
+    gap: tokens.spacingVerticalM,
   },
-  header: {
-    fontSize: tokens.fontSizeBase600,
-    color: tokens.colorBrandForeground2,
+  card: {
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalM}`,
+    boxShadow: tokens.shadow8,
   },
-  bold: {
-    fontWeight: 'bold',
+  image: {
+    height: '44px',
+    width: '44px',
   },
-  sectionTitle: {
-    margin: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalSNudge}`,
+  title: {
+    marginBlock: tokens.spacingVerticalS,
+  },
+  footer: {
+    marginTop: 'auto',
   },
 });
+
+interface AboutCardProps {
+  icon: JSX.Element;
+  title: string;
+  text: string;
+  action?: AboutCallToActionProps;
+}
+
+interface AboutCallToActionProps {
+  icon: JSX.Element;
+  text: string;
+  url: string;
+}
 
 export default function About() {
   const styles = useStyles();
@@ -39,7 +77,6 @@ export default function About() {
 
   const { jobs } = useResume();
   const currentJob: Job = useMemo(() => jobs[0], [jobs]);
-
   const careerStart: Date = useMemo(
     () => jobs[jobs.length - 1].startDate,
     [jobs]
@@ -57,52 +94,108 @@ export default function About() {
     return today.getFullYear() - careerStart.getFullYear();
   }, [careerStart, today]);
 
+  const AboutContent: AboutCardProps[] = useMemo(
+    () => [
+      {
+        icon: <LocationRippleColor />,
+        title: 'Hello from Grand Rapids!',
+        text: "I'm Victor, your friendly neighborhood developer. Born, raised, and active in West Michigan, I have a passion for technology and the community. If you are local, let's connect and chat about tech, gaming, or anything else over a cup of coffee!",
+        action: {
+          icon: <MailFilled />,
+          text: 'Contact Me',
+          url: 'mailto:victorfrye@outlook.com',
+        },
+      },
+      {
+        icon: <PhoneLaptopColor />,
+        title: 'Developer by Day',
+        text: `I currently work professionally as a ${currentJob.title} at ${currentJob.company.name}. With ${getYearsOfExperience()} years of experience, my specialties include web application development with .NET and React, cloud architecture with Azure, and DevOps automation for developer productivity.`,
+        action: {
+          icon: <BriefcaseFilled />,
+          text: 'View Resume',
+          url: '/resume',
+        },
+      },
+      {
+        icon: <DesignIdeasColor />,
+        title: 'Community Contributor',
+        text: "I love connecting with the developer community and growing together. Whether it's through blogging, speaking at events, or one-on-one conversations, you will find me engaged with others who share my passion for technology and innovation.",
+        action: {
+          icon: <EditFilled />,
+          text: 'Read Blog',
+          url: '/blog',
+        },
+      },
+      {
+        icon: <GameChatColor />,
+        title: 'Digital Adventurer',
+        text: 'When I leave the keyboard behind, you can find me exploring virtual worlds. Occasionally, I might instead read a fantasy book or go for a run in the great outdoors. Adventure can be found in pixels, pages, or on paths.',
+      },
+      {
+        icon: <PeopleHomeColor />,
+        title: 'Supported by Family',
+        text: 'I am happily married to my wife, Anna: my best friend, partner in crime, and biggest supporter. Together we have two wild and wonderful dogs, Maya and Gin, who keep our home lively and full of love.',
+      },
+    ],
+    [currentJob, getYearsOfExperience]
+  );
+
   return (
-    <Card appearance="subtle" className={styles.container} size="small">
-      <Title3 as="h1" className={styles.sectionTitle}>
-        Hello from Grand Rapids!
-      </Title3>
-      <Body1 as="p">
-        <Body1Stronger>
-          I&#x27;m Victor, your friendly neighborhood developer
-        </Body1Stronger>
-        . With {`${getYearsOfExperience()}`} years of experience in the
-        industry, I&#x27;ve worked with a variety of technologies and platforms.
-        My current focuses are on web development with{' '}
-        <Body1Stronger>React.js</Body1Stronger> and{' '}
-        <Body1Stronger>.NET</Body1Stronger> ecosystems,{' '}
-        <Body1Stronger>Azure</Body1Stronger> cloud services,{' '}
-        <Body1Stronger>DevOps</Body1Stronger> automation and developer{' '}
-        productivity, and emerging <Body1Stronger>AI</Body1Stronger> solutions.
-      </Body1>
-      <Body1 as="p">
-        I&#x27;m passionate about{' '}
-        <Body1Stronger>digital transformation</Body1Stronger>, the{' '}
-        <Body1Stronger>developer experience</Body1Stronger>, and constructing
-        solutions that help people <Body1Stronger>achieve more</Body1Stronger>.
-      </Body1>
-      {currentJob?.company && (
-        <Body1 as="p">
-          I&#x27;m currently working as a{' '}
-          <Body1Stronger>
-            {currentJob.title} at{' '}
-            <Link
-              as="a"
-              href={currentJob.company?.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className={styles.bold}
-            >
-              {currentJob.company?.name}
-            </Link>
-          </Body1Stronger>
-          , a {currentJob.company?.description} based in{' '}
-          {currentJob.company?.location}. In my downtime, I enjoy{' '}
-          <Body1Stronger>gaming</Body1Stronger>,{' '}
-          <Body1Stronger>reading</Body1Stronger>, and quality time with{' '}
-          <Body1Stronger>my wife and our two dogs</Body1Stronger>.
-        </Body1>
-      )}
-    </Card>
+    <div>
+      <Carousel align="center" whitespace>
+        <CarouselViewport>
+          <CarouselSlider cardFocus>
+            {AboutContent.map((content) => (
+              <CarouselCard key={content.title} className={styles.container}>
+                <Card
+                  appearance="filled-alternative"
+                  size="large"
+                  className={styles.card}
+                >
+                  <CardHeader
+                    image={cloneElement(content.icon, {
+                      className: styles.image,
+                    })}
+                    header={
+                      <Title3 as="h2" className={styles.title}>
+                        {content.title}
+                      </Title3>
+                    }
+                  />
+
+                  <Body2 as="p">{content.text}</Body2>
+
+                  <CardFooter className={styles.footer}>
+                    {content.action ? (
+                      <Button
+                        as="a"
+                        href={content.action.url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        appearance="primary"
+                        icon={content.action.icon}
+                      >
+                        {content.action.text}
+                      </Button>
+                    ) : null}
+                  </CardFooter>
+                </Card>
+              </CarouselCard>
+            ))}
+          </CarouselSlider>
+        </CarouselViewport>
+        <CarouselNavContainer
+          layout="inline"
+          next={{ 'aria-label': 'go to next' }}
+          prev={{ 'aria-label': 'go to previous' }}
+        >
+          <CarouselNav>
+            {(index) => (
+              <CarouselNavButton aria-label={`Carousel Nav Button ${index}`} />
+            )}
+          </CarouselNav>
+        </CarouselNavContainer>
+      </Carousel>
+    </div>
   );
 }

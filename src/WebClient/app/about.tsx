@@ -137,7 +137,7 @@ export default function About() {
         text: 'I am happily married to my wife, Anna: my best friend, partner in crime, and biggest supporter. Together we have two wild and wonderful dogs, Maya and Gin, who keep our home lively and full of love.',
       },
     ],
-    [currentJob]
+    [currentJob, getYearsOfExperience]
   );
 
   return (

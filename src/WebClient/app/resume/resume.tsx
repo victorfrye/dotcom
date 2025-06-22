@@ -32,7 +32,6 @@ const useStyles = makeStyles({
     margin: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalSNudge}`,
   },
   image: {
-    color: tokens.colorBrandForeground2,
     height: '44px',
     width: '44px',
     borderRadius: '4px',

@@ -1,0 +1,245 @@
+{
+  "$schema": "../../../../files/resume.schema.json",
+  "experience": [
+    {
+      "company": {
+        "name": "Leading EDJE",
+        "location": "Columbus, Ohio",
+        "link": "https://leadingedje.com"
+      },
+      "title": "Senior Software Engineer",
+      "startDate": "2023-02-20",
+      "accomplishments": [
+        "Migrated a legacy ASP.NET 4 application to .NET 8 microservices hosted in Kubernetes for application modernization, improved maintainability, and developer experience.",
+        "Replatformed a React and .NET web application from prototype project to microservice architecture for change failure rate reduction of 90 percent and increased deployment frequency of 400 percent.",
+        "Automated the CI/CD pipelines for JavaScript and .NET applications with Azure Pipelines, resulting in a 70 percent reduction in deployment time and zero-downtime deployments.",
+        "Developed and launched a .NET MAUI mobile application for a single-codebase mobile application to reduce development time and costs by 50 percent."
+      ]
+    },
+    {
+      "company": {
+        "name": "Corewell Health",
+        "location": "Grand Rapids, Michigan",
+        "link": "https://corewellhealth.org"
+      },
+      "title": "Software Engineer",
+      "startDate": "2019-05-06",
+      "endDate": "2023-02-17",
+      "accomplishments": [
+        "Architected and developed an event-driven system using Java and Apache ActiveMQ for real-time delivery of over ten million next best action recommendations monthly.",
+        "Automated provider reimbursement processes using Java integrations, resulting in a 17 percent reduction in overhead costs and same-day acknowledgment of new claims.",
+        "Managed the product development lifecycle for a health insurance payer portal with over 1 million users and improved feature delivery speed by 50 percent.",
+        "Administrated a fleet of over 300 Java and .NET microservices, ensuring availability and performance of business-critical shared APIs for organization-wide applications."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": {
+        "name": "Cornerstone University",
+        "location": "Grand Rapids, Michigan",
+        "link": "https://cornerstone.edu"
+      },
+      "degree": "Master of Business Administration",
+      "major": "Project Management",
+      "grade": 3.84,
+      "startDate": "2020-06-01",
+      "endDate": "2022-02-14",
+      "accomplishments": [
+        "Graduated with highest honors and a 3.84 grade point average.",
+        "Attended full-time course load in the MBA program with a focus on project management and quantitative business during full-time employment."
+      ]
+    },
+    {
+      "school": {
+        "name": "Davenport University",
+        "location": "Grand Rapids, Michigan",
+        "link": "https://davenport.edu"
+      },
+      "degree": "Bachelor of Science",
+      "major": "Computer Science",
+      "grade": 3.77,
+      "startDate": "2016-01-03",
+      "endDate": "2019-12-14",
+      "accomplishments": [
+        "Graduated with highest honors and reoccurring member of the Dean's List for academic excellence.",
+        "Inducted into three academic honor societies: Alpha Lambda Delta, Upsilon Pi Epsilon, and the National Society of Leadership and Success.",
+        "Built a capstone project developing a mobile application for managing medication schedules and reminders using Flutter."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "C#",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": ".NET",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "HTML",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "CSS",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "JavaScript",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "React",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Node.js",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Java",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Spring",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "PowerShell",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Docker",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Kubernetes",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Git",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Azure DevOps",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "GitHub Actions",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Terraform",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Bicep",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Functions",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Static Web Apps",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Service Bus",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Blob Storage",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Virtual Network",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Front Door",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure API Management",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure Key Vault",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure App Configuration",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Entra ID",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "SQL Server",
+      "category": "Data and AI"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Data and AI"
+    },
+    {
+      "name": "Azure Cosmos DB",
+      "category": "Data and AI"
+    },
+    {
+      "name": "Azure AI",
+      "category": "Data and AI"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Microsoft Certified: Azure Data Fundamentals",
+      "issuer": {
+        "name": "Microsoft",
+        "location": "Redmond, Washington",
+        "link": "https://microsoft.com"
+      },
+      "startDate": "2025-01-13",
+      "link": "https://learn.microsoft.com/en-us/users/victorfrye/credentials/99a7fcfc7f4974f5"
+    },
+    {
+      "name": "Microsoft Certified: Azure Administrator Associate",
+      "issuer": {
+        "name": "Microsoft",
+        "location": "Redmond, Washington",
+        "link": "https://microsoft.com"
+      },
+      "startDate": "2024-09-23",
+      "endDate": "2026-09-23",
+      "link": "https://learn.microsoft.com/en-us/users/victorfrye/credentials/e9fc1312a25fcc56"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Fundamentals",
+      "issuer": {
+        "name": "Microsoft",
+        "location": "Redmond, Washington",
+        "link": "https://microsoft.com"
+      },
+      "startDate": "2024-04-30",
+      "link": "https://learn.microsoft.com/en-us/users/victorfrye/credentials/af866c0af923042d"
+    },
+    {
+      "name": "Microsoft Certified: Azure Fundamentals",
+      "issuer": {
+        "name": "Microsoft",
+        "location": "Redmond, Washington",
+        "link": "https://microsoft.com"
+      },
+      "startDate": "2023-12-21",
+      "link": "https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392"
+    }
+  ],
+  "projects": []
+}

@@ -13,7 +13,7 @@ This article will explore the new feature of `dotnet run file.cs` and the value 
 
 ## The Current Project-Based Model
 
-Today, if I wanted to write a simple C# console application that output "Hello, World!", I need to do the following:
+Today, if I wanted to write a simple C# console application that outputs "Hello, World!", I need to do the following:
 
 1. Install the .NET SDK.
 2. Install an IDE or text editor like Visual Studio or Visual Studio Code.

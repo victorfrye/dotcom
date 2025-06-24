@@ -7,13 +7,13 @@ tags:
   - dotnet
 ---
 
-I missed something at Microsoft Build 2025: the announcement of the new `dotnet run file.cs` model in .NET 10 Preview 4. This is a new paradigm for running and writing .NET applications and if you are reading this, you might not be the target of this feature. However, you will probably meet or read C# code that is written this way.
+I missed something at [Microsoft Build 2025](https://victorfrye.com/blog/posts/microsoft-build-2025-wrapped): the announcement of the new `dotnet run file.cs` model in [.NET 10 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-10-preview-4/). This is a new paradigm for running and writing .NET applications and if you are reading this, you might not be the target of this feature. However, you will probably meet or read C# code that is written this way.
 
 This article will explore the new feature of `dotnet run file.cs` and the value it brings to the .NET ecosystem. Run it!
 
 ## The Current Project-Based Model
 
-Today, if I wanted to write a simple C# console application that output "Hello, World!", I need to do the following:
+Today, if I wanted to write a simple C# console application that outputs "Hello, World!", I need to do the following:
 
 1. Install the .NET SDK.
 2. Install an IDE or text editor like Visual Studio or Visual Studio Code.

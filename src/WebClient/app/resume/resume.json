@@ -1,17 +1,17 @@
 {
-  "$schema": "../../../../files/resume.schema.json",
+  "$schema": "https://raw.githubusercontent.com/victorfrye/dotcom/main/files/resume.schema.json",
   "experience": [
     {
       "company": {
         "name": "Leading EDJE",
-        "location": "Columbus, Ohio",
+        "location": "Dublin, Ohio",
         "link": "https://leadingedje.com"
       },
       "title": "Senior Software Engineer",
       "startDate": "2023-02-20",
       "accomplishments": [
         "Migrated a legacy ASP.NET 4 application to .NET 8 microservices hosted in Kubernetes for application modernization, improved maintainability, and developer experience.",
-        "Replatformed a React and .NET web application from prototype project to microservice architecture for change failure rate reduction of 90 percent and increased deployment frequency of 400 percent.",
+        "Replatformed a React and .NET web application from prototype to microservice architecture for change failure rate reduction of 90 percent and increased deployment frequency of 400 percent.",
         "Automated the CI/CD pipelines for JavaScript and .NET applications with Azure Pipelines, resulting in a 70 percent reduction in deployment time and zero-downtime deployments.",
         "Developed and launched a .NET MAUI mobile application for a single-codebase mobile application to reduce development time and costs by 50 percent."
       ]
@@ -26,9 +26,9 @@
       "startDate": "2019-05-06",
       "endDate": "2023-02-17",
       "accomplishments": [
-        "Architected and developed an event-driven system using Java and Apache ActiveMQ for real-time delivery of over ten million next best action recommendations monthly.",
-        "Automated provider reimbursement processes using Java integrations, resulting in a 17 percent reduction in overhead costs and same-day acknowledgment of new claims.",
-        "Managed the product development lifecycle for a health insurance payer portal with over 1 million users and improved feature delivery speed by 50 percent.",
+        "Architected and developed an event-driven system using Java and Apache ActiveMQ for real-time delivery of over 10 million next best action recommendations monthly.",
+        "Automated provider reimbursement processes using Java microservices, resulting in a 17 percent reduction in overhead costs and same-day acknowledgment of new claims.",
+        "Managed the product and software development lifecycle for a health insurance payer portal with over 1 million users and improved feature delivery speed by 50 percent.",
         "Administrated a fleet of over 300 Java and .NET microservices, ensuring availability and performance of business-critical shared APIs for organization-wide applications."
       ]
     }
@@ -78,6 +78,26 @@
       "category": "Developer Technologies"
     },
     {
+      "name": "NuGet",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "ASP.NET Core",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Entity Framework Core",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Aspire",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "xUnit",
+      "category": "Developer Technologies"
+    },
+    {
       "name": "HTML",
       "category": "Developer Technologies"
     },
@@ -94,7 +114,7 @@
       "category": "Developer Technologies"
     },
     {
-      "name": "React",
+      "name": "npm",
       "category": "Developer Technologies"
     },
     {
@@ -102,11 +122,19 @@
       "category": "Developer Technologies"
     },
     {
-      "name": "Java",
+      "name": "React",
       "category": "Developer Technologies"
     },
     {
-      "name": "Spring",
+      "name": "Next.js",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Jest",
+      "category": "Developer Technologies"
+    },
+    {
+      "name": "Fluent UI",
       "category": "Developer Technologies"
     },
     {
@@ -115,10 +143,6 @@
     },
     {
       "name": "Docker",
-      "category": "Developer Technologies"
-    },
-    {
-      "name": "Kubernetes",
       "category": "Developer Technologies"
     },
     {
@@ -142,6 +166,10 @@
       "category": "Cloud Infrastructure"
     },
     {
+      "name": "Azure Container Apps",
+      "category": "Cloud Infrastructure"
+    },
+    {
       "name": "Azure Functions",
       "category": "Cloud Infrastructure"
     },
@@ -154,11 +182,11 @@
       "category": "Cloud Infrastructure"
     },
     {
-      "name": "Azure Blob Storage",
+      "name": "Azure Virtual Network",
       "category": "Cloud Infrastructure"
     },
     {
-      "name": "Azure Virtual Network",
+      "name": "Azure DNS",
       "category": "Cloud Infrastructure"
     },
     {
@@ -182,7 +210,19 @@
       "category": "Cloud Infrastructure"
     },
     {
+      "name": "Transact-SQL",
+      "category": "Data and AI"
+    },
+    {
       "name": "SQL Server",
+      "category": "Data and AI"
+    },
+    {
+      "name": "Azure SQL",
+      "category": "Data and AI"
+    },
+    {
+      "name": "Azure Cosmos DB",
       "category": "Data and AI"
     },
     {
@@ -190,7 +230,11 @@
       "category": "Data and AI"
     },
     {
-      "name": "Azure Cosmos DB",
+      "name": "Redis",
+      "category": "Data and AI"
+    },
+    {
+      "name": "Azure Blob Storage",
       "category": "Data and AI"
     },
     {

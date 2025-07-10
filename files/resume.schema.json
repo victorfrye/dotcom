@@ -27,7 +27,7 @@
                 "format": "uri"
               }
             },
-            "required": ["name", "location", "link"]
+            "required": ["name"]
           },
           "title": {
             "description": "The title of the job position held",
@@ -51,7 +51,7 @@
             }
           }
         },
-        "required": ["name", "deathDate", "description", "link"]
+        "required": ["company", "title", "startDate"]
       }
     },
     "education": {
@@ -78,7 +78,7 @@
                 "format": "uri"
               }
             },
-            "required": ["name", "location", "link"]
+            "required": ["name"]
           },
           "degree": {
             "description": "The degree obtained",
@@ -110,7 +110,7 @@
             }
           }
         },
-        "required": ["school", "degree", "major", "startDate", "endDate"]
+        "required": ["school", "degree", "major", "startDate"]
       }
     },
     "skills": {
@@ -124,7 +124,7 @@
             "type": "string"
           },
           "category": {
-            "description": "The category of the skill, e.g., language, cloud, devops, appdev",
+            "description": "The category of the skill, e.g., devtech, cloud, data/ai",
             "type": "string"
           }
         },
@@ -132,7 +132,7 @@
       }
     },
     "certifications": {
-      "description": "The list of certifications held by the person",
+      "description": "The list of certificates held by the person",
       "type": "array",
       "items": {
         "type": "object",
@@ -159,7 +159,7 @@
                 "format": "uri"
               }
             },
-            "required": ["name", "location", "link"]
+            "required": ["name"]
           },
           "startDate": {
             "description": "The date the certification was issued",

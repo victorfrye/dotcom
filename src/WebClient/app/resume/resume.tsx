@@ -1,35 +1,42 @@
 'use client';
 
-import { JSX, useCallback } from 'react';
+import { JSX, cloneElement, useCallback } from 'react';
 
 import {
+  Body2,
   Subtitle1,
   Tag,
   TagGroup,
+  Title1,
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
+import {
+  BuildingMultipleColor,
+  CertificateColor,
+  LaptopColor,
+  LibraryColor,
+} from '@fluentui/react-icons';
 
-import Certification from '@dotcom/resume/certification';
-import Education from '@dotcom/resume/education';
 import useResume from '@dotcom/resume/use-resume';
-import Workplace from '@dotcom/resume/workplace';
 
 const useStyles = makeStyles({
   container: {
     display: 'flex',
     flexDirection: 'column',
   },
-  item: {
+  title: {
     display: 'flex',
-    width: '48%',
-    '@media screen and (max-width: 768px)': {
-      width: '100%',
-    },
-    flex: '0 auto',
+    flexDirection: 'row',
+    gap: tokens.spacingVerticalXS,
+    alignItems: 'center',
   },
-  sectionTitle: {
-    margin: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalSNudge}`,
+  titleText: {
+    margin: `${tokens.spacingVerticalS} ${tokens.spacingHorizontalNone}`,
+  },
+  titleMedia: {
+    height: '44px',
+    width: '44px',
   },
   image: {
     height: '44px',
@@ -44,100 +51,178 @@ const useStyles = makeStyles({
   bold: {
     fontWeight: 'bold',
   },
-  list: {
+  section: {
     display: 'flex',
-    flexDirection: 'row',
-    flex: '0 auto',
-    flexWrap: 'wrap',
-    maxWidth: '100%',
-    gap: tokens.spacingVerticalXXXL,
-    listStyleType: 'none',
-    marginBlock: tokens.spacingVerticalNone,
-    paddingInline: tokens.spacingHorizontalNone,
-    padding: tokens.spacingVerticalS,
+    flexDirection: 'column',
+    gap: tokens.spacingVerticalM,
+    margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalXXXL}`,
+  },
+  item: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: tokens.spacingVerticalXXS,
+  },
+  list: {
+    listStyleType: 'disc',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: tokens.spacingVerticalXS,
+    marginBlock: tokens.spacingVerticalXS,
+    paddingInlineStart: tokens.spacingHorizontalXXL,
+  },
+  subtle: {
+    color: tokens.colorNeutralForeground2,
   },
   skills: {
-    display: 'flex',
     flexWrap: 'wrap',
-    '@media screen and (max-width: 576px)': {
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    justifyContent: 'start',
-    alignItems: 'start',
-    gap: tokens.spacingVerticalL,
+    gap: tokens.spacingVerticalS,
   },
 });
 
 export default function Resume() {
   const styles = useStyles();
-  const { jobs, schools, certificates, skills } = useResume();
+  const { certifications, education, experience, skills } = useResume();
 
-  const renderEmploymentHistory = useCallback(
-    (): JSX.Element[] =>
-      jobs.map((job) => {
-        return (
-          <li key={job.company.name} className={styles.item}>
-            {<Workplace job={job} />}
-          </li>
-        );
-      }),
-    [jobs, styles]
+  const renderSectionTitle = useCallback(
+    (title: string, media?: JSX.Element): JSX.Element => (
+      <div className={styles.title}>
+        {media && cloneElement(media, { className: styles.titleMedia })}
+        <Title1 as="h2" className={styles.titleText}>
+          {title}
+        </Title1>
+      </div>
+    ),
+    [styles]
   );
 
-  const renderEducationHistory = useCallback(
-    (): JSX.Element[] =>
-      schools.map((school) => (
-        <li key={school.name} className={styles.item}>
-          {<Education school={school} />}
-        </li>
-      )),
-    [schools, styles]
-  );
+  const renderExperienceHistory = useCallback((): JSX.Element[] => {
+    return experience
+      .toSorted((a, b) =>
+        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1
+      )
+      .map((job) => (
+        <div key={job.title} className={styles.item}>
+          <Subtitle1 as="h3" className={styles.titleText}>
+            {job.title + ' | ' + job.company.name}
+          </Subtitle1>
+          <Body2 className={styles.subtle}>
+            {job.startDate.toLocaleString('default', {
+              month: 'long',
+              year: 'numeric',
+            })}
+            {job.endDate
+              ? ` - ${job.endDate.toLocaleString('default', {
+                  month: 'long',
+                  year: 'numeric',
+                })}`
+              : ' - Present'}
+          </Body2>
+          <Body2 className={styles.subtle}>
+            <ul className={styles.list}>
+              {job.accomplishments.map((accomplishment, index) => (
+                <li key={index}>{accomplishment}</li>
+              ))}
+            </ul>
+          </Body2>
+        </div>
+      ));
+  }, [experience, styles]);
 
-  const renderCertifications = useCallback(
-    (): JSX.Element[] =>
-      certificates.map((certification) => (
-        <li key={certification.name} className={styles.item}>
-          {<Certification certificate={certification} />}
-        </li>
-      )),
-    [certificates, styles]
-  );
+  const renderEducationHistory = useCallback((): JSX.Element[] => {
+    return education
+      .toSorted((a, b) =>
+        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1
+      )
+      .map((edu) => (
+        <div key={edu.school.name} className={styles.item}>
+          <Subtitle1 as="h3" className={styles.titleText}>
+            {edu.degree + ' | ' + edu.school.name}
+          </Subtitle1>
+          <Body2 className={styles.subtle}>
+            {edu.endDate
+              ? `Graduated ${edu.endDate.toLocaleString('default', {
+                  month: 'long',
+                  year: 'numeric',
+                })}`
+              : 'Currently enrolled'}
+          </Body2>
+        </div>
+      ));
+  }, [education, styles]);
+
+  const renderCertifications = useCallback((): JSX.Element[] => {
+    return certifications
+      .toSorted((a, b) => (a.startDate > b.startDate ? -1 : 1))
+      .map((certification) => (
+        <div key={certification.name} className={styles.item}>
+          <Subtitle1 as="h3" className={styles.titleText}>
+            {certification.name}
+          </Subtitle1>
+          <Body2 className={styles.subtle}>
+            {'Issued ' +
+              certification.startDate.toLocaleString('default', {
+                month: 'long',
+                year: 'numeric',
+              }) +
+              ' by ' +
+              certification.issuer.name}
+          </Body2>
+        </div>
+      ));
+  }, [certifications, styles]);
 
   const renderSkills = useCallback((): JSX.Element[] => {
-    return skills
-      .toSorted((a, b) => (a > b ? 1 : -1))
-      .map((skill) => {
-        return (
-          <Tag size="small" shape="circular" key={skill}>
-            {skill}
-          </Tag>
-        );
-      });
-  }, [skills]);
+    const skillsByCategory = skills.reduce<Record<string, typeof skills>>(
+      (acc, skill) => {
+        const category = skill.category || 'Uncategorized';
+        if (!acc[category]) {
+          acc[category] = [];
+        }
+        acc[category].push(skill);
+        return acc;
+      },
+      {}
+    );
+
+    return Object.entries(skillsByCategory).map(
+      ([category, categorySkills]) => (
+        <div key={category} className={styles.item}>
+          <Subtitle1 as="h3" className={styles.titleText}>
+            {category}
+          </Subtitle1>
+          <TagGroup className={styles.skills}>
+            {categorySkills.map((skill) => (
+              <Tag size="small" shape="circular" key={skill.name}>
+                {skill.name}
+              </Tag>
+            ))}
+          </TagGroup>
+        </div>
+      )
+    );
+  }, [styles, skills]);
 
   return (
     <div className={styles.container}>
-      <Subtitle1 as="h3" className={styles.sectionTitle}>
-        Employment
-      </Subtitle1>
-      <ul className={styles.list}>{renderEmploymentHistory()}</ul>
+      <section id="experience" className={styles.section}>
+        {renderSectionTitle('Experience', <BuildingMultipleColor />)}
+        {renderExperienceHistory()}
+      </section>
 
-      <Subtitle1 as="h3" className={styles.sectionTitle}>
-        Education
-      </Subtitle1>
-      <ul className={styles.list}>{renderEducationHistory()}</ul>
+      <section id="education" className={styles.section}>
+        {renderSectionTitle('Education', <LibraryColor />)}
+        {renderEducationHistory()}
+      </section>
 
-      <Subtitle1 as="h3" className={styles.sectionTitle}>
-        Certifications
-      </Subtitle1>
-      <ul className={styles.list}>{renderCertifications()}</ul>
+      <section id="certifications" className={styles.section}>
+        {renderSectionTitle('Certifications', <CertificateColor />)}
+        {renderCertifications()}
+      </section>
 
-      <Subtitle1 as="h3" className={styles.sectionTitle}>
-        Skills
-      </Subtitle1>
-      <TagGroup className={styles.skills}>{renderSkills()}</TagGroup>
+      <section id="skills" className={styles.section}>
+        {renderSectionTitle('Skills', <LaptopColor />)}
+        {renderSkills()}
+      </section>
     </div>
   );
 }

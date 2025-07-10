@@ -30,8 +30,8 @@ import {
   PhoneLaptopColor,
 } from '@fluentui/react-icons';
 
-import { useResume } from '@dotcom/resume';
-import { Job } from '@dotcom/types';
+import useResume from '@dotcom/resume/use-resume';
+import { Experience } from '@dotcom/types';
 
 const useStyles = makeStyles({
   carousel: {
@@ -75,14 +75,18 @@ export default function About() {
   const styles = useStyles();
   const today: Date = useMemo(() => new Date(), []);
 
-  const { jobs } = useResume();
-  const currentJob: Job = useMemo(() => jobs[0], [jobs]);
+  const { experience } = useResume();
+  const currentJob: Experience = useMemo(() => experience[0], [experience]);
   const careerStart: Date = useMemo(
-    () => jobs[jobs.length - 1].startDate,
-    [jobs]
+    () => experience[experience.length - 1]?.startDate ?? undefined,
+    [experience]
   );
 
   const getYearsOfExperience = useCallback((): number => {
+    if (!careerStart) {
+      return 0;
+    }
+
     if (
       today.getMonth() < careerStart.getMonth() ||
       (today.getMonth() === careerStart.getMonth() &&
@@ -109,7 +113,7 @@ export default function About() {
       {
         icon: <PhoneLaptopColor />,
         title: 'Developer by Day',
-        text: `I currently work professionally as a ${currentJob.title} at ${currentJob.company.name}. With ${getYearsOfExperience()} years of experience, my specialties include web application development with .NET and React, cloud architecture with Azure, and DevOps automation for developer productivity.`,
+        text: `I currently work professionally as a ${currentJob?.title} at ${currentJob?.company?.name}. With ${getYearsOfExperience()} years of experience, my specialties include web application development with .NET and React, cloud architecture with Azure, and DevOps automation for developer productivity.`,
         action: {
           icon: <BriefcaseFilled />,
           text: 'View Resume',
@@ -166,7 +170,7 @@ export default function About() {
                   <Body2 as="p">{content.text}</Body2>
 
                   <CardFooter className={styles.footer}>
-                    {content.action ? (
+                    {content.action && (
                       <Button
                         as="a"
                         href={content.action.url}
@@ -177,7 +181,7 @@ export default function About() {
                       >
                         {content.action.text}
                       </Button>
-                    ) : null}
+                    )}
                   </CardFooter>
                 </Card>
               </CarouselCard>

@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/victorfrye/dotcom/main/files/resume.schema.json",
+  "type": "object",
+  "properties": {
+    "experience": {
+      "description": "The list of job positions held by the person",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "description": "The company where the position was held",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the company",
+                "type": "string"
+              },
+              "location": {
+                "description": "The location of the company",
+                "type": "string"
+              },
+              "link": {
+                "description": "The URL of the company's website",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name"]
+          },
+          "title": {
+            "description": "The title of the job position held",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "The date the job position started",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The date the job position ended",
+            "type": "string",
+            "format": "date"
+          },
+          "accomplishments": {
+            "description": "A list of accomplishments or responsibilities in the job position",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["company", "title", "startDate"]
+      }
+    },
+    "education": {
+      "description": "The list of educational qualifications",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "school": {
+            "description": "The school where the education was obtained",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the school",
+                "type": "string"
+              },
+              "location": {
+                "description": "The location of the school",
+                "type": "string"
+              },
+              "link": {
+                "description": "The URL of the school's website",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name"]
+          },
+          "degree": {
+            "description": "The degree obtained",
+            "type": "string"
+          },
+          "major": {
+            "description": "The major or field of study",
+            "type": "number",
+          },
+          "grade": {
+            "description": "The grade or GPA obtained",
+            "type": "number"
+          },
+          "startDate": {
+            "description": "The date the education started",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The date the education ended",
+            "type": "string",
+            "format": "date"
+          },
+          "accomplishments": {
+            "description": "A list of accomplishments or responsibilities during the education",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["school", "degree", "major", "startDate"]
+      }
+    },
+    "skills": {
+      "description": "The list of skills possessed by the person",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the skill",
+            "type": "string"
+          },
+          "category": {
+            "description": "The category of the skill, e.g., devtech, cloud, data/ai",
+            "type": "string"
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "certifications": {
+      "description": "The list of certificates held by the person",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the certification",
+            "type": "string"
+          },
+          "issuer": {
+            "description": "The organization that issued the certification",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the issuer",
+                "type": "string"
+              },
+              "location": {
+                "description": "The location of the issuer",
+                "type": "string"
+              },
+              "link": {
+                "description": "The URL of the issuer's website",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["name"]
+          },
+          "startDate": {
+            "description": "The date the certification was issued",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The date the certification expires",
+            "type": "string",
+            "format": "date"
+          },
+          "link": {
+            "description": "The URL of the certification details",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["name", "issuer", "startDate"]
+      }
+    },
+    "projects": {
+      "description": "The list of projects worked and maintained",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the project",
+            "type": "string"
+          },
+          "description": {
+            "description": "A brief description of the project",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "The date the project started",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The date the project ended or was last updated",
+            "type": "string",
+            "format": "date"
+          },
+          "technologies": {
+            "description": "The technologies used in the project",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "link": {
+            "description": "The URL of the project's repository or website",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["name", "description", "link", "startDate"]
+      },
+      "required": ["experience", "education", "skills"]
+    }
+  }
+}

@@ -1,123 +1,151 @@
-import { Certificate, Job, School } from '@dotcom/types';
+import { useCallback, useEffect, useReducer } from 'react';
 
-interface ResumeData {
-  jobs: Job[];
-  schools: School[];
-  certificates: Certificate[];
-  skills: string[];
+import resumeDocument from '@dotcom/resume/resume.json';
+import {
+  Certificate,
+  Education,
+  Entity,
+  Experience,
+  Skill,
+} from '@dotcom/types';
+
+interface EntityRecord {
+  name: string;
+  location?: string;
+  link?: string;
 }
 
-const resumeData: ResumeData = {
-  jobs: [
-    {
-      company: {
-        name: 'Leading EDJE',
-        location: 'Dublin, Ohio',
-        description: 'software consultancy',
-        url: 'https://leadingedje.com/',
-      },
-      title: 'Senior Software Engineer',
-      startDate: new Date(2023, 2, 20),
-      endDate: undefined,
-      description:
-        'Developing and architecting client solutions for a multitude of partners across industries. Key achievements include re-platforming a high-traffic lead generation widget for zero-downtime deployments and launching a mobile-native application healthcare application.',
-    },
-    {
-      company: {
-        name: 'Corewell Health',
-        location: 'Grand Rapids, Michigan',
-        description: 'regional healthcare provider',
-        url: 'https://corewellhealth.org/',
-      },
-      title: 'Software Engineer',
-      startDate: new Date(2019, 5, 6),
-      endDate: new Date(2023, 2, 17),
-      description:
-        'Developed and supported continued operations of over 300 internal APIs and digital services to improve patient care and reduce member costs. Key achievements included the launch of a targeted marketing campaign service to push millions of personalized messages monthly and migration of legacy document service to a cloud-based solution for over 50% cost reduction.',
-    },
-  ],
-  schools: [
-    {
-      name: 'Cornerstone University',
-      degree: 'Master of Business Administration',
-      major: 'Business Administration',
-      location: 'Grand Rapids, Michigan',
-      grade: '3.84',
-      startDate: new Date(2020, 6, 1),
-      graduationDate: new Date(2022, 2, 14),
-      description:
-        "Attended Cornerstone University's Professional & Graduate Studies program full-time in accelerated format. Academic focus was on quantitative business administration with an emphasis project management. Graduated with a 3.84 GPA.",
-      url: 'https://cornerstone.edu/',
-    },
-    {
-      name: 'Davenport University',
-      degree: 'Bachelor of Science',
-      major: 'Computer Science',
-      location: 'Grand Rapids, Michigan',
-      grade: '3.77',
-      startDate: new Date(2016, 1, 3),
-      graduationDate: new Date(2019, 12, 14),
-      description:
-        "Attended Davenport University's College of Technology full-time. Majored in computer science with focuses on software development, artificial intelligence, and mathematics. Graduated with a 3.77 GPA and three academic honor society inductions.",
-      url: 'https://davenport.edu/',
-    },
-  ],
-  certificates: [
-    {
-      name: 'Microsoft Certified: Azure Fundamentals',
-      issuer: 'Microsoft',
-      issueDate: new Date(2023, 12, 21),
-      expirationDate: undefined,
-      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392',
-    },
-    {
-      name: 'Microsoft Certified: Azure AI Fundamentals',
-      issuer: 'Microsoft',
-      issueDate: new Date(2024, 4, 30),
-      expirationDate: undefined,
-      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/af866c0af923042d',
-    },
-    {
-      name: 'Microsoft Certified: Azure Administrator Associate',
-      issuer: 'Microsoft',
-      issueDate: new Date(2024, 9, 23),
-      expirationDate: new Date(2025, 9, 23),
-      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/e9fc1312a25fcc56',
-    },
-    {
-      name: 'Microsoft Certified: Azure Data Fundamentals',
-      issuer: 'Microsoft',
-      issueDate: new Date(2025, 1, 13),
-      expirationDate: undefined,
-      url: 'https://learn.microsoft.com/en-us/users/victorfrye/credentials/99a7fcfc7f4974f5',
-    },
-  ],
-  skills: [
-    'html',
-    'css',
-    'csharp',
-    'javascript',
-    'typescript',
-    'powershell',
-    'sql',
-    'dotnet',
-    'nodejs',
-    'react',
-    'nextjs',
-    'azure',
-    'github',
-    'bicep',
-    'terraform',
-    'docker',
-    'git',
-  ],
+interface ExperienceRecord {
+  company: EntityRecord;
+  title: string;
+  startDate: Date;
+  endDate?: Date;
+  accomplishments?: string[];
+}
+
+interface EducationRecord {
+  school: EntityRecord;
+  degree: string;
+  major: string;
+  grade?: number;
+  startDate: Date;
+  endDate?: Date;
+  accomplishments?: string[];
+}
+
+interface SkillRecord {
+  name: string;
+  category: string;
+}
+
+interface CertificateRecord {
+  name: string;
+  issuer: EntityRecord;
+  startDate: Date;
+  endDate?: Date;
+  link?: string;
+}
+
+interface ResumeDocument {
+  $schema: string;
+  experience?: ExperienceRecord[];
+  education?: EducationRecord[];
+  skills?: SkillRecord[];
+  certifications?: CertificateRecord[];
+}
+
+const toEntity = (entityRecord: EntityRecord): Entity => ({
+  name: entityRecord.name,
+  location: entityRecord.location,
+  link: entityRecord.link,
+});
+
+const toCertificate = (cert: CertificateRecord): Certificate => ({
+  name: cert.name,
+  issuer: toEntity(cert.issuer),
+  startDate: new Date(cert.startDate),
+  endDate: cert.endDate ? new Date(cert.endDate) : undefined,
+  link: cert.link,
+});
+
+const toEducation = (edu: EducationRecord): Education => ({
+  school: toEntity(edu.school),
+  degree: edu.degree,
+  major: edu.major,
+  grade: edu.grade,
+  startDate: new Date(edu.startDate),
+  endDate: edu.endDate ? new Date(edu.endDate) : undefined,
+  accomplishments: edu.accomplishments ?? [],
+});
+
+const toExperience = (exp: ExperienceRecord): Experience => ({
+  company: toEntity(exp.company),
+  title: exp.title,
+  startDate: new Date(exp.startDate),
+  endDate: exp.endDate ? new Date(exp.endDate) : undefined,
+  accomplishments: exp.accomplishments ?? [],
+});
+
+const toSkill = (skill: SkillRecord): Skill => ({
+  name: skill.name,
+  category: skill.category,
+});
+
+interface ResumeState {
+  certifications: Certificate[];
+  education: Education[];
+  experience: Experience[];
+  skills: Skill[];
+  loading: boolean;
+}
+
+type ResumeAction =
+  | { type: 'INIT' }
+  | { type: 'SUCCESS'; payload: ResumeDocument };
+
+const reducer = (state: ResumeState, action: ResumeAction): ResumeState => {
+  switch (action.type) {
+    case 'INIT':
+      return { ...state, loading: true };
+    case 'SUCCESS': {
+      const doc = action.payload;
+      return {
+        ...state,
+        certifications:
+          doc.certifications?.map((cert) => toCertificate(cert)) ?? [],
+        education: doc.education?.map((edu) => toEducation(edu)) ?? [],
+        experience: doc.experience?.map((exp) => toExperience(exp)) ?? [],
+        skills: doc.skills?.map((skill) => toSkill(skill)) ?? [],
+        loading: false,
+      };
+    }
+    default:
+      return state;
+  }
 };
 
 export default function useResume() {
-  const jobs: Job[] = resumeData.jobs;
-  const schools: School[] = resumeData.schools;
-  const certificates: Certificate[] = resumeData.certificates;
-  const skills: string[] = resumeData.skills;
+  const [state, dispatch] = useReducer(reducer, {
+    certifications: [],
+    education: [],
+    experience: [],
+    skills: [],
+    loading: true,
+  });
 
-  return { jobs, schools, certificates, skills };
+  const fetchResume = useCallback(() => {
+    dispatch({ type: 'INIT' });
+    const doc: ResumeDocument = resumeDocument as unknown as ResumeDocument;
+
+    dispatch({
+      type: 'SUCCESS',
+      payload: doc,
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchResume();
+  }, [fetchResume]);
+
+  return { ...state };
 }

@@ -1,7 +1,9 @@
+import Entity from '@dotcom/types/entity';
+
 export default interface Certificate {
   name: string;
-  issuer: string;
-  issueDate: Date;
-  expirationDate?: Date;
-  url: string;
+  issuer: Entity;
+  startDate: Date;
+  endDate?: Date;
+  link?: string;
 }

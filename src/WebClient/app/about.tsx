@@ -75,7 +75,7 @@ export default function About() {
   const styles = useStyles();
   const today: Date = useMemo(() => new Date(), []);
 
-  const { experience } = useResume.useResume();
+  const { experience } = useResume();
   const currentJob: Experience = useMemo(() => experience[0], [experience]);
   const careerStart: Date = useMemo(
     () => experience[experience.length - 1]?.startDate ?? undefined,

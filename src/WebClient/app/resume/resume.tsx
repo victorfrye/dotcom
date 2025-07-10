@@ -119,8 +119,8 @@ export default function Resume() {
           </Body2>
           <Body2 className={styles.subtle}>
             <ul className={styles.list}>
-              {job.accomplishments.map((accomplishment, index) => (
-                <li key={index}>{accomplishment}</li>
+              {job.accomplishments.map((accomplishment) => (
+                <li key={accomplishment}>{accomplishment}</li>
               ))}
             </ul>
           </Body2>

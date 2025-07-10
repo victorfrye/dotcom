@@ -19,11 +19,18 @@ import {
 } from '@fluentui/react-icons';
 
 import useResume from '@dotcom/resume/use-resume';
+import { Skill } from '@dotcom/types';
 
 const useStyles = makeStyles({
   container: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  section: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: tokens.spacingVerticalM,
+    margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalXXXL}`,
   },
   title: {
     display: 'flex',
@@ -31,31 +38,17 @@ const useStyles = makeStyles({
     gap: tokens.spacingVerticalXS,
     alignItems: 'center',
   },
-  titleText: {
-    margin: `${tokens.spacingVerticalS} ${tokens.spacingHorizontalNone}`,
-  },
   titleMedia: {
     height: '44px',
     width: '44px',
+  },
+  titleText: {
+    margin: `${tokens.spacingVerticalS} ${tokens.spacingHorizontalNone}`,
   },
   image: {
     height: '44px',
     width: '44px',
     borderRadius: '4px',
-  },
-  header: {
-    display: 'flex',
-    color: tokens.colorBrandForeground2,
-    margin: `${tokens.spacingVerticalNone} auto ${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone}`,
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
-  section: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: tokens.spacingVerticalM,
-    margin: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalXXXL}`,
   },
   item: {
     display: 'flex',

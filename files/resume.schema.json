@@ -90,7 +90,7 @@
           },
           "grade": {
             "description": "The grade or GPA obtained",
-            "type": "string"
+            "type": "number"
           },
           "startDate": {
             "description": "The date the education started",

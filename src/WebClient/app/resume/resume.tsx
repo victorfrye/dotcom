@@ -172,7 +172,7 @@ export default function Resume() {
   }, [certifications, styles]);
 
   const renderSkills = useCallback((): JSX.Element[] => {
-    const skillsByCategory = skills.reduce<Record<string, typeof skills>>(
+    const skillsByCategory = skills.reduce<Record<string, Skill[]>>(
       (acc, skill) => {
         const category = skill.category || 'Uncategorized';
         if (!acc[category]) {

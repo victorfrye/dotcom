@@ -90,6 +90,7 @@ export default function Frame({ children }: Readonly<FrameProps>) {
 
   const pathname = usePathname();
 
+  const isHomePage = pathname === '/';
   const isBlogPage = pathname.startsWith('/blog');
   const isResumePage = pathname.startsWith('/resume');
 
@@ -98,6 +99,10 @@ export default function Frame({ children }: Readonly<FrameProps>) {
   const blogLinkRef = useRef<HTMLAnchorElement>(null);
 
   const getSelectedTab = useCallback((): string => {
+    if (isHomePage) {
+      return 'about';
+    }
+
     if (isBlogPage) {
       return 'blog';
     }
@@ -106,8 +111,8 @@ export default function Frame({ children }: Readonly<FrameProps>) {
       return 'resume';
     }
 
-    return 'about';
-  }, [isBlogPage, isResumePage]);
+    return '';
+  }, [isHomePage, isBlogPage, isResumePage]);
 
   const currentPage = getSelectedTab();
 

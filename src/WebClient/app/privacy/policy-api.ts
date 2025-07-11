@@ -1,5 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
@@ -20,6 +22,8 @@ export async function getPolicyHtmlContent(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
     .use(rehypeStringify)
     .process(markdown);
 

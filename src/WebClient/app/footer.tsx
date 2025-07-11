@@ -39,21 +39,14 @@ const useStyles = makeStyles({
       padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL} ${tokens.spacingVerticalNone}`,
     },
   },
-  privacy: {
+  legal: {
+    display: 'flex',
+    flexDirection: 'row',
     marginTop: 'auto',
     marginBottom: 'auto',
     marginLeft: 'auto',
+    columnGap: tokens.spacingVerticalL,
     '@media screen and (max-width: 576px)': {
-      marginRight: 'auto',
-      padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL} ${tokens.spacingVerticalNone}`,
-    },
-    flexWrap: 'wrap',
-  },
-  copyright: {
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    '@media screen and (max-width: 576px)': {
-      marginLeft: 'auto',
       marginRight: 'auto',
       padding: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalL} ${tokens.spacingVerticalNone}`,
     },
@@ -90,20 +83,22 @@ export default function Footer() {
           className={styles.switch}
         />
 
-        <Link
-          href={'/privacy'}
-          ref={privacyLinkRef}
-          appearance="subtle"
-          className={styles.privacy}
-        >
-          <Caption1 as="span" align="end" block>
-            Privacy
-          </Caption1>
-        </Link>
+        <div className={styles.legal}>
+          <Link
+            href={'/privacy'}
+            ref={privacyLinkRef}
+            appearance="subtle"
+            className={styles.privacy}
+          >
+            <Caption1 as="span" align="end" block>
+              Privacy
+            </Caption1>
+          </Link>
 
-        <Caption1 as="span" align="end" block className={styles.copyright}>
-          © Victor Frye {_today.getFullYear()}
-        </Caption1>
+          <Caption1 as="span" align="end" block className={styles.copyright}>
+            © Victor Frye {_today.getFullYear()}
+          </Caption1>
+        </div>
       </CardFooter>
     </>
   );

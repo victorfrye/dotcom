@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated July 10, 2025*
+*Last updated July 11, 2025*
 
 This Privacy Policy for Victor Frye ("**we**", "**us**", or "**our**"), describes how we might access, collect, store, use, and/or share ("**process**") your personal information when you use our services ("**Services**"), including when you:
 
@@ -13,17 +13,17 @@ This Privacy Policy for Victor Frye ("**we**", "**us**", or "**our**"), describe
 
 *This summary provides key points from our Privacy Policy, but you can find out more details about any of these topics by clicking the link following each key point or by using our [table of contents](#table-of-contents) below to find the section you are looking for.*
 
-**What personal information do we process?** When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about [personal information you disclose to us](#personalinfo).
+**What personal information do we process?** When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about [personal information you disclose to us](#personal-information-you-disclose-to-us).
 
 **Do we process any sensitive personal information?** Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
 
 **Do we collect any information from third parties?** We do not collect any information from third parties.
 
-**How do we process your information?** We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about [how we process your information](#infouse).
+**How do we process your information?** We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about [how we process your information](#2-how-do-we-process-your-information).
 
-**How do we keep your information safe?** We have adequate organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Learn more about [how we keep your information safe](#infosafe).
+**How do we keep your information safe?** We have adequate organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Learn more about [how we keep your information safe](#6-how-do-we-keep-your-information-safe).
 
-**What are your rights?** Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about [your privacy rights](#privacyrights).
+**What are your rights?** Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about [your privacy rights](#8-what-are-your-privacy-rights).
 
 **How do you exercise your rights?** The easiest way to exercise your rights is by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.
 
@@ -31,23 +31,23 @@ Want to learn more about what we do with any information we collect? [Review the
 
 ## TABLE OF CONTENTS
 
-1. [WHAT INFORMATION DO WE COLLECT?](#infocollect)
-2. [HOW DO WE PROCESS YOUR INFORMATION?](#infouse)
-3. [WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?](#legalbases)
-4. [DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?](#cookies)
-5. [HOW LONG DO WE KEEP YOUR INFORMATION?](#inforetain)
-6. [HOW DO WE KEEP YOUR INFORMATION SAFE?](#infosafe)
-7. [DO WE COLLECT INFORMATION FROM MINORS?](#infominors)
-8. [WHAT ARE YOUR PRIVACY RIGHTS?](#privacyrights)
-9. [CONTROLS FOR DO-NOT-TRACK FEATURES](#dnt)
-10. [DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?](#usprivacy)
-11. [DO WE MAKE UPDATES TO THIS POLICY?](#policyupdates)
-12. [HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?](#datadelete)
-13. [HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)
+1. [WHAT INFORMATION DO WE COLLECT?](#1-what-information-do-we-collect)
+2. [HOW DO WE PROCESS YOUR INFORMATION?](#2-how-do-we-process-your-information)
+3. [WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?](#3-what-legal-bases-do-we-rely-on-to-process-your-personal-information)
+4. [DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?](#4-do-we-use-cookies-and-other-tracking-technologies)
+5. [HOW LONG DO WE KEEP YOUR INFORMATION?](#5-how-long-do-we-keep-your-information)
+6. [HOW DO WE KEEP YOUR INFORMATION SAFE?](#6-how-do-we-keep-your-information-safe)
+7. [DO WE COLLECT INFORMATION FROM MINORS?](#7-do-we-collect-information-from-minors)
+8. [WHAT ARE YOUR PRIVACY RIGHTS?](#8-what-are-your-privacy-rights)
+9. [CONTROLS FOR DO-NOT-TRACK FEATURES](#9-controls-for-do-not-track-features)
+10. [DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?](#10-do-united-states-residents-have-specific-privacy-rights)
+11. [DO WE MAKE UPDATES TO THIS POLICY?](#11-do-we-make-updates-to-this-policy)
+12. [HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?](#12-how-can-you-review-update-or-delete-the-data-we-collect-from-you)
+13. [HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)
 
-## 1. WHAT INFORMATION DO WE COLLECT? <a name="infocollect"></a>
+## 1. WHAT INFORMATION DO WE COLLECT?
 
-### Personal information you disclose to us <a name="personalinfo"></a>
+### Personal information you disclose to us
 
 ***In Short:*** *We collect personal information that you provide to us.*
 
@@ -65,7 +65,7 @@ We automatically collect certain information when you visit, use, or navigate th
 
 Like many businesses, we also collect information through cookies and similar technologies.
 
-The information we collect includes: 
+The information we collect includes:
 
 - *Log and Usage Data.* Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the Services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called "crash dumps"), and hardware settings).
 
@@ -73,7 +73,7 @@ The information we collect includes:
 
 - *Location Data.* We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt out, you may not be able to use certain aspects of the Services.
 
-## 2. HOW DO WE PROCESS YOUR INFORMATION? <a name="infouse"></a>
+## 2. HOW DO WE PROCESS YOUR INFORMATION?
 
 ***In Short:*** *We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We process the personal information for the following purposes listed below. We may also process your information for other purposes only with your prior explicit consent.*
 
@@ -87,7 +87,7 @@ The information we collect includes:
 
 - **To save or protect an individual's vital interest.** We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.
 
-## 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION? <a name="legalbases"></a>
+## 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?
 
 ***In Short:*** *We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.*
 
@@ -95,7 +95,7 @@ The information we collect includes:
 
 The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:
 
-- **Consent.** We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about [withdrawing your consent](#withdrawconsent).
+- **Consent.** We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about [withdrawing your consent](#withdrawing-your-consent).
 
 - **Legitimate Interests.** We may process your information when we believe it is reasonably necessary to achieve our legitimate business interests and those interests do not outweigh your interests and fundamental rights and freedoms. For example, we may process your personal information for some of the purposes described in order to:
 
@@ -111,7 +111,7 @@ The General Data Protection Regulation (GDPR) and UK GDPR require us to explain 
 
 ***If you are located in Canada, this section applies to you.***
 
-We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can withdraw your consent at any time. You can [withdraw your consent](#withdrawconsent) at any time.
+We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can withdraw your consent at any time. You can [withdraw your consent](#withdrawing-your-consent) at any time.
 
 In some exceptional cases, we may be legally permitted under applicable law to process your information without your concent, including, for example:
 
@@ -139,7 +139,7 @@ In some exceptional cases, we may be legally permitted under applicable law to p
 
 - We may disclose de-identified information for approved research or statistics projects, subject to ethics oversight and confidentiality commitments
 
-## 4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES? <a name="cookies"></a>
+## 4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
 
 ***In Short:*** *We may use cookies and other tracking technologies to collect and store your information.*
 
@@ -159,7 +159,7 @@ Examples of cookies we may use include:
 
 We also permit third parties and service providers to use online tracking technologies on our Services for analytics and advertising, including to help manage and display advertisements, to tailor advertisements to your interests, and to measure the effectiveness of those advertisements. These third parties and service providers use their technology to provide advertising about products and services tailored to your interests which may appear either on our Services or on other websites.
 
-To the extent these online tracking technologies are deemed to be a "sale"/"sharing" (which includes targeted advertising, as defined under applicable laws) under applicable US state laws, you can opt out of these online tracking technologies by submitting a request as described in the "[DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?](#usprivacy)" section below.
+To the extent these online tracking technologies are deemed to be a "sale"/"sharing" (which includes targeted advertising, as defined under applicable laws) under applicable US state laws, you can opt out of these online tracking technologies by submitting a request as described in the "[DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?](#10-do-united-states-residents-have-specific-privacy-rights)" section below.
 
 ### Google Analytics
 
@@ -169,7 +169,7 @@ To the extent these online tracking technologies are deemed to be a "sale"/"shar
 
 - We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our Services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of the Services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft collects and uses your data, visit the [Microsoft Privacy Statement](https://www.microsoft.com/privacy/privacystatement).
 
-## 5. HOW LONG DO WE KEEP YOUR INFORMATION? <a name="inforetain"></a>
+## 5. HOW LONG DO WE KEEP YOUR INFORMATION?
 
 ***In Short:*** *We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy unless otherwise required by law.*
 
@@ -177,23 +177,23 @@ We will only keep your personal information for as long as it is necessary for t
 
 When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.
 
-## 6. HOW DO WE KEEP YOUR INFORMATION SAFE? <a name="infosafe"></a>
+## 6. HOW DO WE KEEP YOUR INFORMATION SAFE?
 
 ***In Short:*** *We aim to protect your personal information through a system of organizational and technical security measures.*
 
 The security of your data is important to us and we strive to use commercially acceptable means to protect your personal information. However, no method of transmission over the Internet or method of electronic storage is 100% secure, and we cannot guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.
 
-## 7. DO WE COLLECT INFORMATION FROM MINORS? <a name="infominors"></a>
+## 7. DO WE COLLECT INFORMATION FROM MINORS?
 
 ***In Short:*** *We do not knowingly collect data from or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction.*
 
 We do not knowingly collect, solicit data from, or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or the equivalent age as specified by law in your jurisdiction or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age or the equivalent age as specified by law in your jurisdiction has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18 or the equivalent age as specified by law in your jurisdiction, please contact us.
 
-## 8. WHAT ARE YOUR PRIVACY RIGHTS? <a name="privacyrights"></a>
+## 8. WHAT ARE YOUR PRIVACY RIGHTS?
 
 ***In Short:*** *Depending on your state of residence in the US or in some regions, such as the European Economic Area (EEA), United Kingdom (UK), and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time, depending on your country, province, or state of residence.*
 
-In some regions (like the EEA, UK, and Canada), you have certain rights under applicable data protection laws. These may include the right: (i) to request access and obtain a copy of your personal information; (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. If a decision that produces legal or similarly significant effects is made solely by automated means, we will inform you, explain the main factors, and offer a simple way to request human review. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.
+In some regions (like the EEA, UK, and Canada), you have certain rights under applicable data protection laws. These may include the right: (i) to request access and obtain a copy of your personal information; (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. If a decision that produces legal or similarly significant effects is made solely by automated means, we will inform you, explain the main factors, and offer a simple way to request human review. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.
 
 We will consider and act upon any request in accordance with applicable data protection laws.
 
@@ -201,30 +201,34 @@ If you are located in the EEA or UK and you believe we are unlawfully processing
 
 If you are located in Switzerland, you may contact the Federal Data Protection and Information Commissioner.
 
-**Withdrawing your consent**: If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.
+If you have questions or comments about your privacy rights, you may contact us.
+
+### Withdrawing your consent
+
+If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.
 
 However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.
 
-**Cookies and similar technologies**: Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services.
+### Cookies and similar technologies
 
-If you have questions or comments about your privacy rights, you may contact us.
+Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services.
 
-## 9. CONTROLS FOR DO-NOT-TRACK FEATURES <a name="dnt"></a>
+## 9. CONTROLS FOR DO-NOT-TRACK FEATURES
 
 Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy POLICY.
 
 California law requires us to let you know how we respond to web browser DNT signals. Because there currently is not an industry or legal standard for recognizing or honoring DNT signals, we do not respond to them at this time.
 
-## 10. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS? <a name="usprivacy"></a>
+## 10. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
 
 ***In Short:*** *If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia , you may have the right to request access to and receive details about the personal information we maintain about you and how we have processed it, correct inaccuracies, get a copy of, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. More information is provided below.*
 
 ### Categories of Personal Information We Collect
 
-The table below shows the categories of personal information we have collected in the past twelve (12) months. The table includes illustrative examples of each category and does not reflect the personal information we collect from you. For a comprehensive inventory of all personal information we process, please refer to the section "[WHAT INFORMATION DO WE COLLECT?](#infocollect)" above.
+The table below shows the categories of personal information we have collected in the past twelve (12) months. The table includes illustrative examples of each category and does not reflect the personal information we collect from you. For a comprehensive inventory of all personal information we process, please refer to the section "[WHAT INFORMATION DO WE COLLECT?](#1-what-information-do-we-collect)" above.
 
 | Category | Examples | Collected
-| --- | --- | --- 
+| --- | --- | ---
 | A. Identifiers | Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name | NO
 | B. Personal information as defined in the California Customer Records statute | Name, contact information, education, employment, employment history, and financial information | NO
 | C. Protected classification characteristics under state or federal law | Gender, age, date of birth, race and ethnicity, national origin, marital status, and other demographic data | NO
@@ -250,11 +254,11 @@ We will use and retain the collected personal information needed to provide the 
 
 ### Sources of Personal Information
 
-Learn more about the sources of personal information we collect in the section "[WHAT INFORMATION DO WE COLLECT?](#infocollect)" above.
+Learn more about the sources of personal information we collect in the section "[WHAT INFORMATION DO WE COLLECT?](#1-what-information-do-we-collect)" above.
 
 ### How We Use and Share Personal Information
 
-Learn more about how we use your personal information in the section "[HOW DO WE PROCESS YOUR INFORMATION?](#infouse)" above.
+Learn more about how we use your personal information in the section "[HOW DO WE PROCESS YOUR INFORMATION?](#2-how-do-we-process-your-information)" above.
 
 **Will your information be shared with anyone else?**
 
@@ -296,7 +300,7 @@ Depending upon the state where you live, you may also have the following rights:
 
 ### How to Exercise Your Rights
 
-To exercise these rights, you can contact us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.
+To exercise these rights, you can contact us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.
 
 Under certain US state data protection laws, you can designate an authorized agent to make a request on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with applicable laws.
 
@@ -308,23 +312,23 @@ If you submit the request through an authorized agent, we may need to collect ad
 
 ### Appeals
 
-Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
+Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
 
 ### California "Shine the Light" Law
 
-California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.
+California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.
 
-## 11. DO WE MAKE UPDATES TO THIS POLICY? <a name="policyupdates"></a>
+## 11. DO WE MAKE UPDATES TO THIS POLICY?
 
 ***In Short:*** *Yes, we will update this policy as necessary to stay compliant with relevant laws.*
 
 We may update this Privacy Policy from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Policy. If we make material changes to this Privacy Policy, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Policy frequently to be informed of how we are protecting your information.
 
-## 12. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU? <a name="datadelete"></a>
+## 12. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
 
-Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, you can contact us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#contact)" below.
+Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, you can contact us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.
 
-## 13. HOW CAN YOU CONTACT US ABOUT THIS POLICY? <a name="contact"></a>
+## 13. HOW CAN YOU CONTACT US ABOUT THIS POLICY?
 
 If you have any questions about this policy, you can contact us:
 

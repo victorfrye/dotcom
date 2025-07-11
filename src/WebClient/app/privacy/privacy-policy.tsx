@@ -55,6 +55,21 @@ const useMarkdownStyles = makeStaticStyles({
     fontWeight: tokens.fontWeightSemibold,
     lineHeight: tokens.lineHeightBase600,
   },
+  table: {
+    borderCollapse: 'collapse',
+    gap: tokens.spacingVerticalM,
+  },
+  tr: {
+    borderBottom: `${tokens.strokeWidthThin} solid ${tokens.colorNeutralStroke2}`,
+  },
+  th: {
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
+    fontWeight: tokens.fontWeightSemibold,
+  },
+  td: {
+    height: tokens.spacingVerticalXXXL,
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
+  },
 });
 
 interface PrivacyPolicyProps {

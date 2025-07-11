@@ -84,18 +84,13 @@ export default function Footer() {
         />
 
         <div className={styles.legal}>
-          <Link
-            href={'/privacy'}
-            ref={privacyLinkRef}
-            appearance="subtle"
-            className={styles.privacy}
-          >
+          <Link href={'/privacy'} ref={privacyLinkRef} appearance="subtle">
             <Caption1 as="span" align="end" block>
               Privacy
             </Caption1>
           </Link>
 
-          <Caption1 as="span" align="end" block className={styles.copyright}>
+          <Caption1 as="span" align="end" block>
             © Victor Frye {_today.getFullYear()}
           </Caption1>
         </div>

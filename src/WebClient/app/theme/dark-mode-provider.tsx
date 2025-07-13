@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  ReactNode,
   createContext,
   useCallback,
   useEffect,
@@ -8,49 +9,60 @@ import {
   useState,
 } from 'react';
 
-import { useMediaQuery } from 'react-responsive';
+import {
+  initializeDarkMode,
+  useThemeMediaQuery,
+  useThemePreferences,
+} from '@dotcom/theme';
 
 interface DarkModeContextProps {
   isDark: boolean;
-  onDarkModeToggled: (isDark: boolean) => void;
+  onDarkModeToggle: (isDark: boolean) => void;
 }
 
 export const DarkModeContext = createContext<DarkModeContextProps>({
-  isDark: true,
+  isDark: initializeDarkMode(),
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  onDarkModeToggled: (_isDark: boolean) => {},
+  onDarkModeToggle: (_isDark: boolean) => {},
 });
 
 export default function DarkModeProvider({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const [isDark, setIsDark] = useState(true);
+}: Readonly<{ children: ReactNode }>) {
+  const { themePreferences, handleThemePreferencesChange } =
+    useThemePreferences();
+  const systemPrefersDark = useThemeMediaQuery();
 
-  const systemPrefersLight = useMediaQuery(
-    {
-      query: '(prefers-color-scheme: light)',
-    },
-    undefined,
-    (isSystemLight) => setIsDark(!isSystemLight)
+  const [isDark, setIsDark] = useState<boolean>(
+    themePreferences?.enableDarkMode ?? systemPrefersDark
   );
 
-  const onDarkModeToggled = useCallback((isDark: boolean) => {
-    setIsDark(isDark);
-  }, []);
+  const handleDarkModeToggle = useCallback(
+    (prefersDark: boolean) => {
+      handleThemePreferencesChange({
+        ...themePreferences,
+        enableDarkMode: prefersDark,
+      });
+      setIsDark(prefersDark);
+    },
+    [handleThemePreferencesChange, themePreferences]
+  );
 
   const darkMode = useMemo(
     () => ({
       isDark,
-      onDarkModeToggled,
+      onDarkModeToggle: handleDarkModeToggle,
     }),
-    [isDark, onDarkModeToggled]
+    [isDark, handleDarkModeToggle]
   );
 
   useEffect(() => {
-    if (systemPrefersLight) {
-      setIsDark(false);
+    if (themePreferences?.enableDarkMode !== undefined) {
+      return;
     }
-  }, [systemPrefersLight]);
+
+    setIsDark(systemPrefersDark);
+  }, [themePreferences, systemPrefersDark]);
 
   return (
     <DarkModeContext.Provider value={darkMode}>

@@ -17,7 +17,6 @@ export default function useThemeMediaQuery(): boolean {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setPrefersDark(mediaQuery.matches);
 
     mediaQuery.addEventListener('change', handleMediaQueryChange);
 

@@ -55,13 +55,13 @@ export default function Footer() {
   const styles = useStyles();
   const _today: Date = new Date();
 
-  const { isDark, onDarkModeToggled } = useDarkMode();
+  const { isDark, onDarkModeToggle } = useDarkMode();
 
-  const handleDarkModeToggled = (
+  const handleDarkModeToggle = (
     _event: ChangeEvent<HTMLInputElement>,
     data: SwitchOnChangeData
   ) => {
-    onDarkModeToggled(data.checked);
+    onDarkModeToggle(data.checked);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function Footer() {
         <Socials />
         <Switch
           checked={isDark}
-          onChange={handleDarkModeToggled}
+          onChange={handleDarkModeToggle}
           label={isDark ? 'Dark Mode' : 'Light Mode'}
           className={styles.switch}
         />

@@ -38,7 +38,6 @@ const useMarkdownStyles = makeStaticStyles({
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
     margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
-    // marginBlock: tokens.spacingVerticalM,
   },
   h1: {
     fontSize: tokens.fontSizeHero800,
@@ -72,11 +71,11 @@ const useMarkdownStyles = makeStaticStyles({
   },
 });
 
-interface PrivacyPolicyProps {
+interface PolicyProps {
   html: string;
 }
 
-export default function PrivacyPolicy({ html }: Readonly<PrivacyPolicyProps>) {
+export default function Policy({ html }: Readonly<PolicyProps>) {
   const styles = useStyles();
   useMarkdownStyles();
 

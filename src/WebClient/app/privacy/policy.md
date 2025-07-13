@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated July 11, 2025*
+*Last updated July 13, 2025*
 
 This Privacy Policy for Victor Frye ("**we**", "**us**", or "**our**"), describes how we might access, collect, store, use, and/or share ("**process**") your personal information when you use our services ("**Services**"), including when you:
 
@@ -149,13 +149,13 @@ You can instruct your browser to refuse all cookies or to indicate when a cookie
 
 Examples of cookies we may use include:
 
-- **Session Cookies.** We may use session cookies to operate our Services.
+- **Necessary Cookies.** We may use necessary cookies to operate our Services, including providing a secure log in or adjusting consent preferences.
 
-- **Preference Cookies.** We may use preference cookies to remember your preferences and various settings.
+- **Functional Cookies.** We may use functional cookies to perform certain functions like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
 
-- **Security Cookies.** We may use security cookies for security purposes.
+- **Analytical Cookies.** We may use analytical cookies to help us understand how our visitors use the Services and to monitor website performance.
 
-- **Advertising Cookies.** Advertising cookies are used to help deliver advertisements that are relevant to you and your interests.
+- **Advertising Cookies.** We may use advertising cookies to visitors with customized advertisements that are relevant to you and your interests.
 
 We also permit third parties and service providers to use online tracking technologies on our Services for analytics and advertising, including to help manage and display advertisements, to tailor advertisements to your interests, and to measure the effectiveness of those advertisements. These third parties and service providers use their technology to provide advertising about products and services tailored to your interests which may appear either on our Services or on other websites.
 

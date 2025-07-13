@@ -26,6 +26,7 @@ import { usePathname } from 'next/navigation';
 import Footer from '@dotcom/footer';
 import Header from '@dotcom/header';
 import Loading from '@dotcom/loading';
+import { CookieBanner } from '@dotcom/privacy';
 
 const useStyles = makeStyles({
   frame: {
@@ -182,6 +183,8 @@ export default function Frame({ children }: Readonly<FrameProps>) {
         </div>
         <Footer />
       </Card>
+
+      <CookieBanner />
     </div>
   );
 }

@@ -1,16 +1,26 @@
 'use client';
 
 import * as React from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 
 import {
   FluentProvider,
   makeStaticStyles,
+  makeStyles,
   tokens,
   webDarkTheme,
   webLightTheme,
 } from '@fluentui/react-components';
 
 import useDarkMode from '@dotcom/theme/use-dark-mode';
+
+const useStyles = makeStyles({
+  hidden: {
+    visibility: 'hidden',
+    height: '100vh',
+    width: '100vw',
+  },
+});
 
 const useStaticStyles = makeStaticStyles({
   html: {
@@ -55,13 +65,28 @@ const useStaticStyles = makeStaticStyles({
 
 export default function ThemeProvider({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: ReactNode }>) {
+  const styles = useStyles();
   useStaticStyles();
   const { isDark } = useDarkMode();
-
-  return (
-    <FluentProvider theme={isDark ? webDarkTheme : webLightTheme}>
-      {children}
-    </FluentProvider>
+  const theme = useMemo(
+    () => (isDark ? webDarkTheme : webLightTheme),
+    [isDark]
   );
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className={styles.hidden}>
+        <FluentProvider theme={webLightTheme}>{children}</FluentProvider>
+      </div>
+    );
+  }
+
+  return <FluentProvider theme={theme}>{children}</FluentProvider>;
 }

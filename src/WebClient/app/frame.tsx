@@ -6,7 +6,6 @@ import {
   Card,
   Link,
   SelectTabEventHandler,
-  Spinner,
   Tab,
   TabList,
   TabValue,
@@ -26,6 +25,7 @@ import { usePathname } from 'next/navigation';
 
 import Footer from '@dotcom/footer';
 import Header from '@dotcom/header';
+import Loading from '@dotcom/loading';
 
 const useStyles = makeStyles({
   frame: {
@@ -56,12 +56,6 @@ const useStyles = makeStyles({
   main: {
     padding: tokens.spacingVerticalS,
     gap: tokens.spacingVerticalS,
-  },
-  spinner: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '50vh',
   },
   link: {
     textDecoration: 'none',
@@ -130,7 +124,7 @@ export default function Frame({ children }: Readonly<FrameProps>) {
         blogLinkRef.current?.click();
         break;
       default:
-        console.warn(`Unknown tab value: ${data.value}`);
+        console.error(`Unknown tab value: ${data.value}`);
     }
 
     setSelectedValue(data.value);
@@ -183,15 +177,7 @@ export default function Frame({ children }: Readonly<FrameProps>) {
           </TabList>
 
           <main className={styles.main}>
-            {selectedValue === currentPage ? (
-              children
-            ) : (
-              <Spinner
-                label={'Loading...'}
-                size="extra-large"
-                className={styles.spinner}
-              />
-            )}
+            {selectedValue === currentPage ? children : <Loading />}
           </main>
         </div>
         <Footer />

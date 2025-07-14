@@ -17,7 +17,7 @@ export async function getPrivacyPolicy(): Promise<string> {
   return getPolicyHtmlContent(fileContents);
 }
 
-export async function getPolicyHtmlContent(markdown: string): Promise<string> {
+async function getPolicyHtmlContent(markdown: string): Promise<string> {
   const content = await unified()
     .use(remarkParse)
     .use(remarkGfm)

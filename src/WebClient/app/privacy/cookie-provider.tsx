@@ -11,8 +11,8 @@ import {
 import Clarity from '@microsoft/clarity';
 import { sendGAEvent } from '@next/third-parties/google';
 
-import { CookieSettings, useCookieSettings } from '@dotcom/privacy';
-import { readValue } from '@dotcom/storage';
+import { CookieSettings } from '@dotcom/privacy';
+import { readValue, useLocalStorage } from '@dotcom/storage';
 
 let initialized = false;
 
@@ -27,10 +27,17 @@ export const CookieContext = createContext<CookieContextProps>({
   onConsentChange: (_settings: CookieSettings) => {},
 });
 
+interface CookieProviderProps {
+  children: ReactNode;
+}
+
 export default function CookieProvider({
   children,
-}: Readonly<{ children: ReactNode }>) {
-  const { cookieSettings, handleCookieSettingsChange } = useCookieSettings();
+}: Readonly<CookieProviderProps>) {
+  const {
+    value: cookieSettings,
+    handleValueChange: handleCookieSettingsChange,
+  } = useLocalStorage<CookieSettings>('cookies');
 
   const handleGAConsentChange = useCallback(
     (settings: CookieSettings) =>

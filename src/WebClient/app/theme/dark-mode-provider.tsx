@@ -9,11 +9,22 @@ import {
   useState,
 } from 'react';
 
-import {
-  initializeDarkMode,
-  useThemeMediaQuery,
-  useThemePreferences,
-} from '@dotcom/theme';
+import { readValue, useLocalStorage } from '@dotcom/storage';
+import { ThemePreferences, useThemeMediaQuery } from '@dotcom/theme';
+
+function initDarkMode() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const userPrefersDark = readValue<ThemePreferences>('theme');
+
+  const systemPrefersDark = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
+  return userPrefersDark?.enableDarkMode ?? systemPrefersDark;
+}
 
 interface DarkModeContextProps {
   isDark: boolean;
@@ -21,16 +32,22 @@ interface DarkModeContextProps {
 }
 
 export const DarkModeContext = createContext<DarkModeContextProps>({
-  isDark: initializeDarkMode(),
+  isDark: initDarkMode(),
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   onDarkModeToggle: (_isDark: boolean) => {},
 });
 
+interface DarkModeProviderProps {
+  children: ReactNode;
+}
+
 export default function DarkModeProvider({
   children,
-}: Readonly<{ children: ReactNode }>) {
-  const { themePreferences, handleThemePreferencesChange } =
-    useThemePreferences();
+}: Readonly<DarkModeProviderProps>) {
+  const {
+    value: themePreferences,
+    handleValueChange: handleThemePreferencesChange,
+  } = useLocalStorage<ThemePreferences>('theme');
   const systemPrefersDark = useThemeMediaQuery();
 
   const [isDark, setIsDark] = useState<boolean>(

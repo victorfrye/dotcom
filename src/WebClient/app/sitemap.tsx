@@ -15,6 +15,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
     },
     {
+      url: 'https://victorfrye.com/privacy',
+      lastModified: new Date(2025, 5, 13),
+      priority: 0.1,
+      changeFrequency: 'yearly',
+    },
+    {
       url: 'https://victorfrye.com/resume',
       lastModified: new Date(),
       priority: 0.8,

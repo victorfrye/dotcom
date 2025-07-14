@@ -1,10 +1,11 @@
 import { ReactNode } from 'react';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 
 import Frame from '@dotcom/frame';
 import '@dotcom/globals.css';
-import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
+import ProviderTree from '@dotcom/provider-tree';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -54,13 +55,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId="G-WFNJTNS1NZ" />
+
       <body>
         <div id="root">
-          <DarkModeProvider>
-            <ThemeProvider>
-              <Frame>{children}</Frame>
-            </ThemeProvider>
-          </DarkModeProvider>
+          <ProviderTree>
+            <Frame>{children}</Frame>
+          </ProviderTree>
         </div>
       </body>
     </html>

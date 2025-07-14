@@ -18,7 +18,7 @@ import {
 } from '@fluentui/react-components';
 import { Cookies32Regular } from '@fluentui/react-icons';
 
-import { CookieSettings, useCookieSettings } from '@dotcom/privacy';
+import { CookieSettings, useCookies } from '@dotcom/privacy';
 
 const useStyles = makeStyles({
   fab: {
@@ -54,19 +54,19 @@ export default function CookieBanner() {
   const [cookieBannerOpen, setCookieBannerOpen] = useState(false);
   const [cookieManagerOpen, setCookieManagerOpen] = useState(false);
 
-  const { cookieSettings, handleCookieSettingsChange } = useCookieSettings();
+  const { settings, onSettingsChange } = useCookies();
 
   const [analyticalCookiesEnabled, setAnalyticalCookiesEnabled] = useState(
-    cookieSettings?.enableAnalytics ?? true
+    settings?.enableAnalytics ?? true
   );
   const [advertisingCookiesEnabled, setAdvertisingCookiesEnabled] = useState(
-    cookieSettings?.enableAdvertising ?? true
+    settings?.enableAdvertising ?? true
   );
 
   const privacyLinkRef = useRef<HTMLAnchorElement>(null);
 
   const handleCookieConsentChange = (cookies: CookieSettings) => {
-    handleCookieSettingsChange(cookies);
+    onSettingsChange(cookies);
   };
 
   const handleAcceptAllButtonClick = () => {
@@ -118,13 +118,11 @@ export default function CookieBanner() {
   };
 
   useEffect(() => {
-    if (!cookieSettings) {
+    if (!settings) {
       setShowFab(false);
       setCookieBannerOpen(true);
     }
-
-    // Logic to handle cookie settings changes can be added here
-  }, [cookieSettings]);
+  }, [settings]);
 
   return (
     <div>

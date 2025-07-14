@@ -54,7 +54,7 @@ export default function CookieBanner() {
   const [cookieBannerOpen, setCookieBannerOpen] = useState(false);
   const [cookieManagerOpen, setCookieManagerOpen] = useState(false);
 
-  const { settings, onSettingsChange } = useCookies();
+  const { settings, onConsentChange } = useCookies();
 
   const [analyticalCookiesEnabled, setAnalyticalCookiesEnabled] = useState(
     settings?.enableAnalytics ?? true
@@ -66,7 +66,7 @@ export default function CookieBanner() {
   const privacyLinkRef = useRef<HTMLAnchorElement>(null);
 
   const handleCookieConsentChange = (cookies: CookieSettings) => {
-    onSettingsChange(cookies);
+    onConsentChange(cookies);
   };
 
   const handleAcceptAllButtonClick = () => {

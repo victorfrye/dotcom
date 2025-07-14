@@ -18,13 +18,13 @@ let initialized = false;
 
 interface CookieContextProps {
   settings: CookieSettings | null;
-  onSettingsChange: (settings: CookieSettings) => void;
+  onConsentChange: (settings: CookieSettings) => void;
 }
 
 export const CookieContext = createContext<CookieContextProps>({
   settings: readValue<CookieSettings>('cookies'),
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  onSettingsChange: (_settings: CookieSettings) => {},
+  onConsentChange: (_settings: CookieSettings) => {},
 });
 
 export default function CookieProvider({
@@ -32,28 +32,43 @@ export default function CookieProvider({
 }: Readonly<{ children: ReactNode }>) {
   const { cookieSettings, handleCookieSettingsChange } = useCookieSettings();
 
-  const handleSettingsChange = useCallback(
+  const handleGAConsentChange = useCallback(
+    (settings: CookieSettings) =>
+      sendGAEvent('consent', 'update', {
+        ad_user_data: settings.enableAdvertising ? 'granted' : 'denied',
+        ad_personalization: settings.enableAdvertising ? 'granted' : 'denied',
+        ad_storage: settings.enableAdvertising ? 'granted' : 'denied',
+        analytics_storage: settings.enableAnalytics ? 'granted' : 'denied',
+      }),
+    []
+  );
+
+  const handleClarityConsentChange = useCallback(
+    (settings: CookieSettings) => Clarity.consent(settings.enableAnalytics),
+    []
+  );
+
+  const handleConsentChange = useCallback(
     (settings: CookieSettings) => {
       handleCookieSettingsChange(settings);
 
       try {
-        sendGAEvent('consent', 'update', {
-          ad_user_data: settings.enableAdvertising ? 'granted' : 'denied',
-          ad_personalization: settings.enableAdvertising ? 'granted' : 'denied',
-          ad_storage: settings.enableAdvertising ? 'granted' : 'denied',
-          analytics_storage: settings.enableAnalytics ? 'granted' : 'denied',
-        });
+        handleGAConsentChange(settings);
       } catch (error) {
         console.error('Error updating GA cookie consent settings:', error);
       }
 
       try {
-        Clarity.consent(settings.enableAnalytics);
+        handleClarityConsentChange(settings);
       } catch (error) {
         console.error('Error updating Clarity cookie consent settings:', error);
       }
     },
-    [handleCookieSettingsChange]
+    [
+      handleClarityConsentChange,
+      handleCookieSettingsChange,
+      handleGAConsentChange,
+    ]
   );
 
   useEffect(() => {
@@ -61,24 +76,28 @@ export default function CookieProvider({
       return;
     }
 
-    sendGAEvent('consent', 'update', {
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-    });
-
     Clarity.init('rfkjulzalm');
 
+    if (cookieSettings) {
+      handleGAConsentChange(cookieSettings);
+      handleClarityConsentChange(cookieSettings);
+    } else {
+      // If no previous cookie settings are found, set default consent.
+      handleGAConsentChange({
+        enableAdvertising: false,
+        enableAnalytics: false,
+      });
+    }
+
     initialized = true;
-  }, []);
+  }, [cookieSettings, handleClarityConsentChange, handleGAConsentChange]);
 
   const cookies = useMemo(
     () => ({
       settings: cookieSettings,
-      onSettingsChange: handleSettingsChange,
+      onConsentChange: handleConsentChange,
     }),
-    [cookieSettings, handleSettingsChange]
+    [cookieSettings, handleConsentChange]
   );
 
   return (

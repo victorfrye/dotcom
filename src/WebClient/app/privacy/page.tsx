@@ -1,4 +1,5 @@
-import { Policy, getPrivacyPolicy } from '@dotcom/privacy';
+import Policy from '@dotcom/privacy/policy';
+import { getPrivacyPolicy } from '@dotcom/privacy/policy-api';
 
 export default async function PrivacyPage() {
   const privacyPolicy = await getPrivacyPolicy();

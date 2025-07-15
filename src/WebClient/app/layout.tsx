@@ -59,9 +59,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
 
       <body>
         <div id="root">
-          <ProviderTree>
-            <Frame>{children}</Frame>
-          </ProviderTree>
+          <ProviderTree>{children}</ProviderTree>
         </div>
       </body>
     </html>

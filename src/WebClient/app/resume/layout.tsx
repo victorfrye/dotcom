@@ -21,7 +21,7 @@ interface ResumeLayoutProps {
   children: ReactNode;
 }
 
-export default function ResumeLayout({
+export default async function ResumeLayout({
   children,
 }: Readonly<ResumeLayoutProps>) {
   return <>{children}</>;

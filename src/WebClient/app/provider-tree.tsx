@@ -1,5 +1,8 @@
+'use client';
+
 import { ReactNode } from 'react';
 
+import Frame from '@dotcom/frame';
 import { CookieProvider } from '@dotcom/privacy';
 import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
 
@@ -13,7 +16,9 @@ export default function ProviderTree({
   return (
     <CookieProvider>
       <DarkModeProvider>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Frame>{children}</Frame>
+        </ThemeProvider>
       </DarkModeProvider>
     </CookieProvider>
   );

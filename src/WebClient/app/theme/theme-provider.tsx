@@ -67,9 +67,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export default function ThemeProvider({
-  children,
-}: Readonly<ThemeProviderProps>) {
+export default function ThemeProvider({ children }: ThemeProviderProps) {
   const styles = useStyles();
   useStaticStyles();
   const { isDark } = useDarkMode();

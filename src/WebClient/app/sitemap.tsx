@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: 'https://victorfrye.com/privacy',
-      lastModified: new Date(2025, 5, 13),
+      lastModified: new Date(2025, 5, 14),
       priority: 0.1,
       changeFrequency: 'yearly',
     },

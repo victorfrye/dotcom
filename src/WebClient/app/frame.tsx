@@ -80,7 +80,7 @@ const PersonIcon = bundleIcon(PersonColor, PersonRegular);
 const BriefcaseIcon = bundleIcon(BriefcaseColor, BriefcaseRegular);
 const EditIcon = bundleIcon(EditColor, EditRegular);
 
-export default function Frame({ children }: Readonly<FrameProps>) {
+export default function Frame({ children }: FrameProps) {
   const styles = useStyles();
 
   const pathname = usePathname();

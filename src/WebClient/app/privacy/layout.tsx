@@ -16,7 +16,7 @@ interface PrivacyLayoutProps {
   children: ReactNode;
 }
 
-export default function PrivacyLayout({
+export default async function PrivacyLayout({
   children,
 }: Readonly<PrivacyLayoutProps>) {
   return <>{children}</>;

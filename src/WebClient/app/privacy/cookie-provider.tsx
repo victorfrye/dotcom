@@ -11,7 +11,7 @@ import {
 import Clarity from '@microsoft/clarity';
 import { sendGAEvent } from '@next/third-parties/google';
 
-import { CookieSettings } from '@dotcom/privacy';
+import CookieSettings from '@dotcom/privacy/cookie-settings';
 import { readValue, useLocalStorage } from '@dotcom/storage';
 
 let initialized = false;
@@ -31,9 +31,7 @@ interface CookieProviderProps {
   children: ReactNode;
 }
 
-export default function CookieProvider({
-  children,
-}: Readonly<CookieProviderProps>) {
+export default function CookieProvider({ children }: CookieProviderProps) {
   const {
     value: cookieSettings,
     handleValueChange: handleCookieSettingsChange,

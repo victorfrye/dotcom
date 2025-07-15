@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useRef } from 'react';
+import { ChangeEvent } from 'react';
 
 import {
   Caption1,
@@ -68,8 +68,6 @@ export default function Footer() {
     onDarkModeToggle(data.checked);
   };
 
-  const privacyLinkRef = useRef<HTMLAnchorElement>(null);
-
   return (
     <>
       <Divider appearance="subtle" inset className={styles.divider} />
@@ -84,7 +82,7 @@ export default function Footer() {
         />
 
         <div className={styles.legal}>
-          <Link href={'/privacy'} ref={privacyLinkRef} appearance="subtle">
+          <Link href={'/privacy'} appearance="subtle">
             <Caption1 as="span" align="end" block>
               Privacy
             </Caption1>

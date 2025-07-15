@@ -43,7 +43,7 @@ interface DarkModeProviderProps {
 
 export default function DarkModeProvider({
   children,
-}: Readonly<DarkModeProviderProps>) {
+}: DarkModeProviderProps) {
   const {
     value: themePreferences,
     handleValueChange: handleThemePreferencesChange,

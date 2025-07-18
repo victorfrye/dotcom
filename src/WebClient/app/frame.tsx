@@ -23,10 +23,10 @@ import {
 } from '@fluentui/react-icons';
 import { usePathname } from 'next/navigation';
 
+import { CookieBanner } from '@dotcom/cookies';
 import Footer from '@dotcom/footer';
 import Header from '@dotcom/header';
 import Loading from '@dotcom/loading';
-import { CookieBanner } from '@dotcom/privacy';
 
 const useStyles = makeStyles({
   frame: {

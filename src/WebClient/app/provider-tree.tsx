@@ -2,8 +2,7 @@
 
 import { ReactNode } from 'react';
 
-import Frame from '@dotcom/frame';
-import { CookieProvider } from '@dotcom/privacy';
+import { ConsentProvider } from '@dotcom/privacy';
 import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
 
 interface ProviderTreeProps {
@@ -14,12 +13,10 @@ export default function ProviderTree({
   children,
 }: Readonly<ProviderTreeProps>) {
   return (
-    <CookieProvider>
+    <ConsentProvider>
       <DarkModeProvider>
-        <ThemeProvider>
-          <Frame>{children}</Frame>
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </DarkModeProvider>
-    </CookieProvider>
+    </ConsentProvider>
   );
 }

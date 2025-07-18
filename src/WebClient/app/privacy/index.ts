@@ -1,2 +1,3 @@
-export { default as CookieBanner } from './cookie-banner';
-export { default as CookieProvider } from './cookie-provider';
+export { default as ConsentProvider } from './consent-provider';
+export type { default as ConsentSettings } from './consent-settings';
+export { default as useConsent } from './use-consent';

@@ -12,7 +12,7 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
-import CookieText from '@dotcom/privacy/cookie-text';
+import CookieText from '@dotcom/cookies/cookie-text';
 
 const useStyles = makeStyles({
   fab: {
@@ -66,15 +66,15 @@ export default function CookieConsentDialog({
               {CookieText.consentDialog.title}
             </DialogTitle>
             <DialogContent>{CookieText.consentDialog.body}</DialogContent>
-            <DialogActions>
-              <Button onClick={onRejectAll}>
+            <DialogActions fluid>
+              <Button appearance="primary" onClick={onAcceptAll}>
+                {CookieText.buttons.acceptAll}
+              </Button>
+              <Button appearance="primary" onClick={onRejectAll}>
                 {CookieText.buttons.rejectAll}
               </Button>
               <Button onClick={onManageCookies}>
                 {CookieText.buttons.manageCookies}
-              </Button>
-              <Button appearance="primary" onClick={onAcceptAll}>
-                {CookieText.buttons.acceptAll}
               </Button>
             </DialogActions>
           </DialogBody>

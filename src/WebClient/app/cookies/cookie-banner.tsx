@@ -1,9 +1,9 @@
 'use client';
 
-import CookieButton from '@dotcom/privacy/cookie-button';
-import CookieConsentDialog from '@dotcom/privacy/cookie-consent-dialog';
-import CookieManagerDialog from '@dotcom/privacy/cookie-manager-dialog';
-import useCookieConsentState from '@dotcom/privacy/use-cookie-consent-state';
+import CookieButton from '@dotcom/cookies/cookie-button';
+import CookieConsentDialog from '@dotcom/cookies/cookie-consent-dialog';
+import CookieManagerDialog from '@dotcom/cookies/cookie-manager-dialog';
+import useCookieBanner from '@dotcom/cookies/use-cookie-banner';
 
 export default function CookieBanner() {
   const {
@@ -19,7 +19,7 @@ export default function CookieBanner() {
     handleAnalyticsToggle,
     handleAdvertisingToggle,
     handleFabClick,
-  } = useCookieConsentState();
+  } = useCookieBanner();
 
   return (
     <div>

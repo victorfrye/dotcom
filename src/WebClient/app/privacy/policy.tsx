@@ -1,6 +1,11 @@
 'use client';
 
+import { useMemo } from 'react';
+
+import PrivacyText from './privacy-text';
 import {
+  Text,
+  Title1,
   makeStaticStyles,
   makeStyles,
   tokens,
@@ -11,6 +16,10 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: tokens.spacingVerticalS,
+  },
+  title: {
+    display: 'flex',
+    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalM}`,
   },
 });
 
@@ -73,16 +82,33 @@ const useMarkdownStyles = makeStaticStyles({
 
 interface PolicyProps {
   html: string;
+  date: Date;
 }
 
-export default function Policy({ html }: Readonly<PolicyProps>) {
+export default function Policy({ html, date }: Readonly<PolicyProps>) {
   const styles = useStyles();
   useMarkdownStyles();
 
+  const formattedDate = useMemo(() => {
+    return date.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  }, [date]);
+
   return (
-    <main
-      className={styles.container}
-      dangerouslySetInnerHTML={{ __html: html ?? '' }}
-    />
+    <main className={styles.container}>
+      <Title1 as="h1" className={styles.title}>
+        {PrivacyText.policy.title}
+      </Title1>
+
+      <Text italic>{`${PrivacyText.policy.lastUpdated} ${formattedDate}`}</Text>
+
+      <div
+        dangerouslySetInnerHTML={{ __html: html }}
+        className={styles.container}
+      />
+    </main>
   );
 }

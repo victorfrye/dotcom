@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 
+import { ClarityTag, Gtag } from '@dotcom/analytics';
 import Frame from '@dotcom/frame';
 import '@dotcom/globals.css';
 import ProviderTree from '@dotcom/provider-tree';
@@ -55,11 +55,14 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId="G-WFNJTNS1NZ" />
+      <Gtag tagId="G-WFNJTNS1NZ" />
+      <ClarityTag projectId="rfkjulzalm" />
 
       <body>
         <div id="root">
-          <ProviderTree>{children}</ProviderTree>
+          <ProviderTree>
+            <Frame>{children}</Frame>
+          </ProviderTree>
         </div>
       </body>
     </html>

@@ -4,21 +4,20 @@ import { ChangeEvent, useEffect, useState } from 'react';
 
 import { SwitchOnChangeData } from '@fluentui/react-components';
 
-import CookieSettings from '@dotcom/privacy/cookie-settings';
-import useCookies from '@dotcom/privacy/use-cookies';
+import { ConsentSettings, useConsent } from '@dotcom/privacy';
 
-export default function useCookieConsentState() {
-  const { settings, onConsentChange } = useCookies();
+export default function useCookieBanner() {
+  const { consent: settings, onConsentChange } = useConsent();
 
   const [showFab, setShowFab] = useState(true);
   const [consentDialogOpen, setConsentDialogOpen] = useState(false);
   const [managerDialogOpen, setManagerDialogOpen] = useState(false);
 
   const [analyticsEnabled, setAnalyticsEnabled] = useState(
-    settings?.enableAnalytics ?? true
+    settings?.analytics ?? true
   );
   const [advertisingEnabled, setAdvertisingEnabled] = useState(
-    settings?.enableAdvertising ?? true
+    settings?.advertising ?? true
   );
 
   useEffect(() => {
@@ -28,14 +27,17 @@ export default function useCookieConsentState() {
     }
   }, [settings]);
 
-  const handleCookieConsentChange = (cookies: CookieSettings) => {
+  const handleCookieConsentChange = (cookies: ConsentSettings) => {
+    setAnalyticsEnabled(cookies.analytics);
+    setAdvertisingEnabled(cookies.advertising);
+
     onConsentChange(cookies);
   };
 
   const handleAcceptAllClick = () => {
     handleCookieConsentChange({
-      enableAnalytics: true,
-      enableAdvertising: true,
+      analytics: true,
+      advertising: true,
     });
 
     setConsentDialogOpen(false);
@@ -46,8 +48,8 @@ export default function useCookieConsentState() {
 
   const handleRejectAllClick = () => {
     handleCookieConsentChange({
-      enableAnalytics: false,
-      enableAdvertising: false,
+      analytics: false,
+      advertising: false,
     });
 
     setConsentDialogOpen(false);
@@ -63,8 +65,8 @@ export default function useCookieConsentState() {
 
   const handleSaveSettingsClick = () => {
     handleCookieConsentChange({
-      enableAnalytics: analyticsEnabled,
-      enableAdvertising: advertisingEnabled,
+      analytics: analyticsEnabled,
+      advertising: advertisingEnabled,
     });
 
     setManagerDialogOpen(false);

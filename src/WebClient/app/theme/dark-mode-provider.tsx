@@ -41,9 +41,7 @@ interface DarkModeProviderProps {
   children: ReactNode;
 }
 
-export default function DarkModeProvider({
-  children,
-}: DarkModeProviderProps) {
+export default function DarkModeProvider({ children }: DarkModeProviderProps) {
   const {
     value: themePreferences,
     handleValueChange: handleThemePreferencesChange,

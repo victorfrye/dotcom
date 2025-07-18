@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next';
 
 import { getPosts } from '@dotcom/blog/posts-api';
+import { getPrivacyPolicy } from '@dotcom/privacy/policy-api';
 
 export const dynamic = 'force-static';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts();
+  const privacyPolicy = await getPrivacyPolicy();
 
   const sitemap: MetadataRoute.Sitemap = [
     {
@@ -16,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: 'https://victorfrye.com/privacy',
-      lastModified: new Date(2025, 5, 14),
+      lastModified: privacyPolicy.date,
       priority: 0.1,
       changeFrequency: 'yearly',
     },

@@ -1,6 +1,7 @@
-# Privacy Policy
-
-*Last updated July 14, 2025*
+---
+title: "Privacy Policy"
+date: 2025-07-18
+---
 
 This Privacy Policy for Victor Frye ("**we**", "**us**", or "**our**"), describes how we might access, collect, store, use, and/or share ("**process**") your personal information when you use our services ("**Services**"), including when you:
 
@@ -161,11 +162,11 @@ To the extent these online tracking technologies are deemed to be a "sale"/"shar
 
 ### Google Analytics
 
-- We may share your information with Google Analytics to track and analyze the use of the Services. To opt out of being tracked by Google Analytics across the Services, visit <https://tools.google.com/dlpage/gaoptout>. For more information on the privacy practices of Google, please visit the [Google Privacy & Terms page](https://policies.google.com/privacy).
+- We partner with Google Analytics to track and analyze how you use and interact with our Services. Google Analytics uses cookies and similar tracking technologies to collect information about your use of the Services, including your IP address, browser type, pages visited, time spent on pages, and other usage statistics. This information is used to compile reports and improve our Services. For more information about how Google collects and uses your data, visit the [Google Privacy & Terms page](https://policies.google.com/privacy).
 
 ### Microsoft Clarity
 
-- We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our Services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of the Services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft collects and uses your data, visit the [Microsoft Privacy Statement](https://www.microsoft.com/privacy/privacystatement).
+- We partner with Microsoft Clarity to capture how you use and interact with our Services through behavioral metrics, heatmaps, and session replay to improve and market our Services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of the Services and online activity. Additionally, we use this information for site optimization and fraud/security purposes. For more information about how Microsoft collects and uses your data, visit the [Microsoft Privacy Statement](https://www.microsoft.com/privacy/privacystatement).
 
 ## 5. HOW LONG DO WE KEEP YOUR INFORMATION?
 
@@ -213,7 +214,7 @@ Most Web browsers are set to accept cookies by default. If you prefer, you can u
 
 ## 9. CONTROLS FOR DO-NOT-TRACK FEATURES
 
-Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy POLICY.
+Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Policy.
 
 California law requires us to let you know how we respond to web browser DNT signals. Because there currently is not an industry or legal standard for recognizing or honoring DNT signals, we do not respond to them at this time.
 
@@ -310,7 +311,7 @@ If you submit the request through an authorized agent, we may need to collect ad
 
 ### Appeals
 
-Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below.. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
+Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS POLICY?](#13-how-can-you-contact-us-about-this-policy)" below. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
 
 ### California "Shine the Light" Law
 

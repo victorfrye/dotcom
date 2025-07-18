@@ -77,7 +77,6 @@ export default function Socials() {
             alt="LinkedIn"
             height={20}
             width={20}
-            suppressHydrationWarning
           />
         ),
       },
@@ -90,7 +89,6 @@ export default function Socials() {
             alt="GitHub"
             height={20}
             width={20}
-            suppressHydrationWarning
           />
         ),
       },
@@ -103,7 +101,6 @@ export default function Socials() {
             alt="Threads"
             height={20}
             width={20}
-            suppressHydrationWarning
           />
         ),
       },
@@ -116,7 +113,6 @@ export default function Socials() {
             alt="Bluesky"
             height={20}
             width={20}
-            suppressHydrationWarning
           />
         ),
       },
@@ -153,7 +149,6 @@ export default function Socials() {
         target="_blank"
         rel="me noreferrer noopener"
         key={social.href}
-        suppressHydrationWarning
       />
     ));
   };

@@ -63,9 +63,11 @@ const useStaticStyles = makeStaticStyles({
   },
 });
 
-export default function ThemeProvider({
-  children,
-}: Readonly<{ children: ReactNode }>) {
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+export default function ThemeProvider({ children }: ThemeProviderProps) {
   const styles = useStyles();
   useStaticStyles();
   const { isDark } = useDarkMode();

@@ -21,6 +21,8 @@ interface BlogLayoutProps {
   children: ReactNode;
 }
 
-export default function BlogLayout({ children }: Readonly<BlogLayoutProps>) {
+export default async function BlogLayout({
+  children,
+}: Readonly<BlogLayoutProps>) {
   return <>{children}</>;
 }

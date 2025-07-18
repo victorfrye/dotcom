@@ -1,3 +1,5 @@
+'use client';
+
 import { JSX, useCallback } from 'react';
 
 import { Button, Image, makeStyles, tokens } from '@fluentui/react-components';

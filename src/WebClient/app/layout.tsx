@@ -2,9 +2,10 @@ import { ReactNode } from 'react';
 
 import { Metadata } from 'next';
 
+import { ClarityTag, Gtag } from '@dotcom/analytics';
 import Frame from '@dotcom/frame';
 import '@dotcom/globals.css';
-import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
+import ProviderTree from '@dotcom/provider-tree';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -54,13 +55,14 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
+      <Gtag tagId="G-WFNJTNS1NZ" />
+      <ClarityTag projectId="rfkjulzalm" />
+
       <body>
         <div id="root">
-          <DarkModeProvider>
-            <ThemeProvider>
-              <Frame>{children}</Frame>
-            </ThemeProvider>
-          </DarkModeProvider>
+          <ProviderTree>
+            <Frame>{children}</Frame>
+          </ProviderTree>
         </div>
       </body>
     </html>

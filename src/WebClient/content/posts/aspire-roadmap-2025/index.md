@@ -1,7 +1,7 @@
 ---
 title: "Aspire Roadmap 2025: Code-first DevOps, polyglot, and AI"
 description: A look at the recently published Aspire roadmap for 2025, focusing on its code-first DevOps evolution, polyglot aspirations, and AI orchestration, and more.
-date: 2025-07-24
+date: 2025-07-25
 preview: assets/_blog/aspire-roadmap-2025/banner.jpg
 tags:
   - aspire
@@ -13,7 +13,7 @@ tags:
   - ai
 ---
 
-The Aspire team has recently published their [2025 roadmap](https://github.com/dotnet/aspire/discussions/10644), revealing an exciting evolution from local development orchestration to comprehensive framework for DevOps concerns. [Aspire](/blog/posts/hello-aspire-breaking-down-key-features) launched with a code-first application model and instantaneous run experience, then expanded into deploy scenarios with publishers. This roadmap shows how it's becoming a complete code-first alternative to YAML-heavy DevOps toolchains while embracing polyglot development and AI workload orchestration.
+The Aspire team has recently published their [2025 roadmap](https://github.com/dotnet/aspire/discussions/10644), revealing an exciting evolution from local development orchestration to a comprehensive framework for DevOps concerns. [Aspire](/blog/posts/hello-aspire-breaking-down-key-features) launched with a code-first application model and instantaneous run experience, then expanded into deploy scenarios with publishers. This roadmap shows how it's becoming a complete code-first alternative to YAML-heavy DevOps toolchains while embracing polyglot development and AI workload orchestration.
 
 While these are aspirational goals rather than firm commitments, they provide valuable insight into Aspire's direction. Let's explore the most compelling features and why they position Aspire as a game-changing DevOps framework for .NET, polyglot, and AI applications.
 
@@ -44,7 +44,7 @@ These features may transform testing from simple integration scenarios to compre
 ### Deployment
 
 Deployment bridges development and customer value delivery. Aspire's local orchestration model naturally extends to cloud deployment scenarios. Aspire has been expanding to include deployment targets and publishers, simplifying the process of getting your application into production.
-Currently, Aspire publishes artifacts like Bicep (IaC), Docker Compose, and Kubernetes manifests. While deployment targets are limited and opinionated, the roadmap addresses key enterprise needs:
+Currently, Aspire publishes artifacts like Bicep, Docker Compose, and Kubernetes manifests. While deployment targets are limited and opinionated, the roadmap addresses key enterprise needs:
 
 - **Additional deployment targets**: Support for Azure App Service, Azure Functions, and improved Docker/Kubernetes workflows
 - **Environment support**: Define dev/stage/prod environments with specific configurations and secrets
@@ -77,11 +77,11 @@ These features fall into two categories: enhanced observability and agent develo
 
 ## Aspire tooling
 
-As Aspire evolves into a comprehensive framework, its tooling ecosystem continues expanding beyond the core .NET SDK. The roadmap includes several improvements:
+As Aspire evolves into a mature framework, its tooling ecosystem continues expanding beyond the core .NET SDK. The roadmap includes several improvements:
 
 - **Aspire CLI**: Continued improvements and unified commands
 - **WinGet and Homebrew installers**: Standard install support for Windows and macOS
-- **Visual Studio Code extension**: Run, debug, and orchestrate polyglot Aspire applications in VS Code
+- **VS Code extension**: Run, debug, and orchestrate polyglot Aspire applications in VS Code
 
 These improvements reduce friction for adoption and enhance the overall developer experience, particularly for polyglot developers who favor VS Code.
 

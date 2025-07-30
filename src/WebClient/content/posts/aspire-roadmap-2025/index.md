@@ -1,7 +1,7 @@
 ---
 title: "Aspire Roadmap 2025: Code-first DevOps, polyglot, and AI"
 description: A look at the recently published Aspire roadmap for 2025, focusing on its code-first DevOps evolution, polyglot aspirations, and AI orchestration, and more.
-date: 2025-07-28
+date: 2025-07-30
 preview: assets/_blog/aspire-roadmap-2025/banner.jpg
 tags:
   - aspire
@@ -73,7 +73,9 @@ While AI dominates software conversations, Aspire has focused on fundamental dev
 - **Azure AI Foundry**: Integration for building agent-based applications
 - **Aspire MCP server**: Optional runtime endpoint exposing the Aspire model as an MCP server for AI agents
 
-Building AI applications is itself a nascent discipline. The Aspire team appears to be taking a measured approach to AI integration instead of branding itself another set of AI-native tools. These Aspire AI features are focused on two key areas: observability and agents. Observability is another area Aspire already excels at with the Aspire dashboard. Token usage and LLM-specific metrics visualizations in the Aspire dashboard will be a wonderful addition to the existing telemetry and observability features. It stays true to the natural value of Aspire while also extending to needs of AI local development needs. In agentic regards, Aspire works but has a lot of limitations. Existing AI integrations, like Azure OpenAI and Ollama, provide some options for local and cloud-hosted LLMs. The integration with Azure AI Foundry may extend the catalog and options for LLMs. It will be exceptionally interesting if the integration supports Azure AI Foundry Local capabilities to provide a unified catalog of models both locally and in the cloud. The Aspire MCP server likewise adds agentic capabilities to Aspire. Model Context Protocol (MCP) is becoming an industry standard for AI agents communicating, understanding, and interacting with outside systems. An Aspire MCP server could provide development tools like GitHub Copilot with deep context on your application model and all the resources Aspire manages. I am all for more intelligent development workflows. Like so many other technologies, Aspire is targeting AI trends and trying to provide its own value in the space.
+Building AI applications is itself a nascent discipline. The Aspire team appears to be taking a measured approach to AI integration instead of branding itself another set of AI-native tools. These Aspire AI features are focused on two key areas: observability and agents. Observability is another area Aspire already excels at with the Aspire dashboard. Token usage and LLM-specific metrics visualizations in the Aspire dashboard will be a wonderful addition to the existing telemetry and observability features. It stays true to the natural value of Aspire while also extending to needs of AI local development needs.
+
+In agentic regards, Aspire works but has a lot of limitations. Existing AI integrations, like Azure OpenAI and Ollama, provide some options for local and cloud-hosted LLMs. The integration with Azure AI Foundry may extend the catalog and options for LLMs. It will be exceptionally interesting if the integration supports Azure AI Foundry Local capabilities to provide a unified catalog of models both locally and in the cloud. The Aspire MCP server likewise adds agentic capabilities to Aspire. Model Context Protocol (MCP) is becoming an industry standard for AI agents communicating, understanding, and interacting with outside systems. An Aspire MCP server could provide development tools like GitHub Copilot with deep context on your application model and all the resources Aspire manages. I am all for more intelligent development workflows. Like so many other technologies, Aspire is targeting AI trends and trying to provide its own value in the space.
 
 ## Aspire tooling
 
@@ -87,6 +89,6 @@ The tooling of Aspire is a meta story and so are its roadmap items. The code-fir
 
 ## Final thoughts
 
-The 2025 roadmap that the Aspire team published is an exciting glimpse into a rapidly evolving framework. Nothing is a commitment, but the vision tells a story of what Aspire is developing into: a code-first DevOps framework that simplifies local development, testing, and deployment while embracing polyglot development and AI orchestration. I am incredibly excited by this roadmap as it aligns with my own dreams for Aspire. I love what it is today and recommend it to every .NET developer and some polyglot developers. If the Aspire team can deliver on half of these features, it will only continue to be a game-changer for developing distributed applications.
+The [2025 roadmap](https://github.com/dotnet/aspire/discussions/10644) that the Aspire team published is an exciting glimpse into a rapidly evolving framework. Nothing is a commitment, but the vision tells a story of what Aspire is developing into: a code-first DevOps framework that simplifies local development, testing, and deployment while embracing polyglot development and AI orchestration. I am incredibly excited by this roadmap as it aligns with my own dreams for Aspire. I love what it is today and recommend it to every .NET developer and some polyglot developers. If the Aspire team can deliver on half of these features, it will only continue to be a game-changer for developing distributed applications.
 
 Let me know what you think of Aspire and where it is going. Are you excited about the roadmap? Do you think Aspire can deliver on these promises? I would love to hear your thoughts and experiences with Aspire so far.

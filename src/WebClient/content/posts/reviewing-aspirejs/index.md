@@ -1,7 +1,7 @@
 ---
 title: "Reviewing Aspire.JS: Current state of Aspire for JavaScript"
 description: A review of Aspire for JavaScript, an orchestration framework for polyglot applications, including current state, personal experiences, and future aspirations.
-date: 2025-07-28
+date: 2025-07-30
 preview: assets/_blog/reviewing-aspirejs/banner.jpg
 tags:
   - aspire
@@ -15,11 +15,11 @@ Aspire is the coolest thing in software development right now. That's a statemen
 
 One reason I refer to Aspire as the coolest thing in software development is my frequent use of it in JavaScript projects. Whether it's a simple static site or a full-stack application, Aspire has become my go-to tool for local development.
 
-This post is a review of Aspire for JavaScript including current state, personal experiences, and future aspirations. If you are a JavaScript, .NET, or polyglot developer interested in Aspire, this analysis is for you. If you are not familiar with Aspire, you may want to read a [breakdown of its key features](/blog/posts/hello-aspire-breaking-down-key-features) first.
+This post is a review of Aspire for JavaScript including current state, my personal experiences, and future aspirations. If you are a JavaScript, .NET, or polyglot developer interested in Aspire, this analysis is for you. If you are not familiar with Aspire, you may want to read a [breakdown of its key features](/blog/posts/hello-aspire-breaking-down-key-features) first.
 
 ## Current state
 
-Aspire in its current state is a code-first orchestration framework written in C# but enabling local development and hosting of polyglot applications. JavaScript and .NET exist in harmony with Aspire. Given the common stack of a JavaScript web frontend, an .NET web API backend, and a containerized database or other backing services, Aspire hosts the entire stack and abstracts away the different mechanisms for running and connecting each component.
+Aspire in its current state is a code-first orchestration framework written in C# but enabling local development and hosting of polyglot applications. JavaScript and .NET exist in harmony with Aspire. Given the common stack of a JavaScript web frontend, a .NET web API backend, and a containerized database or other backing services, Aspire hosts the entire stack and abstracts away the different mechanisms for running and connecting each component.
 
 The above stack is the apparent assumption of Aspire for JavaScript. Aspire allows for modeling and running JavaScript backends, full-stack JavaScript applications, and scripts, but given the .NET-first nature of Aspire, you will be writing some C# code if you use Aspire. Accepting this for the app host, the orchestrator and C# model, Aspire provides two extension points of note for JavaScript development: Integration packages and deployment targets.
 
@@ -52,7 +52,7 @@ JavaScript developers are accustomed to a true serverless experience, one in whi
 
 And so much more. This is antithetical to traditional .NET development and represents a fundamental difference in JavaScript versus .NET. Some JavaScript developers may opt for containerized hosting due to enterprise infrastructure or for self-managed static web servers like Nginx, but Azure already provides a first-class static web hosting solution with [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/overview). Azure Static Web Apps are nowhere to be found in the Aspire deployment story, which is a major gap for Aspire for JavaScript.
 
-## Personal Aspire.JS story
+## My Aspire.JS story
 
 To understand how Aspire fits JavaScript development currently and potentially in the future, it is helpful to understand how a developer who has adopted Aspire already uses it. I am a full-stack developer who currently favors .NET for backend development, React for frontend development, and Azure for cloud hosting. I started using Aspire for a sample .NET web API that I wanted to run on macOS and Windows, so that anyone could pull down the code and run it with minimal configuration. Aspire was perfect for this, so I started using it for all my .NET projects. This in turn led me to use Aspire to host a React frontend alongside my web API and database, which also proved to be effortless. Finally, I asked the question: _Why not use Aspire for my JavaScript only projects?_
 

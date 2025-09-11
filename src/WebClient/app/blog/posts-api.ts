@@ -28,15 +28,13 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   // Tell the date to be EST
   date?.setMinutes(date.getMinutes() + 300);
 
-  const html = await getPostHtmlContent(content);
-
   return {
     slug,
     ...data,
     date: date,
     lastModified: data.lastModified ? new Date(data.lastModified) : undefined,
-    readingDuration: readingDuration(html, { emoji: false }),
-    content: html,
+    readingDuration: readingDuration(content, { emoji: false }),
+    content: await getPostHtmlContent(content),
   } as Post;
 }
 

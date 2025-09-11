@@ -16,7 +16,7 @@ defaults:
     shell: pwsh
 
 env:
-  NODEJS_VERSION: '22.x'
+  NODEJS_VERSION: '24.x'
 
 jobs:
   build_and_deploy:
@@ -34,10 +34,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODEJS_VERSION }}
           cache: npm

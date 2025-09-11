@@ -2,7 +2,7 @@
 title: "dotnet run file.cs: The new file-based application model"
 description: Let's explore the dotnet run file.cs paradigm for writing file-based .NET applications and the new value it brings to the .NET ecosystem.
 date: 2025-06-23
-preview: assets/_blog/dotnet-run-file/banner.jpg
+image: assets/_blog/dotnet-run-file/banner.jpg
 tags:
   - dotnet
 ---

@@ -18,9 +18,9 @@ import CookieText from '@dotcom/cookies/cookie-text';
 
 interface CookieManagerDialogProps {
   open: boolean;
-  onAcceptAll: () => void;
-  onRejectAll: () => void;
-  onSaveSettings: () => void;
+  onAccept: () => void;
+  onReject: () => void;
+  onSave: () => void;
   advertisingEnabled: boolean;
   analyticsEnabled: boolean;
   onAdvertisingToggle: (
@@ -35,9 +35,9 @@ interface CookieManagerDialogProps {
 
 export default function CookieManagerDialog({
   open,
-  onAcceptAll,
-  onRejectAll,
-  onSaveSettings,
+  onAccept,
+  onReject,
+  onSave,
   advertisingEnabled,
   analyticsEnabled,
   onAdvertisingToggle,
@@ -84,15 +84,13 @@ export default function CookieManagerDialog({
             ))}
           </DialogContent>
           <DialogActions fluid>
-            <Button appearance="primary" onClick={onAcceptAll}>
-              {CookieText.buttons.acceptAll}
+            <Button appearance="primary" onClick={onAccept}>
+              {CookieText.buttons.accept}
             </Button>
-            <Button appearance="primary" onClick={onRejectAll}>
-              {CookieText.buttons.rejectAll}
+            <Button appearance="primary" onClick={onReject}>
+              {CookieText.buttons.reject}
             </Button>
-            <Button onClick={onSaveSettings}>
-              {CookieText.buttons.saveSettings}
-            </Button>
+            <Button onClick={onSave}>{CookieText.buttons.save}</Button>
           </DialogActions>
         </DialogBody>
       </DialogSurface>

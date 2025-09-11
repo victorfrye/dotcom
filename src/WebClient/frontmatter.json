@@ -36,8 +36,8 @@
           "isModifiedDate": true
         },
         {
-          "title": "Content preview",
-          "name": "preview",
+          "title": "Banner image",
+          "name": "image",
           "type": "image"
         },
         {

@@ -2,7 +2,7 @@
 title: Microsoft Build 2025 Wrapped
 description: A recap of the most exciting announcements from Microsoft Build 2025 according to your friendly neighborhood developer.
 date: 2025-05-22
-preview: assets/_blog/microsoft-build-2025-wrapped/banner.jpg
+image: assets/_blog/microsoft-build-2025-wrapped/banner.jpg
 tags:
   - ai
   - aspire

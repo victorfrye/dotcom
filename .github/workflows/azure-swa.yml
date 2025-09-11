@@ -14,7 +14,6 @@ permissions:
 defaults:
   run:
     shell: pwsh
-    working-directory: './src/WebClient'
 
 env:
   NODEJS_VERSION: '22.x'
@@ -45,13 +44,13 @@ jobs:
           cache-dependency-path: ./src/WebClient/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefix ./src/WebClient
 
       - name: Verify formatting
-        run: npm run lint:check
+        run: npm run lint --prefix ./src/WebClient
 
       - name: Build sources
-        run: npm run build
+        run: npm run build --prefix ./src/WebClient
 
       - name: Deploy static web app
         id: deploy

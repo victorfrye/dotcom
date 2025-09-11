@@ -1,4 +1,6 @@
-const prettierConfig = {
+import type { Config as PrettierConfig } from 'prettier';
+
+const prettierConfig: PrettierConfig = {
   plugins: ['@trivago/prettier-plugin-sort-imports'],
   trailingComma: 'es5',
   tabWidth: 2,

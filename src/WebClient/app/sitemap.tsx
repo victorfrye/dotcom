@@ -8,11 +8,12 @@ export const dynamic = 'force-static';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts();
   const privacyPolicy = await getPrivacyPolicy();
+  const now = new Date();
 
   const sitemap: MetadataRoute.Sitemap = [
     {
       url: 'https://victorfrye.com',
-      lastModified: new Date(),
+      lastModified: now,
       priority: 1.0,
       changeFrequency: 'weekly',
     },
@@ -24,13 +25,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: 'https://victorfrye.com/resume',
-      lastModified: new Date(),
+      lastModified: now,
       priority: 0.8,
       changeFrequency: 'monthly',
     },
     {
       url: 'https://victorfrye.com/blog',
-      lastModified: new Date(),
+      lastModified: now,
+      priority: 0.8,
+      changeFrequency: 'weekly',
+    },
+    {
+      url: 'https://victorfrye.com/blog/feed/rss.xml',
+      lastModified: now,
       priority: 0.8,
       changeFrequency: 'weekly',
     },

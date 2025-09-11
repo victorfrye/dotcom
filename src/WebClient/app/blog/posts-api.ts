@@ -14,7 +14,7 @@ import { Post } from '@dotcom/types';
 
 const postsDirectory = join(process.cwd(), 'content/posts');
 
-export async function getPostSlugs(): Promise<string[]> {
+async function getPostSlugs(): Promise<string[]> {
   return await fs.promises.readdir(postsDirectory);
 }
 
@@ -28,13 +28,15 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   // Tell the date to be EST
   date?.setMinutes(date.getMinutes() + 300);
 
+  const html = await getPostHtmlContent(content);
+
   return {
     slug,
     ...data,
     date: date,
     lastModified: data.lastModified ? new Date(data.lastModified) : undefined,
-    readingDuration: readingDuration(content, { emoji: false }),
-    html: await getPostHtmlContent(content),
+    readingDuration: readingDuration(html, { emoji: false }),
+    content: html,
   } as Post;
 }
 
@@ -44,7 +46,7 @@ export async function getPosts(): Promise<Post[]> {
   return posts.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
 }
 
-export async function getPostHtmlContent(markdown: string): Promise<string> {
+async function getPostHtmlContent(markdown: string): Promise<string> {
   const content = await unified()
     .use(remarkParse)
     .use(remarkGfm)

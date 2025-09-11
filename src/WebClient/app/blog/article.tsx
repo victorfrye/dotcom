@@ -14,7 +14,7 @@ import {
 } from '@fluentui/react-components';
 import { CalendarRegular } from '@fluentui/react-icons';
 
-import BlogBreadcrumb from '@dotcom/blog/blog-breadcrumb';
+import BlogBreadcrumb from '@dotcom/blog/breadcrumb';
 import usePost from '@dotcom/blog/use-post';
 import { Post } from '@dotcom/types';
 
@@ -126,7 +126,7 @@ export default function Article({ post }: Readonly<ArticleProps>) {
       <BlogBreadcrumb post={post} />
 
       <Image
-        src={`/${post.preview}`}
+        src={`/${post.image}`}
         alt={post.title}
         shape="rounded"
         block
@@ -146,7 +146,7 @@ export default function Article({ post }: Readonly<ArticleProps>) {
 
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
-      <div dangerouslySetInnerHTML={{ __html: post.html ?? '' }} />
+      <div dangerouslySetInnerHTML={{ __html: post.content ?? '' }} />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-export const PrivacyText = {
+const PrivacyText = {
   policy: {
     title: 'Privacy Policy',
     lastUpdated: 'Last updated: ',

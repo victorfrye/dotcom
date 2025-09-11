@@ -1,6 +1,6 @@
 import { Link, Text } from '@fluentui/react-components';
 
-export const CookieText = {
+const CookieText = {
   consentDialog: {
     title: 'We value your privacy',
     body: (
@@ -45,10 +45,10 @@ export const CookieText = {
   },
 
   buttons: {
-    acceptAll: 'Accept All',
-    rejectAll: 'Reject All',
-    manageCookies: 'Manage Cookies',
-    saveSettings: 'Save Settings',
+    accept: 'Accept All',
+    reject: 'Reject Unnecessary',
+    manage: 'Manage Cookies',
+    save: 'Save Settings',
   },
 };
 

@@ -55,7 +55,7 @@ export async function generateMetadata(
     openGraph: {
       title: `${post.title} | Victor Frye`,
       description: post.description,
-      images: [`/${post.preview}`],
+      images: [`/${post.image}`],
     },
   };
 }

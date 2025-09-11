@@ -3,7 +3,7 @@
 import { JSX, useCallback } from 'react';
 
 import { Button, Image, makeStyles, tokens } from '@fluentui/react-components';
-import { MailFilled } from '@fluentui/react-icons';
+import { MailFilled, RssFilled } from '@fluentui/react-icons';
 
 import { useDarkMode } from '@dotcom/theme';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     gap: tokens.spacingVerticalM,
     '@media screen and (max-width: 576px)': {
-      gap: tokens.spacingVerticalSNudge,
+      gap: tokens.spacingVerticalXXS,
     },
   },
   icon: {
@@ -132,6 +132,11 @@ export default function Socials() {
         href: 'mailto:victorfrye@outlook.com',
         styles: styles.brand,
         image: <MailFilled className={styles.icon} height={20} width={20} />,
+      },
+      {
+        href: '/blog/feed/rss.xml',
+        styles: styles.brand,
+        image: <RssFilled className={styles.icon} height={20} width={20} />,
       },
     ];
   }, [isDark, styles]);

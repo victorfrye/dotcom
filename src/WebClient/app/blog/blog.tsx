@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react';
 
-import BlogBreadcrumb from './blog-breadcrumb';
+import BlogBreadcrumb from './breadcrumb';
 import { makeStyles, tokens } from '@fluentui/react-components';
 
 import PostPreview from '@dotcom/blog/post-preview';

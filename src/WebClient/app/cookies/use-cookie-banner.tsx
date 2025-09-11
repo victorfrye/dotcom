@@ -27,15 +27,15 @@ export default function useCookieBanner() {
     }
   }, [settings]);
 
-  const handleCookieConsentChange = (cookies: ConsentSettings) => {
+  const handleConsentChange = (cookies: ConsentSettings) => {
     setAnalyticsEnabled(cookies.analytics);
     setAdvertisingEnabled(cookies.advertising);
 
     onConsentChange(cookies);
   };
 
-  const handleAcceptAllClick = () => {
-    handleCookieConsentChange({
+  const handleAcceptClick = () => {
+    handleConsentChange({
       analytics: true,
       advertising: true,
     });
@@ -46,8 +46,8 @@ export default function useCookieBanner() {
     setShowFab(true);
   };
 
-  const handleRejectAllClick = () => {
-    handleCookieConsentChange({
+  const handleRejectClick = () => {
+    handleConsentChange({
       analytics: false,
       advertising: false,
     });
@@ -58,13 +58,13 @@ export default function useCookieBanner() {
     setShowFab(true);
   };
 
-  const handleManageCookiesClick = () => {
+  const handleManageClick = () => {
     setConsentDialogOpen(false);
     setManagerDialogOpen(true);
   };
 
-  const handleSaveSettingsClick = () => {
-    handleCookieConsentChange({
+  const handleSaveClick = () => {
+    handleConsentChange({
       analytics: analyticsEnabled,
       advertising: advertisingEnabled,
     });
@@ -100,10 +100,10 @@ export default function useCookieBanner() {
     managerDialogOpen,
     analyticsEnabled,
     advertisingEnabled,
-    handleAcceptAllClick,
-    handleRejectAllClick,
-    handleManageCookiesClick,
-    handleSaveSettingsClick,
+    handleAcceptClick,
+    handleRejectClick,
+    handleManageClick,
+    handleSaveClick,
     handleAnalyticsToggle,
     handleAdvertisingToggle,
     handleFabClick,

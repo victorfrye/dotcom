@@ -2,7 +2,7 @@
 title: "Reviewing Aspire.JS: Current state of Aspire for JavaScript"
 description: A review of Aspire for JavaScript, an orchestration framework for polyglot applications, including current state, personal experiences, and future aspirations.
 date: 2025-07-30
-preview: assets/_blog/reviewing-aspirejs/banner.jpg
+image: assets/_blog/reviewing-aspirejs/banner.jpg
 tags:
   - aspire
   - cloudnative

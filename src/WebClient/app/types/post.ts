@@ -6,9 +6,9 @@ export default interface Post {
   date: Date;
   lastModified: Date;
   readingDuration: string;
-  preview: string;
+  image: string;
   draft: boolean;
   tags: string[];
   categories: string[];
-  html: string;
+  content: string;
 }

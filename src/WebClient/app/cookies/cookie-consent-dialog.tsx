@@ -44,16 +44,16 @@ const useStyles = makeStyles({
 
 interface CookieConsentDialogProps {
   open: boolean;
-  onAcceptAll: () => void;
-  onRejectAll: () => void;
-  onManageCookies: () => void;
+  onAccept: () => void;
+  onReject: () => void;
+  onManage: () => void;
 }
 
 export default function CookieConsentDialog({
   open,
-  onAcceptAll,
-  onRejectAll,
-  onManageCookies,
+  onAccept,
+  onReject,
+  onManage,
 }: Readonly<CookieConsentDialogProps>) {
   const styles = useStyles();
 
@@ -67,15 +67,13 @@ export default function CookieConsentDialog({
             </DialogTitle>
             <DialogContent>{CookieText.consentDialog.body}</DialogContent>
             <DialogActions fluid>
-              <Button appearance="primary" onClick={onAcceptAll}>
-                {CookieText.buttons.acceptAll}
+              <Button appearance="primary" onClick={onAccept}>
+                {CookieText.buttons.accept}
               </Button>
-              <Button appearance="primary" onClick={onRejectAll}>
-                {CookieText.buttons.rejectAll}
+              <Button appearance="primary" onClick={onReject}>
+                {CookieText.buttons.reject}
               </Button>
-              <Button onClick={onManageCookies}>
-                {CookieText.buttons.manageCookies}
-              </Button>
+              <Button onClick={onManage}>{CookieText.buttons.manage}</Button>
             </DialogActions>
           </DialogBody>
         </DialogSurface>

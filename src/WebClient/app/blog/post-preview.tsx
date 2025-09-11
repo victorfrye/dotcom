@@ -97,7 +97,7 @@ export default function PostPreview(props: Readonly<PostPreviewProps>) {
       className={styles.container}
     >
       <CardPreview>
-        <Image src={`/${post.preview}`} alt={post.title} block />
+        <Image src={`/${post.image}`} alt={post.title} block />
       </CardPreview>
 
       <CardHeader

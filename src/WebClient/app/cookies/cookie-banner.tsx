@@ -12,10 +12,10 @@ export default function CookieBanner() {
     managerDialogOpen,
     analyticsEnabled,
     advertisingEnabled,
-    handleAcceptAllClick,
-    handleRejectAllClick,
-    handleManageCookiesClick,
-    handleSaveSettingsClick,
+    handleAcceptClick,
+    handleRejectClick,
+    handleManageClick,
+    handleSaveClick,
     handleAnalyticsToggle,
     handleAdvertisingToggle,
     handleFabClick,
@@ -28,18 +28,18 @@ export default function CookieBanner() {
       <div>
         <CookieConsentDialog
           open={consentDialogOpen}
-          onAcceptAll={handleAcceptAllClick}
-          onRejectAll={handleRejectAllClick}
-          onManageCookies={handleManageCookiesClick}
+          onAccept={handleAcceptClick}
+          onReject={handleRejectClick}
+          onManage={handleManageClick}
         />
       </div>
 
       <div>
         <CookieManagerDialog
           open={managerDialogOpen}
-          onAcceptAll={handleAcceptAllClick}
-          onRejectAll={handleRejectAllClick}
-          onSaveSettings={handleSaveSettingsClick}
+          onAccept={handleAcceptClick}
+          onReject={handleRejectClick}
+          onSave={handleSaveClick}
           advertisingEnabled={advertisingEnabled}
           analyticsEnabled={analyticsEnabled}
           onAdvertisingToggle={handleAdvertisingToggle}

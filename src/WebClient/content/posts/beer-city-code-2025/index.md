@@ -2,7 +2,7 @@
 title: "Beer City Code 2025: Cheers to the Grand Rapids community!"
 description: Cheers to the Grand Rapids developer community! Thank you to the attendees, organizers, sponsors, and my fellow speakers for making this event a success.
 date: 2025-08-11
-preview: assets/_blog/beer-city-code-2025/banner.jpg
+image: assets/_blog/beer-city-code-2025/banner.jpg
 tags:
   - dotnet
   - aspire

@@ -2,7 +2,7 @@
 title: "Aspire Roadmap 2025: Code-first DevOps, polyglot, and AI"
 description: A look at the recently published Aspire roadmap for 2025, focusing on its code-first DevOps evolution, polyglot aspirations, and AI orchestration, and more.
 date: 2025-07-30
-preview: assets/_blog/aspire-roadmap-2025/banner.jpg
+image: assets/_blog/aspire-roadmap-2025/banner.jpg
 tags:
   - aspire
   - cloudnative

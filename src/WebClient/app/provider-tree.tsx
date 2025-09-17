@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 
 import { ConsentProvider } from '@dotcom/privacy';
-import { DarkModeProvider, ThemeProvider } from '@dotcom/theme';
+import { ColorModeProvider, ThemeProvider } from '@dotcom/theme';
 
 interface ProviderTreeProps {
   children: ReactNode;
@@ -14,9 +14,9 @@ export default function ProviderTree({
 }: Readonly<ProviderTreeProps>) {
   return (
     <ConsentProvider>
-      <DarkModeProvider>
+      <ColorModeProvider>
         <ThemeProvider>{children}</ThemeProvider>
-      </DarkModeProvider>
+      </ColorModeProvider>
     </ConsentProvider>
   );
 }

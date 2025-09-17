@@ -2,7 +2,8 @@ import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Article from '@dotcom/blog/article';
-import { getPostBySlug, getPosts } from '@dotcom/blog/posts-api';
+import { getPostBySlug, getPosts } from '@dotcom/blog/content-utils';
+import { getLink } from '@dotcom/blog/post-utils';
 
 interface PostPageProps {
   slug: string;
@@ -50,7 +51,7 @@ export async function generateMetadata(
     description: post.description,
     keywords: [...previousKeywords, ...post.tags],
     alternates: {
-      canonical: `/blog/posts/${post.slug}`,
+      canonical: getLink(post),
     },
     openGraph: {
       title: `${post.title} | Victor Frye`,

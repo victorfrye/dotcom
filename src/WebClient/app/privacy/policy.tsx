@@ -2,7 +2,6 @@
 
 import { useMemo } from 'react';
 
-import PrivacyText from './privacy-text';
 import {
   Text,
   Title1,
@@ -10,6 +9,8 @@ import {
   makeStyles,
   tokens,
 } from '@fluentui/react-components';
+
+import PrivacyText from '@dotcom/privacy/text';
 
 const useStyles = makeStyles({
   container: {
@@ -81,11 +82,11 @@ const useMarkdownStyles = makeStaticStyles({
 });
 
 interface PolicyProps {
-  html: string;
+  content: string;
   date: Date;
 }
 
-export default function Policy({ html, date }: Readonly<PolicyProps>) {
+export default function Policy({ content, date }: Readonly<PolicyProps>) {
   const styles = useStyles();
   useMarkdownStyles();
 
@@ -106,7 +107,7 @@ export default function Policy({ html, date }: Readonly<PolicyProps>) {
       <Text italic>{`${PrivacyText.policy.lastUpdated} ${formattedDate}`}</Text>
 
       <div
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: content }}
         className={styles.container}
       />
     </main>

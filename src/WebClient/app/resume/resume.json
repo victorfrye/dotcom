@@ -134,6 +134,10 @@
       "category": "Developer Technologies"
     },
     {
+      "name": "Playwright",
+      "category": "Developer Technologies"
+    },
+    {
       "name": "Fluent UI",
       "category": "Developer Technologies"
     },
@@ -158,11 +162,19 @@
       "category": "Developer Technologies"
     },
     {
+      "name": "Azure App Testing",
+      "category": "Developer Technologies"
+    },
+    {
       "name": "Terraform",
       "category": "Cloud Infrastructure"
     },
     {
       "name": "Bicep",
+      "category": "Cloud Infrastructure"
+    },
+    {
+      "name": "Azure App Service",
       "category": "Cloud Infrastructure"
     },
     {
@@ -238,7 +250,7 @@
       "category": "Data and AI"
     },
     {
-      "name": "Azure AI",
+      "name": "Azure AI Foundry",
       "category": "Data and AI"
     }
   ],
@@ -285,5 +297,42 @@
       "link": "https://learn.microsoft.com/en-us/users/victorfrye/credentials/fab0ead497381392"
     }
   ],
-  "projects": []
+  "portfolio": [
+    {
+      "name": "Blog",
+      "description": "A personal blog about software development, cloud computing, and career progression.",
+      "startDate": "2025-05-03",
+      "link": "https://victorfrye.com/blog"
+    },
+    {
+      "name": "Shrug Man",
+      "description": "A simple website to generate the shrug ASCII emoticon ¯\\_(ツ)_/¯ for copying and pasting.",
+      "startDate": "2025-04-01",
+      "link": "https://shrugman.com"
+    },
+    {
+      "name": "Mocking Mirror",
+      "description": "An AI application to mock users with computer vision and witty text generation.",
+      "startDate": "2024-05-01",
+      "link": "https://github.com/victorfrye/mockingmirror"
+    },
+    {
+      "name": "Microsoft Graveyard",
+      "description": "A virtual graveyard and memorial for discontinued Microsoft products and services.",
+      "startDate": "2024-01-01",
+      "link": "https://microsoftgraveyard.com"
+    },
+    {
+      "name": "VictorFrye.COM",
+      "description": "The personal landing page of your friendly neighborhood developer, myself, Victor Frye.",
+      "startDate": "2023-12-01",
+      "link": "https://victorfrye.com"
+    },
+    {
+      "name": "Dotfiles",
+      "description": "A collection of configuration files and scripts for automated setup of a Windows development environment.",
+      "startDate": "2019-08-01",
+      "link": "https://github.com/victorfrye/dotfiles"
+    }
+  ]
 }

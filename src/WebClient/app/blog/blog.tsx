@@ -5,8 +5,8 @@ import { useCallback } from 'react';
 import BlogBreadcrumb from './breadcrumb';
 import { makeStyles, tokens } from '@fluentui/react-components';
 
-import PostPreview from '@dotcom/blog/post-preview';
-import { Post } from '@dotcom/types';
+import Post from '@dotcom/blog/post';
+import PostCard from '@dotcom/blog/post-card';
 
 const useStyles = makeStyles({
   header: {
@@ -42,7 +42,7 @@ export default function Blog({ posts }: Readonly<BlogProps>) {
     (): JSX.Element[] =>
       posts.map((post) => (
         <li key={post.slug} className={styles.item}>
-          <PostPreview post={post} />
+          <PostCard post={post} />
         </li>
       )),
     [posts, styles]

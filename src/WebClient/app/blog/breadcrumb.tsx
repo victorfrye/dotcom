@@ -5,14 +5,13 @@ import {
   BreadcrumbButton,
   BreadcrumbDivider,
   BreadcrumbItem,
-  Tooltip,
   makeStyles,
   tokens,
-  truncateBreadcrumbLongName,
 } from '@fluentui/react-components';
 import { HomeColor } from '@fluentui/react-icons';
 
-import { Post } from '@dotcom/types';
+import Post from '@dotcom/blog/post';
+import { getLink } from '@dotcom/blog/post-utils';
 
 const useStyles = makeStyles({
   breadcrumb: {
@@ -44,14 +43,9 @@ export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {
           </BreadcrumbItem>
           <BreadcrumbDivider />
           <BreadcrumbItem>
-            <Tooltip withArrow content={post.title} relationship="label">
-              <BreadcrumbButton
-                href={`/blog/posts/${post.slug}`}
-                current={!!post}
-              >
-                {truncateBreadcrumbLongName(post.title)}
-              </BreadcrumbButton>
-            </Tooltip>
+            <BreadcrumbButton href={getLink(post)} current={!!post}>
+              {post.title}
+            </BreadcrumbButton>
           </BreadcrumbItem>
         </>
       )}

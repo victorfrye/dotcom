@@ -2,14 +2,13 @@
 
 import { useCallback, useEffect, useReducer } from 'react';
 
+import Certificate from '@dotcom/resume/certificate';
+import Education from '@dotcom/resume/education';
+import Entity from '@dotcom/resume/entity';
+import Experience from '@dotcom/resume/experience';
+import Project from '@dotcom/resume/project';
 import resumeDocument from '@dotcom/resume/resume.json';
-import {
-  Certificate,
-  Education,
-  Entity,
-  Experience,
-  Skill,
-} from '@dotcom/types';
+import Skill from '@dotcom/resume/skill';
 
 interface EntityRecord {
   name: string;
@@ -48,12 +47,21 @@ interface CertificateRecord {
   link?: string;
 }
 
+interface PortfolioRecord {
+  name: string;
+  description: string;
+  startDate: Date;
+  endDate?: Date;
+  link?: string;
+}
+
 interface ResumeDocument {
   $schema: string;
   experience?: ExperienceRecord[];
   education?: EducationRecord[];
   skills?: SkillRecord[];
   certifications?: CertificateRecord[];
+  portfolio?: PortfolioRecord[];
 }
 
 const toEntity = (entityRecord: EntityRecord): Entity => ({
@@ -93,10 +101,19 @@ const toSkill = (skill: SkillRecord): Skill => ({
   category: skill.category,
 });
 
+const toProject = (item: PortfolioRecord): Project => ({
+  name: item.name,
+  description: item.description,
+  startDate: new Date(item.startDate),
+  endDate: item.endDate ? new Date(item.endDate) : undefined,
+  link: item.link,
+});
+
 interface ResumeState {
   certifications: Certificate[];
   education: Education[];
   experience: Experience[];
+  portfolio: Project[];
   skills: Skill[];
   loading: boolean;
 }
@@ -118,6 +135,7 @@ const reducer = (state: ResumeState, action: ResumeAction): ResumeState => {
         education: doc.education?.map((edu) => toEducation(edu)) ?? [],
         experience: doc.experience?.map((exp) => toExperience(exp)) ?? [],
         skills: doc.skills?.map((skill) => toSkill(skill)) ?? [],
+        portfolio: doc.portfolio?.map((item) => toProject(item)) ?? [],
         loading: false,
       };
     }
@@ -132,6 +150,7 @@ export default function useResume() {
     education: [],
     experience: [],
     skills: [],
+    portfolio: [],
     loading: true,
   });
 

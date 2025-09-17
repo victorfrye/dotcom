@@ -4,6 +4,7 @@ import { JSX, cloneElement, useCallback } from 'react';
 
 import {
   Body2,
+  Button,
   Subtitle1,
   Tag,
   TagGroup,
@@ -12,14 +13,17 @@ import {
   tokens,
 } from '@fluentui/react-components';
 import {
+  AppsColor,
   BuildingMultipleColor,
   CertificateColor,
-  LaptopColor,
   LibraryColor,
+  OpenRegular,
+  PuzzlePieceColor,
 } from '@fluentui/react-icons';
 
+import Skill from '@dotcom/resume/skill';
+import ResumeText from '@dotcom/resume/text';
 import useResume from '@dotcom/resume/use-resume';
-import { Skill } from '@dotcom/types';
 
 const useStyles = makeStyles({
   container: {
@@ -70,11 +74,15 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
     gap: tokens.spacingVerticalS,
   },
+  footer: {
+    margin: `${tokens.spacingVerticalS} ${tokens.spacingHorizontalNone} ${tokens.spacingVerticalNone}`,
+  },
 });
 
 export default function Resume() {
   const styles = useStyles();
-  const { certifications, education, experience, skills } = useResume();
+  const { certifications, education, experience, skills, portfolio } =
+    useResume();
 
   const renderSectionTitle = useCallback(
     (title: string, media?: JSX.Element): JSX.Element => (
@@ -195,26 +203,65 @@ export default function Resume() {
     );
   }, [styles, skills]);
 
+  const renderPortfolio = useCallback((): JSX.Element[] => {
+    return portfolio
+      .toSorted((a, b) => (a.startDate < b.startDate ? -1 : 1))
+      .map((project) => (
+        <div key={project.name} className={styles.item}>
+          <Subtitle1 as="h3" className={styles.titleText}>
+            {project.name}
+          </Subtitle1>
+          <Body2 className={styles.subtle}>{project.description}</Body2>
+          {project.link && (
+            <div className={styles.footer}>
+              <Button
+                icon={<OpenRegular />}
+                as="a"
+                size="small"
+                href={project.link}
+                target="_blank"
+                rel="me noreferrer noopener"
+                key={project.link}
+              >
+                {ResumeText.portfolio.open}
+              </Button>
+            </div>
+          )}
+        </div>
+      ));
+  }, [portfolio, styles]);
+
   return (
     <div className={styles.container}>
       <section id="experience" className={styles.section}>
-        {renderSectionTitle('Experience', <BuildingMultipleColor />)}
+        {renderSectionTitle(
+          ResumeText.experience.title,
+          <BuildingMultipleColor />
+        )}
         {renderExperienceHistory()}
       </section>
 
       <section id="education" className={styles.section}>
-        {renderSectionTitle('Education', <LibraryColor />)}
+        {renderSectionTitle(ResumeText.education.title, <LibraryColor />)}
         {renderEducationHistory()}
       </section>
 
       <section id="certifications" className={styles.section}>
-        {renderSectionTitle('Certifications', <CertificateColor />)}
+        {renderSectionTitle(
+          ResumeText.certifications.title,
+          <CertificateColor />
+        )}
         {renderCertifications()}
       </section>
 
       <section id="skills" className={styles.section}>
-        {renderSectionTitle('Skills', <LaptopColor />)}
+        {renderSectionTitle(ResumeText.skills.title, <PuzzlePieceColor />)}
         {renderSkills()}
+      </section>
+
+      <section id="portfolio" className={styles.section}>
+        {renderSectionTitle(ResumeText.portfolio.title, <AppsColor />)}
+        {renderPortfolio()}
       </section>
     </div>
   );

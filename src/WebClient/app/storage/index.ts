@@ -1,2 +1,2 @@
-export { readValue } from './local-storage-api';
+export { readValue } from './local-storage-utils';
 export { default as useLocalStorage } from './use-local-storage';

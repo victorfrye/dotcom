@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 
-import { readValue, writeValue } from './local-storage-api';
+import { readValue, writeValue } from '@dotcom/storage/local-storage-utils';
 
 export default function useLocalStorage<T>(
   key: string,

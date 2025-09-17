@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
-import { getPosts } from '@dotcom/blog/posts-api';
-import { getPrivacyPolicy } from '@dotcom/privacy/policy-api';
+import { getPosts } from '@dotcom/blog/content-utils';
+import { getPrivacyPolicy } from '@dotcom/privacy/policy-utils';
 
 export const dynamic = 'force-static';
 

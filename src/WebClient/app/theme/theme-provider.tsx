@@ -12,7 +12,7 @@ import {
   webLightTheme,
 } from '@fluentui/react-components';
 
-import useDarkMode from '@dotcom/theme/use-dark-mode';
+import useColorMode from '@dotcom/theme/use-color-mode';
 
 const useStyles = makeStyles({
   hidden: {
@@ -70,7 +70,7 @@ interface ThemeProviderProps {
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   const styles = useStyles();
   useStaticStyles();
-  const { isDark } = useDarkMode();
+  const { isDark } = useColorMode();
   const theme = useMemo(
     () => (isDark ? webDarkTheme : webLightTheme),
     [isDark]

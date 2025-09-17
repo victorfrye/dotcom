@@ -3,9 +3,9 @@ import { ReactNode } from 'react';
 import { Metadata } from 'next';
 
 import { ClarityTag, Gtag } from '@dotcom/analytics';
-import Frame from '@dotcom/frame';
 import '@dotcom/globals.css';
 import ProviderTree from '@dotcom/provider-tree';
+import { Shell } from '@dotcom/shell';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       <body>
         <div id="root">
           <ProviderTree>
-            <Frame>{children}</Frame>
+            <Shell>{children}</Shell>
           </ProviderTree>
         </div>
       </body>

@@ -86,7 +86,7 @@
           },
           "major": {
             "description": "The major or field of study",
-            "type": "number",
+            "type": "number"
           },
           "grade": {
             "description": "The grade or GPA obtained",
@@ -180,8 +180,8 @@
         "required": ["name", "issuer", "startDate"]
       }
     },
-    "projects": {
-      "description": "The list of projects worked and maintained",
+    "portfolio": {
+      "description": "The list of projects and works in the person's portfolio",
       "type": "array",
       "items": {
         "type": "object",
@@ -204,20 +204,13 @@
             "type": "string",
             "format": "date"
           },
-          "technologies": {
-            "description": "The technologies used in the project",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "link": {
             "description": "The URL of the project's repository or website",
             "type": "string",
             "format": "uri"
           }
         },
-        "required": ["name", "description", "link", "startDate"]
+        "required": ["name", "description", "startDate"]
       },
       "required": ["experience", "education", "skills"]
     }

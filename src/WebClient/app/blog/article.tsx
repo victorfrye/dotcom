@@ -15,8 +15,8 @@ import {
 import { CalendarRegular } from '@fluentui/react-icons';
 
 import BlogBreadcrumb from '@dotcom/blog/breadcrumb';
-import usePost from '@dotcom/blog/use-post';
-import { Post } from '@dotcom/types';
+import Post from '@dotcom/blog/post';
+import { formatDate, formatTitle } from '@dotcom/blog/post-utils';
 
 const useStyles = makeStyles({
   banner: {
@@ -103,8 +103,6 @@ export default function Article({ post }: Readonly<ArticleProps>) {
   const styles = useStyles();
   useMarkdownStyles();
 
-  const { getDate } = usePost(post);
-
   const renderTags = useCallback((): JSX.Element[] => {
     if (!post.tags) {
       return [];
@@ -134,13 +132,13 @@ export default function Article({ post }: Readonly<ArticleProps>) {
       />
 
       <Title1 as="h1" className={styles.title}>
-        {post.title}
+        {formatTitle(post)}
       </Title1>
 
       <div className={styles.postDate}>
         <CalendarRegular />
         <em>
-          {getDate()} • {post.readingDuration}
+          {formatDate(post)} • {post.readingDuration}
         </em>
       </div>
 

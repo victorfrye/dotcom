@@ -1,4 +1,4 @@
-import About from '@dotcom/about';
+import { About } from '@dotcom/about';
 
 export default async function HomePage() {
   return <About />;

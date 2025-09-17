@@ -2,15 +2,16 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 builder.AddNpmApp("client", "../WebClient", "dev")
     .WithHttpEndpoint(env: "PORT")
+    .WithUrlForEndpoint("http", static url => url.DisplayText = "🏠 Home")
     .WithUrlForEndpoint("http", static _ => new()
     {
         Url = "/resume",
-        DisplayText = "Resume"
+        DisplayText = "💼 Resume"
     })
     .WithUrlForEndpoint("http", static _ => new()
     {
         Url = "/blog",
-        DisplayText = "Blog"
+        DisplayText = "✏️ Blog"
     })
     .WithExternalHttpEndpoints()
     .WithHttpHealthCheck("/");

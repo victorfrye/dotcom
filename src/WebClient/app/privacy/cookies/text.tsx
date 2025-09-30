@@ -7,7 +7,7 @@ const CookieText = {
       <>
         This website uses cookies to enhance your user experience and analyze
         performance and traffic on our website. By clicking{' '}
-        <Text weight="bold">Accept All</Text>, you consent to our use of cookies
+        <Text weight="bold">Accept all</Text>, you consent to our use of cookies
         and <Link href={'/privacy'}>Privacy Policy</Link>.
       </>
     ),
@@ -45,10 +45,10 @@ const CookieText = {
   },
 
   buttons: {
-    accept: 'Accept All',
-    reject: 'Reject Unnecessary',
-    manage: 'Manage Cookies',
-    save: 'Save Settings',
+    accept: 'Accept all',
+    reject: 'Reject unnecessary',
+    manage: 'Manage cookies',
+    save: 'Save settings',
   },
 };
 

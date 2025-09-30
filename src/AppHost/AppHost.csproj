@@ -8,8 +8,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <IsAspireHost>true</IsAspireHost>
-
     <AssemblyName>VictorFrye.DotCom.AppHost</AssemblyName>
     <RootNamespace>VictorFrye.DotCom.AppHost</RootNamespace>
 

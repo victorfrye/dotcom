@@ -62,7 +62,7 @@
   "frontMatter.content.pageFolders": [
     {
       "title": "posts",
-      "path": "[[workspace]]/src/WebClient/content/posts"
+      "path": "[[workspace]]/src/WebClient/content/blog"
     }
   ],
   "frontMatter.git.enabled": true

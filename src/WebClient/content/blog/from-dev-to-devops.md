@@ -1,14 +1,14 @@
 ---
 title: From Dev to DevOps
-subtitle: Transforming mindset another way
-description: Learning DevOps is not limited by technology skills. Here, we discuss the tooling and mindset that can help developers transition to DevOps engineers. 
+subtitle: A learning path for developers interested in DevOps
+description: Learning DevOps is not limited by technology skills. Here, we discuss the tooling and mindset that can help developers transition to DevOps engineers.
 date: 2025-09-29
 image: assets/_blog/from-dev-to-devops/banner.jpg
 tags:
   - devops
 ---
 
-DevOps is more than a role; it's a culture and mindset that bridges the gap between development and operations. Any member of an IT organization or software company can embrace DevOps principles to improve collaboration, streamline processes, and enhance software delivery. Any person can carry more than one role. However, the literature for DevOps often starts with operations: system administrators, infrastructure engineers, and site reliability engineers (SREs). One of the best books on the topic, [The Pheonix Project](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B0DPNL8863), is written from the perspective of an operations manager (and I highly recommend reading it). DevOps is about operations, but it is also about development. In truth, DevOps is about the entire software lifecycle and thus any person involved in it can learn and grow into a DevOps role. One such path is from developer to a DevOps engineer.
+DevOps is more than a role; it's a culture and mindset that bridges the gap between development and operations. Any member of an IT organization or software company can embrace DevOps principles to improve collaboration, streamline processes, and enhance software delivery. Any person can carry more than one role. However, the literature for DevOps often starts with operations: system administrators, infrastructure engineers, and site reliability engineers (SREs). One of the best books on the topic, [The Phoenix Project](https://itrevolution.com/product/the-phoenix-project/), is written from the perspective of an operations manager (and I highly recommend reading it). DevOps is about operations, but it is also about development. In truth, DevOps is about the entire software lifecycle and thus any person involved in it can learn and grow into a DevOps role. One such path is from developer to a DevOps engineer.
 
 ## The common guidance
 
@@ -42,13 +42,15 @@ Being a DevOps engineer may never include a direct title change. However, it may
 
 ## Learning DevOps
 
+![The DevOps learning path for developers](/assets/_blog/from-dev-to-devops/learning_devops.jpg)
+
 ### Build systems
 
 As a developer, you are already working with various technologies used for DevOps. The first is your build system. Today, software is built often. You need to build your application locally multiple times to test changes. You may use pipelines to build your application in another environment for verifying changes in a pull request. If you want to move from developer to DevOps engineer, the first place to start is understanding how your code is built and how it is run in all the different environments.
 
 With .NET, this means understanding the differences between the .NET SDK and runtime and the [dotnet CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/) used to build, run, and publish code. For JavaScript, this means understanding the differences between development servers, bundling, and how static files are served in browsers. Every language has its own build tools and is different in execution environments. For .NET, the common language runtime (CLR) is used to run code on Windows, Linux, and macOS. For JavaScript, the runtime is the browser or Node.js. Understanding how your code is built and executed is critical to automation and maintenance. When you know this, you can begin to optimize and automate the process.
 
-### Source control
+### Source control concepts
 
 Most developers are already using source control, such as Git, to store and collaborate on code. However, it is an underappreciated tool that is critical to developers and DevOps engineers alike. Source control systems are the foundation of collaboration and change management. GitOps is a practice that uses Git repositories as the source of truth for all kinds of code, including application code, infrastructure as code, configuration files, and CI/CD pipelines. Your branching strategies and pull request processes are key aspects of how you audit and manage change. Git is the tool, but GitOps is the adoption of DevOps practices for automation of operational concerns. Turns out this developer tool is also a DevOps tool.
 
@@ -68,15 +70,17 @@ As you learn pipelines and the concepts of CI/CD, you will also need to understa
 
 As you learn where your code is run, you will also need to learn how that environment is created and configured. This is where infrastructure as code (IaC) comes in and the developer skills you already possess can shine. IaC is the practice of defining your hosting and runtime environments through code. Various languages and tools exist for this, such as Terraform, Azure Bicep, Ansible, Pulumi, and PowerShell DSC. The value in IaC is the same as traditional source code: it is versioned, readable, and traceable. If you write something to create a virtual machine and never commit it to a central repository, it is lost. However, if you write a Terraform file to create a VM and commit it to source control, you can track changes, review history, and implement CI/CD practices to validate changes and achieve infrastructure automation. As a developer, you already know how to write code. You can learn IaC and apply your existing skills to an operations domain.
 
-## Learning continues
+## Continuous learning
 
 The journey from developer to DevOps engineer is surprisingly natural evolution. Developers already know their application and the value it delivers. They already know how to write code and collaborate with others. They already know the software lifecycle and the pains of delivering software. Learning DevOps is about expanding their existing knowledge and skills to automate and optimize the concerns outside of developing new features. The best way to learn DevOps is not necessarily learning Linux or Kubernetes, but instead mastering the tools they are already using and expanding knowledge of the whole system. Learn your how your code is built, where it is run, and how it gets there. Automate the friction in the process. When you start there, the mindset of DevOps fits into place:
 
-- When you know how your code is built, you can understand the impact of the runtime environment and why containerization may help with consistency.
+![Continuous learning and applications of DevOps knowledge for developers](/assets/_blog/from-dev-to-devops/continuous_learning.jpg)
+
+- When you understand your build system, you can optimize your code runtime and [apply containerization efficiently](/blog/posts/multi-stage-docker-dotnet-guide).
 - When you know source control concepts, you can apply them to infrastructure and pipelines for version control, collaboration, and traceability.
-- When you know the command line, you can automate tasks like test execution and building your code for continuous integration.
-- When you know pipelines, you can automate the delivery and deployment of your code for faster feedback and value delivery.
-- When you know your hosting environment, you can optimize your code for scalability or zero-downtime deployments.
-- When you know how to write high quality code, you can apply these same principles to infrastructure code for repeatable deployments and consistent runtime environments.
+- When you possess command-line knowledge, you can automate tasks for test quality and CI/CD pipelines.
+- When you control your pipelines, you can automate for faster feedback and software delivery.
+- When you understand your hosting environment, you can optimize for scalability and apply effective deployment strategies.
+- When you write high quality code, you can apply the same principles to infrastructure, pipeline, and test code.
 
 DevOps is not a set of tools or a team, but a fuzzier concept: a mindset and shared responsibility. The path to learning DevOps is likewise non-exact. The concepts and tooling mentioned are how I started to learn DevOps as a developer. Your path may be different, but the key is to start with what you know and use today. From there, you learn the adjacent concepts, the tooling, and the why behind it all. And then, you keep learning.

@@ -26,7 +26,7 @@ A developer is responsible for writing, testing, and maintaining code that forms
 One distinction is that a person may perform more than one role. For example, a developer may also be acting in the role of a manager, a designer, or a network engineer. The role of a developer is focused on developing software, but a person is often responsible for more than just writing code. Commonly, people in the developer role are also responsible for:
 
 - Troubleshooting business applications and triaging why behavior is not as expected.
-- Understanding legacy software and how they operate critical business logic.
+- Understanding legacy software and how it operates critical business logic.
 
 In an enterprise and during a production incident, someone in the role of developer may be called to explain why insurance claims are still pending or an appointment booking failed. At the intersection of operations and development, a developer may be the first to know when a database failure or network outage is causing business disruption. In this way, developers are already acting outside of the limited scope of writing code. This is where DevOps comes in.
 
@@ -56,7 +56,7 @@ Most developers are already using source control, such as Git, to store and coll
 
 ### Command-line and scripting
 
-The command-line is avoidable for most developers these days. IDEs and graphical interfaces often abstract away the need to use a command-line interface (CLI). However, CLIs are necessary for DevOps automation. You can know F5 runs your code in the IDE, but when authoring a pipeline you need to know the commands that do this. Sometimes it becomes a series of commands, at which point you transition from simple commands to scripting. Commonly, the recommended scripting language is Bash as it is the native shell on Linux. However, any scripting language will help you as you learn DevOps. You can learn PowerShell or Python and still accomplish much of what you need to do. The key is to learn how to automate tasks that you would otherwise do manually without your mouse. Bash, PowerShell, and Python are all cross-platform choices. Practice navigating your file system, managing installed apps, and running your build commands from the command line.
+The command-line can be avoided by most developers these days. IDEs and graphical interfaces often abstract away the need to use a command-line interface (CLI). However, CLIs are necessary for DevOps automation. You can know F5 runs your code in the IDE, but when authoring a pipeline you need to know the commands that do this. Sometimes it becomes a series of commands, at which point you transition from simple commands to scripting. Commonly, the recommended scripting language is Bash as it is the native shell on Linux. However, any scripting language will help you as you learn DevOps. You can learn PowerShell or Python and still accomplish much of what you need to do. The key is to learn how to automate tasks that you would otherwise do manually without your mouse. Bash, PowerShell, and Python are all cross-platform choices. Practice navigating your file system, managing installed apps, and running your build commands from the command line.
 
 ### Continuous integration and delivery
 
@@ -72,7 +72,7 @@ As you learn where your code is run, you will also need to learn how that enviro
 
 ## Continuous learning
 
-The journey from developer to DevOps engineer is surprisingly natural evolution. Developers already know their application and the value it delivers. They already know how to write code and collaborate with others. They already know the software lifecycle and the pains of delivering software. Learning DevOps is about expanding their existing knowledge and skills to automate and optimize the concerns outside of developing new features. The best way to learn DevOps is not necessarily learning Linux or Kubernetes, but instead mastering the tools they are already using and expanding knowledge of the whole system. Learn your how your code is built, where it is run, and how it gets there. Automate the friction in the process. When you start there, the mindset of DevOps fits into place:
+The journey from developer to DevOps engineer is a surprisingly natural evolution. Developers already know their application and the value it delivers. They already know how to write code and collaborate with others. They already know the software lifecycle and the pains of delivering software. Learning DevOps is about expanding their existing knowledge and skills to automate and optimize the concerns outside of developing new features. The best way to learn DevOps is not necessarily learning Linux or Kubernetes, but instead mastering the tools they are already using and expanding knowledge of the whole system. Learn your how your code is built, where it is run, and how it gets there. Automate the friction in the process. When you start there, the mindset of DevOps fits into place:
 
 ![Continuous learning and applications of DevOps knowledge for developers](/assets/_blog/from-dev-to-devops/continuous_learning.jpg)
 

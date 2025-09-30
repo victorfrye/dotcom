@@ -64,6 +64,7 @@ const useStyles = makeStyles({
     },
   },
   legal: {
+    color: tokens.colorNeutralForeground2,
     display: 'flex',
     flexDirection: 'row',
     marginTop: 'auto',

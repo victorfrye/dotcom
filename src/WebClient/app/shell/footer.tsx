@@ -64,7 +64,6 @@ const useStyles = makeStyles({
     },
   },
   legal: {
-    color: tokens.colorNeutralForeground2,
     display: 'flex',
     flexDirection: 'row',
     marginTop: 'auto',
@@ -78,6 +77,9 @@ const useStyles = makeStyles({
     },
     flexWrap: 'wrap',
     padding: `${tokens.spacingVerticalNone} ${tokens.spacingHorizontalL}`,
+  },
+  copyright: {
+    color: tokens.colorNeutralForeground2,
   },
 });
 
@@ -130,7 +132,7 @@ export default function Footer() {
             </Caption1>
           </Link>
 
-          <Caption1 as="span" align="end" block>
+          <Caption1 as="span" align="end" block className={styles.copyright}>
             {ShellText.footer.copyright(today.getFullYear())}
           </Caption1>
         </div>

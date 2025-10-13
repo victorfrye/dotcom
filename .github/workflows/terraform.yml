@@ -86,7 +86,7 @@ jobs:
       - name: Build summary
         id: build-summary
         run: |
-          TF_PLAN=$(terraform -chdir=infra show tfplan)
+          TF_PLAN=$(terraform -chdir=infra show -no-color tfplan)
           
           delimiter="$(openssl rand -hex 8)"
           echo "summary<<${delimiter}" >> $GITHUB_OUTPUT

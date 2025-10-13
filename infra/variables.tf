@@ -40,17 +40,6 @@ variable "domain_name" {
   default     = "victorfrye.com"
 }
 
-variable "name_servers" {
-  description = "The name servers for the DNS zone."
-  type        = list(string)
-  default = [
-    "ns1-32.azure-dns.com.",
-    "ns2-32.azure-dns.net.",
-    "ns3-32.azure-dns.org.",
-    "ns4-32.azure-dns.info.",
-  ]
-}
-
 variable "bing_validation_token" {
   description = "The Bing validation token."
   type        = string

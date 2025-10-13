@@ -20,7 +20,7 @@ This blog post is a reference for those who attended my presentations as well as
 
 My first presentation was titled "Aspire to Effortless" and focused on Aspire, the coolest topic in software development. I shared its invitation to a modern .NET platform, what it is, and how the developer dashboard and orchestrator provide an effortless local development experience. For those interested in learning more or finding the resources available, I recommend reading more on my blog and following along as I continue to explore Aspire. Some helpful links and resources include:
 
-- [Presentation slide deck](https://github.com/victorfrye/beercitycode2025/blob/main/files/aspiretoeffortless.pdf)
+- [Presentation slide deck](https://github.com/victorfrye/presentations/blob/main/files/2025/beercitycode/aspiretoeffortless.pdf)
 - [Sample CRUD app repository](https://github.com/victorfrye/crudcounter)
 - [Aspire roadmap blog post](/blog/posts/aspire-roadmap-2025)
 - [Aspire Discord server](https://aka.ms/aspire-discord)
@@ -29,7 +29,7 @@ My first presentation was titled "Aspire to Effortless" and focused on Aspire, t
 
 My second presentation was titled "AI for Dummies" and focused on an overview of artificial intelligence, the value of AI as a service, and how to get started with Azure AI services for building applications without a data science degree. I shared my own experiences building the Mocking Mirror application that uses Azure OpenAI in a .NET application to provide a simple, yet powerful AI experience. I recommend reading more here on my blog or the Leading EDJE blog for staying up to date on the latest in AI. Some links worth checking out include:
 
-- [Presentation slide deck](https://github.com/victorfrye/beercitycode2025/blob/main/files/aifordummies.pdf)
+- [Presentation slide deck](https://github.com/victorfrye/presentations/blob/main/files/2025/beercitycode/aifordummies.pdf)
 - [Mocking Mirror repository](https://github.com/victorfrye/mockingmirror)
 - [Leading EDJE blog](https://blog.leadingedje.com)
 

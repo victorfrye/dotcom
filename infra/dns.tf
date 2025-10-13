@@ -14,7 +14,7 @@ resource "azurerm_dns_ns_record" "name_servers" {
   resource_group_name = data.azurerm_resource_group.dotcom.name
 
   zone_name = azurerm_dns_zone.domain.name
-  records   = var.name_servers
+  records   = azurerm_dns_zone.domain.name_servers
   ttl       = 172800
 }
 

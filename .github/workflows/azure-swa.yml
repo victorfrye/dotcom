@@ -10,11 +10,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-
-defaults:
-  run:
-    shell: pwsh
-
+  
 env:
   NODEJS_VERSION: '24.x'
 

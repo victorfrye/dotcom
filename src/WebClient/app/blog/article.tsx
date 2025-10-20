@@ -20,7 +20,7 @@ import { formatDate, formatTitle } from '@dotcom/blog/post-utils';
 
 const useStyles = makeStyles({
   banner: {
-    maxWidth: 'calc(1080px)',
+    maxWidth: '1080px',
     height: 'auto',
   },
   title: {
@@ -75,8 +75,9 @@ const useMarkdownStyles = makeStaticStyles({
     lineHeight: tokens.lineHeightBase600,
   },
   img: {
-    width: '100%',
-    maxWidth: '1080px',
+    maxWidth: 'min(100%, 1080px)',
+    maxHeight: '608px',
+    height: 'auto',
     borderRadius: tokens.borderRadiusMedium,
   },
   pre: {

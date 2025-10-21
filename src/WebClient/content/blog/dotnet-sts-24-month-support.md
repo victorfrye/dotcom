@@ -60,7 +60,7 @@ The change in the scenario is subtle, but significant. The choice to move from a
 
 ## .NET 10 is coming
 
-We are very close to the launch of .NET 10, the next LTS release. The change in STS support  won't impact this launch, yet it is the start of a new conversation around upgrading .NET applications. .NET 8 and .NET 9 applications will be upgrading to .NET 10 when ready and taking advantages of new features and performance improvements. What the STS support lifecycle really changes is what comes next: are you going to be stuck with .NET 10 for the next two years or will you be confident in your choice November 2026 to stay on .NET 10 or make the jump to .NET 11?
+We are very close to the launch of .NET 10, the next LTS release. The change in STS support won't impact this launch, yet it is the start of a new conversation around upgrading .NET applications. .NET 8 and .NET 9 applications will be upgrading to .NET 10 when ready and taking advantages of new features and performance improvements. What the STS support lifecycle really changes is what comes next: are you going to be stuck with .NET 10 for the next two years or will you be confident in your choice November 2026 to stay on .NET 10 or make the jump to .NET 11?
 
 ## Concluding remarks
 

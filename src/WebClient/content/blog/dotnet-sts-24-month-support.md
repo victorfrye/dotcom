@@ -41,7 +41,7 @@ Enterprise upgrades for apps in support mode are commonly done at the last minut
 
 ## Support change
 
-The .NET team has recognized issues with the 18-month support window for STS releases and extended support going forward to 24 months. This takes effect with .NET 9, moving the end of support from May 2026 to November 2026. This means that support for STS releases will end at the same time their previous STS releases also end.
+The .NET team has recognized issues with the 18-month support window for STS releases and extended support going forward to 24 months. This takes effect with .NET 9, moving the end of support from May 2026 to November 2026. This means that support for STS releases will now end at the same time as the previous LTS release, aligning the end-of-support dates for both STS and LTS versions.
 
 ![New .NET support lifecycle for releases](/assets/_blog/dotnet-sts-24-month-support/release_lifecycle.jpg)
 

@@ -94,6 +94,21 @@ const useMarkdownStyles = makeStaticStyles({
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
   },
+  table: {
+    borderCollapse: 'collapse',
+    gap: tokens.spacingVerticalM,
+  },
+  tr: {
+    borderBottom: `${tokens.strokeWidthThin} solid ${tokens.colorNeutralStroke2}`,
+  },
+  th: {
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
+    fontWeight: tokens.fontWeightSemibold,
+  },
+  td: {
+    height: tokens.spacingVerticalXXXL,
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
+  },
 });
 
 interface ArticleProps {

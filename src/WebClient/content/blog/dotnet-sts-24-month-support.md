@@ -2,7 +2,7 @@
 title: .NET STS 24-Month Support
 subtitle: How 6 more months changes your upgrade strategy
 description: Microsoft has extended the short-term support (STS) policy for .NET, providing 24 months of support for each release. Let's dive into what this means for enterprise developers planning their upgrade and support strategy.
-date: 2025-10-21
+date: 2025-10-22
 image: assets/_blog/dotnet-sts-24-month-support/banner.jpg
 tags:
   - dotnet

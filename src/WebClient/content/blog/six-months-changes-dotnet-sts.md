@@ -1,9 +1,9 @@
 ---
-title: .NET STS 24-Month Support
-subtitle: How 6 more months changes your upgrade strategy
+title: Six Months Changes .NET STS
+subtitle: How 24-month support changes your upgrade strategy
 description: Microsoft has extended the short-term support (STS) policy for .NET, providing 24 months of support for each release. Let's dive into what this means for enterprise developers planning their upgrade and support strategy.
-date: 2025-10-22
-image: assets/_blog/dotnet-sts-24-month-support/banner.jpg
+date: 2025-10-23
+image: assets/_blog/six-months-changes-dotnet-sts/banner.jpg
 tags:
   - dotnet
 ---
@@ -43,7 +43,7 @@ Enterprise upgrades for apps in support mode are commonly done at the last minut
 
 The .NET team has recognized issues with the 18-month support window for STS releases and extended support going forward to 24 months. This takes effect with .NET 9, moving the end of support from May 2026 to November 2026. This means that support for STS releases will now end at the same time as the previous LTS release, aligning the end-of-support dates for both STS and LTS versions.
 
-![New .NET support lifecycle for releases](/assets/_blog/dotnet-sts-24-month-support/release_lifecycle.jpg)
+![New .NET support lifecycle for releases (Source: Microsoft)](/assets/_blog/six-months-changes-dotnet-sts/release_lifecycle.jpg)
 
 This change in support solves a lot of problems, including with our scenario above:
 
@@ -62,6 +62,8 @@ The change in the scenario is subtle, but significant. The choice to move from a
 
 We are very close to the launch of .NET 10, the next LTS release. The change in STS support won't impact this launch, yet it is the start of a new conversation around upgrading .NET applications. .NET 8 and .NET 9 applications will be upgrading to .NET 10 when ready and taking advantages of new features and performance improvements. What the STS support lifecycle really changes is what comes next: are you going to be stuck with .NET 10 for the next two years or will you be confident in your choice November 2026 to stay on .NET 10 or make the jump to .NET 11?
 
-## Concluding remarks
+## Reflections and recommendations
 
-The scenario I covered was a real one. The team had the bandwidth, the management support was there, and the product roadmap was healthy. However, no one was confident where they would be in 18 months and if we would be able to keep paying the upgrade tax. The schedule was too much of a commitment. The move to 24-month support changes the calculus. The hesitation to upgrade to .NET 9 would not have existed if we knew it wouldn't trap us into upgrading to .NET 10 a year later. Going forward, I will be able to safely recommend upgrading .NET each November regardless of if the release is STS or LTS.
+The scenario I covered was a real one. The team had the bandwidth, the management support was there, and the product roadmap was healthy. However, no one was confident where they would be in 18 months and if we would be able to keep paying the upgrade tax. The schedule was too much of a commitment. The move to 24-month support changes the calculus. The hesitation to upgrade to .NET 9 would not have existed if we knew it wouldn't trap us into upgrading to .NET 10 a year later. If we had the 24-month support at the time, we would have upgraded.
+
+Going forward, I will be recommending my projects use the latest version of .NET, regardless of STS or LTS status. The alignment of when LTS and STS support expiration means projects that are actively being developed are not penalized for choosing STS releases. The upgrade tax is most manageable when projects are active and making small updates frequently. LTS releases are still best suited for applications in maintenance mode or with infrequent updates. However, the choice to use STS releases will no longer be a heavy decision weighted down by upgrade tax concerns. This is a win for .NET developers and enterprises looking to stay current with the platform.

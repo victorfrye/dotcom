@@ -81,6 +81,7 @@ const useMarkdownStyles = makeStaticStyles({
     borderRadius: tokens.borderRadiusMedium,
   },
   'img + em': {
+    display: 'block',
     fontSize: tokens.fontSizeBase200,
     fontWeight: tokens.fontWeightRegular,
     lineHeight: tokens.lineHeightBase200,

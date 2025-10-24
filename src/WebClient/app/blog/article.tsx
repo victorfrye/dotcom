@@ -80,6 +80,12 @@ const useMarkdownStyles = makeStaticStyles({
     height: 'auto',
     borderRadius: tokens.borderRadiusMedium,
   },
+  'img + em': {
+    fontSize: tokens.fontSizeBase200,
+    fontWeight: tokens.fontWeightRegular,
+    lineHeight: tokens.lineHeightBase200,
+    color: tokens.colorNeutralForeground2,
+  },
   pre: {
     marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,

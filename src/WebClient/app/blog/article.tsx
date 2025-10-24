@@ -80,6 +80,13 @@ const useMarkdownStyles = makeStaticStyles({
     height: 'auto',
     borderRadius: tokens.borderRadiusMedium,
   },
+  'img + em': {
+    display: 'block',
+    fontSize: tokens.fontSizeBase200,
+    fontWeight: tokens.fontWeightRegular,
+    lineHeight: tokens.lineHeightBase200,
+    color: tokens.colorNeutralForeground2,
+  },
   pre: {
     marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
     marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
@@ -93,6 +100,21 @@ const useMarkdownStyles = makeStaticStyles({
     color: tokens.colorNeutralForeground2,
     fontSize: tokens.fontSizeBase400,
     lineHeight: tokens.lineHeightBase400,
+  },
+  table: {
+    borderCollapse: 'collapse',
+    gap: tokens.spacingVerticalM,
+  },
+  tr: {
+    borderBottom: `${tokens.strokeWidthThin} solid ${tokens.colorNeutralStroke2}`,
+  },
+  th: {
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
+    fontWeight: tokens.fontWeightSemibold,
+  },
+  td: {
+    height: tokens.spacingVerticalXXXL,
+    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
   },
 });
 

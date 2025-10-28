@@ -30,14 +30,12 @@ I want to focus on the first two items here as they are the two I am closest to 
 ### GitHub Copilot Coding Agent
 
 ![GitHub Copilot Coding Agent hero](/assets/_blog/microsoft-build-2025-wrapped/copilot_coding_agent.jpg)
-*Image: Microsoft*
 
 GitHub Copilot continues to evolve with the introduction of the new Coding Agent. This allows developers to assign development tasks to Copilot in GitHub. From there, Copilot takes over the developer inner loop and handles writing code, running tests, and drafting a pull request to integrate the changes. You can watch the PR draft in real-time to see the changes Copilot pushes and collaborate through comments to suggest changes. It even allows control over the MCP servers used in the development process. This sounds like the automated software engineer pitch, but instead it is being pitched for the tedious work developers often need to do, e.g. upgrading your .NET 8 project to .NET 10 this fall. It is in preview now, but requires a GitHub Copilot Pro+ or Enterprise license currently. Neither of which I have as they are expensive at $390 a year. I might need to review my training budget...
 
 ### GitHub Copilot for .NET Aspire
 
 ![GitHub Copilot for .NET Aspire hero](/assets/_blog/microsoft-build-2025-wrapped/copilot_dotnet_aspire.jpg)
-*Image: Microsoft*
 
 Yeah that's right, [.NET Aspire](https://victorfrye.com/blog/posts/hello-aspire-breaking-down-key-features) is getting the Copilot treatment too! When launching the app from Visual Studio or Visual Studio Code, you will now see the familiar GitHub Copilot icon in the top right corner of the Aspire dashboard. Using it to test my own website, I asked it get traces and structured logs and it was able to identify that no telemetry exists but my web client application was in the running state. That's correct as I haven't configured any telemetry with the Next.js frontend just yet... I have been meaning to get to that.
 

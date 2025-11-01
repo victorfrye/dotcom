@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fluentui/react-components": "^9.70.0",
-    "@fluentui/react-icons": "^2.0.311",
+    "@fluentui/react-icons": "^2.0.313",
     "@microsoft/clarity": "^1.0.0",
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",

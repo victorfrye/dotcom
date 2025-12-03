@@ -66,7 +66,7 @@ Now that we have our SDK project set up, it's time to generate the client code. 
 ```bash
 kiota generate \
     --language csharp \
-    --openapi https://localhost:7045.yaml \
+    --openapi https://localhost:7045/openapi/v1.json \
     --output ./src/Sdk \
     --class-name ChristmasApiClient \
     --namespace-name VictorFrye.MerryChristmas.Sdk
@@ -109,7 +109,7 @@ Console.WriteLine(await client.Api.Christmas.GetAsync());
 
 ```
 
-This demo is very lightweight, but gives a sneak peak at our gifted SDK in action. We create an instance of the `ChristmasApiClient`, configure it with a base URL, and make a call to the `GetAsync` method on the `Christmas` endpoint. The generated client handles all the HTTP communication, serialization, and deserialization for us.
+This demo is very lightweight, but gives a sneak peek at our gifted SDK in action. We create an instance of the `ChristmasApiClient`, configure it with a base URL, and make a call to the `GetAsync` method on the `Christmas` endpoint. The generated client handles all the HTTP communication, serialization, and deserialization for us.
 
 The biggest trick of any generated code is understanding how to use it. The real gift: we don't have to write any of the boilerplate code ourselves. The generated SDK does all the heavy lifting, allowing us to focus on building out and consuming our APIs.
 

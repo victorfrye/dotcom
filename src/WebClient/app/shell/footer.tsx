@@ -1,22 +1,21 @@
 'use client';
 
-import { useCallback } from 'react';
-
 import {
   Button,
   Caption1,
   CardFooter,
   Divider,
   Link,
-  Tooltip,
   makeStyles,
+  Tooltip,
   tokens,
 } from '@fluentui/react-components';
 import { WeatherMoonFilled, WeatherSunnyFilled } from '@fluentui/react-icons';
+import { useCallback } from 'react';
 
-import FooterButtons from '@dotcom/shell/socials';
-import ShellText from '@dotcom/shell/text';
-import { useColorMode } from '@dotcom/theme';
+import FooterButtons from '@/shell/socials';
+import ShellText from '@/shell/text';
+import { useColorMode } from '@/theme';
 
 const useStyles = makeStyles({
   footer: {
@@ -103,7 +102,7 @@ export default function Footer() {
           <Tooltip
             withArrow
             content={ShellText.footer.toggleColor(
-              colorMode === 'light' ? 'dark' : 'light'
+              colorMode === 'light' ? 'dark' : 'light',
             )}
             relationship="label"
           >

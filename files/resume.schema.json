@@ -86,7 +86,7 @@
           },
           "major": {
             "description": "The major or field of study",
-            "type": "number"
+            "type": "string"
           },
           "grade": {
             "description": "The grade or GPA obtained",

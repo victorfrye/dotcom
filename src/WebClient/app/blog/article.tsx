@@ -1,22 +1,21 @@
 'use client';
 
-import { useCallback } from 'react';
-
 import {
   Image,
+  makeStaticStyles,
+  makeStyles,
   Tag,
   TagGroup,
   Title1,
-  makeStaticStyles,
-  makeStyles,
   tokens,
   typographyStyles,
 } from '@fluentui/react-components';
 import { CalendarRegular } from '@fluentui/react-icons';
+import { type JSX, useCallback } from 'react';
 
-import BlogBreadcrumb from '@dotcom/blog/breadcrumb';
-import Post from '@dotcom/blog/post';
-import { formatDate, formatTitle } from '@dotcom/blog/post-utils';
+import BlogBreadcrumb from '@/blog/breadcrumb';
+import type Post from '@/blog/post';
+import { formatDate, formatTitle } from '@/blog/post-utils';
 
 const useStyles = makeStyles({
   banner: {
@@ -167,6 +166,7 @@ export default function Article({ post }: Readonly<ArticleProps>) {
 
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
+      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Article content is managed in source control */}
       <div dangerouslySetInnerHTML={{ __html: post.content ?? '' }} />
     </main>
   );

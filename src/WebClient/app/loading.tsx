@@ -1,6 +1,6 @@
 'use client';
 
-import { Spinner, makeStyles } from '@fluentui/react-components';
+import { makeStyles, Spinner } from '@fluentui/react-components';
 
 const useStyles = makeStyles({
   spinner: {

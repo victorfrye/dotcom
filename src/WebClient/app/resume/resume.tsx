@@ -1,15 +1,13 @@
 'use client';
 
-import { JSX, cloneElement, useCallback } from 'react';
-
 import {
   Body2,
   Button,
+  makeStyles,
   Subtitle1,
   Tag,
   TagGroup,
   Title1,
-  makeStyles,
   tokens,
 } from '@fluentui/react-components';
 import {
@@ -20,10 +18,11 @@ import {
   OpenRegular,
   PuzzlePieceColor,
 } from '@fluentui/react-icons';
+import { cloneElement, type JSX, useCallback } from 'react';
 
-import Skill from '@dotcom/resume/skill';
-import ResumeText from '@dotcom/resume/text';
-import useResume from '@dotcom/resume/use-resume';
+import type Skill from '@/resume/skill';
+import ResumeText from '@/resume/text';
+import useResume from '@/resume/use-resume';
 
 const useStyles = makeStyles({
   container: {
@@ -93,18 +92,18 @@ export default function Resume() {
         </Title1>
       </div>
     ),
-    [styles]
+    [styles],
   );
 
   const renderExperienceHistory = useCallback((): JSX.Element[] => {
     return experience
       .toSorted((a, b) =>
-        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1
+        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1,
       )
       .map((job) => (
         <div key={job.title} className={styles.item}>
           <Subtitle1 as="h3" className={styles.titleText}>
-            {job.title + ' | ' + job.company.name}
+            {`${job.title} | ${job.company.name}`}
           </Subtitle1>
           <Body2 className={styles.subtle}>
             {job.startDate.toLocaleString('default', {
@@ -132,12 +131,12 @@ export default function Resume() {
   const renderEducationHistory = useCallback((): JSX.Element[] => {
     return education
       .toSorted((a, b) =>
-        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1
+        (a.endDate ?? Date.now()) < (b.endDate ?? Date.now()) ? 1 : -1,
       )
       .map((edu) => (
         <div key={edu.school.name} className={styles.item}>
           <Subtitle1 as="h3" className={styles.titleText}>
-            {edu.degree + ' | ' + edu.school.name}
+            {`${edu.degree} | ${edu.school.name}`}
           </Subtitle1>
           <Body2 className={styles.subtle}>
             {edu.endDate
@@ -182,7 +181,7 @@ export default function Resume() {
         acc[category].push(skill);
         return acc;
       },
-      {}
+      {},
     );
 
     return Object.entries(skillsByCategory).map(
@@ -199,7 +198,7 @@ export default function Resume() {
             ))}
           </TagGroup>
         </div>
-      )
+      ),
     );
   }, [styles, skills]);
 
@@ -236,7 +235,7 @@ export default function Resume() {
       <section id="experience" className={styles.section}>
         {renderSectionTitle(
           ResumeText.experience.title,
-          <BuildingMultipleColor />
+          <BuildingMultipleColor />,
         )}
         {renderExperienceHistory()}
       </section>
@@ -249,7 +248,7 @@ export default function Resume() {
       <section id="certifications" className={styles.section}>
         {renderSectionTitle(
           ResumeText.certifications.title,
-          <CertificateColor />
+          <CertificateColor />,
         )}
         {renderCertifications()}
       </section>

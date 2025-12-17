@@ -1,7 +1,5 @@
 'use client';
 
-import { KeyboardEvent, useCallback, useRef } from 'react';
-
 import {
   Body1,
   Button,
@@ -10,17 +8,18 @@ import {
   CardHeader,
   CardPreview,
   Image,
+  makeStyles,
   Subtitle1,
   Tag,
   TagGroup,
-  makeStyles,
   tokens,
   typographyStyles,
 } from '@fluentui/react-components';
 import { BookOpenFilled, CalendarRegular } from '@fluentui/react-icons';
+import { type JSX, type KeyboardEvent, useCallback, useRef } from 'react';
 
-import Post from '@dotcom/blog/post';
-import { formatDate, formatTitle, getLink } from '@dotcom/blog/post-utils';
+import type Post from '@/blog/post';
+import { formatDate, formatTitle, getLink } from '@/blog/post-utils';
 
 const useStyles = makeStyles({
   container: {
@@ -68,7 +67,7 @@ export default function PostCard(props: Readonly<PostPreviewProps>) {
         handleCardActionClicked();
       }
     },
-    [handleCardActionClicked]
+    [handleCardActionClicked],
   );
 
   const renderTags = useCallback((): JSX.Element[] => {

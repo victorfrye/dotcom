@@ -1,18 +1,17 @@
 'use client';
 
-import { JSX, useCallback } from 'react';
-
 import {
   Button,
   Image,
-  Tooltip,
   makeStyles,
+  Tooltip,
   tokens,
 } from '@fluentui/react-components';
 import { MailFilled, RssFilled } from '@fluentui/react-icons';
+import { type JSX, useCallback } from 'react';
 
-import ShellText from '@dotcom/shell/text';
-import { useColorMode } from '@dotcom/theme';
+import ShellText from '@/shell/text';
+import { useColorMode } from '@/theme';
 
 interface Social {
   text: string;

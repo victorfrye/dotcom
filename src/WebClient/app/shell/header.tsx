@@ -3,13 +3,13 @@
 import {
   Avatar,
   CardHeader,
+  makeStyles,
   Subtitle2,
   Title1,
-  makeStyles,
   tokens,
 } from '@fluentui/react-components';
 
-import ShellText from '@dotcom/shell/text';
+import ShellText from '@/shell/text';
 
 const useStyles = makeStyles({
   header: {

@@ -1,33 +1,32 @@
 'use client';
 
-import { ReactNode, useCallback, useRef, useState } from 'react';
-
 import {
   Card,
   Link,
-  SelectTabEventHandler,
+  makeStyles,
+  type SelectTabEventHandler,
   Tab,
   TabList,
-  TabValue,
-  makeStyles,
+  type TabValue,
   tokens,
 } from '@fluentui/react-components';
 import {
   BriefcaseColor,
   BriefcaseRegular,
+  bundleIcon,
   EditColor,
   EditRegular,
   PersonColor,
   PersonRegular,
-  bundleIcon,
 } from '@fluentui/react-icons';
 import { usePathname } from 'next/navigation';
+import { type ReactNode, useCallback, useRef, useState } from 'react';
 
-import Loading from '@dotcom/loading';
-import { CookieBanner } from '@dotcom/privacy';
-import Footer from '@dotcom/shell/footer';
-import Header from '@dotcom/shell/header';
-import ShellText from '@dotcom/shell/text';
+import Loading from '@/loading';
+import { CookieBanner } from '@/privacy';
+import Footer from '@/shell/footer';
+import Header from '@/shell/header';
+import ShellText from '@/shell/text';
 
 const useStyles = makeStyles({
   shell: {

@@ -1,4 +1,4 @@
-import { Experience } from '@dotcom/resume';
+import type { Experience } from '@/resume';
 
 const AboutText = {
   card: {

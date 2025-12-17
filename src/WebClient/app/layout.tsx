@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
-import { Metadata } from 'next';
-
-import { ClarityTag, Gtag } from '@dotcom/analytics';
-import '@dotcom/globals.css';
-import ProviderTree from '@dotcom/provider-tree';
-import { Shell } from '@dotcom/shell';
+import { ClarityTag, Gtag } from '@/analytics';
+import '@/globals.css';
+import ProviderTree from '@/provider-tree';
+import { Shell } from '@/shell';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://victorfrye.com'),

@@ -1,16 +1,16 @@
 'use client';
 
 import {
-  ReactNode,
   createContext,
+  type ReactNode,
   useCallback,
   useEffect,
   useMemo,
 } from 'react';
 
-import { useClarity, useGA } from '@dotcom/analytics';
-import ConsentSettings from '@dotcom/privacy/consent-settings';
-import { readValue, useLocalStorage } from '@dotcom/storage';
+import { useClarity, useGA } from '@/analytics';
+import type ConsentSettings from '@/privacy/consent-settings';
+import { readValue, useLocalStorage } from '@/storage';
 
 let initialized = false;
 
@@ -52,7 +52,7 @@ export default function ConsentProvider({ children }: ConsentProviderProps) {
       handleClarityConsentChange,
       handleCookieSettingsChange,
       handleGAConsentChange,
-    ]
+    ],
   );
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export default function ConsentProvider({ children }: ConsentProviderProps) {
       consent: consentSettings,
       onConsentChange: handleConsentChange,
     }),
-    [consentSettings, handleConsentChange]
+    [consentSettings, handleConsentChange],
   );
 
   return (

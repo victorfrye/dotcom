@@ -1,4 +1,4 @@
-import Entity from '@dotcom/resume/entity';
+import type Entity from '@/resume/entity';
 
 export default interface Experience {
   company: Entity;

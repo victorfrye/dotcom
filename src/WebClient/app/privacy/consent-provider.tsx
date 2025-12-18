@@ -21,7 +21,6 @@ interface ConsentContextProps {
 
 export const ConsentContext = createContext<ConsentContextProps>({
   consent: readValue<ConsentSettings>('consent'),
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   onConsentChange: (_settings: ConsentSettings) => {},
 });
 
@@ -29,7 +28,9 @@ interface ConsentProviderProps {
   children: ReactNode;
 }
 
-export default function ConsentProvider({ children }: ConsentProviderProps) {
+export default function ConsentProvider({
+  children,
+}: Readonly<ConsentProviderProps>) {
   const {
     value: consentSettings,
     handleValueChange: handleCookieSettingsChange,

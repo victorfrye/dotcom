@@ -10,8 +10,8 @@ import {
 } from '@fluentui/react-components';
 import { HomeColor } from '@fluentui/react-icons';
 
-import Post from '@dotcom/blog/post';
-import { getLink } from '@dotcom/blog/post-utils';
+import type Post from '@/blog/post';
+import { getLink } from '@/blog/post-utils';
 
 const useStyles = makeStyles({
   breadcrumb: {

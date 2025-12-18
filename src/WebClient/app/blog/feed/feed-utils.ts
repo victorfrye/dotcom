@@ -1,8 +1,8 @@
+import fs from 'node:fs';
+import { join } from 'node:path';
 import { Feed } from 'feed';
-import fs from 'fs';
-import { join } from 'path';
 
-import { getPosts } from '@dotcom/blog/content-utils';
+import { getPosts } from '@/blog/content-utils';
 
 const feedDirPath = join(process.cwd(), 'public/blog/feed');
 

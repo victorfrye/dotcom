@@ -43,7 +43,7 @@ jobs:
         run: npm ci --prefix ./src/WebClient
 
       - name: Verify formatting
-        run: npm run lint --prefix ./src/WebClient
+        run: npm run lint:ci --prefix ./src/WebClient
 
       - name: Build sources
         run: npm run build --prefix ./src/WebClient

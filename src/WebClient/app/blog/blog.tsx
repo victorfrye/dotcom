@@ -1,12 +1,10 @@
 'use client';
 
-import { useCallback } from 'react';
-
-import BlogBreadcrumb from './breadcrumb';
 import { makeStyles, tokens } from '@fluentui/react-components';
-
-import Post from '@dotcom/blog/post';
-import PostCard from '@dotcom/blog/post-card';
+import { type JSX, useCallback } from 'react';
+import type Post from '@/blog/post';
+import PostCard from '@/blog/post-card';
+import BlogBreadcrumb from './breadcrumb';
 
 const useStyles = makeStyles({
   header: {
@@ -45,7 +43,7 @@ export default function Blog({ posts }: Readonly<BlogProps>) {
           <PostCard post={post} />
         </li>
       )),
-    [posts, styles]
+    [posts, styles],
   );
 
   return (

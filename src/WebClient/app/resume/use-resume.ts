@@ -2,13 +2,13 @@
 
 import { useCallback, useEffect, useReducer } from 'react';
 
-import Certificate from '@dotcom/resume/certificate';
-import Education from '@dotcom/resume/education';
-import Entity from '@dotcom/resume/entity';
-import Experience from '@dotcom/resume/experience';
-import Project from '@dotcom/resume/project';
-import resumeDocument from '@dotcom/resume/resume.json';
-import Skill from '@dotcom/resume/skill';
+import type Certificate from '@/resume/certificate';
+import type Education from '@/resume/education';
+import type Entity from '@/resume/entity';
+import type Experience from '@/resume/experience';
+import type Project from '@/resume/project';
+import resumeDocument from '@/resume/resume.json';
+import type Skill from '@/resume/skill';
 
 interface EntityRecord {
   name: string;

@@ -1,6 +1,6 @@
 import { permanentRedirect } from 'next/navigation';
 
-import { buildFeed } from '@dotcom/blog/feed/feed-utils';
+import { buildFeed } from '@/blog/feed/feed-utils';
 
 export default async function FeedPage() {
   await buildFeed();

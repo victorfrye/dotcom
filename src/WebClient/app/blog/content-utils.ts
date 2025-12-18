@@ -1,6 +1,6 @@
-import fs from 'fs';
+import fs from 'node:fs';
+import { join } from 'node:path';
 import matter from 'gray-matter';
-import { join } from 'path';
 import readingDuration from 'reading-duration';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -10,7 +10,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import Post from '@dotcom/blog/post';
+import type Post from '@/blog/post';
 
 const blogContentPath = join(process.cwd(), 'content/blog');
 

@@ -1,7 +1,5 @@
 'use client';
 
-import { JSX, cloneElement, useCallback, useMemo } from 'react';
-
 import {
   Body2,
   Button,
@@ -15,8 +13,8 @@ import {
   CarouselNavContainer,
   CarouselSlider,
   CarouselViewport,
-  Title3,
   makeStyles,
+  Title3,
   tokens,
 } from '@fluentui/react-components';
 import {
@@ -29,9 +27,10 @@ import {
   MailFilled,
   PeopleCommunityColor,
 } from '@fluentui/react-icons';
+import { cloneElement, type JSX, useCallback, useMemo } from 'react';
 
-import AboutText from '@dotcom/about/text';
-import { Experience, useResume } from '@dotcom/resume';
+import AboutText from '@/about/text';
+import { type Experience, useResume } from '@/resume';
 
 const useStyles = makeStyles({
   carousel: {
@@ -80,7 +79,7 @@ export default function About() {
   const currentJob: Experience = useMemo(() => experience[0], [experience]);
   const careerStart: Date = useMemo(
     () => experience[experience.length - 1]?.startDate ?? undefined,
-    [experience]
+    [experience],
   );
 
   const getYearsOfExperience = useCallback((): number => {
@@ -114,7 +113,7 @@ export default function About() {
       {
         icon: <CodeColor />,
         title: AboutText.card.career.title,
-        text: !!currentJob
+        text: currentJob
           ? AboutText.card.career.text(currentJob, getYearsOfExperience())
           : '',
         action: {
@@ -144,7 +143,7 @@ export default function About() {
         text: AboutText.card.family.text,
       },
     ],
-    [currentJob, getYearsOfExperience]
+    [currentJob, getYearsOfExperience],
   );
 
   return (

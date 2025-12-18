@@ -1,8 +1,12 @@
 import { withGriffelCSSExtraction } from '@griffel/next-extraction-plugin';
-import { NextConfig } from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = withGriffelCSSExtraction()({
   output: 'export',
+
+  reactStrictMode: true,
+  reactCompiler: true,
+
   turbopack: {},
   webpack: (config) => {
     config.module.rules.unshift(
@@ -28,7 +32,7 @@ const nextConfig: NextConfig = withGriffelCSSExtraction()({
             },
           },
         ],
-      }
+      },
     );
 
     return config;

@@ -1,5 +1,5 @@
-import { readValue } from '@dotcom/storage';
-import ThemePreferences from '@dotcom/theme/theme-preferences';
+import { readValue } from '@/storage';
+import type ThemePreferences from '@/theme/theme-preferences';
 
 export default function initColorMode() {
   if (typeof window === 'undefined') {
@@ -9,7 +9,7 @@ export default function initColorMode() {
   const userPrefersDark = readValue<ThemePreferences>('theme');
 
   const systemPrefersDark = window.matchMedia(
-    '(prefers-color-scheme: dark)'
+    '(prefers-color-scheme: dark)',
   ).matches;
 
   return userPrefersDark?.colorMode ?? (systemPrefersDark ? 'dark' : 'light');

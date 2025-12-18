@@ -1,4 +1,4 @@
-import Post from '@dotcom/blog/post';
+import type Post from '@/blog/post';
 
 export function formatDate(post: Post): string {
   return new Date(post.date).toLocaleDateString('en-US', {

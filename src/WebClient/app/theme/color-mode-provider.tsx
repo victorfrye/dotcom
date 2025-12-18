@@ -1,19 +1,19 @@
 'use client';
 
 import {
-  ReactNode,
   createContext,
+  type ReactNode,
   useCallback,
   useEffect,
   useMemo,
   useState,
 } from 'react';
 
-import { useLocalStorage } from '@dotcom/storage';
-import ColorMode from '@dotcom/theme/color-mode';
-import initColorMode from '@dotcom/theme/init-color-mode';
-import ThemePreferences from '@dotcom/theme/theme-preferences';
-import useThemeMediaQuery from '@dotcom/theme/use-theme-media-query';
+import { useLocalStorage } from '@/storage';
+import type ColorMode from '@/theme/color-mode';
+import initColorMode from '@/theme/init-color-mode';
+import type ThemePreferences from '@/theme/theme-preferences';
+import useThemeMediaQuery from '@/theme/use-theme-media-query';
 
 interface ColorModeContextProps {
   colorMode: ColorMode;
@@ -49,7 +49,7 @@ export default function ColorModeProvider({
   const systemPrefersDark = useThemeMediaQuery();
 
   const [colorMode, setColorMode] = useState<ColorMode>(
-    themePreferences?.colorMode ?? (systemPrefersDark ? 'dark' : 'light')
+    themePreferences?.colorMode ?? (systemPrefersDark ? 'dark' : 'light'),
   );
 
   const isLight = colorMode === 'light';
@@ -63,7 +63,7 @@ export default function ColorModeProvider({
       });
       setColorMode(colorMode);
     },
-    [handleThemePreferencesChange, themePreferences]
+    [handleThemePreferencesChange, themePreferences],
   );
 
   const handleColorModeToggle = useCallback(() => {
@@ -80,7 +80,7 @@ export default function ColorModeProvider({
       onColorModeToggle: handleColorModeToggle,
       onColorModeChange: handleColorModeChange,
     }),
-    [colorMode, isLight, isDark, handleColorModeToggle, handleColorModeChange]
+    [colorMode, isLight, isDark, handleColorModeToggle, handleColorModeChange],
   );
 
   useEffect(() => {

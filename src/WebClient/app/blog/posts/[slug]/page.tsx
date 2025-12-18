@@ -1,9 +1,9 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import Article from '@dotcom/blog/article';
-import { getPostBySlug, getPosts } from '@dotcom/blog/content-utils';
-import { getLink } from '@dotcom/blog/post-utils';
+import Article from '@/blog/article';
+import { getPostBySlug, getPosts } from '@/blog/content-utils';
+import { getLink } from '@/blog/post-utils';
 
 interface PostPageProps {
   slug: string;
@@ -34,7 +34,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: PostPageParams,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { slug } = await params;
 

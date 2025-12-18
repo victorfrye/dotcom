@@ -1,6 +1,6 @@
-import Blog from '@dotcom/blog/blog';
-import { getPosts } from '@dotcom/blog/content-utils';
-import Post from '@dotcom/blog/post';
+import Blog from '@/blog/blog';
+import { getPosts } from '@/blog/content-utils';
+import type Post from '@/blog/post';
 
 export default async function BlogPage() {
   const posts: Post[] = await getPosts();

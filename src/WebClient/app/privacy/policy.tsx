@@ -1,16 +1,15 @@
 'use client';
 
-import { useMemo } from 'react';
-
 import {
-  Text,
-  Title1,
   makeStaticStyles,
   makeStyles,
+  Text,
+  Title1,
   tokens,
 } from '@fluentui/react-components';
+import { useMemo } from 'react';
 
-import PrivacyText from '@dotcom/privacy/text';
+import PrivacyText from '@/privacy/text';
 
 const useStyles = makeStyles({
   container: {
@@ -107,6 +106,7 @@ export default function Policy({ content, date }: Readonly<PolicyProps>) {
       <Text italic>{`${PrivacyText.policy.lastUpdated} ${formattedDate}`}</Text>
 
       <div
+        /* biome-ignore lint/security/noDangerouslySetInnerHtml: Policy content is managed in source control */
         dangerouslySetInnerHTML={{ __html: content }}
         className={styles.container}
       />

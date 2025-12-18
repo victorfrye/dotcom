@@ -1,7 +1,8 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddNpmApp("client", "../WebClient", "dev")
+builder.AddJavaScriptApp("client", "../WebClient", "dev")
        .WithIconName("Globe")
+       .WithNpm(install: true)
        .WithHttpEndpoint(env: "PORT")
        .WithUrlForEndpoint("http", static url => url.DisplayText = "🏠 Home")
        .WithUrlForEndpoint("http", static _ => new()

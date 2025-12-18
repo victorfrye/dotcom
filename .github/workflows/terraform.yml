@@ -39,7 +39,7 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v5
 
       - name: Set up Terraform
@@ -132,7 +132,7 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v5
 
       - name: Set up Terraform

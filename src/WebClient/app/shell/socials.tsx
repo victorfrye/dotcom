@@ -2,16 +2,20 @@
 
 import {
   Button,
-  Image,
   makeStyles,
   Tooltip,
   tokens,
 } from '@fluentui/react-components';
 import { MailFilled, RssFilled } from '@fluentui/react-icons';
 import { type JSX, useCallback } from 'react';
-
+import {
+  BlueskyIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  ThreadsIcon,
+  XboxIcon,
+} from '@/assets';
 import ShellText from '@/shell/text';
-import { useColorMode } from '@/theme';
 
 interface Social {
   text: string;
@@ -23,6 +27,10 @@ interface Social {
 const useStyles = makeStyles({
   icon: {
     color: tokens.colorNeutralForeground1,
+  },
+  svg: {
+    width: '20px',
+    height: '20px',
   },
   brand: {
     ':hover': {
@@ -60,7 +68,6 @@ const useStyles = makeStyles({
 
 export default function SocialButtons() {
   const styles = useStyles();
-  const { isDark } = useColorMode();
 
   const getSocials = useCallback((): Social[] => {
     return [
@@ -68,66 +75,31 @@ export default function SocialButtons() {
         text: ShellText.footer.socials.linkedin,
         link: 'https://www.linkedin.com/in/victorfrye',
         styles: styles.blue,
-        image: (
-          <Image
-            src={isDark ? '/assets/linkedin.svg' : '/assets/linkedin_dark.svg'}
-            alt={ShellText.footer.socials.linkedin}
-            height={20}
-            width={20}
-          />
-        ),
+        image: <LinkedInIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.github,
         link: 'https://github.com/victorfrye',
         styles: styles.neutral,
-        image: (
-          <Image
-            src={isDark ? '/assets/github.svg' : '/assets/github_dark.svg'}
-            alt={ShellText.footer.socials.github}
-            height={20}
-            width={20}
-          />
-        ),
+        image: <GitHubIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.threads,
         link: 'https://www.threads.com/@thevictorfryeadventure',
         styles: styles.neutral,
-        image: (
-          <Image
-            src={isDark ? '/assets/threads.svg' : '/assets/threads_dark.svg'}
-            alt={ShellText.footer.socials.threads}
-            height={20}
-            width={20}
-          />
-        ),
+        image: <ThreadsIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.bluesky,
         link: 'https://bsky.app/profile/victorfrye.com',
         styles: styles.blue,
-        image: (
-          <Image
-            src={isDark ? '/assets/bluesky.svg' : '/assets/bluesky_dark.svg'}
-            alt={ShellText.footer.socials.bluesky}
-            height={20}
-            width={20}
-          />
-        ),
+        image: <BlueskyIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.xbox,
         link: 'https://www.xbox.com/play/user/FrenchFrye6173',
         styles: styles.green,
-        image: (
-          <Image
-            src={isDark ? '/assets/xbox.svg' : '/assets/xbox_dark.svg'}
-            alt={ShellText.footer.socials.xbox}
-            height={20}
-            width={20}
-          />
-        ),
+        image: <XboxIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.email,
@@ -142,7 +114,7 @@ export default function SocialButtons() {
         image: <RssFilled className={styles.icon} height={20} width={20} />,
       },
     ];
-  }, [isDark, styles]);
+  }, [styles]);
 
   const renderButtons = (): JSX.Element[] => {
     return getSocials().map((social) => (

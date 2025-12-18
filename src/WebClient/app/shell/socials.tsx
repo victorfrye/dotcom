@@ -75,56 +75,31 @@ export default function SocialButtons() {
         text: ShellText.footer.socials.linkedin,
         link: 'https://www.linkedin.com/in/victorfrye',
         styles: styles.blue,
-        image: (
-          <LinkedInIcon
-            className={styles.svg}
-            alt={ShellText.footer.socials.linkedin}
-          />
-        ),
+        image: <LinkedInIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.github,
         link: 'https://github.com/victorfrye',
         styles: styles.neutral,
-        image: (
-          <GitHubIcon
-            className={styles.svg}
-            alt={ShellText.footer.socials.github}
-          />
-        ),
+        image: <GitHubIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.threads,
         link: 'https://www.threads.com/@thevictorfryeadventure',
         styles: styles.neutral,
-        image: (
-          <ThreadsIcon
-            className={styles.svg}
-            alt={ShellText.footer.socials.threads}
-          />
-        ),
+        image: <ThreadsIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.bluesky,
         link: 'https://bsky.app/profile/victorfrye.com',
         styles: styles.blue,
-        image: (
-          <BlueskyIcon
-            className={styles.svg}
-            alt={ShellText.footer.socials.bluesky}
-          />
-        ),
+        image: <BlueskyIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.xbox,
         link: 'https://www.xbox.com/play/user/FrenchFrye6173',
         styles: styles.green,
-        image: (
-          <XboxIcon
-            className={styles.svg}
-            alt={ShellText.footer.socials.xbox}
-          />
-        ),
+        image: <XboxIcon className={styles.svg} />,
       },
       {
         text: ShellText.footer.socials.email,

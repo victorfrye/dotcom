@@ -8,7 +8,11 @@
     "defaultBranch": "main"
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!!**/next-env.d.ts"
+    ]
   },
   "formatter": {
     "enabled": true,

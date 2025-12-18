@@ -29,10 +29,8 @@ export const ColorModeContext = createContext<ColorModeContextProps>({
   colorMode: initialMode,
   isLight: initialMode === 'light',
   isDark: initialMode === 'dark',
-  /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function */
   onColorModeToggle: () => {},
   onColorModeChange: (_mode: ColorMode) => {},
-  /* eslint-enable @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function */
 });
 
 interface ColorModeProviderProps {
@@ -41,7 +39,7 @@ interface ColorModeProviderProps {
 
 export default function ColorModeProvider({
   children,
-}: ColorModeProviderProps) {
+}: Readonly<ColorModeProviderProps>) {
   const {
     value: themePreferences,
     handleValueChange: handleThemePreferencesChange,

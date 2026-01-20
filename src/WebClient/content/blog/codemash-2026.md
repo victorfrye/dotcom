@@ -43,7 +43,7 @@ I also presented a general session on Thursday titled "Diet Docker: Crafting lig
 
 ## Leading EDJE
 
-I want to give a special thank you to my employer, [Leading EDJE](https://leadingedje.com), for sponsoring my attendance at CodeMash 2026. Leading EDJE is a fantastic place to work, and I am grateful for their support in allowing me to attend and speak at this event. We had a total of 12 employees attending CodeMash this, 3 of which including myself presented sessions. Although not a direct sponsor of the event, I love seeing Leading EDJE invest in the professional development of their employees and fostering a culture of learning and growth that outputs so many speakers and community contributors.
+I want to give a special thank you to my employer, [Leading EDJE](https://leadingedje.com), for sponsoring my attendance at CodeMash 2026. Leading EDJE is a fantastic place to work, and I am grateful for their support in allowing me to attend and speak at this event. We had a total of 12 employees attending CodeMash this year, 3 of which including myself presented sessions. Although not a direct sponsor of the event, I love seeing Leading EDJE invest in the professional development of their employees and fostering a culture of learning and growth that outputs so many speakers and community contributors.
 
 ## Thank you
 

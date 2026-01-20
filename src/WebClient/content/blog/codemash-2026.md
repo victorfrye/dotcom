@@ -13,7 +13,7 @@ tags:
   - events
 ---
 
-Thank you to the greater Midwest developer community for an exceptional CodeMash 2026! This year, I was honored to speak at this incredible event for the first time, and it was such a joy to attend and connect with so much of the talent and passion from across the region. CodeMash marks the largest conference I have attended to date, and the energy and culture of the event were truly inspiring. I met so many new friends and saw many familiar faces as well. For the first time ever, I met somehow who discovered me from this blog in person. I love the Midwest developer community and look forward to returning in the future. Cheers!
+Thank you to the greater Midwest developer community for an exceptional CodeMash 2026! This year, I was honored to speak at this incredible event for the first time, and it was such a joy to attend and connect with so much of the talent and passion from across the region. CodeMash marks the largest conference I have attended to date, and the energy and culture of the event were truly inspiring. I met so many new friends and saw many familiar faces as well. For the first time ever, I met someone who discovered me from this blog in person. I love the Midwest developer community and look forward to returning in the future. Cheers!
 
 This blog post is a reference for those who attended my presentations as well as a thank you letter to everyone involved.
 

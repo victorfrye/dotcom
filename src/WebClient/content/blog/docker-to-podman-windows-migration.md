@@ -16,9 +16,9 @@ Docker is synonymous with containers. For years, Docker Desktop has been the go-
 
 ## Docker licensing
 
-There are many reasons Docker Desktop remains a staple for Windows developers. There's even more for why Docker became the de facto standard for containers. However, [Docker Desktop licensing has stopped being free](https://docker.com/pricing/) for many users and enterprises. This change did not include the open-source Docker Engine, which remains free to use and includes the command-line interface, as well as Docker Compose. This change disproportionately impacts Windows users. On macOS and Linux, Docker works seamlessly due to Unix-like operating systems and Linux container compatibility. On Windows, WSL is the underlying technology that makes the Docker engine work and requires a lot of complex setup to interact with across Windows and WSL. Docker Desktop abstracts this complexity away.
+There are many reasons [Docker Desktop](https://docker.com/products/docker-desktop/) remains a staple for Windows developers. There's even more for why Docker became the de facto standard for containers. However, [Docker Desktop licensing has stopped being free](https://docker.com/pricing/) for many users and enterprises. This change did not include the open-source Docker Engine, which remains free to use and includes the command-line interface, as well as Docker Compose. This change disproportionately impacts Windows users. On macOS and Linux, Docker works seamlessly due to Unix-like operating systems and Linux container compatibility. On Windows, Windows Subsystem for Linux (WSL) is the underlying technology that makes the Docker engine work and requires a lot of complex setup to interact with across Windows and WSL. Docker Desktop abstracts this complexity away.
 
-What always bothered me about moving away from Docker Desktop was the lack of a simple solution that provided a similar onboarding experience. Enter Podman.
+What always bothered me about moving away from Docker Desktop was the lack of a simple solution that provided a similar onboarding experience. Enter [Podman](https://podman.io).
 
 ## Why Podman?
 

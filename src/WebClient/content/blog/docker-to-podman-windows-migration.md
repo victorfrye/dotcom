@@ -2,7 +2,7 @@
 title: Docker Desktop to Podman
 subtitle: A Windows developer's migration guide
 description: A quick guide for Windows developers to transition from Docker Desktop to Podman.
-date: 2026-01-20
+date: 2026-01-21
 image: assets/_blog/docker-to-podman-windows-migration/banner.jpg
 tags:
   - cloudnative

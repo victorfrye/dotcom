@@ -49,7 +49,7 @@ There are multiple ways to install Podman on Windows. I recommend using WinGet b
 There are additional tools that we will install alongside Podman to provide a similar experience to Docker Desktop. These include:
 
 - **Podman**: The core container engine and podman CLI.
-- **Podman Desktop**: A GUI that provides similar adminstrative capabilities to Docker Desktop and orchestrates Docker compatibility.
+- **Podman Desktop**: A GUI that provides similar administrative capabilities to Docker Desktop and orchestrates Docker compatibility.
 - **Docker CLI**: The open-source and free Docker CLI for continued compatibility with `docker` CLI commands.
 - **Docker Compose**: The open-source tooling for multi-container orchestration, powering `docker compose` and `podman compose` commands (optional).
 - **Kubectl**: The Kubernetes CLI for managing and interacting with Kubernetes clusters (optional).

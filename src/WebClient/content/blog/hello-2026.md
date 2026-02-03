@@ -22,7 +22,7 @@ My greatest accomplishments last year were none of these. It was buying my first
 
 With reflection comes the chance to pivot. I have decided to make some changes in 2026. Some are small, some are large. Some are personal, some are professional. Some are public, some are private. Some are continuations, some are new.
 
-When setting goals, I start first with what I want to be doing in the year. When I sit down with myself and ask what I enjoy, I come to the focus of community, learning, and fun. I didn't start with these kinds of buzzwords, instead I find them. I my passions and start grouping them together.
+When setting goals, I start first with what I want to be doing in the year. When I sit down with myself and ask what I enjoy, I come to the focus of community, learning, and fun. I didn't start with these kinds of buzzwords, instead I find them. I list my passions and start grouping them together.
 
 I get to community by reflecting on the professional successes last year. The greatest new opportunities came from meeting community leaders at Beer City Code and West Michigan Azure User Group here in Grand Rapids. I love my hometown and want to invest in it so the developer community in GR can thrive. I also want to continue to travel and connect with the greater developer community across the Midwest and beyond. Learning is a natural extension of software engineering. The field is always changing, and staying current is vital. Generative AI is an industry wide shift. I also have upskilling opportunities with cloud-native development and DevOps practices.
 

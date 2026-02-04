@@ -9,7 +9,7 @@ tags:
   - copilot
 ---
 
-I am an generative AI skeptic. I have been enthusiastic about AI since my college days studying deep learning and linear regression models. However, the hype around generative AI has made me cautious, with a blend of optimism and skepticism. I first started using GitHub Copilot in chat interfaces and IDE plugins to understand JavaScript as a front-end novice. Agentic tooling has advanced rapidly since then and many developers including myself haven't fully embraced it yet.
+I am a generative AI skeptic. I have been enthusiastic about AI since my college days studying deep learning and linear regression models. However, the hype around generative AI has made me cautious, with a blend of optimism and skepticism. I first started using GitHub Copilot in chat interfaces and IDE plugins to understand JavaScript as a front-end novice. Agentic tooling has advanced rapidly since then and many developers including myself haven't fully embraced it yet.
 
 Two weeks ago, I decided to start an experiment: use newer tooling like Copilot CLI with a higher request limit for all my coding tasks for two weeks. This includes planning, coding, debugging, testing, and documentation. The goal is to see if I can level up my productivity in a meaningful way or not. This post will cover my experiment, findings, and future usage plans.
 

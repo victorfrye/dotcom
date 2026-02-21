@@ -26,7 +26,7 @@ import Loading from '@/loading';
 import { CookieBanner } from '@/privacy';
 import Footer from '@/shell/footer';
 import Header from '@/shell/header';
-import ShellText from '@/shell/text';
+import ShellText from '@/shell/strings';
 
 const useStyles = makeStyles({
   shell: {

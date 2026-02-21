@@ -1,8 +1,10 @@
 import Policy from '@/privacy/policy';
-import { getPrivacyPolicy } from '@/privacy/policy-utils';
+import Content, { frontmatter } from './content.mdx';
 
-export default async function PrivacyPage() {
-  const policy = await getPrivacyPolicy();
-
-  return <Policy content={policy.content} date={policy.date} />;
+export default function PrivacyPage() {
+  return (
+    <Policy date={frontmatter.date}>
+      <Content />
+    </Policy>
+  );
 }

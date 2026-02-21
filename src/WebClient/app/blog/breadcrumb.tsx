@@ -10,8 +10,8 @@ import {
 } from '@fluentui/react-components';
 import { HomeColor } from '@fluentui/react-icons';
 
-import type Post from '@/blog/post';
-import { getLink } from '@/blog/post-utils';
+import type { ArticlePost } from '@/blog/article';
+import { getLink } from '@/blog/post-formatters';
 
 const useStyles = makeStyles({
   breadcrumb: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 });
 
 interface BlogBreadcrumbProps {
-  post?: Post;
+  post?: ArticlePost;
 }
 
 export default function BlogBreadcrumb(props: Readonly<BlogBreadcrumbProps>) {

@@ -15,7 +15,7 @@ import {
   ThreadsIcon,
   XboxIcon,
 } from '@/assets';
-import ShellText from '@/shell/text';
+import ShellText from '@/shell/strings';
 
 interface Social {
   text: string;

@@ -19,7 +19,7 @@ import { BookOpenFilled, CalendarRegular } from '@fluentui/react-icons';
 import { type JSX, type KeyboardEvent, useCallback, useRef } from 'react';
 
 import type Post from '@/blog/post';
-import { formatDate, formatTitle, getLink } from '@/blog/post-utils';
+import { formatDate, formatTitle, getLink } from '@/blog/post-formatters';
 
 const useStyles = makeStyles({
   container: {
@@ -107,7 +107,7 @@ export default function PostCard(props: Readonly<PostPreviewProps>) {
           <div className={styles.postDate}>
             <CalendarRegular />
             <em>
-              {formatDate(post)} • {post.readingDuration}
+              {formatDate(post.date)} • {post.readingDuration}
             </em>
           </div>
         }

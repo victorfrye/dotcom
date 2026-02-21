@@ -36,7 +36,9 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "globals.d.ts",
+    "**/*.mdx",
+    "css.d.ts",
+    "mdx.d.ts",
     "next.config.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts",

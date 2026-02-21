@@ -1,15 +1,9 @@
 'use client';
 
-import {
-  makeStaticStyles,
-  makeStyles,
-  Text,
-  Title1,
-  tokens,
-} from '@fluentui/react-components';
-import { useMemo } from 'react';
+import { makeStyles, Text, Title1, tokens } from '@fluentui/react-components';
+import type { ReactNode } from 'react';
 
-import PrivacyText from '@/privacy/text';
+import PrivacyText from '@/privacy/strings';
 
 const useStyles = makeStyles({
   container: {
@@ -23,79 +17,19 @@ const useStyles = makeStyles({
   },
 });
 
-const useMarkdownStyles = makeStaticStyles({
-  ul: {
-    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
-  },
-  li: {
-    fontSize: tokens.fontSizeBase400,
-    lineHeight: tokens.lineHeightBase400,
-  },
-  a: {
-    color: tokens.colorBrandForegroundLink,
-    textDecorationLine: 'none',
-  },
-  'a:hover': {
-    color: tokens.colorBrandForegroundLinkHover,
-    textDecorationLine: 'underline',
-  },
-  'a:active': {
-    color: tokens.colorBrandForegroundLinkPressed,
-    textDecorationLine: 'underline',
-  },
-  p: {
-    fontSize: tokens.fontSizeBase400,
-    lineHeight: tokens.lineHeightBase400,
-    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
-  },
-  h1: {
-    fontSize: tokens.fontSizeHero800,
-    fontWeight: tokens.fontWeightSemibold,
-    lineHeight: tokens.lineHeightHero800,
-  },
-  h2: {
-    fontSize: tokens.fontSizeHero700,
-    fontWeight: tokens.fontWeightSemibold,
-    lineHeight: tokens.lineHeightHero700,
-  },
-  h3: {
-    fontSize: tokens.fontSizeBase600,
-    fontWeight: tokens.fontWeightSemibold,
-    lineHeight: tokens.lineHeightBase600,
-  },
-  table: {
-    borderCollapse: 'collapse',
-    gap: tokens.spacingVerticalM,
-  },
-  tr: {
-    borderBottom: `${tokens.strokeWidthThin} solid ${tokens.colorNeutralStroke2}`,
-  },
-  th: {
-    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
-    fontWeight: tokens.fontWeightSemibold,
-  },
-  td: {
-    height: tokens.spacingVerticalXXXL,
-    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
-  },
-});
-
 interface PolicyProps {
-  content: string;
-  date: Date;
+  date: string;
+  children: ReactNode;
 }
 
-export default function Policy({ content, date }: Readonly<PolicyProps>) {
+export default function Policy({ date, children }: Readonly<PolicyProps>) {
   const styles = useStyles();
-  useMarkdownStyles();
 
-  const formattedDate = useMemo(() => {
-    return date.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    });
-  }, [date]);
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
 
   return (
     <main className={styles.container}>
@@ -105,11 +39,7 @@ export default function Policy({ content, date }: Readonly<PolicyProps>) {
 
       <Text italic>{`${PrivacyText.policy.lastUpdated} ${formattedDate}`}</Text>
 
-      <div
-        /* biome-ignore lint/security/noDangerouslySetInnerHtml: Policy content is managed in source control */
-        dangerouslySetInnerHTML={{ __html: content }}
-        className={styles.container}
-      />
+      {children}
     </main>
   );
 }

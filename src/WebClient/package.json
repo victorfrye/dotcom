@@ -11,6 +11,7 @@
     "lint:fix": "biome check --write",
     "lint:ci": "biome ci",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "knip": "knip"
   },
   "dependencies": {

@@ -37,7 +37,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mdx",
-    "globals.d.ts",
+    "css.d.ts",
     "mdx.d.ts",
     "next.config.ts",
     "next-env.d.ts",

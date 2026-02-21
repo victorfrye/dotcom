@@ -9,7 +9,7 @@ import {
   tokens,
 } from '@fluentui/react-components';
 
-import ShellText from '@/shell/text';
+import ShellText from '@/shell/strings';
 
 const useStyles = makeStyles({
   header: {

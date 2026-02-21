@@ -3,7 +3,7 @@
 import { makeStyles, Text, Title1, tokens } from '@fluentui/react-components';
 import type { ReactNode } from 'react';
 
-import PrivacyText from '@/privacy/text';
+import PrivacyText from '@/privacy/strings';
 
 const useStyles = makeStyles({
   container: {

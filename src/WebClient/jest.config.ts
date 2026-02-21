@@ -8,11 +8,16 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/app/$1',
+    '^@test-utils$': '<rootDir>/test-utils',
   },
+  // Transform ESM modules from node_modules
+  transformIgnorePatterns: [
+    'node_modules/(?!(unified|remark-parse|remark-stringify|remark-frontmatter|remark-gfm|remark-mdx-frontmatter|remark-rehype|rehype-autolink-headings|rehype-slug|rehype-stringify|vfile-matter|vfile|unist-util-stringify-position|unist-util-visit|unist-util-visit-parents|unist-util-is|micromark|mdast-util-from-markdown|mdast-util-to-markdown|mdast-util-frontmatter|mdast-util-gfm|mdast-util-to-string|mdast-util-to-hast)/)',
+  ],
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
     'mdx-components.tsx',
-    '!app/**/__tests__/**',
+    '!app/**/*.test.{ts,tsx}',
     '!app/**/index.ts',
     '!app/**/*.d.ts',
     '!app/**/page.tsx',

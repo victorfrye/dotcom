@@ -59,7 +59,13 @@ terraform validate
 terraform plan
 ```
 
-There is no test framework configured.
+### Testing
+
+- **Jest 30** with `@testing-library/react` for unit and component tests
+- Run tests: `npm run test` — Run with coverage: `npm run test:coverage`
+- Coverage threshold: 80% across statements, branches, functions, and lines
+- Test files are colocated side-by-side with source (e.g., `shell.test.tsx` next to `shell.tsx`)
+- Shared test utilities in `test-utils.tsx` — import via `@test-utils` alias for `renderWithProviders`
 
 ## Conventions
 
@@ -68,7 +74,7 @@ There is no test framework configured.
 Feature-based directory organization under `src/WebClient/app/`. Each feature directory (e.g., `blog/`, `shell/`, `theme/`, `privacy/`, `storage/`) uses:
 
 - **Barrel exports** via `index.ts` for public API
-- **`text.ts`** files for static UI strings — do not inline user-facing text in components
+- **`strings.ts`** files for static UI strings — do not inline user-facing text in components
 
 ### TypeScript / React
 

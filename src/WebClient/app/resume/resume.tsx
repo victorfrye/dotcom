@@ -21,7 +21,7 @@ import {
 import { cloneElement, type JSX, useCallback } from 'react';
 
 import type Skill from '@/resume/skill';
-import ResumeText from '@/resume/text';
+import ResumeText from '@/resume/strings';
 import useResume from '@/resume/use-resume';
 
 const useStyles = makeStyles({

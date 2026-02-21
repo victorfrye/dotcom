@@ -11,7 +11,7 @@ import {
 import { HomeColor } from '@fluentui/react-icons';
 
 import type { ArticlePost } from '@/blog/article';
-import { getLink } from '@/blog/post-utils';
+import { getLink } from '@/blog/post-formatters';
 
 const useStyles = makeStyles({
   breadcrumb: {

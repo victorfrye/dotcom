@@ -29,7 +29,7 @@ import {
 } from '@fluentui/react-icons';
 import { cloneElement, type JSX, useCallback, useMemo } from 'react';
 
-import AboutText from '@/about/text';
+import AboutText from '@/about/strings';
 import { type Experience, useResume } from '@/resume';
 
 const useStyles = makeStyles({

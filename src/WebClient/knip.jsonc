@@ -13,6 +13,8 @@
 		"@svgr/webpack",
 		// Ambient type declarations for gtag global
 		"@types/gtag.js",
+		// Jest module alias mapped in jest.config.ts
+		"@test-utils",
 		// Used by Jest to parse TypeScript config (jest.config.ts)
 		"ts-node"
 	],

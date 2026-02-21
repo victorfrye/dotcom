@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-import { getPosts } from '@/blog/content-utils';
+import { getPosts } from '@/blog/post-loader';
 import { frontmatter as policyFrontmatter } from '@/privacy/content.mdx';
 
 export const dynamic = 'force-static';

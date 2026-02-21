@@ -19,7 +19,7 @@ import { BookOpenFilled, CalendarRegular } from '@fluentui/react-icons';
 import { type JSX, type KeyboardEvent, useCallback, useRef } from 'react';
 
 import type Post from '@/blog/post';
-import { formatDate, formatTitle, getLink } from '@/blog/post-utils';
+import { formatDate, formatTitle, getLink } from '@/blog/post-formatters';
 
 const useStyles = makeStyles({
   container: {

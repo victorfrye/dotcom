@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import Article from '@/blog/article';
-import { getMdxReadingDuration } from '@/blog/content-utils';
+import { getMdxReadingDuration } from '@/blog/post-loader';
 import Content, { frontmatter } from './content.mdx';
 
 const readingDuration = getMdxReadingDuration('copilot-experiment');

@@ -13,7 +13,7 @@ import { CalendarRegular } from '@fluentui/react-icons';
 import { type JSX, type ReactNode, useCallback } from 'react';
 
 import BlogBreadcrumb from '@/blog/breadcrumb';
-import { formatDate, formatTitle } from '@/blog/post-utils';
+import { formatDate, formatTitle } from '@/blog/post-formatters';
 
 const useStyles = makeStyles({
   banner: {

@@ -41,7 +41,8 @@ npm run lint         # Biome check (lint + format)
 npm run lint:fix     # Biome check with auto-fix
 npm run lint:ci      # Biome CI mode (used in GitHub Actions)
 npm run test         # Jest unit tests
-npm run knip         # Dead code/dependency detection
+npm run test:coverage # Jest with coverage (80% threshold, runs in CI)
+npm run knip         # Dead code/dependency detection (local only)
 ```
 
 Aspire orchestrated development (primary way to run locally, from repo root):

@@ -2,7 +2,6 @@
 
 import {
   Image,
-  makeStaticStyles,
   makeStyles,
   Tag,
   TagGroup,
@@ -11,10 +10,9 @@ import {
   typographyStyles,
 } from '@fluentui/react-components';
 import { CalendarRegular } from '@fluentui/react-icons';
-import { type JSX, useCallback } from 'react';
+import { type JSX, type ReactNode, useCallback } from 'react';
 
 import BlogBreadcrumb from '@/blog/breadcrumb';
-import type Post from '@/blog/post';
 import { formatDate, formatTitle } from '@/blog/post-utils';
 
 const useStyles = makeStyles({
@@ -38,92 +36,23 @@ const useStyles = makeStyles({
   },
 });
 
-const useMarkdownStyles = makeStaticStyles({
-  ul: {
-    margin: `${tokens.spacingVerticalMNudge} ${tokens.spacingHorizontalNone}`,
-  },
-  li: {
-    fontSize: tokens.fontSizeBase400,
-    lineHeight: tokens.lineHeightBase400,
-  },
-  a: {
-    color: tokens.colorBrandForegroundLink,
-    textDecorationLine: 'none',
-  },
-  'a:hover': {
-    color: tokens.colorBrandForegroundLinkHover,
-    textDecorationLine: 'underline',
-  },
-  'a:active': {
-    color: tokens.colorBrandForegroundLinkPressed,
-    textDecorationLine: 'underline',
-  },
-  p: {
-    fontSize: tokens.fontSizeBase400,
-    lineHeight: tokens.lineHeightBase400,
-    margin: `${tokens.spacingVerticalM} ${tokens.spacingHorizontalNone}`,
-  },
-  h2: {
-    fontSize: tokens.fontSizeHero700,
-    fontWeight: tokens.fontWeightSemibold,
-    lineHeight: tokens.lineHeightHero700,
-  },
-  h3: {
-    fontSize: tokens.fontSizeBase600,
-    fontWeight: tokens.fontWeightSemibold,
-    lineHeight: tokens.lineHeightBase600,
-  },
-  img: {
-    maxWidth: 'min(100%, 1080px)',
-    maxHeight: '608px',
-    height: 'auto',
-    borderRadius: tokens.borderRadiusMedium,
-  },
-  'img + em': {
-    display: 'block',
-    fontSize: tokens.fontSizeBase200,
-    fontWeight: tokens.fontWeightRegular,
-    lineHeight: tokens.lineHeightBase200,
-    color: tokens.colorNeutralForeground2,
-  },
-  pre: {
-    marginLeft: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
-    marginRight: `calc(-${tokens.fontSizeBase300} + -${tokens.lineHeightBase300})`,
-    overflow: 'auto',
-    padding: `calc((${tokens.fontSizeBase300} + ${tokens.lineHeightBase300}) / 2)`,
-    wordWrap: 'normal',
-    backgroundColor: tokens.colorNeutralBackgroundAlpha2,
-    borderRadius: tokens.borderRadiusMedium,
-  },
-  code: {
-    color: tokens.colorNeutralForeground2,
-    fontSize: tokens.fontSizeBase400,
-    lineHeight: tokens.lineHeightBase400,
-  },
-  table: {
-    borderCollapse: 'collapse',
-    gap: tokens.spacingVerticalM,
-  },
-  tr: {
-    borderBottom: `${tokens.strokeWidthThin} solid ${tokens.colorNeutralStroke2}`,
-  },
-  th: {
-    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
-    fontWeight: tokens.fontWeightSemibold,
-  },
-  td: {
-    height: tokens.spacingVerticalXXXL,
-    padding: `${tokens.spacingVerticalXS} ${tokens.spacingHorizontalS}`,
-  },
-});
-
-interface ArticleProps {
-  post: Post;
+export interface ArticlePost {
+  title: string;
+  subtitle?: string;
+  date: Date | string;
+  readingDuration: string;
+  image: string;
+  tags: string[];
+  slug: string;
 }
 
-export default function Article({ post }: Readonly<ArticleProps>) {
+interface ArticleProps {
+  post: ArticlePost;
+  children: ReactNode;
+}
+
+export default function Article({ post, children }: Readonly<ArticleProps>) {
   const styles = useStyles();
-  useMarkdownStyles();
 
   const renderTags = useCallback((): JSX.Element[] => {
     if (!post.tags) {
@@ -160,14 +89,13 @@ export default function Article({ post }: Readonly<ArticleProps>) {
       <div className={styles.postDate}>
         <CalendarRegular />
         <em>
-          {formatDate(post)} • {post.readingDuration}
+          {formatDate(post.date)} • {post.readingDuration}
         </em>
       </div>
 
       <TagGroup className={styles.tags}>{renderTags()}</TagGroup>
 
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Article content is managed in source control */}
-      <div dangerouslySetInnerHTML={{ __html: post.content ?? '' }} />
+      {children}
     </main>
   );
 }

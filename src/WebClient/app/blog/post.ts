@@ -1,15 +1,19 @@
-export default interface Post {
+export interface PostMetadata {
   slug: string;
   title: string;
   subtitle?: string;
   description: string;
-  author: string;
-  date: Date;
-  lastModified: Date;
-  readingDuration: string;
+  date: string;
+  lastModified?: string;
   image: string;
-  draft: boolean;
+  draft?: boolean;
   tags: string[];
-  categories: string[];
-  content: string;
+  categories?: string[];
+}
+
+export default interface Post
+  extends Omit<PostMetadata, 'date' | 'lastModified'> {
+  date: Date;
+  lastModified?: Date;
+  readingDuration: string;
 }

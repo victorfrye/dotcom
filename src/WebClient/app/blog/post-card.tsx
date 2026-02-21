@@ -107,7 +107,7 @@ export default function PostCard(props: Readonly<PostPreviewProps>) {
           <div className={styles.postDate}>
             <CalendarRegular />
             <em>
-              {formatDate(post)} • {post.readingDuration}
+              {formatDate(post.date)} • {post.readingDuration}
             </em>
           </div>
         }

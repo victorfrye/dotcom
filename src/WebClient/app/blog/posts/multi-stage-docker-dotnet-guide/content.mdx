@@ -6,7 +6,7 @@ description: A practical guide to crafting a multi-stage build for production-re
 date: 2025-05-09
 image: assets/_blog/multi-stage-docker-dotnet-guide/banner.jpg
 tags:
-  - aspnet
+  - aspnetcore
   - cloudnative
   - devops
   - docker
@@ -31,7 +31,7 @@ COPY VictorFrye.HelloDotnet.slnx ./
 RUN dotnet restore
 
 COPY . .
-RUN dotnet build -c Release --no-restore 
+RUN dotnet build -c Release --no-restore
 
 RUN dotnet test -c Release --no-build
 
@@ -75,7 +75,7 @@ Next, we need to copy the rest of our source code into the **build** image and b
 
 ```dockerfile
 COPY . .
-RUN dotnet build -c Release --no-restore 
+RUN dotnet build -c Release --no-restore
 ```
 
 At this point we are wrapping up our initial build stage. Our builder still needs to run our tests and publish, but like a pipeline we can separate these into their own stages. This is good practice as it allows Docker to fail fast and create a logical separation of concerns. Our next stage will be our **test** stage and use the build stage as its base. It will execute our tests without rebuilding and fail the image builder if they do not pass.
@@ -120,7 +120,7 @@ COPY VictorFrye.HelloDotnet.slnx ./
 RUN dotnet restore
 
 COPY . .
-RUN dotnet build -c Release --no-restore 
+RUN dotnet build -c Release --no-restore
 
 FROM build AS test
 RUN dotnet test -c Release --no-build

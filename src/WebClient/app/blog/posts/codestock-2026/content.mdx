@@ -1,0 +1,64 @@
+---
+slug: codestock-2026
+title: CodeStock 2026
+subtitle: Welcome back CodeStock community!
+description: Thank you and welcome back CodeStock 2026! What an amazing return to form for this beloved Tennessee developer conference.
+date: 2026-04-11
+image: assets/_blog/codestock-2026/banner.jpg
+tags:
+  - dotnet
+  - aspire
+  - ai
+  - copilot
+  - terraform
+  - azure
+  - events
+---
+
+Welcome back and thank you to the greater Tennessee developer community for an exceptional CodeStock 2026! I've returned home after two-days attending and speaking at CodeStock, and it was a joy to experience. I've heard a lot from fellow speakers of CodeStock from the past, and its presence these last two days has lived up to expectations. The consensus I heard was "CodeStock is back". The energy was there, the attendees were there, the community was there. I met so many new friends in this second visit to Tennessee.
+
+For those who attended my sessions, thank you! With so many amazing sessions to attend and so many great speakers, I am honored you chose to attend mine. I hope you found them valuable and informative. For those who didn't attend, I hope to see you at a future event.
+
+The rest of this blog post is a reference for those who attended my presentations as well as a thank you letter to everyone involved.
+
+## Cloud Terraformation
+
+![Cloud Terraformation hero](/assets/_blog/codestock-2026/cloud_terraformation.jpg)
+
+On Thursday, I presented a session titled "Cloud Terraformation: From ClickOps to infrastructure as code". We broke down Terraform and dove deep into Azure provider options with AzureRM and AzApi. We also took on the challenge once again of Terraforming an existing application. I tried leveraging Copilot for writing the Terraform code and handling imports, but conference wifi and too much reasoning by models led to a bit of a disaster. We fell back to pre-written code and live coding, which worked. A plan, an apply, and some light destroying and recreating left us with... a blue screen on my web app. It was DNS, of course. Minutes after the session, propagation finished and the app was up and running. I think this session is cursed with demo failures, but everyone laughs and learns, and that's what matters. For those interested in learning more or checking out the final state, you can continue to read more on my blog or check out the resources below. Some helpful links and resources include:
+
+- [Presentation slide deck](https://github.com/victorfrye/presentations/blob/main/files/2026/codestock/cloudterraformation.pdf)
+- [Shrug Man repository](https://github.com/victorfrye/shrugman)
+- [Shrug Man website](https://shrugman.com)
+- [Comparing AzureRM and AzAPI](https://www.hashicorp.com/en/blog/enhancing-azure-deployments-with-azurerm-and-azapi-terraform-providers)
+
+## Polly Want a 500?
+
+![Polly Want a 500? hero](/assets/_blog/codestock-2026/polly_want_a_500.jpg)
+
+On Friday, I presented a second session called "Polly Want a 500?: Chaos engineering for .NET applications". In this session, we covered the concepts of chaos engineering and resiliency testing. The .NET library [Polly](https://github.com/App-vNext/Polly) was a key focus, demonstrating resilience strategies and then introducing chaos strategies to go further and test the resiliency of our application. I built a sample application and together we went through a couple of different chaos experiments. My favorite part of this was showing the Aspire dashboard for viewing traces and metrics from our chaos experiments. The out-of-the-box OpenTelemetry support makes it easy to visualize the impact of resiliency strategies and chaos experiments. For those interested in learning more or checking out the demo code, you can find some helpful links and resources include:
+
+- [Presentation slide deck](https://github.com/victorfrye/presentations/blob/main/files/2026/codestock/pollywanta500.pdf)
+- [Sample application repository](https://github.com/victorfrye/chaosseas)
+- [Polly chaos strategies documentation](https://www.pollydocs.org/chaos/)
+- [Microsoft.Extensions.Http.Resilience documentation](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience)
+
+## Leading EDJE
+
+I want to give a special thank you to my employer, [Leading EDJE](https://leadingedje.com), for continuing to support my speaking at conferences. They were not a sponsor of CodeStock 2026, but they continue to give me the freedom and encouragement to speak at events like this.
+
+## Thank you
+
+Thank you again if you attended my presentations or any of the other amazing sessions at CodeStock 2026. Attendees are why we all put so much effort into conferences, as speakers, sponsors, and organizers. Also thank you to the organizers and volunteers who made this event possible. And a special thank you to the sponsors. These are the companies helping to make this event happen and investing in the future Midwestern developer community:
+
+- [Premier Staffing Partners](https://premierstaffingpartners.com/)
+- [AI TechX](https://research.utk.edu/aitn/ai-techx/)
+- [Clayton](https://claytonhomes.com/)
+- [Pilot](https://pilotcompany.com/)
+- [Segra](https://fiber.segra.com/whats-your-connectivity-game-plan/)
+- [Zelvin](https://zelvin.com/)
+- [Vaco](https://vaco.com/)
+- [Visit Knoxville](https://visitknoxville.com/)
+- [CGI](https://cgi.com/)
+- [KUBRA](https://kub.org/)
+- [Rocket](https://rocket.com/)

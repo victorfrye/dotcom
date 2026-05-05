@@ -9,6 +9,7 @@ tags:
   - aspire
   - cloudnative
   - dotnet
+  - devops
 ---
 
 .NET Aspire is a new framework for building cloud-native and distributed applications. It brings a [host of key features as I've previously discussed](https://victorfrye.com/blog/posts/hello-aspire-breaking-down-key-features), but my two favorites are the ability to model your application stack in C# code and the instant local development environment you get after doing so.
@@ -121,16 +122,16 @@ If you chose to install the Aspire CLI and run that way, you are greeted with a 
 Dashboard:
 📈  https://localhost:17280/login?t=af9ee87cf516605f0639052a6731c2d0
 
-╭──────────┬───────────────────────────┬─────────┬────────────────────────╮ 
-│ Resource │ Type                      │ State   │ Endpoint(s)            │ 
-├──────────┼───────────────────────────┼─────────┼────────────────────────┤ 
-│ api      │ Project                   │ Running │ https://localhost:7558 │ 
-│          │                           │         │ http://localhost:5556  │ 
-│ cache    │ Container                 │ Running │ tcp://localhost:60771  │ 
-│ client   │ Executable                │ Running │ http://localhost:60772 │ 
-│ db       │ SqlServerDatabaseResource │ Running │ None                   │ 
-│ sql      │ Container                 │ Running │ tcp://localhost:60773  │ 
-╰──────────┴───────────────────────────┴─────────┴────────────────────────╯ 
+╭──────────┬───────────────────────────┬─────────┬────────────────────────╮
+│ Resource │ Type                      │ State   │ Endpoint(s)            │
+├──────────┼───────────────────────────┼─────────┼────────────────────────┤
+│ api      │ Project                   │ Running │ https://localhost:7558 │
+│          │                           │         │ http://localhost:5556  │
+│ cache    │ Container                 │ Running │ tcp://localhost:60771  │
+│ client   │ Executable                │ Running │ http://localhost:60772 │
+│ db       │ SqlServerDatabaseResource │ Running │ None                   │
+│ sql      │ Container                 │ Running │ tcp://localhost:60773  │
+╰──────────┴───────────────────────────┴─────────┴────────────────────────╯
 Press CTRL-C to stop the app host and exit.
 ```
 
@@ -158,7 +159,7 @@ First, the `csproj` file for our AI application host looks like this:
     <AssemblyName>VictorFrye.MockingMirror.AppHost</AssemblyName>
     <RootNamespace>VictorFrye.MockingMirror.AppHost</RootNamespace>
 
-   <UserSecretsId>353d8321-8cea-41fd-b09b-0503c184b4c8</UserSecretsId>  
+   <UserSecretsId>353d8321-8cea-41fd-b09b-0503c184b4c8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -227,20 +228,20 @@ There's a lot to consume here, but the key takeaway is you have options. Regardl
 Dashboard:
 📈  https://localhost:17244/login?t=e5f80d45a566a13a40755d0154e1d410
 
-╭─────────────────────┬───────────────────────────┬─────────┬────────────────────────╮                
-│ Resource            │ Type                      │ State   │ Endpoint(s)            │                
-├─────────────────────┼───────────────────────────┼─────────┼────────────────────────┤                
-│ api                 │ Project                   │ Running │ https://localhost:7034 │                
-│                     │                           │         │ http://localhost:5170  │                
-│ client              │ Executable                │ Running │ http://localhost:63526 │                
-│ openai              │ AzureOpenAIResource       │ Running │ None                   │                
-│ openai-roles        │ AzureProvisioningResource │ Running │ None                   │                
-│ OpenAIModel         │ Parameter                 │ Unknown │ None                   │                
-│ OpenAIName          │ Parameter                 │ Unknown │ None                   │                
-│ OpenAIResourceGroup │ Parameter                 │ Unknown │ None                   │                
-│ SpeechKey           │ Parameter                 │ Unknown │ None                   │                
-│ SpeechRegion        │ Parameter                 │ Unknown │ None                   │                
-╰─────────────────────┴───────────────────────────┴─────────┴────────────────────────╯                
+╭─────────────────────┬───────────────────────────┬─────────┬────────────────────────╮
+│ Resource            │ Type                      │ State   │ Endpoint(s)            │
+├─────────────────────┼───────────────────────────┼─────────┼────────────────────────┤
+│ api                 │ Project                   │ Running │ https://localhost:7034 │
+│                     │                           │         │ http://localhost:5170  │
+│ client              │ Executable                │ Running │ http://localhost:63526 │
+│ openai              │ AzureOpenAIResource       │ Running │ None                   │
+│ openai-roles        │ AzureProvisioningResource │ Running │ None                   │
+│ OpenAIModel         │ Parameter                 │ Unknown │ None                   │
+│ OpenAIName          │ Parameter                 │ Unknown │ None                   │
+│ OpenAIResourceGroup │ Parameter                 │ Unknown │ None                   │
+│ SpeechKey           │ Parameter                 │ Unknown │ None                   │
+│ SpeechRegion        │ Parameter                 │ Unknown │ None                   │
+╰─────────────────────┴───────────────────────────┴─────────┴────────────────────────╯
 Press CTRL-C to stop the app host and exit.
 ```
 

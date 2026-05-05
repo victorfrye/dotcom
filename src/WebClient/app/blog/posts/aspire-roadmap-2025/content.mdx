@@ -9,7 +9,7 @@ tags:
   - aspire
   - cloudnative
   - dotnet
-  - javascript
+  - web
   - azure
   - devops
   - ai
@@ -28,7 +28,7 @@ DevOps combines development (Dev) and operations (Ops) to deliver software faste
 Aspire already excels at code-first application modeling in C#, expressing your entire architecture—databases, services, .NET projects, and polyglot components—then spinning it up locally with `aspire run`. No YAML configuration files, just standard .NET code that ideally mirrors your production architecture. The roadmap expands this with:
 
 - **Improved container support**: Shell commands, scripts, and interactive debugging inside containers
-- **Multi-repo support**: Native orchestration across multiple repositories  
+- **Multi-repo support**: Native orchestration across multiple repositories
 - **Built-in runtime acquisition**: Automatic installation of Node.js, .NET, and other required runtimes
 
 Aspire local development is a mature feature set already. These improvements focus on further simplifying the developer experience and tackling complex orchestration scenarios. Multi-repo support has been a long-standing pain point as many developers opt to separate components, like a frontend and backend, in separate repositories. Removing the monorepo requirement or custom cross-repo orchestration makes Aspire more accessible to many teams. You can already run polyglot applications in containers with Aspire, but continued improvements will allow more robust debugging and feedback loops with local containerized applications. The built-in runtime acquisition is both the most exciting and most daunting feature here. It may simplify the first run experience, which helps with onboarding and CI/CD pipelines and one area that I adore of Aspire. However, depending on its implementation, it could also lead to extra local machine complexity with Aspire managed runtimes versus system-wide runtimes. The local development experience is already fantastic and delivers the code-first developer experience Aspire promises. Therefore, I am optimistic that these improvements will build on that foundation.

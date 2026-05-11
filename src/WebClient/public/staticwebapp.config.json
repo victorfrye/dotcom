@@ -1,4 +1,16 @@
 {
+  "routes": [
+    {
+      "route": "/blog/posts/hello-aspire-breaking-down-key-features",
+      "redirect": "/blog/posts/hello-aspire",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/posts/real-world-aspirifying",
+      "redirect": "/blog/posts/real-world-aspireifying",
+      "statusCode": 301
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html"
   }

@@ -72,19 +72,6 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-
-  redirects: async () => [
-    {
-      source: '/blog/posts/hello-aspire-breaking-down-key-features',
-      destination: '/blog/posts/hello-aspire',
-      permanent: true,
-    },
-    {
-      source: '/blog/posts/real-world-aspirifying',
-      destination: '/blog/posts/real-world-aspireifying',
-      permanent: true,
-    },
-  ],
 };
 
 const withGriffel = withGriffelCSSExtraction();

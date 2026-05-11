@@ -4,9 +4,7 @@ import Article from '@/blog/article';
 import { getMdxReadingDuration } from '@/blog/post-loader';
 import Content, { frontmatter } from './content.mdx';
 
-const readingDuration = getMdxReadingDuration(
-  'hello-aspire-breaking-down-key-features',
-);
+const readingDuration = getMdxReadingDuration('aspireify-efcore');
 
 export const metadata: Metadata = {
   title: `${frontmatter.title} | Victor Frye`,

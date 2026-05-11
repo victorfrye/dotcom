@@ -1,10 +1,10 @@
 ---
-slug: real-world-aspirifying
-title: Real-World Aspirifying
+slug: real-world-aspireifying
+title: Real-World Aspireifying
 subtitle: Using Aspire for complex polyglot applications in production
 description: A deep dive into real-world use of Aspire for a complex polyglot application, including architecture, implementation details, and lessons learned.
 date: 2026-04-11
-image: assets/_blog/real-world-aspirifying/banner.jpg
+image: assets/_blog/real-world-aspireifying/banner.jpg
 tags:
   - aspire
   - cloudnative
@@ -16,15 +16,15 @@ tags:
   - devops
 ---
 
-It's been almost a full year since I first wrote about [Aspire](/blog/posts/hello-aspire-breaking-down-key-features). At the time, I was so compelled by my experimentation about it and conferences were rejecting my talks on the technology, so I started this blog and published my first piece of content. My only production use of Aspire was experimental apps and personal projects. It was amazing, but projects I was professionally involved in were .NET Framework monoliths or Java applications (platforms that Aspire wasn't fully cooked for at the time). I could rant and rave about how cool the tool was, but using it in the wilderness of enterprise software development was a different story. I had no real-world experience to share and no real-world stories to tell.
+It's been almost a full year since I first wrote about [Aspire](/blog/posts/hello-aspire). At the time, I was so compelled by my experimentation about it and conferences were rejecting my talks on the technology, so I started this blog and published my first piece of content. My only production use of Aspire was experimental apps and personal projects. It was amazing, but projects I was professionally involved in were .NET Framework monoliths or Java applications (platforms that Aspire wasn't fully cooked for at the time). I could rant and rave about how cool the tool was, but using it in the wilderness of enterprise software development was a different story. I had no real-world experience to share and no real-world stories to tell.
 
-Now, I do. Over the last six months, I have been using Aspire for production-bound enterprise distributed applications. In this post, I will be sharing the wins, the frustrations, and the lessons learned from real-world aspirifying of such apps. The actual code will not be shared given private nature of real applications, but the impact of course will be.
+Now, I do. Over the last six months, I have been using Aspire for production-bound enterprise distributed applications. In this post, I will be sharing the wins, the frustrations, and the lessons learned from real-world aspireifying of such apps. The actual code will not be shared given private nature of real applications, but the impact of course will be.
 
 ## The Application
 
 The application is a complex distributed system with multiple polyglot services and backing Azure PaaS resources. It's a greenfield project, so we had the opportunity to choose our tech stack and take advantage of the latest and greatest in many respects. We started with the production target model first. Of course, requirements evolved and more was added over time but we started with a familiar core set of technologies and components:
 
-![Architecture diagram of the application, showing the various components and their interactions](/assets/_blog/real-world-aspirifying/architecture-diagram.png)
+![Architecture diagram of the application, showing the various components and their interactions](/assets/_blog/real-world-aspireifying/architecture-diagram.png)
 
 - **Backend web API**: An ASP.NET Core web API that serves as the main set of business logic and data access for the application. Uses Entity Framework Core (EF Core) with code-first database migrations.
 - **Frontend web app**: A Next.js web application with server-side rendering, client-side interactivity, and a backend-for-frontend (BFF) API proxy layer for authentication and orchestration.
@@ -36,7 +36,7 @@ The application is a complex distributed system with multiple polyglot services 
 - **Azure App Configuration**: Used for centralized management of application configuration settings and feature flags, including key vault references for secrets.
 - **Azure Application Insights**: Used for monitoring, logging, and telemetry across all components of the application.
 
-Already, it was pretty clear that this was going to be complex to model locally. I was very quick to suggest Aspire as the tool to save us. The team was on board, but had significantly less exposure to Aspire. Thus, we set out on a journey to learn how real-world aspirification would work for us. I have zero regrets about this decision.
+Already, it was pretty clear that this was going to be complex to model locally. I was very quick to suggest Aspire as the tool to save us. The team was on board, but had significantly less exposure to Aspire. Thus, we set out on a journey to learn how real-world aspireification would work for us. I have zero regrets about this decision.
 
 From this reference architecture, we launched a project and started building. Production didn't exist yet, nor any staging or dev/test environments. We had a blank canvas and a dream. Ready, set, aspire!
 
@@ -78,9 +78,9 @@ We got our deployment environments eventually. We decided not to use Aspire for 
 
 This left us reverse engineering how our local model was working and translating that to cloud requirements. Our app workloads were all containerized, so that packaging wasn't complex. The biggest problem was configuration. Aspire `WithRef` allows us to effortlessly link resources together, but underneath is a bunch of connection strings. The shape of these took some reverse engineering and digging through Aspire code to replicate for our deployments. A creative pattern I found is Azure resources use a plain base url as a value when that's all that's needed and morphs into a `;` delimited connection string when additional values are needed. This means a value could be `https://victorfrye.com` or `Endpoint=https://victorfrye.com;Secret=keepitsafe` dynamically. I only wish this was better documented or a ConnectionString type was exposed by Aspire client integrations. Oh well, wish lists are feedback for the future.
 
-## Our Aspirified system
+## Our Aspireified system
 
-This brings us closer to our final aspirified system. The following systems were aspirified local model:
+This brings us closer to our final aspireified system. The following systems were aspireified local model:
 
 - **Backend web API**: [A .NET project resource](https://aspire.dev/integrations/dotnet/project-resources/)
 - **JavaScript projects**: A chain of [JavaScript apps](https://aspire.dev/integrations/frameworks/javascript/) for the npm workspace and individual frontend projects

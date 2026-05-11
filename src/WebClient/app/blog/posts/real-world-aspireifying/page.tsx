@@ -4,7 +4,7 @@ import Article from '@/blog/article';
 import { getMdxReadingDuration } from '@/blog/post-loader';
 import Content, { frontmatter } from './content.mdx';
 
-const readingDuration = getMdxReadingDuration('2025-wrapped');
+const readingDuration = getMdxReadingDuration('real-world-aspireifying');
 
 export const metadata: Metadata = {
   title: `${frontmatter.title} | Victor Frye`,

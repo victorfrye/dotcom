@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 labels: ['💡 Issue-Feature']
 assignees:
-  - victorfrye
+- victorfrye
 ---
 
 **Is your feature request related to a problem? Please describe.**

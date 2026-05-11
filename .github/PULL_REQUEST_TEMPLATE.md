@@ -7,6 +7,6 @@ A quick summary of the pull request and changes made.
 
 **Task Checklist**
 
-- [ ] Built and ran locally
-- [ ] Attached an issue
-- [ ] Tests added and/or updated
+- [] Built and ran locally
+- [] Attached an issue
+- [] Tests added and/or updated

@@ -4,9 +4,7 @@ import Article from '@/blog/article';
 import { getMdxReadingDuration } from '@/blog/post-loader';
 import Content, { frontmatter } from './content.mdx';
 
-const readingDuration = getMdxReadingDuration(
-  'hello-aspire',
-);
+const readingDuration = getMdxReadingDuration('hello-aspire');
 
 export const metadata: Metadata = {
   title: `${frontmatter.title} | Victor Frye`,

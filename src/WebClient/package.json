@@ -42,7 +42,7 @@
     "vfile-matter": "^5.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.6.3",
+    "@biomejs/biome": "^2.5.15",
     "@griffel/next-extraction-plugin": "^0.1.13",
     "@griffel/webpack-loader": "2.2.21",
     "@mdx-js/loader": "^3.1.1",

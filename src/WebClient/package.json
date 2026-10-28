@@ -42,9 +42,9 @@
     "vfile-matter": "^5.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.15",
-    "@griffel/next-extraction-plugin": "^0.1.13",
-    "@griffel/webpack-loader": "2.2.21",
+    "@biomejs/biome": "^2.6.3",
+    "@griffel/next-extraction-plugin": "^0.1.15",
+    "@griffel/webpack-loader": "^2.2.31",
     "@mdx-js/loader": "^3.1.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^7.0.1",
@@ -52,7 +52,7 @@
     "@types/gtag.js": "^0.0.20",
     "@types/jest": "^30.0.0",
     "@types/mdx": "^2.0.14",
-    "@types/node": "^25.9.9",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
@@ -61,7 +61,7 @@
     "knip": "^6.43.0",
     "serve": "^14.2.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "overrides": {
     "@babel/plugin-transform-runtime": "7.29.7",

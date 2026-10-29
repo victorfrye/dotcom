@@ -17,7 +17,8 @@
     "allowJs": true,
     "incremental": true,
     "paths": {
-      "@/*": ["./app/*"]
+      "@/*": ["./app/*"],
+      "@test-utils": ["./test-utils"]
     },
     /* Linting */
     "forceConsistentCasingInFileNames": true,
@@ -41,8 +42,7 @@
     "mdx.d.ts",
     "next.config.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.test.tsx"]
 }
